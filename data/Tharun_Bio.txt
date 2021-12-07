@@ -1,7 +1,0 @@
-Tharun V.P. is a researcher at the Indian Institute of Science, where he works on "Human Collaborative Agricultural Robots".
-He is adept in technologies like Computer Vision, Machine Learning, and Robotics. He received a Bachelors in Electronics and 
-Communications Engineering from the Vellore Institute of Technology where he decorated posts like Co-founder and Senior- 
-Core-Committee member of IEEE-IAS and Robovitics respectively. He also served as the AI Team Lead of the Innovation Team at 
-Wipro Limited from 2018-21 where he contributed to 5+ high impact demonstrable projects and represented Wipro at NRF(2020) 
-with a unique Retail solution. He is also certified in non-technical domains like Human Psychology, Body Language, and 
-Micro Expressions. Recently, he has secured the 3rd Prize for an asset inspection and management solution proposed at IROS(2021).
