@@ -155,8 +155,40 @@
               <p>An aerial robotic solution for asset Inspection and Management (I&M).</p>
             </td>
           </tr> 
-					
-         
+
+
+	          <tr onmouseout="mip_stop()" onmouseover="mip_start()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='surface_crack'><video  width=100% height=100% muted autoplay loop>
+                <source src="imgs/surface_crack.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='imgs/surface_crack.png' id="surface_crack_img" width="160" height="160">
+              </div>
+              <script type="text/javascript">
+                function mip_start() {
+                  document.getElementById('surface_crack').style.opacity = "1";
+				  document.getElementById('surface_crack_img').style.opacity = "0";
+                }
+
+                function mip_stop() {
+                  document.getElementById('surface_crack').style.opacity = "0";
+				  document.getElementById('surface_crack_img').style.opacity = "1";
+                }
+                mip_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+<!--               <a href="http://jonbarron.info/mipnerf360"> -->
+                <papertitle>Monocular Depth Estimation using Transfer Learning</papertitle>
+              </a>
+              <br>
+			  <a href="https://www.youtube.com/watch?v=BT46AndhSgc">video</a>
+              <p></p>
+              <p>An aerial robotic solution for asset Inspection and Management (I&M).</p>
+            </td>
+          </tr> 	
 					
 					
           <tr onmouseout="hypernerf_stop()" onmouseover="hypernerf_start()">
@@ -186,7 +218,7 @@
                 <papertitle>Virtual Try-on</papertitle>
               </a>
               <br>
-              <a href="https://hypernerf.github.io/">project page</a>
+              <a href="https://github.com/tvpian/Virtual_Try-On">project page</a>
               /
               <a href="https://arxiv.org/abs/2106.13228">video</a>
               <p></p>
