@@ -83,7 +83,7 @@
               <a href="https://drive.google.com/file/d/1elhbnbw8tmN40R1RY2LYWXJa3nPUeYuo/view?usp=drive_web">video</a>
               <p></p>
               <p>
-								A robotic manipulator based precision weeding robot for optimizing the usage of pesticides in indoor farms.</p>
+		A robotic manipulator based precision weeding robot for optimizing the usage of pesticides in indoor farms.</p>
             </td>
           </tr> 
 	
@@ -157,22 +157,22 @@
           </tr> 
 
 
-	          <tr onmouseout="mip_stop()" onmouseover="mip_start()" >
+	          <tr onmouseout="dfv_stop()" onmouseover="dfv_start()" >
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
                 <div class="two" id='depth-from-video'><video  width=100% height=100% muted autoplay loop>
-                <source src="imgs/surface_crack.mp4" type="video/mp4">
+                <source src="imgs/Monocular_Depth_Estimation_vid.mp4" type="video/mp4">
                 Your browser does not support the video tag.
                 </video></div>
                 <img src='imgs/depth-from-video.jpg' id="depth-from-video_img" width="160" height="160">
               </div>
               <script type="text/javascript">
-                function mip_start() {
+                function dfv_start() {
                   document.getElementById('depth-from-video').style.opacity = "1";
 				  document.getElementById('depth-from-video_img').style.opacity = "0";
                 }
 
-                function mip_stop() {
+                function dfv_stop() {
                   document.getElementById('depth-from-video').style.opacity = "0";
 				  document.getElementById('depth-from-video_img').style.opacity = "1";
                 }
