@@ -135,3 +135,12 @@ body {
   background-color: black; /* Set the background color to black */
   color: white; /* Set text color to white */
 }
+
+#profile-photo-container {
+  width: 100%; /* Set the width of the container to 100% */
+}
+
+#profile-photo-container img {
+  display: block; /* Make the image a block element to fill the container */
+}
+
