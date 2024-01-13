@@ -132,7 +132,6 @@ span.highlight {
 
 body {
   margin: 0;
-  overflow: hidden;
   background-color: black; /* Set the background color to black */
   color: white; /* Set text color to white */
 }
