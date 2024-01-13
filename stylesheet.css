@@ -129,3 +129,10 @@ name {
 span.highlight {
   background-color: #ffffd0;
 }
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black; /* Set the background color to black */
+  color: white; /* Set text color to white */
+}
