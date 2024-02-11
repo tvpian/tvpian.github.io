@@ -1,7 +1,11 @@
-Tharun V.P. is a researcher at the Indian Institute of Science, where he works on "Human Collaborative Agricultural Robots".
-He is adept in technologies like Computer Vision, Machine Learning, and Robotics. He received a Bachelors in Electronics and 
-Communications Engineering from the Vellore Institute of Technology where he decorated posts like Co-founder and Senior- 
-Core-Committee member of IEEE-IAS and Robovitics respectively. He also served as the AI Team Lead of the Innovation Team at 
-Wipro Limited from 2018-21 where he contributed to 5+ high impact demonstrable projects and represented Wipro at NRF(2020) 
-with a unique Retail solution. He is also certified in non-technical domains like Human Psychology, Body Language, and 
-Micro Expressions. Recently, he has secured the 3rd Prize for an asset inspection and management solution proposed at IROS(2021).
+A seasoned technology enthusiast and developer renowned with a unique storytelling ability. Currently, I hold the position of Robotics Engineer at Catt Labs, where my work is primarily focused on the intricate domains of Autonomous Navigation and Security for Mobile Unmanned Ground Vehicles (UGVs).
+
+My expertise extends across diverse realms, including Human-Robot Interaction, Multi-Modal Networks, Computer Vision, and Cognitive Science. In my previous role as a Research Assistant at the University of Maryland's esteemed Perception and Robotics Group, I dedicated myself to the fascinating domain of Multi-Modal Human-Robot Interaction, striving to foster greater synergy between humans and machines.
+
+Further enriching my journey, I played a pivotal role at the Robotics Innovations Lab within the Indian Institute of Science. Here, my efforts were centered around pioneering solutions for Human Collaborative Agricultural Robotics, a mission that holds great promise for the future of agriculture.
+
+My journey also includes a notable chapter as an AI Team Lead at Wipro's Innovations Lab. In this capacity, I specialized in designing and implementing cutting-edge AI and Computer Vision techniques. My ability to bridge the gap between theory and practical application was a hallmark of this role.
+
+Proficient in Machine Learning, Computer Vision, NLP, IoT, Robotics, and Mixed Reality, I bring a versatile skill set to the table, underpinned by advanced programming languages like Python and C++. Complementing my technical expertise, I hold certifications in non-technical domains such as Human Psychology, Body Language, Micro Expressions, and Design Thinking.
+
+At the core of my work philosophy lies a simple yet profound mantra: "A signature in every work." I firmly believe that true excellence is achieved by making an indelible mark in every project and undertaking.
