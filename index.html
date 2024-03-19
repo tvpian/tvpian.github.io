@@ -67,6 +67,73 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+          <tr onmouseout="slic_stop()" onmouseover="slic_start()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='slic'><video  width=100% height=100% muted autoplay loop>
+                <source src="imgs/slic.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='imgs/slic.png' id="slic_img" width="160" height="160">
+              </div>
+              <script type="text/javascript">
+                function slic_start() {
+                  document.getElementById('slic').style.opacity = "1";
+				  document.getElementById('slic_img').style.opacity = "0";
+                }
+
+                function slic_stop() {
+                  document.getElementById('slic').style.opacity = "0";
+				  document.getElementById('slic_img').style.opacity = "1";
+                }
+                slic_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+<!--               <a href="http://jonbarron.info/mipnerf360"> -->
+                <papertitle>Simple Linear Iterative Clustering(SLIC)</papertitle>
+              </a>
+              <br>
+			          <a href="https://github.com/tvpian/SLIC-Image-Segmentation">project_page</a>
+              <p></p>
+              <p>Image Segmentation using SLIC.</p>
+            </td>
+          </tr> 
+          
+
+          <tr onmouseout="inr_stop()" onmouseover="inr_start()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='inr'><video  width=100% height=100% muted autoplay loop>
+                <source src="imgs/inr.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video></div>
+                <img src='imgs/inr.png' id="inr_img" width="160" height="160">
+              </div>
+              <script type="text/javascript">
+                function inr_start() {
+                  document.getElementById('inr').style.opacity = "1";
+				  document.getElementById('inr_img').style.opacity = "0";
+                }
+
+                function inr_stop() {
+                  document.getElementById('inr').style.opacity = "0";
+				  document.getElementById('inr_img').style.opacity = "1";
+                }
+                inr_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+<!--               <a href="http://jonbarron.info/mipnerf360"> -->
+                <papertitle>Implicit Neural Representation(INR)</papertitle>
+              </a>
+              <br>
+              <a href="https://github.com/tvpian/Image-Outpainting">project_page</a>
+              <p></p>
+              <p>Image Outpainting using Implicit Neural Representations(INR).</p>
+            </td>
+          </tr> 
+
           <tr onmouseout="rawnerf_stop()" onmouseover="rawnerf_start()" bgcolor="#ffffd0">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -101,8 +168,7 @@
             </td>
           </tr> 
 	
-					
-
+				
 
           <tr onmouseout="mip360_stop()" onmouseover="mip360_start()" >
             <td style="padding:20px;width:25%;vertical-align:middle">
