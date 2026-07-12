@@ -7,8 +7,18 @@
   <meta name="description" content="Human in the Loom — essays about embodied intelligence, human–robot relations, and the stories woven into emerging technology.">
   <meta name="theme-color" content="#171510">
   <title>Human in the Loom — Technology, examined from inside the weave</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('tvp-theme');
+        const theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+      } catch (_error) {}
+    })();
+  </script>
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon" type="image/png" href="../images/seal_icon.png">
+  <script src="../theme.js" defer></script>
   <script src="essays.js" defer></script>
 </head>
 <body>
@@ -16,7 +26,10 @@
   <header>
     <a class="publication-name" href="./" aria-label="Human in the Loom home"><span class="loom-mark" aria-hidden="true"></span><span>Human in the Loom</span></a>
     <nav aria-label="Publication navigation"><a href="#essays">Essays</a><a href="#premise">Premise</a><a href="../">Portfolio</a></nav>
-    <a class="subscribe-link" href="https://humanintheloom.substack.com/subscribe">Subscribe <span aria-hidden="true">↗</span></a>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span aria-hidden="true"></span></button>
+      <a class="subscribe-link" href="https://humanintheloom.substack.com/subscribe">Subscribe <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
 
   <main id="main">
@@ -27,10 +40,10 @@
         <p>Human in the Loom is an independent publication about the systems we build—and the values, assumptions, and stories we quietly weave into them.</p>
         <div class="hero-actions"><a class="button" href="#essays">Explore recent essays <span aria-hidden="true">↓</span></a><a class="quiet-link" href="https://humanintheloom.substack.com/subscribe">Join the publication ↗</a></div>
       </div>
-      <div class="loom-visual" aria-hidden="true">
-        <span class="orb orb-one"></span><span class="orb orb-two"></span>
-        <span class="thread thread-one"></span><span class="thread thread-two"></span><span class="thread thread-three"></span>
-        <p>human <i>×</i> machine</p><strong>intelligence<br>takes shape<br>in between</strong>
+      <div class="loom-visual" aria-hidden="true" data-depth-scene>
+        <span class="orb orb-one" data-depth="0.14"></span><span class="orb orb-two" data-depth="0.22"></span>
+        <span class="thread thread-one" data-depth="0.34"></span><span class="thread thread-two" data-depth="0.48"></span><span class="thread thread-three" data-depth="0.58"></span>
+        <p data-depth="0.66">human <i>×</i> machine</p><strong data-depth="0.78">intelligence<br>takes shape<br>in between</strong>
       </div>
     </section>
 

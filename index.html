@@ -7,8 +7,18 @@
   <meta name="description" content="Tharun Vadakke Puthanveettil is an R&D engineer, robotics researcher, first-principles design thinker, and technical storyteller working across embodied AI and human–robot interaction.">
   <meta name="theme-color" content="#121212">
   <title>Tharun V Puthanveettil — Intelligent Systems &amp; Technical Stories</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('tvp-theme');
+        const theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+      } catch (_error) {}
+    })();
+  </script>
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
+  <script src="theme.js" defer></script>
   <script src="portfolio.js" defer></script>
 </head>
 <body>
@@ -27,7 +37,10 @@
       <a href="#stories">Stories</a>
       <a href="#about">About</a>
     </nav>
-    <a class="header-cta" href="mailto:tharunv.pvit@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span aria-hidden="true"></span></button>
+      <a class="header-cta" href="mailto:tharunv.pvit@gmail.com">Let’s talk <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
 
   <main id="main">
@@ -45,13 +58,13 @@
       </div>
 
       <div class="hero-portrait">
-        <div class="portrait-frame">
-          <img src="imgs/tvp_full_portfolio.png" alt="Tharun speaking at an event">
-          <div class="portrait-grid" aria-hidden="true"></div>
-          <div class="portrait-orb portrait-orb-one" aria-hidden="true"></div>
-          <div class="portrait-orb portrait-orb-two" aria-hidden="true"></div>
-          <div class="portrait-thread thread-a" aria-hidden="true"></div>
-          <div class="portrait-thread thread-b" aria-hidden="true"></div>
+        <div class="portrait-frame" data-depth-scene>
+          <img src="imgs/tvp_full_portfolio.png" alt="Tharun speaking at an event" data-depth="0.34">
+          <div class="portrait-grid" aria-hidden="true" data-depth="-0.08"></div>
+          <div class="portrait-orb portrait-orb-one" aria-hidden="true" data-depth="0.18"></div>
+          <div class="portrait-orb portrait-orb-two" aria-hidden="true" data-depth="0.26"></div>
+          <div class="portrait-thread thread-a" aria-hidden="true" data-depth="0.42"></div>
+          <div class="portrait-thread thread-b" aria-hidden="true" data-depth="0.52"></div>
         </div>
         <div class="portrait-caption">
           <span>Engineer</span><span>Researcher</span><span>Storyteller</span>
