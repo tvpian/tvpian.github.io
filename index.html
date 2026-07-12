@@ -234,31 +234,68 @@
 
     <section class="product-interlude" id="product">
       <div class="product-heading">
-        <div><p class="eyebrow light"><span></span>Independent product · 2025–now</p><h2>A workspace built around how research actually happens.</h2></div>
-        <p>UltraNote Lite sits outside my robotics work, but reveals the same instinct: understand the real workflow, remove accidental complexity, and build the whole system—not just its most visible feature.</p>
+        <div><p class="eyebrow light"><span></span>Independent products · 2025–now</p><h2>Tools built around how technical work actually happens.</h2></div>
+        <p>These products sit outside my robotics work, but reveal the same instinct: understand the real workflow, remove accidental complexity, and build the whole system—not just its most visible feature.</p>
       </div>
 
-      <article class="ultranote-showcase">
-        <div class="ultranote-copy">
-          <div class="ultranote-brand"><span>UN</span><div><small>Local-first · self-hosted · open source</small><h3>UltraNote Lite</h3></div></div>
-          <blockquote>“The notebook I wanted<br>but couldn’t find.”</blockquote>
-          <p>A single-user workspace for daily notes, tasks, projects, journaling, and research capture. It occupies the space between heavyweight cloud tools and bare Markdown: fast enough for every thought, structured enough for long-running work, and owned entirely by the person using it.</p>
-          <div class="product-principles"><span><strong>Local first</strong>No cloud, account, telemetry, or data lock-in.</span><span><strong>Capture first</strong>One shortcut routes a task, note, journal entry, or idea.</span><span><strong>Agent ready</strong>People and coding agents share one durable project record.</span></div>
-          <div class="spotlight-links"><a class="button button-light" href="https://github.com/tvpian/Ultranote_Lite">Explore UltraNote <span aria-hidden="true">↗</span></a><a class="text-link product-doc-link" href="https://github.com/tvpian/Ultranote_Lite/blob/main/AGENT_GUIDE.md">Agent architecture <span aria-hidden="true">↗</span></a></div>
+      <div class="product-switcher">
+        <div class="product-tabs" role="tablist" aria-label="Independent products">
+          <button type="button" role="tab" id="product-tab-ultranote" aria-controls="product-panel-ultranote" aria-selected="true" tabindex="0" data-product-tab="ultranote"><span>01</span>UltraNote Lite</button>
+          <button type="button" role="tab" id="product-tab-intrachat" aria-controls="product-panel-intrachat" aria-selected="false" tabindex="-1" data-product-tab="intrachat"><span>02</span>Intra-Chat</button>
+        </div>
+        <p class="product-position" aria-live="polite"><span data-product-position>01 / 02</span><small>Use arrows, tabs, or swipe</small></p>
+      </div>
+
+      <div class="product-stage" data-product-stage>
+        <div class="product-panel" role="tabpanel" id="product-panel-ultranote" aria-labelledby="product-tab-ultranote" data-product-panel="ultranote">
+          <article class="product-showcase ultranote-showcase">
+            <div class="product-copy ultranote-copy">
+              <div class="product-brand ultranote-brand"><span>UN</span><div><small>Local-first · self-hosted · open source</small><h3>UltraNote Lite</h3></div></div>
+              <blockquote>“The notebook I wanted<br>but couldn’t find.”</blockquote>
+              <p>A single-user workspace for daily notes, tasks, projects, journaling, and research capture. It occupies the space between heavyweight cloud tools and bare Markdown: fast enough for every thought, structured enough for long-running work, and owned entirely by the person using it.</p>
+              <div class="product-principles"><span><strong>Local first</strong>No cloud, account, telemetry, or data lock-in.</span><span><strong>Capture first</strong>One shortcut routes a task, note, journal entry, or idea.</span><span><strong>Agent ready</strong>People and coding agents share one durable project record.</span></div>
+              <div class="spotlight-links"><a class="button button-light" href="https://github.com/tvpian/Ultranote_Lite">Explore UltraNote <span aria-hidden="true">↗</span></a><a class="text-link product-doc-link" href="https://github.com/tvpian/Ultranote_Lite/blob/main/AGENT_GUIDE.md">Agent architecture <span aria-hidden="true">↗</span></a></div>
+            </div>
+
+            <div class="product-gallery ultranote-gallery">
+              <figure class="product-screen ultranote-screen screen-today"><img src="imgs/ultranote-today.png" alt="UltraNote Today workspace with daily notes, project tasks, scratchpad, and journal"><figcaption>Today · one rolling page</figcaption></figure>
+              <figure class="product-screen ultranote-screen screen-research"><img src="imgs/ultranote-research.png" alt="UltraNote research workspace with capture inbox, topic maps, paper notes, and monthly synthesis"><figcaption>Research · capture to synthesis</figcaption></figure>
+              <figure class="product-screen ultranote-screen screen-mobile"><img src="imgs/ultranote-mobile.png" alt="UltraNote mobile Today view as an installable progressive web application"><figcaption>Mobile · a real capture flow</figcaption></figure>
+            </div>
+          </article>
+
+          <div class="product-system-strip" aria-label="UltraNote system architecture">
+            <div><span>01</span><strong>Capture anywhere</strong><small>Desktop · PWA · share sheet · bookmarklet</small></div>
+            <div><span>02</span><strong>Organize deliberately</strong><small>Daily · projects · research · wiki-links</small></div>
+            <div><span>03</span><strong>Keep the source of truth</strong><small>One Node process · one owned data file</small></div>
+            <div><span>04</span><strong>Collaborate with agents</strong><small>Context · query · search · validated updates</small></div>
+          </div>
         </div>
 
-        <div class="ultranote-gallery">
-          <figure class="ultranote-screen screen-today"><img src="imgs/ultranote-today.png" alt="UltraNote Today workspace with daily notes, project tasks, scratchpad, and journal"><figcaption>Today · one rolling page</figcaption></figure>
-          <figure class="ultranote-screen screen-research"><img src="imgs/ultranote-research.png" alt="UltraNote research workspace with capture inbox, topic maps, paper notes, and monthly synthesis"><figcaption>Research · capture to synthesis</figcaption></figure>
-          <figure class="ultranote-screen screen-mobile"><img src="imgs/ultranote-mobile.png" alt="UltraNote mobile Today view as an installable progressive web application"><figcaption>Mobile · a real capture flow</figcaption></figure>
-        </div>
-      </article>
+        <div class="product-panel" role="tabpanel" id="product-panel-intrachat" aria-labelledby="product-tab-intrachat" data-product-panel="intrachat" hidden>
+          <article class="product-showcase intrachat-showcase">
+            <div class="product-copy intrachat-copy">
+              <div class="product-brand intrachat-brand"><span>IC</span><div><small>Offline-first · LAN-hosted · open source</small><h3>Intra-Chat</h3></div></div>
+              <blockquote>“The operating layer<br>for a physical team.”</blockquote>
+              <p>An actively developed, self-hosted team hub for labs, workshops, and robotics crews. It keeps conversation, technical knowledge, files, equipment, and agent-generated context on the local network—without external accounts, cloud dependency, or telemetry.</p>
+              <div class="product-principles"><span><strong>Durable memory</strong>Turn chat into manuals and project knowledge.</span><span><strong>Built for the bench</strong>Track equipment, owners, status, and check-outs.</span><span><strong>Agent ready</strong>Scoped keys let scripts and agents push knowledge.</span></div>
+              <div class="spotlight-links"><a class="button intrachat-button" href="https://github.com/tvpian/Intra-Chat">Explore Intra-Chat <span aria-hidden="true">↗</span></a><a class="text-link intrachat-doc-link" href="https://github.com/tvpian/Intra-Chat/blob/main/docs/AGENT_INTEGRATION.md">Agent API <span aria-hidden="true">↗</span></a></div>
+            </div>
 
-      <div class="product-system-strip" aria-label="UltraNote system architecture">
-        <div><span>01</span><strong>Capture anywhere</strong><small>Desktop · PWA · share sheet · bookmarklet</small></div>
-        <div><span>02</span><strong>Organize deliberately</strong><small>Daily · projects · research · wiki-links</small></div>
-        <div><span>03</span><strong>Keep the source of truth</strong><small>One Node process · one owned data file</small></div>
-        <div><span>04</span><strong>Collaborate with agents</strong><small>Context · query · search · validated updates</small></div>
+            <div class="product-gallery intrachat-gallery">
+              <figure class="product-screen intrachat-screen intra-chat"><img src="https://raw.githubusercontent.com/tvpian/Intra-Chat/main/docs/screenshots/02-chat.png" alt="Intra-Chat real-time team conversation interface"><figcaption>Chat · live on the LAN</figcaption></figure>
+              <figure class="product-screen intrachat-screen intra-knowledge"><img src="https://raw.githubusercontent.com/tvpian/Intra-Chat/main/docs/screenshots/08-knowledge.png" alt="Intra-Chat searchable project knowledge base"><figcaption>Knowledge · beyond the scroll</figcaption></figure>
+              <figure class="product-screen intrachat-screen intra-inventory"><img src="https://raw.githubusercontent.com/tvpian/Intra-Chat/main/docs/screenshots/09-inventory.png" alt="Intra-Chat lab equipment inventory with asset status and ownership"><figcaption>Inventory · built for the bench</figcaption></figure>
+            </div>
+          </article>
+
+          <div class="product-system-strip intrachat-system-strip" aria-label="Intra-Chat system architecture">
+            <div><span>01</span><strong>Work offline</strong><small>One Flask process · any browser · local network</small></div>
+            <div><span>02</span><strong>Preserve team memory</strong><small>Chat · manual · projects · knowledge base</small></div>
+            <div><span>03</span><strong>Run the lab</strong><small>Files · inventory · ownership · check-outs</small></div>
+            <div><span>04</span><strong>Connect local agents</strong><small>Scoped API keys · Ollama summaries · no egress</small></div>
+          </div>
+        </div>
       </div>
     </section>
 

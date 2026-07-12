@@ -97,3 +97,59 @@ filterButtons.forEach((button) => {
     });
   });
 });
+
+const productTabs = [...document.querySelectorAll('[data-product-tab]')];
+const productPanels = [...document.querySelectorAll('[data-product-panel]')];
+const productStage = document.querySelector('[data-product-stage]');
+const productPosition = document.querySelector('[data-product-position]');
+
+if (productTabs.length && productPanels.length) {
+  const selectProduct = (index, focus = false) => {
+    const normalizedIndex = (index + productTabs.length) % productTabs.length;
+    const selected = productTabs[normalizedIndex];
+
+    productTabs.forEach((tab, tabIndex) => {
+      const active = tabIndex === normalizedIndex;
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      if (active && focus) tab.focus();
+    });
+    productPanels.forEach((panel) => {
+      panel.hidden = panel.dataset.productPanel !== selected.dataset.productTab;
+    });
+    if (productPosition) {
+      productPosition.textContent = `${String(normalizedIndex + 1).padStart(2, '0')} / ${String(productTabs.length).padStart(2, '0')}`;
+    }
+  };
+
+  productTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectProduct(index));
+    tab.addEventListener('keydown', (event) => {
+      let nextIndex;
+      if (event.key === 'ArrowRight') nextIndex = index + 1;
+      else if (event.key === 'ArrowLeft') nextIndex = index - 1;
+      else if (event.key === 'Home') nextIndex = 0;
+      else if (event.key === 'End') nextIndex = productTabs.length - 1;
+      else return;
+      event.preventDefault();
+      selectProduct(nextIndex, true);
+    });
+  });
+
+  let swipeStartX = null;
+  productStage?.addEventListener('pointerdown', (event) => {
+    if (event.pointerType === 'mouse') return;
+    swipeStartX = event.clientX;
+  });
+  productStage?.addEventListener('pointerup', (event) => {
+    if (swipeStartX === null) return;
+    const distance = event.clientX - swipeStartX;
+    swipeStartX = null;
+    if (Math.abs(distance) < 55) return;
+    const currentIndex = productTabs.findIndex((tab) => tab.getAttribute('aria-selected') === 'true');
+    selectProduct(currentIndex + (distance < 0 ? 1 : -1));
+  });
+  productStage?.addEventListener('pointercancel', () => {
+    swipeStartX = null;
+  });
+}
