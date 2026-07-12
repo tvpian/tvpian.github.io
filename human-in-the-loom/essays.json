@@ -1,0 +1,77 @@
+{
+  "updatedAt": "2026-07-02T00:51:00.000Z",
+  "essays": [
+    {
+      "publication": "Human in the Loom",
+      "title": "The Career Trap Nobody Warned You About",
+      "description": "Why smart, hard-working people still end up stuck — and why the real gap is not effort, but career capital.",
+      "url": "https://humanintheloom.substack.com/p/the-career-trap-nobody-warned-you",
+      "date": "Jul 2, 2026",
+      "published": "2026-07-02T00:51:00.000Z"
+    },
+    {
+      "publication": "Personal notes",
+      "title": "Why Every Robot Is Folding Laundry",
+      "description": "Deformability, Dynamics, and the Physics of a Perfect Demo.",
+      "url": "https://tvpian.substack.com/p/why-every-robot-is-folding-laundry",
+      "date": "Jul 1, 2026",
+      "published": "2026-07-01T05:21:17.000Z"
+    },
+    {
+      "publication": "Personal notes",
+      "title": "Your AI Needs a Second Brain Too!",
+      "description": "Why a local-first personal workspace may become the single grounding layer for human workflows and AI agents",
+      "url": "https://tvpian.substack.com/p/your-ai-needs-a-second-brain-too",
+      "date": "Jun 29, 2026",
+      "published": "2026-06-29T10:10:06.000Z"
+    },
+    {
+      "publication": "Personal notes",
+      "title": "Chain-of-X Is Becoming the Default Reasoning Stack for Robotics and Embodied AI",
+      "description": "Why explicit chains of thought, action, state, tools, and verification are steadily replacing monolithic policies in the next wave of embodied intelligence.",
+      "url": "https://tvpian.substack.com/p/chain-of-x-is-becoming-the-default",
+      "date": "Jun 28, 2026",
+      "published": "2026-06-28T14:05:23.000Z"
+    },
+    {
+      "publication": "Human in the Loom",
+      "title": "How Do You Engineer Hype? Inside the System Behind India’s Comet Sneakers",
+      "description": "What an Indian sneaker brand can teach founders about positioning, product moats, and designing community into every drop.",
+      "url": "https://humanintheloom.substack.com/p/how-do-you-engineer-hype-inside-the",
+      "date": "Jun 28, 2026",
+      "published": "2026-06-28T00:04:02.000Z"
+    },
+    {
+      "publication": "Personal notes",
+      "title": "Stop Designing Robot Learning Around the Teleop Device",
+      "description": "Why robot learning needs task-adaptive teleoperation, not device lock-in",
+      "url": "https://tvpian.substack.com/p/stop-designing-robot-learning-around",
+      "date": "Jun 22, 2026",
+      "published": "2026-06-22T03:14:39.000Z"
+    },
+    {
+      "publication": "Personal notes",
+      "title": "Robot Learning’s Next Bottleneck Is Not the Policy. It Is the Harness.",
+      "description": "As VLA and robot foundation models become more capable, the real opportunity is shifting toward engineering the systems that make them reliable, safe, measurable, and useful in the physical world.",
+      "url": "https://tvpian.substack.com/p/robot-learnings-next-bottleneck-is",
+      "date": "Jun 22, 2026",
+      "published": "2026-06-22T02:19:50.000Z"
+    },
+    {
+      "publication": "Personal notes",
+      "title": "The Imagination Gap: Why Robotics is Trading Physical Practice for Digital Dreams",
+      "description": "Why the future of embodied AI depends on teaching robots to practice in their own minds.",
+      "url": "https://tvpian.substack.com/p/the-imagination-gap-why-robotics",
+      "date": "Jun 21, 2026",
+      "published": "2026-06-21T23:23:51.000Z"
+    },
+    {
+      "publication": "Personal notes",
+      "title": "Forget the Architecture: 5 Surprising Realities of Building LLMs from Stanford’s CS229",
+      "description": "Why the secret to modern AI isn't the neural network itself, but the massive data pipelines, scaling laws, and human feedback behind it.",
+      "url": "https://tvpian.substack.com/p/forget-the-architecture-5-surprising",
+      "date": "Jun 8, 2026",
+      "published": "2026-06-08T03:22:00.000Z"
+    }
+  ]
+}

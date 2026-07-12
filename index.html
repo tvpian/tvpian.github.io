@@ -6,7 +6,7 @@
   <meta name="author" content="Tharun Vadakke Puthanveettil">
   <meta name="description" content="Tharun Vadakke Puthanveettil is an R&D engineer, robotics researcher, first-principles design thinker, and technical storyteller working across embodied AI and human–robot interaction.">
   <meta name="theme-color" content="#121212">
-  <title>Tharun VP — Intelligent Systems &amp; Technical Stories</title>
+  <title>Tharun V Puthanveettil — Intelligent Systems &amp; Technical Stories</title>
   <link rel="stylesheet" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <script src="portfolio.js" defer></script>
@@ -15,12 +15,13 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <a class="identity" href="#top" aria-label="Tharun VP, home">
+    <a class="identity" href="#top" aria-label="Tharun V Puthanveettil, home">
       <span class="identity-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span>Tharun VP</span>
+      <span>Tharun V Puthanveettil</span>
     </a>
     <nav aria-label="Primary navigation">
       <a href="#work">Work</a>
+      <a href="#product">Product</a>
       <a href="#atlas">Atlas</a>
       <a href="#research">Research</a>
       <a href="#stories">Stories</a>
@@ -59,7 +60,7 @@
     </section>
 
     <section class="focus-strip" aria-label="Current research focus">
-      <article><span>01</span><h2>Video-action<br>models</h2></article>
+      <article><span>01</span><h2>Representation<br>learning</h2></article>
       <article><span>02</span><h2>Egocentric<br>policies</h2></article>
       <article><span>03</span><h2>World models<br>for robotics</h2></article>
       <article><span>04</span><h2>Human–robot<br>interaction</h2></article>
@@ -68,14 +69,14 @@
     <section class="story-map" aria-labelledby="story-map-title">
       <div class="story-map-intro">
         <p class="eyebrow light"><span></span>The through-line</p>
-        <h2 id="story-map-title">Four chapters.<br>One evolving question.</h2>
-        <p>How do we build intelligence that remains useful when it leaves the model, enters the world, and encounters people?</p>
+        <h2 id="story-map-title">How the work<br>evolved.</h2>
+        <p>The path was not perfectly linear. In retrospect, each chapter supplied something the next one needed: models, interfaces, physical systems, and finally machines that learn from experience.</p>
       </div>
       <div class="story-chapters">
-        <article><span>Chapter 01</span><h3>Learning to perceive</h3><p>From statistical prediction to segmentation, depth, implicit representations, and multimodal object tracking.</p><small>Rainfall · SLIC · INR · Depth · TAR</small></article>
-        <article><span>Chapter 02</span><h3>Building systems that move</h3><p>Perception becomes control: coordinated vehicles, aerial localization, inspection, and navigation in dynamic environments.</p><small>Auto-Platoon · ORB-SLAM · UAV inspection</small></article>
-        <article><span>Chapter 03</span><h3>Designing around humans</h3><p>Intelligence becomes an interface—supporting collaboration, coaching, safety, and human intent.</p><small>HRI · Weeding · Try-on · AI Cricket</small></article>
-        <article><span>Chapter 04</span><h3>Teaching robots to learn and act</h3><p>Today’s frontier: demonstrations, learned policies, world models, explainability, and deployment on real robot workcells.</p><small>ACT · Diffusion · VAM · ROS 2 · Sim-to-real</small></article>
+        <article><span>Chapter 01 · 2017–21</span><h3>Finding signal—and making it useful</h3><p>I began with a broad question: how can data become a useful decision or experience? Statistical forecasting grew into computer vision, soft robotics, human-facing AI, and my first perception systems built in ROS.</p><small>Rainfall · Water quality · Soft robot · My Style · Try-on · AI Cricket · ROS</small></article>
+        <article><span>Chapter 02 · 2021–23</span><h3>Giving perception a body</h3><p>At IISc and UMD, models met cameras, manipulators, crops, and human instruction. I moved from ROS into ROS 2 as depth estimation, precision weeding, and an ambitious HRI study made perception physical.</p><small>Depth · Precision weeding · ROS → ROS 2 · Speech + gesture + demonstration</small></article>
+        <article><span>Chapter 03 · 2023–24</span><h3>Architecting multimodal autonomy</h3><p>The focus widened from one model to the whole loop: fuse partial evidence, reason through uncertainty, and close perception into control or safety decisions across people, vehicles, UAVs, and cyber-physical systems.</p><small>PoseFusion · Fall detection · Auto-Platoon · TAR · Multimodal anomaly detection</small></article>
+        <article><span>Chapter 04 · 2024–now</span><h3>Robotic intelligence for the unstructured world</h3><p>Today, those threads converge in bimanual systems that manipulate deformable objects: multimodal perception, compliant control, demonstration-driven policies, digital twins, and closed-loop deployment on real workcells.</p><small>Deformables · Bimanual manipulation · Compliance · Learned policies · Sim-to-real</small></article>
       </div>
     </section>
 
@@ -92,47 +93,60 @@
           <p class="eyebrow"><span></span>Selected systems</p>
           <h2>Where the story<br>becomes a system.</h2>
         </div>
-        <p class="section-note">Four representative bodies of work show how I move between research questions, system architecture, human context, and physical deployment.</p>
+        <p class="section-note">A focused set of systems and technical modules shows how I move between research questions, architecture, human context, and physical deployment.</p>
       </div>
 
       <div class="featured-work">
         <article class="feature-card feature-dark">
-          <div class="feature-art system-art" aria-hidden="true">
-            <span class="system-node node-one"></span><span class="system-node node-two"></span><span class="system-node node-three"></span>
-            <span class="system-line line-one"></span><span class="system-line line-two"></span>
-            <span class="system-label">demonstrate → learn → evaluate → deploy</span>
+          <div class="feature-art learning-stack" aria-hidden="true">
+            <div class="learning-core"><small>closed loop</small><strong>Robot<br>learning</strong><span>skill acquisition</span></div>
+            <div class="learning-module module-teleop"><span>01</span><strong>Teleoperate</strong><small>human demonstrations</small></div>
+            <div class="learning-module module-orchestrate"><span>02</span><strong>Orchestrate</strong><small>behavior trees</small></div>
+            <div class="learning-module module-twin"><span>03</span><strong>Mirror</strong><small>digital twin</small></div>
+            <div class="learning-module module-collect"><span>04</span><strong>Collect</strong><small>automatic episodes</small></div>
+            <div class="learning-module module-train"><span>05</span><strong>Learn</strong><small>data → policy</small></div>
+            <span class="learning-loop loop-a"></span><span class="learning-loop loop-b"></span>
+            <span class="system-label">demonstrate → structure → simulate → learn → deploy</span>
           </div>
           <div class="feature-copy">
             <div class="project-meta"><span>Chapter 04</span><span>Real-world robot learning</span></div>
-            <h3>Learning systems for robotic manipulation</h3>
-            <p>End-to-end infrastructure spanning teleoperation, automatic data collection, LeRobot-style datasets, ACT and diffusion policies, simulation validation, perception, and deployment on ROS 2 workcells.</p>
-            <div class="tags"><span>Robot learning</span><span>ROS 2</span><span>LeRobot</span><span>Sim-to-real</span></div>
+            <h3>Robotic intelligence for unstructured manipulation</h3>
+            <p>Research and engineering for bimanual manipulation of deformable objects—coupling multimodal perception, force-aware compliant control, human demonstrations, learned action policies, high-fidelity simulation, and real-world ROS 2 deployment.</p>
+            <div class="tags"><span>Deformable objects</span><span>Bimanual systems</span><span>Compliance</span><span>Robot learning</span><span>Sim-to-real</span></div>
           </div>
         </article>
 
-        <article class="feature-card">
-          <div class="feature-art image-art motion-frame">
-            <video muted loop playsinline preload="none" poster="imgs/autonomous_weeding.jpg" aria-hidden="true">
+        <article class="feature-card hybrid-card">
+          <div class="feature-art hybrid-art">
+            <div class="hybrid-video motion-frame">
+              <video muted loop playsinline preload="metadata" poster="imgs/autonomous_weeding.jpg" aria-label="Vision-guided agricultural robot operating around plants">
               <source src="imgs/autonomous_weeding.mp4" type="video/mp4">
-            </video>
-            <span class="image-index">Chapter 03 / Collaboration</span>
+              </video>
+              <span class="image-index">Physical deployment</span>
+            </div>
+            <figure><img src="imgs/hybrid-ik-system.png" alt="Paper figure showing plant vision feeding root detection, weed spread estimation, workspace extraction, hybrid IK, and flower-carpet planning"><figcaption>From pixels to a plant-safe plan</figcaption></figure>
+            <figure><img src="imgs/hybrid-ik-leaf-area.png" alt="Paper figure showing the visual pipeline from RGB channels through thresholding and elliptical closing to stem localization"><figcaption>Geometry recovered before motion</figcaption></figure>
           </div>
           <div class="feature-copy">
-            <div class="project-meta"><span>IISc</span><span>Human-collaborative robotics</span></div>
-            <h3>Precision agricultural robotics</h3>
-            <p>A manipulator-based perception and actuation system designed to identify and remove weeds while reducing pesticide use in indoor farms.</p>
-            <div class="tags"><span>Manipulation</span><span>Perception</span><span>Safety</span><span>HRI</span></div>
+            <div class="project-meta"><span>Chapter 02 · 2021–23</span><span>Human-collaborative robotics</span></div>
+            <h3>Hybrid IK for plant-safe planning</h3>
+            <p>A plant is not a rigid obstacle with a clean bounding box. This system first estimates roots, leaf spread, and bed geometry, then couples learned plant geometry with a hybrid inverse-kinematics controller so the manipulator can reach weeds while reducing unintended contact.</p>
+            <div class="hybrid-ideas"><span><strong>See the living workspace</strong>Vision extracts stems, spread areas, and task boundaries—not merely object classes.</span><span><strong>Borrow from human craft</strong>A flower-carpet-inspired planner converts irregular plant layouts into an ordered manipulation sequence.</span><span><strong>Warp before solving</strong>The reachable workspace is reshaped around delicate geometry before hybrid IK selects a motion.</span></div>
+            <div class="tags"><span>Vision</span><span>Hybrid IK</span><span>Manipulation</span><span>Adaptive control</span><span>HRI</span></div>
+            <a class="card-link hybrid-paper-link" href="https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming">Explore the paper and figures <span aria-hidden="true">↗</span></a>
           </div>
         </article>
       </div>
 
       <div class="project-grid">
-        <article class="project-card project-metric">
-          <div class="metric-art" aria-hidden="true"><span class="metric-number">0.82</span><span class="metric-label">F1 under occlusion</span><span class="metric-ring"></span></div>
+        <article class="project-card architecture-card">
+          <div class="architecture-art"><img src="imgs/posefusion-architecture.png" alt="PoseFusion architecture showing view-specific pose graphs, GCN encoders, semantic aggregation, and temporal transformer encoding"><span class="image-index">Architecture designed across two studies</span></div>
           <div class="project-copy">
-            <div class="project-meta"><span>Chapter 04</span><span>Multi-view learning</span></div>
-            <h3>Action recognition that survives occlusion</h3>
-            <p>Transformer and graph-based temporal models for fall detection across camera views, with systematic occlusion and frame-rate evaluation.</p>
+            <div class="project-meta"><span>Research poster · 2023</span><span>Multi-view learning</span></div>
+            <h3>Action recognition from partial evidence</h3>
+            <p>I defined the core architecture across two studies: pose graphs encode spatial structure through GCNs, transformers model action over time, and attention fuses incomplete evidence across camera views. The work supported privacy-preserving fall detection and multi-view recognition under occlusion—then became the architectural starting point for my multimodal anomaly-detection work.</p>
+            <div class="architecture-proof"><span><strong>0.82</strong> F1 under occlusion</span><span><strong>3 views</strong> fused semantically</span><span><strong>GCN → Transformer</strong> spatial to temporal</span></div>
+            <div class="card-links"><a class="card-link" href="https://www.researchgate.net/publication/378143241_Pose_Fusion_-_Multi-View_Pose_Integration_for_Comprehensive_Action_Recognition">View poster ↗</a><a class="card-link" href="https://github.com/tvpian/HPE-based-Fall-Detection">Fall detection ↗</a><a class="card-link" href="https://github.com/tvpian/HPE_for_HAR">PoseFusion ↗</a></div>
           </div>
         </article>
 
@@ -141,43 +155,104 @@
             <video muted loop playsinline preload="none" poster="imgs/ap.png" aria-hidden="true"><source src="imgs/ap.mp4" type="video/mp4"></video>
           </div>
           <div class="project-copy">
-            <div class="project-meta"><span>Chapter 02</span><span>Connected vehicles</span></div>
-            <h3>Bio-inspired vehicle platooning</h3>
-            <p>A leader–follower system using software latching for coordinated behavior in dynamic environments.</p>
-            <a class="card-link" href="https://arxiv.org/abs/2405.11659">Read the paper <span aria-hidden="true">↗</span></a>
+            <div class="project-meta"><span>Chapter 03 · 2023</span><span>Connected vehicles</span></div>
+            <h3>Software-latched multi-robot autonomy</h3>
+            <p>A safety-aware leader–follower stack combining learned detection, feature-based tracking, monocular depth, Kalman state estimation, cooperative sensing, and explicit engage–disengage transitions.</p>
+            <div class="card-links"><a class="card-link" href="https://arxiv.org/abs/2405.11659">Read paper <span aria-hidden="true">↗</span></a><a class="card-link" href="https://github.com/tvpian/Auto-Platoon">View code <span aria-hidden="true">↗</span></a></div>
           </div>
         </article>
 
         <article class="project-card">
-          <div class="project-image vermilion motion-frame">
-            <video muted loop playsinline preload="none" poster="imgs/v_tryon.png" aria-hidden="true"><source src="imgs/v_tryon.mp4" type="video/mp4"></video>
+          <div class="project-image vermilion prototype-still">
+            <img src="imgs/wall_climber.jpg" alt="Three-actuator soft robot positioned along a pipe surface">
+            <span class="image-index">Prototype still</span>
           </div>
           <div class="project-copy">
-            <div class="project-meta"><span>Chapter 03</span><span>Human-facing AI</span></div>
-            <h3>Virtual try-on</h3>
-            <p>An AI system for visualizing apparel and evaluating personal style in a digital shopping workflow.</p>
-            <a class="card-link" href="https://github.com/tvpian/Virtual_Try-On">View repository <span aria-hidden="true">↗</span></a>
+            <div class="project-meta"><span>Chapter 01 · 2017</span><span>Soft robotics · published</span></div>
+            <h3>Pneumatic wall-climbing robot</h3>
+            <p>A lightweight inspection prototype built around three single-bending pneumatic actuators—moving compliance from a control objective into the robot’s physical design.</p>
+            <a class="card-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YsMSGLbcyi4C">View publication <span aria-hidden="true">↗</span></a>
           </div>
         </article>
+      </div>
 
-        <article class="project-card">
-          <div class="project-image acid motion-frame">
-            <video muted loop playsinline preload="none" poster="imgs/AICC_4.png" aria-hidden="true"><source src="imgs/AICC.mp4" type="video/mp4"></video>
-          </div>
-          <div class="project-copy">
-            <div class="project-meta"><span>Chapter 03</span><span>Egocentric interaction</span></div>
-            <h3>AI cricket coach</h3>
-            <p>Video-based action understanding and WebVR feedback for personalized batting practice.</p>
-            <a class="card-link" href="https://github.com/tvpian/AI_Cricket_Coach">View repository <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
+      <article class="system-spotlight tar-spotlight">
+        <div class="spotlight-media motion-frame">
+          <video muted loop playsinline preload="metadata" poster="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" aria-label="Track Anything Rapter following an AprilTag from a UAV">
+            <source src="imgs/tar.mp4" type="video/mp4">
+          </video>
+          <span class="image-index">Real UAV deployment</span>
+        </div>
+        <div class="spotlight-copy">
+          <div class="project-meta"><span>Chapter 03 · 2024</span><span>Multimodal perception → control</span></div>
+          <p class="spotlight-kicker">Track Anything Rapter · TAR</p>
+          <h3>One target.<br>Many ways to specify it.</h3>
+          <p>I co-developed a ROS 2 aerial system that accepts a click, box, image, or text query; combines foundation models for detection and segmentation; then closes the loop through visual servoing on a PX4-enabled VOXL2 M500 drone.</p>
+          <ol class="architecture-flow" aria-label="TAR system architecture">
+            <li><span>01</span>Specify<small>text · image · click · box</small></li>
+            <li><span>02</span>Perceive<small>DINO · CLIP · SAM</small></li>
+            <li><span>03</span>Track<small>target pose · re-detection</small></li>
+            <li><span>04</span>Act<small>visual servoing · PX4</small></li>
+          </ol>
+          <div class="spotlight-links"><a class="button" href="https://github.com/tvpian/Project-TAR">Explore system <span aria-hidden="true">↗</span></a><a class="text-link" href="https://arxiv.org/abs/2405.11655">Read paper <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="system-spotlight hri-spotlight">
+        <div class="spotlight-copy">
+          <div class="project-meta"><span>Chapter 02 · 2021–23</span><span>Formative research exploration</span></div>
+          <p class="spotlight-kicker">Before the field had a recipe</p>
+          <h3>Could a robot learn what a person means—not just what they say?</h3>
+          <p>I pursued an imitation-learning policy with Snehesh Shrestha that fused human demonstrations, speech, and gestures into robot actions. I implemented the architecture as a research prototype, but the study did not reach reliable results or publication. In a still-nascent field and with limited support, the attempt exposed the hard problem early: human intent is distributed across modalities, timing, and context.</p>
+          <p class="research-note"><strong>Why it belongs here:</strong> not as a claimed success, but as the experiment that connected my HRI work to today’s demonstration-driven robot learning. The later NatSGD work provides the research context; I do not claim authorship of that dataset or paper.</p>
+          <div class="spotlight-links"><a class="text-link" href="https://www.snehesh.com/natsgd/">Explore the related NatSGD research <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="research-context-image">
+          <img src="imgs/natsgd-context.png" alt="NatSGD overview showing synchronized speech, gesture, visual observations, and robot demonstrations">
+          <p><span>Related research context</span>NatSGD later formalized speech, gesture, and synchronized robot demonstrations at UMD. Image: Shrestha et al., CC BY 4.0.</p>
+        </div>
+      </article>
+
+      <article class="role-spotlight">
+        <div class="role-copy"><p class="eyebrow"><span></span>Technical module · U-ASTROD</p><h3>When one sensor lies, the others preserve the evidence.</h3><p>For the ASTROD research program, I architected the fusion pipeline that encoded LiDAR, odometry, and network traffic independently before combining their learned representations in a shared anomaly detector.</p><p class="research-note">The published system paired modality-specific spatiotemporal encoders with feature-wise reconstruction scoring. On real robot attacks, that scoring raised multimodal detection accuracy from 72% to 98% and retained 97% accuracy with half the training data.</p><a class="text-link" href="https://doi.org/10.1007/978-3-031-74835-6_15">Read publication <span aria-hidden="true">↗</span></a></div>
+        <figure class="role-figure"><img src="imgs/astrod-architecture.png" alt="U-ASTROD process flow with independent LiDAR, odometry, and network encoders feeding a shared anomaly detector"><figcaption>U-ASTROD process flow · figure from the paper</figcaption></figure>
+      </article>
+    </section>
+
+    <section class="product-interlude" id="product">
+      <div class="product-heading">
+        <div><p class="eyebrow light"><span></span>Independent product · 2025–now</p><h2>A workspace built around how research actually happens.</h2></div>
+        <p>UltraNote Lite sits outside my robotics work, but reveals the same instinct: understand the real workflow, remove accidental complexity, and build the whole system—not just its most visible feature.</p>
+      </div>
+
+      <article class="ultranote-showcase">
+        <div class="ultranote-copy">
+          <div class="ultranote-brand"><span>UN</span><div><small>Local-first · self-hosted · open source</small><h3>UltraNote Lite</h3></div></div>
+          <blockquote>“The notebook I wanted<br>but couldn’t find.”</blockquote>
+          <p>A single-user workspace for daily notes, tasks, projects, journaling, and research capture. It occupies the space between heavyweight cloud tools and bare Markdown: fast enough for every thought, structured enough for long-running work, and owned entirely by the person using it.</p>
+          <div class="product-principles"><span><strong>Local first</strong>No cloud, account, telemetry, or data lock-in.</span><span><strong>Capture first</strong>One shortcut routes a task, note, journal entry, or idea.</span><span><strong>Agent ready</strong>People and coding agents share one durable project record.</span></div>
+          <div class="spotlight-links"><a class="button button-light" href="https://github.com/tvpian/Ultranote_Lite">Explore UltraNote <span aria-hidden="true">↗</span></a><a class="text-link product-doc-link" href="https://github.com/tvpian/Ultranote_Lite/blob/main/AGENT_GUIDE.md">Agent architecture <span aria-hidden="true">↗</span></a></div>
+        </div>
+
+        <div class="ultranote-gallery">
+          <figure class="ultranote-screen screen-today"><img src="imgs/ultranote-today.png" alt="UltraNote Today workspace with daily notes, project tasks, scratchpad, and journal"><figcaption>Today · one rolling page</figcaption></figure>
+          <figure class="ultranote-screen screen-research"><img src="imgs/ultranote-research.png" alt="UltraNote research workspace with capture inbox, topic maps, paper notes, and monthly synthesis"><figcaption>Research · capture to synthesis</figcaption></figure>
+          <figure class="ultranote-screen screen-mobile"><img src="imgs/ultranote-mobile.png" alt="UltraNote mobile Today view as an installable progressive web application"><figcaption>Mobile · a real capture flow</figcaption></figure>
+        </div>
+      </article>
+
+      <div class="product-system-strip" aria-label="UltraNote system architecture">
+        <div><span>01</span><strong>Capture anywhere</strong><small>Desktop · PWA · share sheet · bookmarklet</small></div>
+        <div><span>02</span><strong>Organize deliberately</strong><small>Daily · projects · research · wiki-links</small></div>
+        <div><span>03</span><strong>Keep the source of truth</strong><small>One Node process · one owned data file</small></div>
+        <div><span>04</span><strong>Collaborate with agents</strong><small>Context · query · search · validated updates</small></div>
       </div>
     </section>
 
     <section class="atlas-section" id="atlas">
       <div class="section-heading">
-        <div><p class="eyebrow light"><span></span>Complete Work Atlas</p><h2>Every project.<br>A place in the story.</h2></div>
-        <p class="section-note light-note">The flagship work above establishes the narrative. This atlas preserves the complete trail of systems, experiments, and earlier explorations that shaped it.</p>
+        <div><p class="eyebrow light"><span></span>Work Atlas</p><h2>The complete<br>body of work.</h2></div>
+        <p class="section-note light-note">The selected work above establishes the narrative. This filterable archive preserves the systems, experiments, and earlier explorations that shaped it.</p>
       </div>
 
       <div class="atlas-filters" role="group" aria-label="Filter projects">
@@ -186,25 +261,28 @@
         <button type="button" data-filter="autonomy" aria-pressed="false">Autonomy</button>
         <button type="button" data-filter="perception" aria-pressed="false">Perception</button>
         <button type="button" data-filter="human" aria-pressed="false">Human-facing AI</button>
+        <button type="button" data-filter="product" aria-pressed="false">Independent products</button>
       </div>
 
       <div class="atlas-list">
-        <article class="atlas-item" data-category="embodied"><div class="atlas-number">01</div><div><span>Current frontier</span><h3>Learning Systems for Robotic Manipulation</h3></div><p>Data collection, learned policies, simulation, evaluation, and real-world ROS 2 deployment.</p><div class="atlas-no-media" aria-hidden="true">policy → action</div></article>
-        <article class="atlas-item" data-category="embodied human"><div class="atlas-number">02</div><div><span>Collaborative robotics</span><h3>Autonomous Weeding Robot</h3></div><p>Perception-driven precision weeding for safer, lower-pesticide indoor agriculture.</p><video muted loop playsinline preload="none" poster="imgs/autonomous_weeding.jpg" aria-hidden="true"><source src="imgs/autonomous_weeding.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="autonomy embodied"><div class="atlas-number">03</div><div><span>Connected autonomy</span><h3>Auto-Platoon</h3></div><p>Bio-inspired leader–follower coordination using software latching.</p><video muted loop playsinline preload="none" poster="imgs/ap.png" aria-hidden="true"><source src="imgs/ap.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">04</div><div><span>Multimodal UAV</span><h3>Track Anything Rapter</h3></div><p>Click, image, text, and box-conditioned tracking with foundation models and visual servoing.</p><div class="atlas-no-media cobalt-field" aria-hidden="true">query → track</div></article>
-        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">05</div><div><span>Aerial robotics</span><h3>ORB-SLAM Drone Localization</h3></div><p>Vision-based localization for aerial asset inspection and management.</p><video muted loop playsinline preload="none" poster="imgs/orb.png" aria-hidden="true"><source src="imgs/orb.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="perception autonomy"><div class="atlas-number">06</div><div><span>Aerial inspection</span><h3>Surface Defect Detection</h3></div><p>YOLO-based visual inspection for detecting structural surface defects.</p><video muted loop playsinline preload="none" poster="imgs/surface_crack.png" aria-hidden="true"><source src="imgs/surface_crack.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="perception"><div class="atlas-number">07</div><div><span>Image understanding</span><h3>SLIC Image Segmentation</h3></div><p>Superpixel segmentation for compact and meaningful image representation.</p><video muted loop playsinline preload="none" poster="imgs/slic.png" aria-hidden="true"><source src="imgs/slic.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="perception"><div class="atlas-number">08</div><div><span>Representation learning</span><h3>Implicit Neural Representation</h3></div><p>Image outpainting through coordinate-conditioned neural representations.</p><video muted loop playsinline preload="none" poster="imgs/inr.png" aria-hidden="true"><source src="imgs/inr.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="perception"><div class="atlas-number">09</div><div><span>3D perception</span><h3>Monocular Depth Estimation</h3></div><p>Transfer learning for estimating scene depth from a single camera.</p><video muted loop playsinline preload="none" poster="imgs/depth-from-video.jpg" aria-hidden="true"><source src="imgs/Monocular_Depth_Estimation_vid.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="human perception"><div class="atlas-number">10</div><div><span>Applied AI</span><h3>Virtual Try-On</h3></div><p>Visual apparel synthesis and personalized style evaluation.</p><video muted loop playsinline preload="none" poster="imgs/v_tryon.png" aria-hidden="true"><source src="imgs/v_tryon.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="human perception"><div class="atlas-number">11</div><div><span>Egocentric interaction</span><h3>AI Cricket Coach</h3></div><p>Action recognition and immersive feedback for batting practice.</p><video muted loop playsinline preload="none" poster="imgs/AICC_4.png" aria-hidden="true"><source src="imgs/AICC.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="human"><div class="atlas-number">12</div><div><span>Product intelligence</span><h3>My Style</h3></div><p>An end-to-end AI-powered shopping and personal-style application.</p><video muted loop playsinline preload="none" poster="imgs/my_style.jpg" aria-hidden="true"><source src="imgs/my_style.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="human autonomy"><div class="atlas-number">13</div><div><span>Reinforcement learning</span><h3>RL Cricket Simulation</h3></div><p>A bowler agent that adapts to batting styles and field configurations.</p><video muted loop playsinline preload="none" poster="imgs/RL_cs.png" aria-hidden="true"><source src="imgs/RL_cs.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="embodied"><div class="atlas-number">14</div><div><span>Soft robotics</span><h3>Wall-Climbing Robot</h3></div><p>A lightweight soft-robotic prototype for internal and external pipe inspection.</p><img src="imgs/wall_climber.gif" alt="Wall-climbing soft robot in motion"></article>
-        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">15</div><div><span>Cyber-physical security</span><h3>Multimodal Anomaly Detection</h3></div><p>Domain-aware detection and real-world evaluation of abnormal behavior in autonomous cyber-physical systems.</p><div class="atlas-no-media cobalt-field" aria-hidden="true">sense → detect</div></article>
-        <article class="atlas-item" data-category="embodied human"><div class="atlas-number">16</div><div><span>Plant–robot interaction</span><h3>Vision-Based Hybrid IK Planning</h3></div><p>Neural task planning and inverse kinematics for collaborative precision-farming interactions.</p><div class="atlas-no-media" aria-hidden="true">vision → IK</div></article>
+        <article class="atlas-item" data-category="embodied"><div class="atlas-number">01</div><div><span>Current frontier</span><h3>Robotic Intelligence for Unstructured Manipulation</h3></div><p>Bimanual deformable-object manipulation through multimodal perception, compliance, learned policies, simulation, and real-world deployment.</p><div class="atlas-no-media current-stack-mini" aria-hidden="true"><span>demonstrate</span><i></i><strong>learn</strong><i></i><span>deploy</span></div></article>
+        <article class="atlas-item" data-category="human embodied"><div class="atlas-number">02</div><div><span>Multimodal HRI · exploratory</span><h3>Learning Actions from Human Intent</h3></div><p>An early imitation-learning prototype fusing demonstrations, speech, and gestures into robot actions.</p><img src="imgs/natsgd-context.png" alt="NatSGD overview showing synchronized speech, gesture, visual observations, and robot demonstrations"></article>
+        <article class="atlas-item" data-category="embodied human"><div class="atlas-number">03</div><div><span>Plant–robot interaction</span><h3>Vision-Guided Precision Weeding</h3></div><p>One research program spanning weed perception, adaptive control, and learned hybrid-IK planning for precise collaborative plant interaction.</p><video muted loop playsinline preload="none" poster="imgs/autonomous_weeding.jpg" aria-hidden="true"><source src="imgs/autonomous_weeding.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="autonomy embodied"><div class="atlas-number">04</div><div><span>Connected autonomy</span><h3>Auto-Platoon</h3></div><p>Bio-inspired leader–follower coordination using software latching.</p><video muted loop playsinline preload="none" poster="imgs/ap.png" aria-hidden="true"><source src="imgs/ap.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">05</div><div><span>Multimodal UAV</span><h3>Track Anything Rapter</h3></div><p>Click, image, text, and box-conditioned tracking with foundation models and visual servoing.</p><img src="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" alt="TAR multimodal detection and tracking examples"></article>
+        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">06</div><div><span>Aerial robotics</span><h3>ORB-SLAM Drone Localization</h3></div><p>Vision-based localization for aerial asset inspection and management.</p><video muted loop playsinline preload="none" poster="imgs/orb.png" aria-hidden="true"><source src="imgs/orb.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="perception autonomy"><div class="atlas-number">07</div><div><span>Aerial inspection</span><h3>Surface Defect Detection</h3></div><p>YOLO-based visual inspection for detecting structural surface defects.</p><video muted loop playsinline preload="none" poster="imgs/surface_crack.png" aria-hidden="true"><source src="imgs/surface_crack.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="perception"><div class="atlas-number">08</div><div><span>Image understanding</span><h3>SLIC Image Segmentation</h3></div><p>Superpixel segmentation for compact and meaningful image representation.</p><video muted loop playsinline preload="none" poster="imgs/slic.png" aria-hidden="true"><source src="imgs/slic.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="perception"><div class="atlas-number">09</div><div><span>Representation learning</span><h3>Implicit Neural Representation</h3></div><p>Image outpainting through coordinate-conditioned neural representations.</p><video muted loop playsinline preload="none" poster="imgs/inr.png" aria-hidden="true"><source src="imgs/inr.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="perception"><div class="atlas-number">10</div><div><span>3D perception</span><h3>Monocular Depth Estimation</h3></div><p>Transfer learning for estimating scene depth from a single camera.</p><video muted loop playsinline preload="none" poster="imgs/depth-from-video.jpg" aria-hidden="true"><source src="imgs/Monocular_Depth_Estimation_vid.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="human perception"><div class="atlas-number">11</div><div><span>Applied AI</span><h3>Virtual Try-On</h3></div><p>Visual apparel synthesis and personalized style evaluation.</p><video muted loop playsinline preload="none" poster="imgs/v_tryon.png" aria-hidden="true"><source src="imgs/v_tryon.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="human perception"><div class="atlas-number">12</div><div><span>Egocentric interaction</span><h3>AI Cricket Coach</h3></div><p>Action recognition and immersive feedback for batting practice.</p><video muted loop playsinline preload="none" poster="imgs/AICC_4.png" aria-hidden="true"><source src="imgs/AICC.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="human"><div class="atlas-number">13</div><div><span>Product intelligence</span><h3>My Style</h3></div><p>An end-to-end AI-powered shopping and personal-style application.</p><video muted loop playsinline preload="none" poster="imgs/my_style.jpg" aria-hidden="true"><source src="imgs/my_style.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="human autonomy"><div class="atlas-number">14</div><div><span>Reinforcement learning</span><h3>RL Cricket Simulation</h3></div><p>A bowler agent that adapts to batting styles and field configurations.</p><video muted loop playsinline preload="none" poster="imgs/RL_cs.png" aria-hidden="true"><source src="imgs/RL_cs.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="embodied"><div class="atlas-number">15</div><div><span>Soft robotics</span><h3>Wall-Climbing Robot</h3></div><p>A lightweight soft-robotic prototype for internal and external pipe inspection.</p><img src="imgs/wall_climber.gif" alt="Wall-climbing soft robot in motion"></article>
+        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">16</div><div><span>Cyber-physical security</span><h3>Multimodal Anomaly Detection</h3></div><p>Modality-specific LiDAR, odometry, and network encoders fused for real-world abnormal-behavior detection.</p><img src="imgs/astrod-architecture.png" alt="U-ASTROD multimodal fusion architecture"></article>
+        <article class="atlas-item" data-category="product human"><div class="atlas-number">17</div><div><span>Local-first product</span><h3>UltraNote Lite</h3></div><p>A self-hosted workspace unifying daily capture, research, projects, knowledge graphs, and durable human–agent collaboration.</p><img src="imgs/ultranote-research.png" alt="UltraNote research workspace"></article>
+        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">18</div><div><span>Research poster · 2021</span><h3><a href="https://www.researchgate.net/publication/378143055_Event_Based_Dynamic_Obstacle_Avoidance_For_Outdoor_Environments">Event-Based Dynamic Obstacle Avoidance ↗</a></h3></div><p>An exploratory outdoor-safety concept using asynchronous event streams to react to approaching people and animals where conventional frame cameras struggle.</p><div class="atlas-no-media event-stream-mini" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><span>events → safe action</span></div></article>
       </div>
     </section>
 
@@ -215,17 +293,17 @@
       </div>
 
       <div class="research-grid">
-        <article class="paper-card paper-featured"><div class="paper-top"><span>2026 · Chapter 04</span><span>Autonomous CPS</span></div><h3>Efficient Integration of Domain Knowledge and Data-Driven Methods for Securing Autonomous Cyber-Physical Systems</h3><p class="paper-authors">A. Zoulkarni, M. Noorani, J. S. Baras, J. Mirenzi, T. V. Puthanveettil, C. D. Grody</p><p class="paper-question">How can domain structure and learned evidence work together to secure autonomous systems?</p><p>Connects first-principles system knowledge with data-driven detection for more efficient cyber-physical security.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:aqlVkmm33-oC">Scholar ↗</a></div></article>
-        <article class="paper-card paper-featured"><div class="paper-top"><span>2025 · Chapter 03</span><span>Precision farming</span></div><h3>Vision-Based Hybrid IK Task Planning with Feedforward Neural Network for Collaborative Plant–Robot Interaction</h3><p class="paper-authors">V. P. Tharun, A. R. Chowdhury</p><p class="paper-question">How can vision and learned task planning make plant–robot interaction more collaborative?</p><p>Combines vision, hybrid inverse kinematics, and a feedforward network for precision-farming task execution.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:M3ejUd6NZC8C">Scholar ↗</a></div></article>
-        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 04</span><span>Real-world evaluation</span></div><h3>Multimodal Anomaly Detection for Autonomous Cyber-Physical Systems Empowering Real-World Evaluation</h3><p class="paper-authors">M. Noorani, T. V. Puthanveettil, A. Zoulkarni, J. Mirenzi, C. D. Grody, J. S. Baras</p><p class="paper-question">How should autonomous systems be evaluated when abnormal behavior appears across multiple modalities?</p><p>Develops a multimodal anomaly-detection framework grounded in evaluation beyond controlled laboratory conditions.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YOwf2qJgpHMC">Scholar ↗</a></div></article>
-        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 02</span><span>Multi-agent autonomy</span></div><h3>Auto-Platoon: Freight by Example</h3><p class="paper-authors">T. V. Puthanveettil, A. Singh, Y. Jain, V. Bukka</p><p class="paper-question">How can autonomous followers coordinate reliably with a leader in dynamic environments?</p><p>Introduces software latching and a layered perception–decision–control architecture for real-time multi-agent coordination.</p><div class="paper-links"><a href="https://arxiv.org/abs/2405.11659">Paper ↗</a><a href="https://github.com/tvpian/Auto-Platoon">Code ↗</a></div></article>
-        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapters 01–02</span><span>Multimodal UAV</span></div><h3>Track Anything Rapter (TAR)</h3><p class="paper-authors">T. V. Puthanveettil</p><p class="paper-question">Can a UAV track what a person means, regardless of how they specify it?</p><p>Combines DINO, CLIP, SAM, multimodal queries, visual servoing, and motion control on a PX4-enabled aerial platform.</p><div class="paper-links"><a href="https://arxiv.org/abs/2405.11655">Paper ↗</a><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:kNdYIx-mwKoC">Scholar ↗</a></div></article>
+        <article class="paper-card paper-featured"><div class="paper-top"><span>2026 · Chapter 03</span><span>Autonomous CPS</span></div><h3>Efficient Integration of Domain Knowledge and Data-Driven Methods for Securing Autonomous Cyber-Physical Systems</h3><p class="paper-authors">A. Zoulkarni, M. Noorani, J. S. Baras, J. Mirenzi, T. V. Puthanveettil, C. D. Grody</p><p class="paper-question">How can domain structure and learned evidence work together to secure autonomous systems?</p><p>Connects first-principles system knowledge with data-driven detection for more efficient cyber-physical security.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:aqlVkmm33-oC">Scholar ↗</a></div></article>
+        <article class="paper-card paper-featured"><div class="paper-top"><span>2025 · Chapter 02</span><span>Precision farming</span></div><h3>Vision-Based Hybrid IK Task Planning with Feedforward Neural Network for Collaborative Plant–Robot Interaction</h3><p class="paper-authors">V. P. Tharun, A. R. Chowdhury</p><p class="paper-question">How can vision and learned task planning make plant–robot interaction more collaborative?</p><p>Combines vision, hybrid inverse kinematics, and a feedforward network for precision-farming task execution.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:M3ejUd6NZC8C">Scholar ↗</a></div></article>
+        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 03</span><span>Real-world evaluation</span></div><h3>Multimodal Anomaly Detection for Autonomous Cyber-Physical Systems Empowering Real-World Evaluation</h3><p class="paper-authors">M. Noorani, T. V. Puthanveettil, A. Zoulkarni, J. Mirenzi, C. D. Grody, J. S. Baras</p><p class="paper-question">How should autonomous systems be evaluated when abnormal behavior appears across multiple modalities?</p><p>Architected the multimodal fusion pipeline within a team framework for anomaly detection and evaluation beyond controlled laboratory conditions.</p><div class="paper-links"><a href="https://doi.org/10.1007/978-3-031-74835-6_15">Publication ↗</a><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YOwf2qJgpHMC">Scholar ↗</a></div></article>
+        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 03</span><span>Multi-agent autonomy</span></div><h3>Auto-Platoon: Freight by Example</h3><p class="paper-authors">T. V. Puthanveettil, A. Singh, Y. Jain, V. Bukka</p><p class="paper-question">How can autonomous followers coordinate reliably with a leader in dynamic environments?</p><p>Introduces software latching and a layered perception–decision–control architecture for real-time multi-agent coordination.</p><div class="paper-links"><a href="https://arxiv.org/abs/2405.11659">Paper ↗</a><a href="https://github.com/tvpian/Auto-Platoon">Code ↗</a></div></article>
+        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 03</span><span>Multimodal UAV</span></div><h3>Track Anything Rapter (TAR)</h3><p class="paper-authors">T. V. Puthanveettil, F. Obaid ur Rahman</p><p class="paper-question">Can a UAV track what a person means, regardless of how they specify it?</p><p>Combines DINO, CLIP, SAM, multimodal queries, visual servoing, and motion control on a PX4-enabled aerial platform.</p><div class="paper-links"><a href="https://arxiv.org/abs/2405.11655">Paper ↗</a><a href="https://github.com/tvpian/Project-TAR">Code + demos ↗</a></div></article>
         <article class="paper-card"><div class="paper-top"><span>2021 · Chapter 01</span><span>Forecasting</span></div><h3>A Univariate Data Analysis Approach for Rainfall Forecasting</h3><p class="paper-authors">V. P. Tharun, P. Ramya, S. Renuga Devi</p><p class="paper-question">How can lightweight time-series analysis provide useful early warning of unexpected rainfall?</p><p>Develops an efficient and implementable approach for short-term rainfall forecasting.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:0EnyYjriUFMC">Scholar ↗</a></div></article>
         <article class="paper-card"><div class="paper-top"><span>2019 · Chapter 01</span><span>Regression</span></div><h3>Prediction of Rainfall Using Data Mining Techniques</h3><p class="paper-authors">V. P. Tharun, R. Prakash, S. R. Devi</p><p class="paper-question">How do regression and statistical models compare when predicting regional rainfall intensity?</p><p>Evaluates multiple regression approaches using relative error on rainfall data from Coonoor.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:_kc_bZDykSQC">Scholar ↗</a></div></article>
         <article class="paper-card"><div class="paper-top"><span>2018 · Chapter 01</span><span>Classification</span></div><h3>A Comparative Study of Various Classification Techniques to Determine Water Quality</h3><p class="paper-authors">R. Prakash, V. P. Tharun, S. R. Devi</p><p class="paper-question">Which classical learning method best characterizes groundwater quality from measured samples?</p><p>Compares decision trees, K-nearest neighbours, and support-vector machines on groundwater data.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:hqOjcs7Dif8C">Scholar ↗</a></div></article>
         <article class="paper-card"><div class="paper-top"><span>2018 · Chapter 01</span><span>Assessment</span></div><h3>Water Quality Assessment Using Data Mining Techniques</h3><p class="paper-authors">P. Ramya, V. P. Tharun, S. Renuga Devi</p><p class="paper-question">How can data-mining methods turn raw water measurements into an actionable quality assessment?</p><p>Applies classical learning techniques to environmental water-quality analysis.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:8k81kl-MbHgC">Scholar ↗</a></div></article>
         <article class="paper-card"><div class="paper-top"><span>2018 · Chapter 01</span><span>Time series</span></div><h3>Rainfall Forecasting Using Time Series Analysis</h3><p class="paper-authors">V. P. Tharun, P. Ramya, S. Renuga Devi</p><p class="paper-question">What temporal structure in historical rainfall can be converted into a practical forecast?</p><p>Uses time-series analysis to model and forecast rainfall patterns.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:5nxA0vEk-isC">Scholar ↗</a></div></article>
-        <article class="paper-card"><div class="paper-top"><span>2017 · Chapter 03</span><span>Soft robotics</span></div><h3>Wall-Climbing Robot Using Soft Robotics</h3><p class="paper-authors">L. P. Pratap, P. M. Shailendrasingh, A. Anand, V. P. Tharun</p><p class="paper-question">Can compliant mechanisms produce a lightweight inspection robot for difficult pipe surfaces?</p><p>Develops a soft-robotic wall-climbing prototype for inspection inside and outside pipes.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YsMSGLbcyi4C">Scholar ↗</a></div></article>
+        <article class="paper-card"><div class="paper-top"><span>2017 · Chapter 01</span><span>Soft robotics</span></div><h3>Wall-Climbing Robot Using Soft Robotics</h3><p class="paper-authors">L. P. Pratap, P. M. Shailendrasingh, A. Anand, V. P. Tharun</p><p class="paper-question">Can compliant mechanisms produce a lightweight inspection robot for difficult pipe surfaces?</p><p>Develops a soft-robotic wall-climbing prototype for inspection inside and outside pipes.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YsMSGLbcyi4C">Scholar ↗</a></div></article>
       </div>
       <a class="scholar-link" href="https://scholar.google.com/citations?user=Vre9wQQAAAAJ&amp;hl=en">View complete Google Scholar profile <span aria-hidden="true">↗</span></a>
     </section>
@@ -233,8 +311,8 @@
     <section class="experience-section" id="experience">
       <div class="section-heading compact"><div><p class="eyebrow light"><span></span>Experience</p><h2>A research path shaped by deployment.</h2></div></div>
       <div class="timeline">
-        <article><span class="timeline-index">01</span><div><p class="timeline-period">Present</p><h3>R&amp;D Engineer · AI &amp; Robotics</h3></div><p>Real-world robot learning, deformable-object manipulation, multi-camera perception, learning-policy infrastructure, and ROS 2 deployment.</p></article>
-        <article><span class="timeline-index">02</span><div><p class="timeline-period">University of Maryland</p><h3>Robotics Research</h3></div><p>Mobile-robot navigation security, abnormal-behavior detection, and multimodal human–robot interaction for routine tasks.</p></article>
+        <article><span class="timeline-index">01</span><div><p class="timeline-period">Present</p><h3>R&amp;D Engineer · AI &amp; Robotics</h3></div><p>Bimanual deformable-object manipulation, multimodal perception, force-aware compliance, demonstration-driven policies, digital twins, sim-to-real evaluation, and ROS 2 deployment.</p></article>
+        <article><span class="timeline-index">02</span><div><p class="timeline-period">University of Maryland</p><h3>Robotics &amp; AI Researcher</h3></div><p>Mobile-robot navigation security, abnormal-behavior detection, action recognition, and multimodal human–robot interaction.</p></article>
         <article><span class="timeline-index">03</span><div><p class="timeline-period">Indian Institute of Science</p><h3>Research Assistant</h3></div><p>Human-collaborative agricultural robotics, manipulation, and perception-driven precision weeding.</p></article>
         <article><span class="timeline-index">04</span><div><p class="timeline-period">Wipro Innovations Lab</p><h3>AI Team Lead</h3></div><p>Computer vision, mobile AI, egocentric interaction, mixed reality, and rapid prototyping across emerging technologies.</p></article>
       </div>
@@ -246,9 +324,9 @@
         <h2>Engineering explains what works. Storytelling reveals what it means.</h2>
         <p>I use stories to make complex systems legible: exposing the assumptions behind a model, the incentives behind a demo, and the human consequences hidden inside technical choices.</p>
         <p>Human in the Loom is a distinct editorial publication built around that practice. It shares this portfolio’s intellectual DNA, but uses a more literary and contemplative visual language.</p>
-        <div class="writing-links"><a class="button" href="https://human-in-the-loom.tvpian.chatgpt.site">Enter Human in the Loom <span aria-hidden="true">↗</span></a><a class="text-link" href="https://open.substack.com/pub/humanintheloom/p/how-do-you-engineer-hype-inside-the">Read a recent story <span aria-hidden="true">↗</span></a></div>
+        <div class="writing-links"><a class="button" href="human-in-the-loom/">Enter Human in the Loom <span aria-hidden="true">→</span></a><a class="text-link" href="https://open.substack.com/pub/humanintheloom/p/how-do-you-engineer-hype-inside-the">Read a recent story <span aria-hidden="true">↗</span></a></div>
       </div>
-      <a class="publication-window" href="https://human-in-the-loom.tvpian.chatgpt.site" aria-label="Visit Human in the Loom">
+      <a class="publication-window" href="human-in-the-loom/" aria-label="Visit Human in the Loom">
         <div class="publication-bar"><span>Human in the Loom</span><span>Independent publication ↗</span></div>
         <div class="publication-art" aria-hidden="true"><span class="publication-orb pub-one"></span><span class="publication-orb pub-two"></span><span class="publication-thread pub-thread-one"></span><span class="publication-thread pub-thread-two"></span><p>technology is<br>never woven<br>alone</p></div>
       </a>
@@ -258,7 +336,7 @@
       <div><p class="eyebrow"><span></span>About the practice</p><blockquote>“A signature in every work.”</blockquote></div>
       <div class="about-copy">
         <p>I’m interested in the point where intelligence leaves a benchmark and encounters the physical world: noisy sensors, unfamiliar viewpoints, human expectations, and the consequences of action.</p>
-        <p>My current research interests center on video-action models, egocentric policies, world models for robotics, human–robot interaction, and making robot behavior more explainable.</p>
+        <p>My current research interests center on representation learning, egocentric policies, world models for robotics, human–robot interaction, and making robot behavior more explainable.</p>
         <p>I approach design from first principles and storytelling as a technical responsibility: a system should not only work—it should reveal its logic, limitations, and relationship to the people around it.</p>
         <p>I hold an M.Eng. in Robotics from the University of Maryland and bring experience across academic research, industrial R&amp;D, and real-world robotics deployment.</p>
         <div class="about-links"><a href="https://scholar.google.com/citations?user=Vre9wQQAAAAJ&amp;hl=en">Google Scholar ↗</a><a href="https://www.linkedin.com/in/tvpian/">LinkedIn ↗</a><a href="https://github.com/tvpian">GitHub ↗</a></div>
@@ -273,7 +351,7 @@
   </main>
 
   <footer>
-    <div class="identity"><span class="identity-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Tharun VP</span></div>
+    <div class="identity"><span class="identity-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Tharun V Puthanveettil</span></div>
     <p>Engineer · Researcher · First-principles design thinker · Technical storyteller</p>
     <p>© 2026 Tharun Vadakke Puthanveettil</p>
   </footer>
