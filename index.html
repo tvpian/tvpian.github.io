@@ -16,7 +16,7 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=20260712-2">
+  <link rel="stylesheet" href="stylesheet.css?v=20260712-3">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <script src="theme.js?v=20260712-2" defer></script>
   <script src="portfolio.js?v=20260712-2" defer></script>
@@ -145,6 +145,15 @@
             <h3>Hybrid IK for plant-safe planning</h3>
             <p>A plant is not a rigid obstacle with a clean bounding box. This system first estimates roots, leaf spread, and bed geometry, then couples learned plant geometry with a hybrid inverse-kinematics controller so the manipulator can reach weeds while reducing unintended contact.</p>
             <div class="hybrid-ideas"><span><strong>See the living workspace</strong>Vision extracts stems, spread areas, and task boundaries—not merely object classes.</span><span><strong>Borrow from human craft</strong>A flower-carpet-inspired planner converts irregular plant layouts into an ordered manipulation sequence.</span><span><strong>Warp before solving</strong>The reachable workspace is reshaped around delicate geometry before hybrid IK selects a motion.</span></div>
+            <div class="aggrip-module">
+              <div class="aggrip-motion motion-frame">
+                <video muted loop playsinline preload="metadata" aria-label="CAD animation of the AGGRIP precision-weeding end effector">
+                  <source src="imgs/aggrip.mp4" type="video/mp4">
+                </video>
+                <span>AGGRIP · CAD concept</span>
+              </div>
+              <div class="aggrip-copy"><small>End-effector co-design</small><h4>Pluck precisely. Treat selectively.</h4><p>I co-designed this precision-weeding gripper with a mechanical engineer as part of the same research program. Vision-adaptive control positions the tool to minimize contact with non-weed plants, while its dual-purpose architecture pairs mechanical plucking with targeted spraying—or watering—within one end effector.</p><div><span>Pluck + spray</span><span>Pluck + water</span><span>Minimal crop contact</span></div></div>
+            </div>
             <div class="tags"><span>Vision</span><span>Hybrid IK</span><span>Manipulation</span><span>Adaptive control</span><span>HRI</span></div>
             <a class="card-link hybrid-paper-link" href="https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming">Explore the paper and figures <span aria-hidden="true">↗</span></a>
           </div>
@@ -317,7 +326,7 @@
       <div class="atlas-list">
         <article class="atlas-item" data-category="embodied"><div class="atlas-number">01</div><div><span>Current frontier</span><h3>Robotic Intelligence for Unstructured Manipulation</h3></div><p>Bimanual deformable-object manipulation through multimodal perception, compliance, learned policies, simulation, and real-world deployment.</p><div class="atlas-no-media current-stack-mini" aria-hidden="true"><span>demonstrate</span><i></i><strong>learn</strong><i></i><span>deploy</span></div></article>
         <article class="atlas-item" data-category="human embodied"><div class="atlas-number">02</div><div><span>Multimodal HRI · exploratory</span><h3>Learning Actions from Human Intent</h3></div><p>An early imitation-learning prototype fusing demonstrations, speech, and gestures into robot actions.</p><img src="imgs/natsgd-context.png" alt="NatSGD overview showing synchronized speech, gesture, visual observations, and robot demonstrations"></article>
-        <article class="atlas-item" data-category="embodied human"><div class="atlas-number">03</div><div><span>Plant–robot interaction</span><h3>Vision-Guided Precision Weeding</h3></div><p>One research program spanning weed perception, adaptive control, and learned hybrid-IK planning for precise collaborative plant interaction.</p><video muted loop playsinline preload="none" poster="imgs/autonomous_weeding.jpg" aria-hidden="true"><source src="imgs/autonomous_weeding.mp4" type="video/mp4"></video></article>
+        <article class="atlas-item" data-category="embodied human"><div class="atlas-number">03</div><div><span>Plant–robot interaction</span><h3>Vision-Guided Precision Weeding</h3></div><p>One research program spanning weed perception, adaptive control, plant-safe hybrid-IK planning, and a co-designed pluck-and-treat end effector.</p><video muted loop playsinline preload="none" poster="imgs/autonomous_weeding.jpg" aria-hidden="true"><source src="imgs/autonomous_weeding.mp4" type="video/mp4"></video></article>
         <article class="atlas-item" data-category="autonomy embodied"><div class="atlas-number">04</div><div><span>Connected autonomy</span><h3>Auto-Platoon</h3></div><p>Bio-inspired leader–follower coordination using software latching.</p><video muted loop playsinline preload="none" poster="imgs/ap.png" aria-hidden="true"><source src="imgs/ap.mp4" type="video/mp4"></video></article>
         <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">05</div><div><span>Multimodal UAV</span><h3>Track Anything Rapter</h3></div><p>Click, image, text, and box-conditioned tracking with foundation models and visual servoing.</p><img src="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" alt="TAR multimodal detection and tracking examples"></article>
         <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">06</div><div><span>Aerial robotics</span><h3>ORB-SLAM Drone Localization</h3></div><p>Vision-based localization for aerial asset inspection and management.</p><video muted loop playsinline preload="none" poster="imgs/orb.png" aria-hidden="true"><source src="imgs/orb.mp4" type="video/mp4"></video></article>
