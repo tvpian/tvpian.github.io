@@ -267,9 +267,9 @@ h1 em { color: var(--cobalt); font-weight: 400; }
 .role-figure img { width: 100%; object-fit: contain; }
 .role-figure figcaption { margin-top: 12px; font: 400 8px 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
 
-.product-interlude { padding: 130px max(32px, calc((100vw - 1400px)/2)); background: #191524; color: var(--paper); }
+.product-interlude { padding: 130px max(32px, calc((100vw - 1400px)/2)); background: #191524; color: #f1eee6; }
 .product-heading { display: grid; grid-template-columns: 1.15fr .55fr; gap: 8vw; align-items: end; margin-bottom: 62px; }
-.product-heading h2 { max-width: 900px; margin: 0; font-size: clamp(56px, 6.5vw, 94px); line-height: .92; }
+.product-heading h2 { max-width: 900px; margin: 0; color: #f1eee6; font-size: clamp(56px, 6.5vw, 94px); line-height: .92; }
 .product-heading > p { margin: 0; color: rgba(233,231,225,.63); font-size: 14px; line-height: 1.75; }
 .product-switcher { min-height: 70px; display: flex; align-items: stretch; justify-content: space-between; border: 1px solid rgba(233,231,225,.22); border-bottom: 0; background: #0e0b18; }
 .product-tabs { display: flex; }
@@ -438,7 +438,6 @@ html[data-theme="dark"] .feature-dark,
 html[data-theme="dark"] .atlas-section,
 html[data-theme="dark"] .experience-section,
 html[data-theme="dark"] .contact-section { background: var(--panel-dark); color: #f1eee6; }
-html[data-theme="dark"] .product-interlude { color: #f1eee6; }
 html[data-theme="dark"] .feature-dark,
 html[data-theme="dark"] .eyebrow.light,
 html[data-theme="dark"] .atlas-filters button { color: #f1eee6; }
