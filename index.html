@@ -17,10 +17,10 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=20260908-2">
+  <link rel="stylesheet" href="stylesheet.css?v=20260908-3">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <script src="theme.js?v=20260712-2" defer></script>
-  <script src="portfolio.js?v=20260908-2" defer></script>
+  <script src="portfolio.js?v=20260908-3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -50,7 +50,7 @@
         <p class="eyebrow"><span></span>Tharun V Puthanveettil · Robotics R&amp;D</p>
         <h1>Human-inspired<br><em>robot learning.</em></h1>
         <p class="hero-intro">
-          I want to develop algorithms that help robots understand people, act on their intent, and learn from their demonstrations and corrections. My work combines policy analysis and learning with the systems needed to study them on real robots.
+          I’m Tharun, an AI and robotics R&amp;D engineer and researcher. I work from first principles to build and study systems that perceive, learn, explain, and act on physical robots. My long-term goal is to help robots understand human intent and learn from demonstrations and corrections.
         </p>
         <div class="hero-actions">
           <a class="button" href="#current">Current research <span aria-hidden="true">→</span></a>
@@ -107,14 +107,14 @@
           <p class="eyebrow light"><span></span>Present · R&amp;D engineer, AI &amp; robotics</p>
           <h2>Research infrastructure</h2>
         </div>
-        <p>A shared system for studying teleoperation, data collection, learned policies, human intervention, simulation, and deployment on bimanual manipulation tasks.</p>
+        <p>A shared system for studying teleoperation, data collection, learned policies, human intervention, simulation, deployment, and comparative policy evaluation on bimanual manipulation tasks.</p>
       </div>
 
       <div class="current-work-live__lead">
         <p>I designed and implemented the workflow from teleoperation and synchronized collection through dataset conversion, policy training, evaluation, testing, and deployment.</p>
         <div>
           <p>The physical cell and digital twin use the same operator, recording, review, conversion, and policy interfaces, with separate hardware and physics backends. This supports controlled comparisons between simulation and real deployment.</p>
-          <p>Interventions and failed rollouts can be recorded, reviewed, converted, and returned to training. Policy evaluation is currently performed manually; automating that step remains ongoing work.</p>
+          <p>Interventions and failed rollouts can be recorded, reviewed, converted, and returned to training. Policy evaluation is currently performed manually. I am also developing a common evaluation methodology that goes beyond aggregate success rate to compare model behavior more fairly.</p>
         </div>
       </div>
 
@@ -175,12 +175,16 @@
             <figure class="current-work-live__concept" tabindex="0" data-animate-diagram><svg viewBox="0 0 320 170" role="img" aria-label="Inputs enter a policy; selected inputs are ablated and the output difference is measured"><g class="cwl-concept-thread"><path d="M18 48H126M18 70H126M18 92H126M18 114H126M18 136H126M194 92H216L266 118H292"></path></g><g class="cwl-concept-dash"><path d="M82 70H126M82 114H126M194 92H292"></path></g><g class="cwl-concept-gate"><path d="M82 63V77M82 107V121"></path></g><text class="cwl-concept-key" x="82" y="27" text-anchor="middle">ABLATED</text><rect class="cwl-concept-plate" x="126" y="36" width="68" height="112"></rect><text class="cwl-concept-text" x="160" y="96" text-anchor="middle">POLICY</text><g class="cwl-concept-bracket"><path d="M300 92V118M295 92H305M295 118H305"></path></g><text class="cwl-concept-key" x="309" y="109">Δ</text></svg><figcaption>Cut one input · measure the output response</figcaption></figure>
           </li>
           <li id="egocentric">
-            <span>04</span><div><h4>Egocentric demonstration learning</h4><p><strong class="evidence-state evidence-state--investigating">In development</strong> We are building an in-house FAST-UMI-style device. It reuses the teleoperation, synchronization, data review, and conversion infrastructure I built for the current manipulation system.</p></div>
-            <div class="current-work-live__evidence"><strong>Current state</strong><span>Shared data infrastructure implemented; capture device and egocentric policy studies in development.</span></div>
+            <span>04</span><div><h4>Egocentric demonstration learning</h4><p><strong class="evidence-state evidence-state--investigating">In development</strong> We are developing a portable egocentric interface for recording human manipulation demonstrations. It reuses the teleoperation, synchronization, data review, and conversion infrastructure I built for the current manipulation system.</p></div>
+            <div class="current-work-live__evidence"><strong>Current state</strong><span>Shared data infrastructure implemented; demonstration-capture hardware and egocentric policy studies in development.</span></div>
           </li>
           <li id="world-models">
             <span>05</span><div><h4>Video-action models and inverse dynamics</h4><p><strong class="evidence-state evidence-state--investigating">Offline evaluation completed</strong> I fine-tuned the <a href="https://mimic-video.github.io/">mimic-video</a> architecture on my teleoperation data by adapting and training its inverse-dynamics action decoder. Real-robot evaluation has not yet been performed. A separate inverse-dynamics model trained from digital-twin data for subgoal conditioning remains planned.</p></div>
             <div class="current-work-live__evidence"><strong>Next validation</strong><span>Real-robot rollout, then simulation-trained inverse dynamics for subgoal-conditioned policies.</span></div>
+          </li>
+          <li id="policy-evaluation">
+            <span>06</span><div><h4>Policy evaluation beyond success rate</h4><p><strong class="evidence-state evidence-state--investigating">Methodology in development</strong> I am evaluating leading open-source vision-language-action models across tasks and developing a common methodology for fairer comparison. The work treats aggregate success rate as incomplete and studies partial progress, failure modes, repeatability, recovery behavior, and sensitivity to control conditions.</p></div>
+            <div class="current-work-live__evidence"><strong>Experimental variable</strong><span>Measure how changes in robot compliance influence policy performance, failure behavior, and task completion.</span></div>
           </li>
         </ol>
       </div>
