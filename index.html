@@ -17,10 +17,10 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=20260908-3">
+  <link rel="stylesheet" href="stylesheet.css?v=20260908-4">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <script src="theme.js?v=20260712-2" defer></script>
-  <script src="portfolio.js?v=20260908-3" defer></script>
+  <script src="portfolio.js?v=20260908-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -50,7 +50,7 @@
         <p class="eyebrow"><span></span>Tharun V Puthanveettil · Robotics R&amp;D</p>
         <h1>Human-inspired<br><em>robot learning.</em></h1>
         <p class="hero-intro">
-          I’m Tharun, an AI and robotics R&amp;D engineer and researcher. I work from first principles to build and study systems that perceive, learn, explain, and act on physical robots. My long-term goal is to help robots understand human intent and learn from demonstrations and corrections.
+          I’m Tharun, an AI and robotics R&amp;D engineer and researcher. My research takes inspiration from how people learn, adapt, and develop skills to build robots that can improve through experience. My long-term aim is to enable robots to understand human intent with the contextual sensitivity people use to understand one another—and to act or learn from that understanding.
         </p>
         <div class="hero-actions">
           <a class="button" href="#current">Current research <span aria-hidden="true">→</span></a>
@@ -94,11 +94,11 @@
       </div>
     </section>
 
-    <section class="principles-strip" aria-label="First-principles questions">
-      <p>Research criteria</p>
-      <div><span>01</span>What information is the policy actually using?</div>
-      <div><span>02</span>Does the method hold on a physical system?</div>
-      <div><span>03</span>Can human feedback improve the next policy?</div>
+    <section class="principles-strip" aria-label="Questions guiding the research">
+      <p>Questions guiding the research</p>
+      <div><span>01</span>What representations support understanding of people, tasks, and environments?</div>
+      <div><span>02</span>How can a robot adapt through experience without losing prior capability?</div>
+      <div><span>03</span>How should capability be evaluated beyond task-level success?</div>
     </section>
 
     <section class="current-work-live" id="current">
@@ -158,8 +158,8 @@
 
       <div class="current-work-live__questions">
         <div class="current-work-live__questions-heading">
-          <h3>Active research<br>program</h3>
-          <p>Current work is labelled by maturity.</p>
+          <h3>Current research directions</h3>
+          <p>Each line of work is marked by its current stage of development and validation.</p>
         </div>
         <ol>
           <li id="continual-learning">
@@ -184,7 +184,23 @@
           </li>
           <li id="policy-evaluation">
             <span>06</span><div><h4>Policy evaluation beyond success rate</h4><p><strong class="evidence-state evidence-state--investigating">Methodology in development</strong> I am evaluating leading open-source vision-language-action models across tasks and developing a common methodology for fairer comparison. The work treats aggregate success rate as incomplete and studies partial progress, failure modes, repeatability, recovery behavior, and sensitivity to control conditions.</p></div>
-            <div class="current-work-live__evidence"><strong>Experimental variable</strong><span>Measure how changes in robot compliance influence policy performance, failure behavior, and task completion.</span></div>
+            <figure class="current-work-live__concept current-work-live__evaluation" data-animate-diagram data-evaluation-state="outcome">
+              <div class="evaluation-modes" role="group" aria-label="Policy evaluation lens">
+                <button type="button" data-evaluation-mode="outcome" aria-pressed="true">Outcome</button>
+                <button type="button" data-evaluation-mode="behavior" aria-pressed="false">Behavior</button>
+                <button type="button" data-evaluation-mode="control" aria-pressed="false">Control</button>
+              </div>
+              <svg viewBox="0 0 320 170" role="img" aria-label="Two policies evaluated on the same task and control conditions across outcome, behavior, and control measures">
+                <text class="cwl-concept-text" x="16" y="48">MODEL A</text><text class="cwl-concept-text" x="16" y="128">MODEL B</text>
+                <g class="cwl-concept-thread"><path d="M16 58H104M16 138H104M188 88H218"></path></g>
+                <rect class="cwl-concept-plate" x="104" y="24" width="84" height="128"></rect>
+                <text class="cwl-concept-key" x="146" y="76" text-anchor="middle">SAME TASK</text><text class="cwl-concept-text" x="146" y="94" text-anchor="middle">+ CONDITIONS</text>
+                <g class="cwl-eval-axis cwl-eval-outcome"><path class="cwl-concept-dash" d="M218 44H302"></path><text class="cwl-concept-key" x="218" y="35">OUTCOME</text><text class="cwl-concept-text" x="218" y="58">completion · progress</text></g>
+                <g class="cwl-eval-axis cwl-eval-behavior"><path class="cwl-concept-dash" d="M218 88H302"></path><text class="cwl-concept-key" x="218" y="79">BEHAVIOR</text><text class="cwl-concept-text" x="218" y="102">failure · recovery</text></g>
+                <g class="cwl-eval-axis cwl-eval-control"><path class="cwl-concept-dash" d="M218 132H302"></path><text class="cwl-concept-key" x="218" y="123">CONTROL</text><text class="cwl-concept-text" x="218" y="146">compliance · repeatability</text></g>
+              </svg>
+              <figcaption><span>Controlled comparison</span><span data-evaluation-status aria-live="polite">Task completion · partial progress</span></figcaption>
+            </figure>
           </li>
         </ol>
       </div>
@@ -504,7 +520,7 @@
       <div><p class="eyebrow"><span></span>Research direction</p><blockquote>Robots that can understand people and learn from them.</blockquote></div>
       <div class="about-copy">
         <p>My long-term aim is to develop algorithms that allow robots to interpret human intent in ways that support action and learning.</p>
-        <p>I study this through policy explainability, self-supervised representation learning, egocentric demonstrations, video-action models, inverse dynamics, and human intervention. Continual learning connects these areas by turning demonstrations and corrections into new training evidence.</p>
+        <p>My work approaches this problem through policy understanding, representation learning, world models, embodied experience, human interaction, continual learning, and rigorous evaluation.</p>
         <p>I am particularly interested in methods that remain interpretable and testable when they move from offline benchmarks to physical systems.</p>
         <p>I hold an M.Eng. in Robotics from the University of Maryland and bring experience across academic research, industrial R&amp;D, and real-world robotics deployment.</p>
         <div class="about-links"><a href="https://scholar.google.com/citations?user=Vre9wQQAAAAJ&amp;hl=en">Google Scholar ↗</a><a href="https://www.linkedin.com/in/tvpian/">LinkedIn ↗</a><a href="https://github.com/tvpian">GitHub ↗</a></div>

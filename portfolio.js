@@ -155,6 +155,26 @@ document.querySelectorAll('[data-attention-mode]').forEach((button) => {
   });
 });
 
+const evaluationDescriptions = {
+  outcome: 'Task completion · partial progress',
+  behavior: 'Failure modes · recovery behavior',
+  control: 'Compliance sensitivity · repeatability',
+};
+
+document.querySelectorAll('[data-evaluation-mode]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const evaluation = button.closest('[data-evaluation-state]');
+    if (!evaluation) return;
+    const mode = button.dataset.evaluationMode;
+    evaluation.dataset.evaluationState = mode;
+    evaluation.querySelectorAll('[data-evaluation-mode]').forEach((item) => {
+      item.setAttribute('aria-pressed', String(item === button));
+    });
+    const status = evaluation.querySelector('[data-evaluation-status]');
+    if (status) status.textContent = evaluationDescriptions[mode] ?? '';
+  });
+});
+
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) videos.forEach((video) => video.pause());
   else visibleVideos.forEach((video) => syncVideo(video, true));
