@@ -58,11 +58,16 @@ function addMediaToggle(video) {
 videos.forEach((video) => {
   video.muted = true;
   video.defaultMuted = true;
-  video.preload = 'metadata';
+  if (!video.hasAttribute('preload')) video.preload = 'metadata';
   addMediaToggle(video);
   video.addEventListener('canplay', () => {
     if (visibleVideos.has(video) && !reduceMotion.matches && video.paused) syncVideo(video, true);
   });
+});
+
+document.querySelectorAll('img').forEach((img, index) => {
+  img.decoding = 'async';
+  if (index > 0 && !img.hasAttribute('loading')) img.loading = 'lazy';
 });
 
 if ('IntersectionObserver' in window) {
