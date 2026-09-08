@@ -533,7 +533,7 @@ footer p { margin: 0; color: var(--muted); font: 400 9px 'DM Mono', monospace; l
 .evaluation-modes button { flex: 1; min-height: 30px; padding: 0 7px; border: 1px solid rgba(233,231,225,.22); background: transparent; color: rgba(233,231,225,.58); cursor: pointer; font: 500 7px 'DM Mono', monospace; letter-spacing: .07em; text-transform: uppercase; }
 .evaluation-modes button:hover, .evaluation-modes button:focus-visible { border-color: var(--acid); color: #e9e7e1; outline: none; }
 .evaluation-modes button[aria-pressed="true"] { border-color: var(--acid); background: var(--acid); color: #121212; }
-.cwl-eval-axis { opacity: .2; transition: opacity .3s ease; }
+.cwl-eval-axis { opacity: .045; transition: opacity .3s ease; }
 [data-evaluation-state="outcome"] .cwl-eval-outcome,
 [data-evaluation-state="behavior"] .cwl-eval-behavior,
 [data-evaluation-state="control"] .cwl-eval-control { opacity: 1; }
@@ -548,11 +548,11 @@ footer p { margin: 0; color: var(--muted); font: 400 9px 'DM Mono', monospace; l
 .attention-modes button:hover, .attention-modes button:focus-visible { border-color: var(--acid); color: #e9e7e1; outline: none; }
 .attention-modes button[aria-pressed="true"] { border-color: var(--acid); background: var(--acid); color: #121212; }
 .current-work-live__attention > svg { display: block; min-width: 820px; width: 100%; height: auto; }
-.cwl-attention-panel { opacity: .24; transition: opacity .35s ease, filter .35s ease; }
+.cwl-attention-panel { opacity: .045; transition: opacity .35s ease, filter .35s ease; }
 [data-attention-state="all"] .cwl-attention-input, [data-attention-state="all"] .cwl-attention-all,
 [data-attention-state="ablated"] .cwl-attention-input, [data-attention-state="ablated"] .cwl-attention-ablated,
 [data-attention-state="delta"] .cwl-attention-delta { opacity: 1; filter: none; }
-[data-attention-state="delta"] .cwl-attention-all, [data-attention-state="delta"] .cwl-attention-ablated { opacity: .48; }
+[data-attention-state="delta"] .cwl-attention-all, [data-attention-state="delta"] .cwl-attention-ablated { opacity: .1; }
 .cwl-cell-base { fill: rgba(233,231,225,.055); }
 .cwl-field { stroke: rgba(233,231,225,.18); }
 .cwl-support { fill: none; stroke: var(--acid); stroke-width: 1.5; stroke-dasharray: 4 4; }
