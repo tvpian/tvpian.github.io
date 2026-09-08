@@ -2,20 +2,6 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const videos = [...document.querySelectorAll('video')];
 const visibleVideos = new Set();
 
-function hydrateVideo(video) {
-  if (video.dataset.poster) {
-    video.poster = video.dataset.poster;
-    delete video.dataset.poster;
-  }
-  const sources = [...video.querySelectorAll('source[data-src]')];
-  if (!sources.length) return;
-  sources.forEach((source) => {
-    source.src = source.dataset.src;
-    delete source.dataset.src;
-  });
-  video.load();
-}
-
 function syncVideo(video, visible) {
   if (visible) visibleVideos.add(video);
   else visibleVideos.delete(video);
@@ -25,7 +11,6 @@ function syncVideo(video, visible) {
     return;
   }
 
-  hydrateVideo(video);
   if (video.readyState === HTMLMediaElement.HAVE_NOTHING) video.load();
   const promise = video.play();
   if (promise) promise.catch(() => {
@@ -57,7 +42,6 @@ function addMediaToggle(video) {
       video.pause();
       return;
     }
-    hydrateVideo(video);
     if (video.readyState === HTMLMediaElement.HAVE_NOTHING) video.load();
     try {
       await video.play();
@@ -74,7 +58,7 @@ function addMediaToggle(video) {
 videos.forEach((video) => {
   video.muted = true;
   video.defaultMuted = true;
-  video.preload = 'none';
+  video.preload = 'metadata';
   addMediaToggle(video);
   video.addEventListener('canplay', () => {
     if (visibleVideos.has(video) && !reduceMotion.matches && video.paused) syncVideo(video, true);
@@ -87,10 +71,7 @@ if ('IntersectionObserver' in window) {
   }, { rootMargin: '120px 0px', threshold: 0.2 });
   videos.forEach((video) => observer.observe(video));
 } else if (!reduceMotion.matches) {
-  videos.forEach((video) => {
-    hydrateVideo(video);
-    syncVideo(video, true);
-  });
+  videos.forEach((video) => syncVideo(video, true));
 }
 
 reduceMotion.addEventListener?.('change', () => {
