@@ -58,11 +58,16 @@ function addMediaToggle(video) {
 videos.forEach((video) => {
   video.muted = true;
   video.defaultMuted = true;
-  video.preload = 'metadata';
+  if (!video.hasAttribute('preload')) video.preload = 'metadata';
   addMediaToggle(video);
   video.addEventListener('canplay', () => {
     if (visibleVideos.has(video) && !reduceMotion.matches && video.paused) syncVideo(video, true);
   });
+});
+
+document.querySelectorAll('img').forEach((img, index) => {
+  img.decoding = 'async';
+  if (index > 0 && !img.hasAttribute('loading')) img.loading = 'lazy';
 });
 
 if ('IntersectionObserver' in window) {
@@ -77,6 +82,77 @@ if ('IntersectionObserver' in window) {
 reduceMotion.addEventListener?.('change', () => {
   if (reduceMotion.matches) videos.forEach((video) => video.pause());
   else visibleVideos.forEach((video) => syncVideo(video, true));
+});
+
+const diagrams = [...document.querySelectorAll('[data-animate-diagram]')];
+diagrams.forEach((diagram) => diagram.classList.add('diagram-ready'));
+
+if ('IntersectionObserver' in window && !reduceMotion.matches) {
+  const diagramObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-in-view');
+      diagramObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -12%', threshold: 0.2 });
+  diagrams.forEach((diagram) => diagramObserver.observe(diagram));
+} else {
+  diagrams.forEach((diagram) => diagram.classList.add('is-in-view'));
+}
+
+const platformFigure = document.querySelector('.current-work-live__platform-figure');
+if (platformFigure) {
+  const stageHits = [...platformFigure.querySelectorAll('.cwl-stage-hit')];
+  const stageBands = [...platformFigure.querySelectorAll('.cwl-band rect')];
+  const stageLabels = [...platformFigure.querySelectorAll('.cwl-label text')];
+  const stageSubs = [...platformFigure.querySelectorAll('.cwl-sub text')];
+  const diagramStatus = platformFigure.querySelector('[data-diagram-status]');
+  const defaultStatus = diagramStatus?.textContent ?? '';
+  let pinnedStage = -1;
+
+  const showStage = (index = -1) => {
+    const hit = stageHits[index];
+    platformFigure.dataset.activeStage = index >= 0 ? String(index) : '';
+    [stageBands, stageLabels, stageSubs].forEach((items) => {
+      items.forEach((item, itemIndex) => item.classList.toggle('is-highlighted', itemIndex === index));
+    });
+    if (diagramStatus) diagramStatus.textContent = hit?.dataset.stageLabel ?? defaultStatus;
+  };
+
+  stageHits.forEach((hit, index) => {
+    hit.setAttribute('aria-pressed', 'false');
+    hit.addEventListener('pointerenter', () => showStage(index));
+    hit.addEventListener('pointerleave', () => showStage(pinnedStage));
+    hit.addEventListener('focus', () => showStage(index));
+    hit.addEventListener('blur', () => showStage(pinnedStage));
+    hit.addEventListener('click', () => {
+      pinnedStage = pinnedStage === index ? -1 : index;
+      stageHits.forEach((item, itemIndex) => item.setAttribute('aria-pressed', String(itemIndex === pinnedStage)));
+      showStage(pinnedStage);
+    });
+    hit.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        hit.click();
+      } else if (event.key === 'Escape') {
+        pinnedStage = -1;
+        stageHits.forEach((item) => item.setAttribute('aria-pressed', 'false'));
+        showStage();
+        hit.blur();
+      }
+    });
+  });
+}
+
+document.querySelectorAll('[data-attention-mode]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const attention = button.closest('[data-attention-state]');
+    if (!attention) return;
+    attention.dataset.attentionState = button.dataset.attentionMode;
+    attention.querySelectorAll('[data-attention-mode]').forEach((item) => {
+      item.setAttribute('aria-pressed', String(item === button));
+    });
+  });
 });
 
 document.addEventListener('visibilitychange', () => {
