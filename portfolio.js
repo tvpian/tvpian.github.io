@@ -155,6 +155,174 @@ document.querySelectorAll('[data-attention-mode]').forEach((button) => {
   });
 });
 
+const policyInputDescriptions = {
+  vision: ['Vision', 'Which regions redirect the policy response when visual evidence changes?'],
+  prompt: ['Prompt', 'Which action dimensions shift when the task wording changes?'],
+  state: ['Robot state', 'Which outputs depend on joint, gripper, or force-state information?'],
+  pretraining: ['Pretraining', 'How do learned representations and outputs change across pretrained encoders?'],
+};
+
+document.querySelectorAll('[data-policy-input-mode]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const lab = button.closest('[data-policy-input]');
+    if (!lab) return;
+    const mode = button.dataset.policyInputMode;
+    lab.dataset.policyInput = mode;
+    lab.querySelectorAll('[data-policy-input-mode]').forEach((item) => {
+      item.setAttribute('aria-pressed', String(item === button));
+    });
+    const status = lab.querySelector('[data-policy-input-status]');
+    const description = policyInputDescriptions[mode];
+    if (status && description) {
+      status.replaceChildren();
+      const label = document.createElement('strong');
+      label.textContent = description[0];
+      status.append(label, ` ${description[1]}`);
+    }
+  });
+});
+
+document.querySelectorAll('[data-motion-story]').forEach((story) => {
+  const video = story.querySelector('video');
+  const stages = [...story.querySelectorAll('[data-motion-stage]')];
+  if (!video || !stages.length) return;
+
+  const updateStory = () => {
+    const progress = Number.isFinite(video.duration) && video.duration > 0 ? video.currentTime / video.duration : 0;
+    const active = Math.min(stages.length - 1, Math.floor(progress * stages.length));
+    story.style.setProperty('--motion-progress', `${Math.max(0, Math.min(1, progress)) * 100}%`);
+    stages.forEach((stage, index) => stage.classList.toggle('is-active', index === active));
+  };
+
+  video.addEventListener('timeupdate', updateStory);
+  video.addEventListener('loadedmetadata', updateStory);
+  video.addEventListener('seeked', updateStory);
+  updateStory();
+});
+
+const heroSignal = document.querySelector('[data-hero-signal]');
+if (heroSignal) {
+  const steps = [...heroSignal.querySelectorAll('[data-signal-step]')];
+  const label = heroSignal.querySelector('[data-hero-signal-label]');
+  let activeSignal = 0;
+  let signalTimer = 0;
+
+  const setSignal = (index) => {
+    activeSignal = (index + steps.length) % steps.length;
+    heroSignal.style.setProperty('--signal-progress', `${(activeSignal + 1) * 25}%`);
+    heroSignal.style.setProperty('--signal-position', `${(activeSignal * 25) + 12.5}%`);
+    steps.forEach((step, stepIndex) => step.classList.toggle('is-active', stepIndex === activeSignal));
+    if (label) label.textContent = steps[activeSignal]?.textContent ?? '';
+  };
+  const stopSignal = () => window.clearInterval(signalTimer);
+  const startSignal = () => {
+    stopSignal();
+    if (!reduceMotion.matches) signalTimer = window.setInterval(() => setSignal(activeSignal + 1), 1900);
+  };
+
+  heroSignal.closest('.portrait-frame')?.addEventListener('pointermove', (event) => {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    setSignal(Math.min(steps.length - 1, Math.floor(((event.clientX - bounds.left) / bounds.width) * steps.length)));
+  });
+  heroSignal.closest('.portrait-frame')?.addEventListener('pointerleave', startSignal);
+  setSignal(0);
+  startSignal();
+  reduceMotion.addEventListener?.('change', () => {
+    if (reduceMotion.matches) stopSignal();
+    else startSignal();
+  });
+}
+
+const rail = document.querySelector('[data-research-rail]');
+if (rail) {
+  const links = [...rail.querySelectorAll('[data-rail-target]')];
+  const sections = links.map((link) => document.getElementById(link.dataset.railTarget));
+  const progress = rail.querySelector('[data-rail-progress]');
+  let railFrame = 0;
+
+  const updateRail = () => {
+    railFrame = 0;
+    const pageProgress = document.documentElement.scrollHeight > innerHeight
+      ? scrollY / (document.documentElement.scrollHeight - innerHeight)
+      : 0;
+    if (progress) progress.style.transform = `scaleY(${Math.max(0, Math.min(1, pageProgress))})`;
+
+    const marker = innerHeight * 0.42;
+    let active = 0;
+    sections.forEach((section, index) => {
+      if (section && section.getBoundingClientRect().top <= marker) active = index;
+    });
+    links.forEach((link, index) => {
+      const selected = index === active;
+      link.classList.toggle('is-active', selected);
+      if (selected) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  const requestRailUpdate = () => {
+    if (!railFrame) railFrame = requestAnimationFrame(updateRail);
+  };
+  addEventListener('scroll', requestRailUpdate, { passive: true });
+  addEventListener('resize', requestRailUpdate);
+  updateRail();
+}
+
+const createResearchEntry = (entry) => {
+  const article = document.createElement('article');
+  article.className = 'research-notebook__entry';
+  const period = document.createElement('time');
+  period.textContent = entry.period;
+  const state = document.createElement('span');
+  state.className = `evidence-state evidence-state--${entry.stateClass === 'built' ? 'built' : 'investigating'}`;
+  state.textContent = entry.state;
+  const title = document.createElement('h3');
+  title.textContent = entry.title;
+  const summary = document.createElement('p');
+  summary.textContent = entry.summary;
+  const topics = document.createElement('small');
+  topics.textContent = entry.topics;
+  article.append(period, state, title, summary, topics);
+  return article;
+};
+
+const researchLog = document.querySelector('[data-research-log]');
+if (researchLog) {
+  fetch('data/research-log.json')
+    .then((response) => {
+      if (!response.ok) throw new Error('Research log unavailable');
+      return response.json();
+    })
+    .then((entries) => {
+      if (!Array.isArray(entries) || !entries.length) return;
+      researchLog.replaceChildren(...entries.slice(0, 4).map(createResearchEntry));
+      initReveals(researchLog.querySelectorAll('.research-notebook__entry'));
+    })
+    .catch(() => {});
+}
+
+function initReveals(elements) {
+  const revealItems = [...elements];
+  if (!revealItems.length || reduceMotion.matches || !('IntersectionObserver' in window)) {
+    revealItems.forEach((item) => item.classList.add('is-revealed'));
+    return;
+  }
+  revealItems.forEach((item, index) => {
+    item.classList.add('reveal-ready');
+    item.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 55}ms`);
+  });
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-revealed');
+      revealObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -7%', threshold: 0.08 });
+  revealItems.forEach((item) => revealObserver.observe(item));
+}
+
+initReveals(document.querySelectorAll('.section-heading, .feature-card, .project-card, .system-spotlight, .role-spotlight, .research-notebook__entry'));
+
 const evaluationDescriptions = {
   outcome: 'Task completion · partial progress',
   behavior: 'Failure modes · recovery behavior',

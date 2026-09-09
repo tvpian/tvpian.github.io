@@ -17,10 +17,10 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=20260908-5">
+  <link rel="stylesheet" href="stylesheet.css?v=20260909-1">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <script src="theme.js?v=20260712-2" defer></script>
-  <script src="portfolio.js?v=20260908-4" defer></script>
+  <script src="portfolio.js?v=20260909-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -44,6 +44,17 @@
     </div>
   </header>
 
+  <aside class="research-rail" aria-label="Portfolio chapters" data-research-rail>
+    <span class="research-rail__track" aria-hidden="true"><i data-rail-progress></i></span>
+    <a href="#top" data-rail-target="top"><i></i><span>Thesis</span></a>
+    <a href="#current" data-rail-target="current"><i></i><span>Platform</span></a>
+    <a href="#notes" data-rail-target="notes"><i></i><span>Notebook</span></a>
+    <a href="#work" data-rail-target="work"><i></i><span>Systems</span></a>
+    <a href="#product" data-rail-target="product"><i></i><span>Tools</span></a>
+    <a href="#research" data-rail-target="research"><i></i><span>Evidence</span></a>
+    <a href="#about" data-rail-target="about"><i></i><span>Profile</span></a>
+  </aside>
+
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-copy">
@@ -66,6 +77,16 @@
           <div class="portrait-orb portrait-orb-two" aria-hidden="true" data-depth="0.26"></div>
           <div class="portrait-thread thread-a" aria-hidden="true" data-depth="0.42"></div>
           <div class="portrait-thread thread-b" aria-hidden="true" data-depth="0.52"></div>
+          <div class="hero-signal" data-hero-signal aria-hidden="true">
+            <span class="hero-signal__status"><i></i><b data-hero-signal-label>Observe</b></span>
+            <ol>
+              <li data-signal-step="0" class="is-active">Observe</li>
+              <li data-signal-step="1">Represent</li>
+              <li data-signal-step="2">Predict</li>
+              <li data-signal-step="3">Interact</li>
+            </ol>
+            <span class="hero-signal__line"><i data-hero-signal-dot></i></span>
+          </div>
         </div>
         <div class="portrait-caption">
           <span>Engineer</span><span>Researcher</span><span>Storyteller</span>
@@ -205,13 +226,22 @@
         </ol>
       </div>
 
-      <figure class="current-work-live__attention" data-animate-diagram data-attention-state="all">
-        <div class="current-work-live__attention-heading"><p class="eyebrow light"><span></span>Explainability method</p><p>Compare policy response before and after a controlled input change.</p></div>
-        <div class="attention-modes" role="group" aria-label="Attention comparison view">
-          <button type="button" data-attention-mode="all" aria-pressed="true">All inputs</button>
-          <button type="button" data-attention-mode="ablated" aria-pressed="false">One input removed</button>
-          <button type="button" data-attention-mode="delta" aria-pressed="false">Difference</button>
+      <figure class="current-work-live__attention policy-lab" data-animate-diagram data-attention-state="all" data-policy-input="vision">
+        <div class="current-work-live__attention-heading"><p class="eyebrow light"><span></span>Policy analysis instrument</p><p>Select an input source, then compare the nominal and controlled-perturbation views.</p></div>
+        <div class="policy-lab__controls">
+          <div><small>Input under study</small><div class="policy-input-modes" role="group" aria-label="Policy input under study">
+            <button type="button" data-policy-input-mode="vision" aria-pressed="true">Vision</button>
+            <button type="button" data-policy-input-mode="prompt" aria-pressed="false">Prompt</button>
+            <button type="button" data-policy-input-mode="state" aria-pressed="false">Robot state</button>
+            <button type="button" data-policy-input-mode="pretraining" aria-pressed="false">Pretraining</button>
+          </div></div>
+          <div><small>Diagnostic view</small><div class="attention-modes" role="group" aria-label="Policy comparison view">
+            <button type="button" data-attention-mode="all" aria-pressed="true">Nominal</button>
+            <button type="button" data-attention-mode="ablated" aria-pressed="false">Perturbed</button>
+            <button type="button" data-attention-mode="delta" aria-pressed="false">Difference</button>
+          </div></div>
         </div>
+        <p class="policy-lab__question" data-policy-input-status aria-live="polite"><strong>Vision</strong> Which regions redirect the policy response when visual evidence changes?</p>
         <svg viewBox="0 0 1040 270" role="img" aria-labelledby="current-attention-title current-attention-desc">
           <title id="current-attention-title">Attention routing under input ablation</title><desc id="current-attention-desc">Four cell fields compare the input, attention with all inputs, attention after one input is ablated, and the resulting difference.</desc>
           <defs><pattern id="current-grid" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="18" height="18" class="cwl-cell-base"></rect></pattern></defs>
@@ -220,8 +250,21 @@
           <g class="cwl-attention-panel cwl-attention-ablated" transform="translate(542 34)"><rect class="cwl-field" width="220" height="154" fill="url(#current-grid)"></rect><g class="cwl-hot"><rect x="22" y="66" width="18" height="18" opacity=".4"></rect><rect x="44" y="66" width="18" height="18" opacity=".68"></rect><rect x="66" y="66" width="18" height="18" opacity=".52"></rect><rect x="44" y="88" width="18" height="18" opacity=".82"></rect><rect x="66" y="88" width="18" height="18" opacity=".62"></rect><rect x="88" y="110" width="18" height="18" opacity=".42"></rect></g><rect class="cwl-support" x="108" y="44" width="68" height="54"></rect><text class="cwl-field-label" y="190">ATTENTION · ONE ABLATED</text></g>
           <g class="cwl-attention-panel cwl-attention-delta" transform="translate(804 34)"><rect class="cwl-field" width="220" height="154" fill="url(#current-grid)"></rect><g class="cwl-delta"><rect x="22" y="66" width="18" height="18" opacity=".38"></rect><rect x="44" y="66" width="18" height="18" opacity=".65"></rect><rect x="44" y="88" width="18" height="18" opacity=".78"></rect><rect x="110" y="44" width="18" height="18" opacity=".4"></rect><rect x="132" y="44" width="18" height="18" opacity=".7"></rect><rect x="132" y="66" width="18" height="18" opacity=".92"></rect></g><text class="cwl-field-label" y="190">Δ · ROUTED ELSEWHERE</text></g>
         </svg>
-        <figcaption><span>Schematic · attention routing under input ablation</span><span>Illustrative field—not measured output</span></figcaption>
+        <figcaption><span>Controlled diagnostic schematic · attribution is not causation</span><span>Illustrative field—not measured output</span></figcaption>
       </figure>
+    </section>
+
+    <section class="research-notebook" id="notes" aria-labelledby="research-notebook-title">
+      <div class="research-notebook__heading">
+        <div><p class="eyebrow"><span></span>Public research notebook</p><h2 id="research-notebook-title">Work in motion,<br>without the theatre.</h2></div>
+        <p>A compact record of public, defensible progress. It reports maturity and validation without publishing internal protocols, hardware details, or speculative claims.</p>
+      </div>
+      <div class="research-notebook__stream" data-research-log aria-live="polite">
+        <article class="research-notebook__entry"><time>2026</time><span class="evidence-state evidence-state--built">Experiments completed</span><h3>Policy-input influence studies</h3><p>Attention maps, Grad-CAM, state-vector ablations, prompt comparisons, and representation comparisons are being used to diagnose what steers trained policies.</p><small>Representation learning · policy analysis</small></article>
+        <article class="research-notebook__entry"><time>2026</time><span class="evidence-state evidence-state--investigating">Methodology in development</span><h3>Evaluation beyond success rate</h3><p>Open-source robot policies are being compared through partial progress, failure type, recovery, repeatability, and sensitivity to control conditions.</p><small>Benchmarking · physical evaluation</small></article>
+        <article class="research-notebook__entry"><time>2026</time><span class="evidence-state evidence-state--investigating">System in development</span><h3>Portable egocentric capture</h3><p>A portable demonstration interface is being connected to the same synchronized review and dataset-conversion infrastructure used by the manipulation system.</p><small>Egocentric experience · human guidance</small></article>
+      </div>
+      <p class="research-notebook__source"><span></span>Entries are loaded from <code>data/research-log.json</code> so the record can evolve independently of the page.</p>
     </section>
 
     <section class="work-section" id="work">
@@ -255,11 +298,12 @@
 
         <article class="feature-card hybrid-card">
           <div class="feature-art hybrid-art">
-            <div class="hybrid-video motion-frame">
+            <div class="hybrid-video motion-frame" data-motion-story>
               <video muted loop playsinline preload="metadata" poster="imgs/autonomous_weeding.jpg" aria-label="Vision-guided agricultural robot operating around plants">
               <source src="imgs/autonomous_weeding.mp4" type="video/mp4">
               </video>
               <span class="image-index">Physical deployment</span>
+              <div class="motion-sequence" aria-hidden="true"><span data-motion-stage>Observe</span><span data-motion-stage>Estimate</span><span data-motion-stage>Plan</span><span data-motion-stage>Act</span><i></i></div>
             </div>
             <figure><img src="imgs/hybrid-ik-system.png" alt="Paper figure showing plant vision feeding root detection, weed spread estimation, workspace extraction, hybrid IK, and flower-carpet planning"><figcaption>From pixels to a plant-safe plan</figcaption></figure>
             <figure><img src="imgs/hybrid-ik-leaf-area.png" alt="Paper figure showing the visual pipeline from RGB channels through thresholding and elliptical closing to stem localization"><figcaption>Geometry recovered before motion</figcaption></figure>
@@ -297,8 +341,9 @@
         </article>
 
         <article class="project-card">
-          <div class="project-image cobalt motion-frame">
+          <div class="project-image cobalt motion-frame" data-motion-story>
             <video muted loop playsinline preload="none" poster="imgs/ap.png" aria-hidden="true"><source src="imgs/ap.mp4" type="video/mp4"></video>
+            <div class="motion-sequence" aria-hidden="true"><span data-motion-stage>Detect</span><span data-motion-stage>Track</span><span data-motion-stage>Estimate</span><span data-motion-stage>Follow</span><i></i></div>
           </div>
           <div class="project-copy">
             <div class="project-meta"><span>Chapter 03 · 2023</span><span>Connected vehicles</span></div>
@@ -323,11 +368,12 @@
       </div>
 
       <article class="system-spotlight tar-spotlight">
-        <div class="spotlight-media motion-frame">
+        <div class="spotlight-media motion-frame" data-motion-story>
           <video muted loop playsinline preload="metadata" poster="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" aria-label="Track Anything Rapter following an AprilTag from a UAV">
             <source src="imgs/tar.mp4" type="video/mp4">
           </video>
           <span class="image-index">Real UAV deployment</span>
+          <div class="motion-sequence" aria-hidden="true"><span data-motion-stage>Specify</span><span data-motion-stage>Perceive</span><span data-motion-stage>Track</span><span data-motion-stage>Act</span><i></i></div>
         </div>
         <div class="spotlight-copy">
           <div class="project-meta"><span>Chapter 03 · 2024</span><span>Multimodal perception → control</span></div>
