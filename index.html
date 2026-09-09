@@ -17,10 +17,10 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=20260909-1">
+  <link rel="stylesheet" href="stylesheet.css?v=20260909-2">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <script src="theme.js?v=20260712-2" defer></script>
-  <script src="portfolio.js?v=20260909-1" defer></script>
+  <script src="portfolio.js?v=20260909-2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -48,7 +48,6 @@
     <span class="research-rail__track" aria-hidden="true"><i data-rail-progress></i></span>
     <a href="#top" data-rail-target="top"><i></i><span>Thesis</span></a>
     <a href="#current" data-rail-target="current"><i></i><span>Platform</span></a>
-    <a href="#notes" data-rail-target="notes"><i></i><span>Notebook</span></a>
     <a href="#work" data-rail-target="work"><i></i><span>Systems</span></a>
     <a href="#product" data-rail-target="product"><i></i><span>Tools</span></a>
     <a href="#research" data-rail-target="research"><i></i><span>Evidence</span></a>
@@ -95,10 +94,11 @@
     </section>
 
     <section class="focus-strip" aria-label="Current research focus">
-      <article><span>01</span><div><h2><a href="#explainability">Representation<br>learning</a></h2><p>What has a policy learned, and which inputs influence its actions?</p></div></article>
-      <article><span>02</span><div><h2><a href="#egocentric">Egocentric<br>policies</a></h2><p>How can embodied demonstrations become useful robot experience?</p></div></article>
-      <article><span>03</span><div><h2><a href="#world-models">World models<br>for robotics</a></h2><p>How can predicted outcomes and inverse dynamics support action learning?</p></div></article>
-      <article><span>04</span><div><h2><a href="#continual-learning">Human–robot<br>interaction</a></h2><p>How can human instruction and correction help robots acquire skills?</p></div></article>
+      <div class="focus-strip__prompt"><strong>Four questions shape the work.</strong><span>Select one to trace it into the active research program <i aria-hidden="true">↓</i></span></div>
+      <article><a href="#explainability" data-focus-link><span class="focus-index">01</span><div><h2>Representation<br>learning</h2><p>What has a policy learned, and which inputs influence its actions?</p><span class="focus-strip__cue">Trace this direction <i aria-hidden="true">↘</i></span></div></a></article>
+      <article><a href="#egocentric" data-focus-link><span class="focus-index">02</span><div><h2>Egocentric<br>policies</h2><p>How can embodied demonstrations become useful robot experience?</p><span class="focus-strip__cue">Trace this direction <i aria-hidden="true">↘</i></span></div></a></article>
+      <article><a href="#world-models" data-focus-link><span class="focus-index">03</span><div><h2>World models<br>for robotics</h2><p>How can predicted outcomes and inverse dynamics support action learning?</p><span class="focus-strip__cue">Trace this direction <i aria-hidden="true">↘</i></span></div></a></article>
+      <article><a href="#continual-learning" data-focus-link><span class="focus-index">04</span><div><h2>Human–robot<br>interaction</h2><p>How can human instruction and correction help robots acquire skills?</p><span class="focus-strip__cue">Trace this direction <i aria-hidden="true">↘</i></span></div></a></article>
     </section>
 
     <section class="story-map" aria-labelledby="story-map-title">
@@ -112,6 +112,7 @@
         <article><span>2021–23</span><h3>Perception applied to manipulation and HRI</h3><p>At IISc and UMD, I worked on depth estimation, precision weeding, and an exploratory imitation-learning system using demonstrations, speech, and gesture.</p><small>Depth · Precision weeding · ROS 2 · Speech + gesture + demonstration</small></article>
         <article><span>2023–24</span><h3>Multimodal autonomy and evaluation</h3><p>I developed systems that combined partial evidence across sensors or viewpoints and connected perception to control, coordination, or anomaly detection.</p><small>PoseFusion · Fall detection · Auto-Platoon · TAR · Multimodal anomaly detection</small></article>
         <article><span>2024–present</span><h3>Robot learning on physical systems</h3><p>My current work brings these threads together in bimanual manipulation: teleoperation, multimodal data, compliant control, learned policies, digital twins, and real-world evaluation.</p><small>Deformables · Bimanual manipulation · Compliance · Learned policies · Sim-to-real</small></article>
+        <a class="section-continue" href="#current">See where these threads meet now <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
@@ -254,18 +255,6 @@
       </figure>
     </section>
 
-    <section class="research-notebook" id="notes" aria-labelledby="research-notebook-title">
-      <div class="research-notebook__heading">
-        <div><p class="eyebrow"><span></span>Public research notebook</p><h2 id="research-notebook-title">Work in motion,<br>without the theatre.</h2></div>
-        <p>A compact record of public, defensible progress. It reports maturity and validation without publishing internal protocols, hardware details, or speculative claims.</p>
-      </div>
-      <div class="research-notebook__stream" data-research-log aria-live="polite">
-        <article class="research-notebook__entry"><time>2026</time><span class="evidence-state evidence-state--built">Experiments completed</span><h3>Policy-input influence studies</h3><p>Attention maps, Grad-CAM, state-vector ablations, prompt comparisons, and representation comparisons are being used to diagnose what steers trained policies.</p><small>Representation learning · policy analysis</small></article>
-        <article class="research-notebook__entry"><time>2026</time><span class="evidence-state evidence-state--investigating">Methodology in development</span><h3>Evaluation beyond success rate</h3><p>Open-source robot policies are being compared through partial progress, failure type, recovery, repeatability, and sensitivity to control conditions.</p><small>Benchmarking · physical evaluation</small></article>
-        <article class="research-notebook__entry"><time>2026</time><span class="evidence-state evidence-state--investigating">System in development</span><h3>Portable egocentric capture</h3><p>A portable demonstration interface is being connected to the same synchronized review and dataset-conversion infrastructure used by the manipulation system.</p><small>Egocentric experience · human guidance</small></article>
-      </div>
-    </section>
-
     <section class="work-section" id="work">
       <div class="section-heading">
         <div>
@@ -302,7 +291,7 @@
               <source src="imgs/autonomous_weeding.mp4" type="video/mp4">
               </video>
               <span class="image-index">Physical deployment</span>
-              <div class="motion-sequence" aria-hidden="true"><span data-motion-stage>Observe</span><span data-motion-stage>Estimate</span><span data-motion-stage>Plan</span><span data-motion-stage>Act</span><i></i></div>
+              <div class="motion-sequence" data-system-loop aria-hidden="true"><small>System loop · illustrative</small><span>Observe</span><span>Estimate</span><span>Plan</span><span>Act</span><i></i></div>
             </div>
             <figure><img src="imgs/hybrid-ik-system.png" alt="Paper figure showing plant vision feeding root detection, weed spread estimation, workspace extraction, hybrid IK, and flower-carpet planning"><figcaption>From pixels to a plant-safe plan</figcaption></figure>
             <figure><img src="imgs/hybrid-ik-leaf-area.png" alt="Paper figure showing the visual pipeline from RGB channels through thresholding and elliptical closing to stem localization"><figcaption>Geometry recovered before motion</figcaption></figure>
@@ -342,7 +331,7 @@
         <article class="project-card">
           <div class="project-image cobalt motion-frame" data-motion-story>
             <video muted loop playsinline preload="none" poster="imgs/ap.png" aria-hidden="true"><source src="imgs/ap.mp4" type="video/mp4"></video>
-            <div class="motion-sequence" aria-hidden="true"><span data-motion-stage>Detect</span><span data-motion-stage>Track</span><span data-motion-stage>Estimate</span><span data-motion-stage>Follow</span><i></i></div>
+            <div class="motion-sequence" data-system-loop aria-hidden="true"><small>System loop · illustrative</small><span>Detect</span><span>Track</span><span>Estimate</span><span>Follow</span><i></i></div>
           </div>
           <div class="project-copy">
             <div class="project-meta"><span>Chapter 03 · 2023</span><span>Connected vehicles</span></div>
@@ -372,7 +361,7 @@
             <source src="imgs/tar.mp4" type="video/mp4">
           </video>
           <span class="image-index">Real UAV deployment</span>
-          <div class="motion-sequence" aria-hidden="true"><span data-motion-stage>Specify</span><span data-motion-stage>Perceive</span><span data-motion-stage>Track</span><span data-motion-stage>Act</span><i></i></div>
+          <div class="motion-sequence" data-system-loop aria-hidden="true"><small>System loop · illustrative</small><span>Specify</span><span>Perceive</span><span>Track</span><span>Act</span><i></i></div>
         </div>
         <div class="spotlight-copy">
           <div class="project-meta"><span>Chapter 03 · 2024</span><span>Multimodal perception → control</span></div>

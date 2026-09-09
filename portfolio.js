@@ -182,24 +182,6 @@ document.querySelectorAll('[data-policy-input-mode]').forEach((button) => {
   });
 });
 
-document.querySelectorAll('[data-motion-story]').forEach((story) => {
-  const video = story.querySelector('video');
-  const stages = [...story.querySelectorAll('[data-motion-stage]')];
-  if (!video || !stages.length) return;
-
-  const updateStory = () => {
-    const progress = Number.isFinite(video.duration) && video.duration > 0 ? video.currentTime / video.duration : 0;
-    const active = Math.min(stages.length - 1, Math.floor(progress * stages.length));
-    story.style.setProperty('--motion-progress', `${Math.max(0, Math.min(1, progress)) * 100}%`);
-    stages.forEach((stage, index) => stage.classList.toggle('is-active', index === active));
-  };
-
-  video.addEventListener('timeupdate', updateStory);
-  video.addEventListener('loadedmetadata', updateStory);
-  video.addEventListener('seeked', updateStory);
-  updateStory();
-});
-
 const heroSignal = document.querySelector('[data-hero-signal]');
 if (heroSignal) {
   const steps = [...heroSignal.querySelectorAll('[data-signal-step]')];
@@ -231,6 +213,47 @@ if (heroSignal) {
     if (reduceMotion.matches) stopSignal();
     else startSignal();
   });
+}
+
+const focusLinks = [...document.querySelectorAll('[data-focus-link]')];
+const researchDirections = document.querySelector('.current-work-live__questions > ol');
+let spotlightTimer = 0;
+
+const clearResearchSpotlight = () => {
+  window.clearTimeout(spotlightTimer);
+  researchDirections?.classList.remove('has-spotlight');
+  researchDirections?.querySelectorAll('.is-spotlit').forEach((item) => item.classList.remove('is-spotlit'));
+};
+
+const spotlightResearchDirection = (hash, updateHash = true) => {
+  const targetId = hash.replace(/^#/, '');
+  const target = document.getElementById(targetId);
+  if (!target || !researchDirections?.contains(target)) return;
+
+  clearResearchSpotlight();
+  researchDirections.classList.add('has-spotlight');
+  target.classList.add('is-spotlit');
+  target.tabIndex = -1;
+  target.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'center' });
+  target.focus({ preventScroll: true });
+  if (updateHash) history.pushState(null, '', `#${targetId}`);
+  spotlightTimer = window.setTimeout(clearResearchSpotlight, 9000);
+};
+
+focusLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    spotlightResearchDirection(link.hash);
+  });
+});
+
+addEventListener('hashchange', () => spotlightResearchDirection(location.hash, false));
+addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') clearResearchSpotlight();
+});
+
+if (focusLinks.some((link) => link.hash === location.hash)) {
+  requestAnimationFrame(() => spotlightResearchDirection(location.hash, false));
 }
 
 const rail = document.querySelector('[data-research-rail]');
@@ -268,39 +291,6 @@ if (rail) {
   updateRail();
 }
 
-const createResearchEntry = (entry) => {
-  const article = document.createElement('article');
-  article.className = 'research-notebook__entry';
-  const period = document.createElement('time');
-  period.textContent = entry.period;
-  const state = document.createElement('span');
-  state.className = `evidence-state evidence-state--${entry.stateClass === 'built' ? 'built' : 'investigating'}`;
-  state.textContent = entry.state;
-  const title = document.createElement('h3');
-  title.textContent = entry.title;
-  const summary = document.createElement('p');
-  summary.textContent = entry.summary;
-  const topics = document.createElement('small');
-  topics.textContent = entry.topics;
-  article.append(period, state, title, summary, topics);
-  return article;
-};
-
-const researchLog = document.querySelector('[data-research-log]');
-if (researchLog) {
-  fetch('data/research-log.json')
-    .then((response) => {
-      if (!response.ok) throw new Error('Research log unavailable');
-      return response.json();
-    })
-    .then((entries) => {
-      if (!Array.isArray(entries) || !entries.length) return;
-      researchLog.replaceChildren(...entries.slice(0, 4).map(createResearchEntry));
-      initReveals(researchLog.querySelectorAll('.research-notebook__entry'));
-    })
-    .catch(() => {});
-}
-
 function initReveals(elements) {
   const revealItems = [...elements];
   if (!revealItems.length || reduceMotion.matches || !('IntersectionObserver' in window)) {
@@ -321,7 +311,7 @@ function initReveals(elements) {
   revealItems.forEach((item) => revealObserver.observe(item));
 }
 
-initReveals(document.querySelectorAll('.section-heading, .feature-card, .project-card, .system-spotlight, .role-spotlight, .research-notebook__entry'));
+initReveals(document.querySelectorAll('.section-heading, .feature-card, .project-card, .system-spotlight, .role-spotlight'));
 
 const evaluationDescriptions = {
   outcome: 'Task completion · partial progress',

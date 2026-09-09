@@ -4,8 +4,8 @@ You can visit my portfolio at https://tvpian.github.io
 
 Run `node scripts/serve.mjs`, then open http://127.0.0.1:4173. The preview server supplies the MIME types and byte-range responses required for the portfolio videos; generic Ruby/WEBrick file servers may send MP4 files as `application/octet-stream`, which prevents browser playback.
 
-## Updating the research notebook
+## Research interactions
 
-Edit `data/research-log.json`. Each entry accepts `period`, `state`, `stateClass` (`built` or `investigating`), `title`, `summary`, and `topics`. Keep entries limited to public, defensible progress; unpublished protocols and internal implementation details should remain outside the portfolio.
+The four opening research questions link to the corresponding direction by ID. `portfolio.js` centers and temporarily spotlights the selected direction while preserving a shareable URL hash.
 
-The HTML contains matching fallback entries so the notebook remains readable if JavaScript is unavailable. When changing the JSON, update the fallback entries in `index.html` as well.
+Video labels describe illustrative system loops; they are deliberately independent of playback time and should not be presented as timestamp-aligned events without supporting annotations or logs.
