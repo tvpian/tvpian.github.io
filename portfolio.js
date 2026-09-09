@@ -247,6 +247,12 @@ focusLinks.forEach((link) => {
   });
 });
 
+addEventListener('pointerdown', (event) => {
+  if (!researchDirections?.classList.contains('has-spotlight')) return;
+  if (event.target.closest('[data-focus-link], .is-spotlit')) return;
+  clearResearchSpotlight();
+});
+
 addEventListener('hashchange', () => spotlightResearchDirection(location.hash, false));
 addEventListener('keydown', (event) => {
   if (event.key === 'Escape') clearResearchSpotlight();
