@@ -106,8 +106,9 @@ h1 em { color: var(--cobalt); font-weight: 400; }
 .hero .hero-intro { margin-top: 26px; font-size: clamp(16px, 1.25vw, 18px); }
 .hero .hero-motivation { margin-top: 18px; }
 .hero .hero-actions { flex-direction: row; flex-wrap: wrap; gap: 18px 26px; margin-top: 28px; }
-.hero .portrait-frame--simple { min-height: 0; aspect-ratio: 4 / 5; transform: none; perspective: none; }
-.hero .portrait-frame--simple img { width: 100%; bottom: 0; transform: translateX(-50%); }
+.hero-copy { min-width: 0; }
+.portrait-photo { width: 100%; max-width: 440px; margin: 0 auto; }
+.portrait-photo img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; filter: grayscale(100%); }
 .hero-actions, .writing-links { display: flex; align-items: center; gap: 30px; margin-top: 38px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 54px; padding: 0 24px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font-size: 12px; font-weight: 600; transition: .2s ease; }
 .button:hover { transform: translateY(-2px); background: var(--acid); color: var(--ink); }
