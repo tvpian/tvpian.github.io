@@ -87,12 +87,12 @@ nav a:hover::after, .text-link:hover::after, .card-link:hover::after, .about-lin
 .hero {
   width: min(1400px, calc(100% - 64px));
   margin: 0 auto;
-  min-height: 730px;
+  min-height: 0;
   display: grid;
-  grid-template-columns: 1.08fr .92fr;
+  grid-template-columns: 1.35fr .85fr;
   gap: 7vw;
   align-items: center;
-  padding: 82px 0 90px;
+  padding: 64px 0 68px;
 }
 .eyebrow { display: flex; align-items: center; gap: 11px; margin: 0 0 24px; font: 500 10px/1 'DM Mono', monospace; letter-spacing: .17em; text-transform: uppercase; }
 .eyebrow > span { width: 28px; height: 1px; background: currentColor; }
@@ -101,6 +101,13 @@ h1, h2, blockquote { font-family: 'Instrument Serif', Georgia, serif; font-weigh
 h1 { max-width: 770px; margin: 0; font-size: clamp(66px, 7.1vw, 112px); line-height: .88; }
 h1 em { color: var(--cobalt); font-weight: 400; }
 .hero-intro { max-width: 690px; margin: 38px 0 0; color: var(--muted); font-size: clamp(17px, 1.4vw, 21px); line-height: 1.65; }
+.hero h1 { font-size: clamp(40px, 4.3vw, 68px); line-height: 1.08; letter-spacing: -.035em; }
+.hero-role { margin: 14px 0 0; font-size: clamp(15px, 1.25vw, 18px); line-height: 1.5; }
+.hero .hero-intro { margin-top: 26px; font-size: clamp(16px, 1.25vw, 18px); }
+.hero .hero-motivation { margin-top: 18px; }
+.hero .hero-actions { flex-direction: row; flex-wrap: wrap; gap: 18px 26px; margin-top: 28px; }
+.hero .portrait-frame--simple { min-height: 0; aspect-ratio: 4 / 5; transform: none; perspective: none; }
+.hero .portrait-frame--simple img { width: 100%; bottom: 0; transform: translateX(-50%); }
 .hero-actions, .writing-links { display: flex; align-items: center; gap: 30px; margin-top: 38px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 54px; padding: 0 24px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); font-size: 12px; font-weight: 600; transition: .2s ease; }
 .button:hover { transform: translateY(-2px); background: var(--acid); color: var(--ink); }
