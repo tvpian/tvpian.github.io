@@ -1,0 +1,147 @@
+{
+  "version": "2026-09-24",
+  "policy": "Every quantitative claim identifies its source, evidence tier, and interpretation boundary. Reconstructed graphics are not presented as rerun experiments.",
+  "projects": [
+    {
+      "id": "robot-learning-platform",
+      "route": "projects/robot-learning-platform/",
+      "authors": [
+        "Tharun V. Puthanveettil"
+      ],
+      "claims": [
+        {
+          "claim": "114/114 episodes accepted; ~125 episodes/hour; 337,420 messages; zero dropped messages and SHA mismatches",
+          "source": "Uploaded robot-learning research update; controlled simulation-cell collection session",
+          "tier": "software qualification / simulation data",
+          "boundary": "single session; not a policy-success result"
+        },
+        {
+          "claim": "47 pass, 58 warn, 9 fail initial QC verdicts; all nine failures traced to a gripper-command rate-check false positive",
+          "source": "Uploaded research update and collection record",
+          "tier": "software qualification",
+          "boundary": "checker diagnosis, not data-quality improvement"
+        },
+        {
+          "claim": "ACT 18.5 ms median warm inference; compact VLA 142.7 ms on RTX 6000 Ada",
+          "source": "Uploaded training log index and server stress measurements",
+          "tier": "offline system measurement",
+          "boundary": "one hardware configuration; loopback, not live control latency"
+        },
+        {
+          "claim": "0.0164 rad offline action MAE and 0/5 closed-loop success",
+          "source": "Uploaded inference-streaming experiments",
+          "tier": "simulation closed loop",
+          "boundary": "early checkpoint; demonstrates metric/behavior gap"
+        },
+        {
+          "claim": "512 kinematic configurations with zero flange disagreement; 68/68 scenes compiled; worst composition deviation 0.000715 mm; 705 tests passed on one clean rebuild",
+          "source": "Uploaded simulation-parity and clean-host reports",
+          "tier": "software qualification / simulation offline",
+          "boundary": "geometry and software parity do not establish visual or contact parity"
+        }
+      ]
+    },
+    {
+      "id": "multimodal-perception",
+      "route": "projects/multimodal-perception/",
+      "authors": [
+        "Abhijay Singh",
+        "Tharun V. Puthanveettil",
+        "Aniruddh Balram",
+        "Sathish V.",
+        "Sai S."
+      ],
+      "claims": [
+        {
+          "claim": "PoseFusion attention aggregation accuracy 0.85",
+          "source": "PoseFusion poster DOI 10.13140/RG.2.2.32418.20169",
+          "tier": "published poster",
+          "boundary": "reported dataset and split"
+        },
+        {
+          "claim": "Multi-view F1 0.82 versus single-view F1 0.76 under occlusion",
+          "source": "PoseFusion project preprint / report",
+          "tier": "offline evaluation",
+          "boundary": "controlled skeleton occlusion"
+        },
+        {
+          "claim": "UR Fall GCN+Transformer F1 0.9033; cross-view and structured occlusion results",
+          "source": "Fall-recognition project preprint",
+          "tier": "offline evaluation",
+          "boundary": "reported binary mappings and split"
+        }
+      ]
+    },
+    {
+      "id": "track-anything-rapter",
+      "route": "projects/track-anything-rapter/",
+      "authors": [
+        "Tharun V. Puthanveettil",
+        "Fnu Obaid ur Rahman"
+      ],
+      "claims": [
+        {
+          "claim": "Mean DTW 0.62–1.65 m across reported target, query, platform and obstruction cases",
+          "source": "TAR project report Table 1 and arXiv:2405.11655",
+          "tier": "physical trajectory evaluation",
+          "boundary": "system-level metric; does not isolate subsystem error"
+        }
+      ]
+    },
+    {
+      "id": "auto-platoon",
+      "route": "projects/auto-platoon/",
+      "authors": [
+        "Tharun V. Puthanveettil",
+        "Abhijay Singh",
+        "Yashveer Jain",
+        "Vinay Bukka",
+        "Sameer Arjun S."
+      ],
+      "claims": [
+        {
+          "claim": "Two-robot leader following, obstacle-triggered coordinated stop and automatic resume demonstrated",
+          "source": "Repository video and arXiv:2405.11659",
+          "tier": "physical demonstration",
+          "boundary": "no repeated-trial latency or formation-error benchmark"
+        }
+      ]
+    },
+    {
+      "id": "precision-weeding",
+      "route": "projects/precision-weeding/",
+      "authors": [
+        "V. P. Tharun",
+        "Abhra Roy Chowdhury"
+      ],
+      "claims": [
+        {
+          "claim": "32.27% relative success-rate increase; 0.45 lower average Contact Factor; 58 s lower average execution time",
+          "source": "Springer DOI 10.1007/978-981-95-2382-5_18",
+          "tier": "published simulation and physical evaluation",
+          "boundary": "comparison conditions from the paper; not universal estimates"
+        }
+      ]
+    },
+    {
+      "id": "multimodal-anomaly-detection",
+      "route": "projects/multimodal-anomaly-detection/",
+      "authors": [
+        "Mahshid Noorani",
+        "Tharun V. Puthanveettil",
+        "Asim Zoulkarni",
+        "Jack Mirenzi",
+        "Charles D. Grody",
+        "John S. Baras"
+      ],
+      "claims": [
+        {
+          "claim": "72% scalar-loss baseline; up to 98% vector-based multimodal accuracy; 97% with 92 training samples",
+          "source": "Springer DOI 10.1007/978-3-031-74835-6_15",
+          "tier": "published physical-platform evaluation",
+          "boundary": "one platform and bounded attack library"
+        }
+      ]
+    }
+  ]
+}
