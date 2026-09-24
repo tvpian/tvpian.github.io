@@ -3,6 +3,7 @@
   const toggle = document.querySelector('[data-theme-toggle]');
   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const precisePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
 
   const storedTheme = () => {
     try {
@@ -75,15 +76,17 @@
       frame = 0;
     };
 
-    scene.addEventListener('pointermove', (event) => {
-      const bounds = scene.getBoundingClientRect();
-      targetX = ((event.clientX - bounds.left) / bounds.width - 0.5) * 22;
-      targetY = ((event.clientY - bounds.top) / bounds.height - 0.5) * 22;
-    });
-    scene.addEventListener('pointerleave', () => {
-      targetX = 0;
-      targetY = 0;
-    });
+    if (precisePointer.matches) {
+      scene.addEventListener('pointermove', (event) => {
+        const bounds = scene.getBoundingClientRect();
+        targetX = ((event.clientX - bounds.left) / bounds.width - 0.5) * 22;
+        targetY = ((event.clientY - bounds.top) / bounds.height - 0.5) * 22;
+      });
+      scene.addEventListener('pointerleave', () => {
+        targetX = 0;
+        targetY = 0;
+      });
+    }
 
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(([entry]) => {
