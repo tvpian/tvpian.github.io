@@ -120,6 +120,18 @@
           "source": "Springer DOI 10.1007/978-981-95-2382-5_18",
           "tier": "published simulation and physical evaluation",
           "boundary": "comparison conditions from the paper; not universal estimates"
+        },
+        {
+          "claim": "Hybrid IK success rates of 78.57%, 66.6%, and 59.2% for low-, medium-, and high-density layouts, versus 46.3%, 43.1%, and 36.36% for standard IK",
+          "source": "Hybrid IK paper, Table II",
+          "tier": "published comparative evaluation",
+          "boundary": "iterative Hybrid IK also required longer execution time in every reported layout"
+        },
+        {
+          "claim": "OmxNet Model 2 RMSE improved from 0.0079 m on the original workspace to 0.0025 m on the warped workspace",
+          "source": "Hybrid IK paper, Table III",
+          "tier": "published offline model evaluation",
+          "boundary": "task-curated workspace and reported dataset only"
         }
       ]
     },
@@ -140,6 +152,24 @@
           "source": "Springer DOI 10.1007/978-3-031-74835-6_15",
           "tier": "published physical-platform evaluation",
           "boundary": "one platform and bounded attack library"
+        },
+        {
+          "claim": "Per-modality feature-extractor accuracy ranged from 0.860 to 1.000 for LiDAR, 0.952 for odometry, and 0.940 to 1.000 for network features across two attack settings",
+          "source": "U-ASTROD paper, Table II",
+          "tier": "published offline feature evaluation",
+          "boundary": "PCA projections and classification metrics describe the paper's two attack scenarios"
+        },
+        {
+          "claim": "Cross-environment baseline-attack accuracy reached 99.32% for indoor-to-outdoor W=10 and 95.30% for outdoor-to-indoor W=10",
+          "source": "IEEE ROSE 2026 DOI 10.1109/ROSE69181.2026.11570974, Table I(c)",
+          "tier": "published cross-environment evaluation",
+          "boundary": "normal and stealthy-class performance varies by direction and temporal window"
+        },
+        {
+          "claim": "Inference frequency of at least 559 Hz for W=10 on an AMD Ryzen 9 7950X",
+          "source": "IEEE ROSE 2026 experimental setup",
+          "tier": "published system measurement",
+          "boundary": "hardware- and input-construction-specific; not end-to-end robot reaction latency"
         }
       ]
     }
