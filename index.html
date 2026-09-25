@@ -17,10 +17,10 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=20260924-responsive-system">
+  <link rel="stylesheet" href="stylesheet.css?v=20260925-research-map">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
-  <script src="theme.js?v=20260924-responsive-system" defer></script>
-  <script src="portfolio.js?v=20260924-responsive-system" defer></script>
+  <script src="theme.js?v=20260925-research-map" defer></script>
+  <script src="portfolio.js?v=20260925-research-map" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -383,6 +383,18 @@
         <div class="role-copy"><p class="eyebrow"><span></span>Technical module · U-ASTROD</p><h3>Multimodal anomaly detection</h3><p>For the ASTROD research program, I architected the fusion pipeline that encoded LiDAR, odometry, and network traffic independently before combining their learned representations in a shared anomaly detector.</p><p class="research-note">The published system paired modality-specific spatiotemporal encoders with feature-wise reconstruction scoring. On real robot attacks, that scoring increased multimodal detection accuracy from 72% to 98% and retained 97% accuracy with half the training data.</p><div class="spotlight-links"><a class="button button-light" href="projects/multimodal-anomaly-detection/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://doi.org/10.1007/978-3-031-74835-6_15">Publication <span aria-hidden="true">↗</span></a></div></div>
         <figure class="role-figure"><img src="imgs/astrod-architecture.png" alt="U-ASTROD process flow with independent LiDAR, odometry, and network encoders feeding a shared anomaly detector"><figcaption>U-ASTROD process flow · figure from the paper</figcaption></figure>
       </article>
+    </section>
+
+    <section class="research-map-section" aria-labelledby="research-map-title">
+      <div class="section-heading compact"><div><p class="eyebrow"><span></span>Research map</p><h2 id="research-map-title">One program, tested through different systems.</h2></div><p class="section-note">The projects below are not separate interests. Each isolates a capability needed for robots to perceive evidence, interpret people, learn skills, and act reliably.</p></div>
+      <div class="research-map" role="list">
+        <article role="listitem"><span>01</span><div><h3>Multimodal representation</h3><p>Preserve useful structure when views, body regions, or sensor channels disappear.</p></div><nav aria-label="Projects supporting multimodal representation"><a href="projects/multimodal-perception/">PoseFusion + fall detection</a><a href="projects/multimodal-anomaly-detection/">U-ASTROD</a></nav></article>
+        <article role="listitem"><span>02</span><div><h3>Human-specified intent</h3><p>Translate different forms of instruction into a target that a physical system can act upon.</p></div><nav aria-label="Projects supporting human-specified intent"><a href="projects/track-anything-rapter/">Track Anything Rapter</a><a href="#hri">Multimodal HRI prototype</a></nav></article>
+        <article role="listitem"><span>03</span><div><h3>Embodied data and skill learning</h3><p>Connect demonstrations, synchronized datasets, policy training, evaluation, and correction.</p></div><nav aria-label="Projects supporting embodied learning"><a href="projects/robot-learning-platform/">Robot-learning platform</a><a href="projects/robot-learning-platform/#policies">Policy comparison</a></nav></article>
+        <article role="listitem"><span>04</span><div><h3>World and action structure</h3><p>Use geometry, depth, simulation, prediction, and inverse dynamics to make action consequences testable.</p></div><nav aria-label="Projects supporting world and action structure"><a href="projects/precision-weeding/">Hybrid IK planning</a><a href="projects/robot-learning-platform/#simulation">Real–sim–real</a></nav></article>
+        <article role="listitem"><span>05</span><div><h3>Coordination and interaction</h3><p>Make local observations, human correction, compliance, and shared state influence group behavior.</p></div><nav aria-label="Projects supporting coordination"><a href="projects/auto-platoon/">Auto-Platoon</a><a href="projects/robot-learning-platform/#method">Compliant manipulation</a></nav></article>
+        <article role="listitem"><span>06</span><div><h3>Evaluation and explanation</h3><p>Diagnose what a policy uses, how it fails, and whether a metric reflects physical competence.</p></div><nav aria-label="Projects supporting evaluation"><a href="#current">Policy diagnostics</a><a href="projects/robot-learning-platform/#evidence">Evidence hierarchy</a></nav></article>
+      </div>
     </section>
 
     <section class="product-interlude" id="product">

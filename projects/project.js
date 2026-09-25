@@ -21,6 +21,45 @@ document.querySelectorAll('[data-year]').forEach((node) => {
   node.textContent = String(new Date().getFullYear());
 });
 
+const traceSystems = [...document.querySelectorAll('[data-trace-system]')];
+traceSystems.forEach((system) => {
+  const controls = [...system.querySelectorAll('[data-trace-control]')];
+  const panels = [...system.querySelectorAll('[data-trace-panel]')];
+
+  const clearTrace = () => {
+    delete system.dataset.traceActive;
+    controls.forEach((control) => {
+      control.classList.remove('is-trace-active', 'is-trace-muted');
+      control.setAttribute('aria-pressed', 'false');
+    });
+    panels.forEach((panel) => panel.classList.remove('is-trace-active'));
+  };
+
+  const activateTrace = (key) => {
+    if (system.dataset.traceActive === key) {
+      clearTrace();
+      return;
+    }
+    system.dataset.traceActive = key;
+    controls.forEach((control) => {
+      const active = control.dataset.traceControl === key;
+      control.classList.toggle('is-trace-active', active);
+      control.classList.toggle('is-trace-muted', !active);
+      control.setAttribute('aria-pressed', String(active));
+    });
+    panels.forEach((panel) => panel.classList.toggle('is-trace-active', panel.dataset.tracePanel === key));
+  };
+
+  controls.forEach((control) => control.addEventListener('click', () => activateTrace(control.dataset.traceControl)));
+  system.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') clearTrace();
+  });
+  document.addEventListener('pointerdown', (event) => {
+    if (!system.dataset.traceActive || system.contains(event.target)) return;
+    clearTrace();
+  });
+});
+
 const expandableFigures = [...document.querySelectorAll('.evidence-gallery figure, .research-figure, .figure-grid figure')]
   .filter((figure) => figure.querySelector('img'));
 
