@@ -9,12 +9,12 @@
   </style>
   <symbol id="lstm" viewBox="0 0 174 58">
     <path d="M38 31h25M101 31h25" class="f"/>
-    <path d="M19 13C37 -2 137 -2 155 13" fill="none" stroke="#9c6a27" stroke-width="1.6" marker-end="url(#a)"/>
-    <g fill="#f3bd76" stroke="#171717" stroke-width="1.5">
+    <path d="M19 13C37 -2 137 -2 155 13" fill="none" stroke="#b46d18" stroke-width="1.6" marker-end="url(#a)"/>
+    <g fill="#f2b45b" stroke="#171717" stroke-width="1.5">
       <rect x="0" y="16" width="38" height="30" rx="6"/><rect x="63" y="16" width="38" height="30" rx="6"/><rect x="126" y="16" width="38" height="30" rx="6"/>
     </g>
     <g text-anchor="middle" font-family="Diagram Mono,monospace" font-size="9.5" font-weight="500" fill="#171717">
-      <text x="19" y="35">t−1</text><text x="82" y="35">t</text><text x="145" y="35">t+1</text><text x="87" y="10" fill="#7d5b2a">recurrent state</text>
+      <text x="19" y="35">t−1</text><text x="82" y="35">t</text><text x="145" y="35">t+1</text><text x="87" y="10" fill="#8b5516">recurrent state</text>
     </g>
   </symbol>
 </defs>
@@ -44,12 +44,12 @@
   <rect class="n" x="705" y="172" width="245" height="140" rx="20" fill="#fff3d6"/>
   <text class="ih" x="827.5" y="207" text-anchor="middle">LSTM encoder</text><text class="s" x="827.5" y="231" text-anchor="middle">network sequence</text>
   <use href="#lstm" x="741" y="244" width="174" height="58"/>
-  <path class="f" d="M950 242h50"/><rect class="n" x="1000" y="212" width="54" height="60" rx="9" fill="#7f9eff"/><text x="1027" y="247" text-anchor="middle" font-family="Diagram Mono,monospace" font-weight="500">zₙ</text>
+  <path class="f" d="M950 242h50"/><rect class="n" x="1000" y="212" width="54" height="60" rx="9" fill="#5f7fff"/><text x="1027" y="247" text-anchor="middle" font-family="Diagram Mono,monospace" font-weight="500">zₙ</text>
 </g>
 
 <!-- odometry lane -->
 <g>
-  <rect x="50" y="348" width="92" height="30" rx="4" fill="#9484ae"/><text x="96" y="368" text-anchor="middle" font-family="Diagram Mono,monospace" font-size="10.5" font-weight="500" fill="white">ODOMETRY</text>
+  <rect x="50" y="348" width="92" height="30" rx="4" fill="#806c9f"/><text x="96" y="368" text-anchor="middle" font-family="Diagram Mono,monospace" font-size="10.5" font-weight="500" fill="white">ODOMETRY</text>
   <rect class="n" x="50" y="394" width="275" height="140" rx="20" fill="#eee9f3"/>
   <text class="ih" x="76" y="432">Odometry</text><text class="ih" x="76" y="455">time series</text>
   <text class="is" x="76" y="479">position</text><text class="is" x="76" y="497">orientation</text><text class="is" x="76" y="515">motion</text>
@@ -60,12 +60,12 @@
   <rect class="n" x="705" y="394" width="245" height="140" rx="20" fill="#fff3d6"/>
   <text class="ih" x="827.5" y="429" text-anchor="middle">LSTM encoder</text><text class="s" x="827.5" y="453" text-anchor="middle">odometry sequence</text>
   <use href="#lstm" x="741" y="466" width="174" height="58"/>
-  <path class="f" d="M950 464h50"/><rect class="n" x="1000" y="434" width="54" height="60" rx="9" fill="#b5a6cb"/><text x="1027" y="469" text-anchor="middle" font-family="Diagram Mono,monospace" font-weight="500">zₒ</text>
+  <path class="f" d="M950 464h50"/><rect class="n" x="1000" y="434" width="54" height="60" rx="9" fill="#9b87b7"/><text x="1027" y="469" text-anchor="middle" font-family="Diagram Mono,monospace" font-weight="500">zₒ</text>
 </g>
 
 <!-- lidar lane -->
 <g>
-  <rect x="50" y="570" width="70" height="30" rx="4" fill="#58a99a"/><text x="85" y="590" text-anchor="middle" font-family="Diagram Mono,monospace" font-size="10.5" font-weight="500" fill="white">LIDAR</text>
+  <rect x="50" y="570" width="70" height="30" rx="4" fill="#3d9a8b"/><text x="85" y="590" text-anchor="middle" font-family="Diagram Mono,monospace" font-size="10.5" font-weight="500" fill="white">LIDAR</text>
   <rect class="n" x="50" y="616" width="275" height="120" rx="20" fill="#e1efec"/>
   <text class="ih" x="76" y="654">LiDAR</text><text class="ih" x="76" y="677">time series</text>
   <text class="is" x="76" y="706">3D points</text><text class="is" x="76" y="725">spatial structure</text>
@@ -78,24 +78,24 @@
   <path class="f" d="M512 676h25"/>
   <rect class="n" x="539" y="616" width="142" height="120" rx="20" fill="#d7efeb"/>
   <text class="h" x="610" y="650" text-anchor="middle">PoseGCN</text><text class="s" x="610" y="673" text-anchor="middle">spatial encoder</text>
-  <path d="M569 714l25-25 50 17-21 21-54-13m25-25 29 38" fill="none" stroke="#258b80" stroke-width="3"/><g fill="#97d7cf" stroke="#171717"><circle cx="569" cy="714" r="6"/><circle cx="594" cy="689" r="6"/><circle cx="644" cy="706" r="6"/><circle cx="623" cy="727" r="6"/></g>
+  <path d="M569 714l25-25 50 17-21 21-54-13m25-25 29 38" fill="none" stroke="#16897c" stroke-width="3"/><g fill="#78c8ba" stroke="#171717"><circle cx="569" cy="714" r="6"/><circle cx="594" cy="689" r="6"/><circle cx="644" cy="706" r="6"/><circle cx="623" cy="727" r="6"/></g>
   <path class="f" d="M681 676h24"/>
   <rect class="n" x="705" y="616" width="245" height="120" rx="20" fill="#fff3d6"/>
   <text class="ih" x="827.5" y="648" text-anchor="middle">LSTM encoder</text><text class="s" x="827.5" y="672" text-anchor="middle">LiDAR graph sequence</text>
   <use href="#lstm" x="741" y="680" width="174" height="54"/>
-  <path class="f" d="M950 676h50"/><rect class="n" x="1000" y="646" width="54" height="60" rx="9" fill="#8fc9bf"/><text x="1027" y="681" text-anchor="middle" font-family="Diagram Mono,monospace" font-weight="500">zₗ</text>
+  <path class="f" d="M950 676h50"/><rect class="n" x="1000" y="646" width="54" height="60" rx="9" fill="#66b8aa"/><text x="1027" y="681" text-anchor="middle" font-family="Diagram Mono,monospace" font-weight="500">zₗ</text>
 </g>
 
 <!-- fusion -->
 <path d="M1054 242h26v196M1054 464h26M1054 676h26V490" fill="none" stroke="#171717" stroke-width="2.2"/>
-<rect class="n" x="1080" y="390" width="175" height="150" rx="22" fill="#e6ddf1"/>
+<rect class="n" x="1080" y="390" width="175" height="150" rx="22" fill="#ded2ef"/>
 <text class="ih" x="1167.5" y="424" text-anchor="middle">Late fusion</text><text class="is" x="1167.5" y="446" text-anchor="middle">aligned embeddings</text>
 <g>
-  <rect x="1103" y="463" width="35" height="9" rx="3" fill="#7f9eff"/><rect x="1103" y="477" width="35" height="9" rx="3" fill="#b5a6cb"/><rect x="1103" y="491" width="35" height="9" rx="3" fill="#8fc9bf"/>
+  <rect x="1103" y="463" width="35" height="9" rx="3" fill="#5f7fff"/><rect x="1103" y="477" width="35" height="9" rx="3" fill="#9b87b7"/><rect x="1103" y="491" width="35" height="9" rx="3" fill="#66b8aa"/>
   <path d="M1138 467h9v10m-9 4h9m-9 14h9v-10" fill="none" stroke="#171717" stroke-width="1.5"/>
   <circle cx="1164" cy="481" r="16" fill="#f7f5ef" stroke="#171717" stroke-width="1.35"/><text x="1164" y="487" text-anchor="middle" font-family="Diagram Sans,sans-serif" font-size="20" font-weight="500">⊕</text>
   <path class="f" d="M1180 481h15"/>
-  <rect x="1197" y="457" width="34" height="16" rx="3" fill="#7f9eff"/><rect x="1197" y="473" width="34" height="16" rx="3" fill="#b5a6cb"/><rect x="1197" y="489" width="34" height="16" rx="3" fill="#8fc9bf"/>
+  <rect x="1197" y="457" width="34" height="16" rx="3" fill="#5f7fff"/><rect x="1197" y="473" width="34" height="16" rx="3" fill="#9b87b7"/><rect x="1197" y="489" width="34" height="16" rx="3" fill="#66b8aa"/>
   <text class="m" x="1214" y="524" text-anchor="middle">z_joint</text>
 </g>
 <path class="f" d="M1255 464h25"/>
@@ -106,6 +106,6 @@
 <g stroke="#171717" stroke-width="1.5"><path d="M1324 457l32 18v45l-32 18z" fill="#dce6f5"/><path d="M1356 475l21 12v21l-21 12z" fill="#e6ddf1"/><path d="M1377 487l22-12v45l-22-12z" fill="#f6e4b9"/><path d="M1399 475l31-18v81l-31-18z" fill="#dce6f5"/></g>
 <text class="m" x="1377" y="555" text-anchor="middle">RECONSTRUCTION ERROR</text>
 <path class="f" d="M1472 464h35"/>
-<rect class="n" x="1510" y="390" width="44" height="52" rx="9" fill="#c7f36b"/><path d="m1521 416 8 8 15-17" fill="none" stroke="#171717" stroke-width="4" stroke-linecap="round"/><text class="m" x="1532" y="458" text-anchor="middle">NORMAL</text>
-<rect class="n" x="1510" y="492" width="44" height="52" rx="9" fill="#ff8d7d"/><path d="m1521 507 22 22m0-22-22 22" stroke="#171717" stroke-width="4" stroke-linecap="round"/><text class="m" x="1532" y="560" text-anchor="middle">ANOMALY</text>
+<rect class="n" x="1510" y="390" width="44" height="52" rx="9" fill="#b8dd7b"/><path d="m1521 416 8 8 15-17" fill="none" stroke="#171717" stroke-width="4" stroke-linecap="round"/><text class="m" x="1532" y="458" text-anchor="middle">NORMAL</text>
+<rect class="n" x="1510" y="492" width="44" height="52" rx="9" fill="#ff4d2e"/><path d="m1521 507 22 22m0-22-22 22" stroke="#171717" stroke-width="4" stroke-linecap="round"/><text class="m" x="1532" y="560" text-anchor="middle">ANOMALY</text>
 </svg>
