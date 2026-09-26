@@ -4,7 +4,8 @@
 <defs>
   <marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0 9 4.5 0 9Z" fill="#171717"/></marker>
   <style>
-    .h{font:600 20px 'DM Sans',Arial,sans-serif;fill:#171717}.ih{font:600 18px 'DM Sans',Arial,sans-serif;fill:#171717}.s{font:500 14px 'DM Sans',Arial,sans-serif;fill:#565650}.is{font:500 13px 'DM Sans',Arial,sans-serif;fill:#565650}.m{font:600 12px 'DM Mono',monospace;letter-spacing:.08em;fill:#55554f}.n{stroke:#171717;stroke-width:1.5}.f{fill:none;stroke:#171717;stroke-width:2.2;marker-end:url(#a)}
+    @font-face{font-family:'Diagram Sans';font-weight:400;src:url('fonts/dm-sans-400.ttf')}@font-face{font-family:'Diagram Sans';font-weight:500;src:url('fonts/dm-sans-500.ttf')}@font-face{font-family:'Diagram Mono';font-weight:400;src:url('fonts/dm-mono-400.ttf')}@font-face{font-family:'Diagram Mono';font-weight:500;src:url('fonts/dm-mono-500.ttf')}
+    .h{font:500 19px 'Diagram Sans',sans-serif;letter-spacing:-.012em;fill:#171717}.ih{font:500 17px 'Diagram Sans',sans-serif;letter-spacing:-.008em;fill:#171717}.s{font:400 14px 'Diagram Sans',sans-serif;fill:#60605a}.is{font:400 13px 'Diagram Sans',sans-serif;fill:#60605a}.m{font:500 11px 'Diagram Mono',monospace;letter-spacing:.065em;fill:#5e5e58}.n{stroke:#242421;stroke-width:1.35}.f{fill:none;stroke:#242421;stroke-width:2;marker-end:url(#a)}
   </style>
   <symbol id="lstm" viewBox="0 0 174 58">
     <path d="M38 31h25M101 31h25" class="f"/>
@@ -12,7 +13,7 @@
     <g fill="#f3bd76" stroke="#171717" stroke-width="1.5">
       <rect x="0" y="16" width="38" height="30" rx="6"/><rect x="63" y="16" width="38" height="30" rx="6"/><rect x="126" y="16" width="38" height="30" rx="6"/>
     </g>
-    <g text-anchor="middle" font-family="DM Mono,monospace" font-size="10" font-weight="700" fill="#171717">
+    <g text-anchor="middle" font-family="Diagram Mono,monospace" font-size="9.5" font-weight="500" fill="#171717">
       <text x="19" y="35">t−1</text><text x="82" y="35">t</text><text x="145" y="35">t+1</text><text x="87" y="10" fill="#7d5b2a">recurrent state</text>
     </g>
   </symbol>
@@ -31,7 +32,7 @@
 
 <!-- network lane -->
 <g>
-  <rect x="50" y="126" width="84" height="30" rx="4" fill="#315cff"/><text x="92" y="146" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" font-weight="700" fill="white">NETWORK</text>
+  <rect x="50" y="126" width="84" height="30" rx="4" fill="#315cff"/><text x="92" y="146" text-anchor="middle" font-family="Diagram Mono,monospace" font-size="10.5" font-weight="500" fill="white">NETWORK</text>
   <rect class="n" x="50" y="172" width="275" height="140" rx="20" fill="#e7edf7"/>
   <text class="ih" x="76" y="210">Network</text><text class="ih" x="76" y="233">time series</text>
   <text class="is" x="76" y="262">port · duration</text><text class="is" x="76" y="281">packet context</text>
@@ -43,12 +44,12 @@
   <rect class="n" x="705" y="172" width="245" height="140" rx="20" fill="#fff3d6"/>
   <text class="ih" x="827.5" y="207" text-anchor="middle">LSTM encoder</text><text class="s" x="827.5" y="231" text-anchor="middle">network sequence</text>
   <use href="#lstm" x="741" y="244" width="174" height="58"/>
-  <path class="f" d="M950 242h50"/><rect class="n" x="1000" y="212" width="54" height="60" rx="9" fill="#7f9eff"/><text x="1027" y="247" text-anchor="middle" font-family="DM Mono,monospace" font-weight="700">zₙ</text>
+  <path class="f" d="M950 242h50"/><rect class="n" x="1000" y="212" width="54" height="60" rx="9" fill="#7f9eff"/><text x="1027" y="247" text-anchor="middle" font-family="Diagram Mono,monospace" font-weight="500">zₙ</text>
 </g>
 
 <!-- odometry lane -->
 <g>
-  <rect x="50" y="348" width="92" height="30" rx="4" fill="#9484ae"/><text x="96" y="368" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" font-weight="700" fill="white">ODOMETRY</text>
+  <rect x="50" y="348" width="92" height="30" rx="4" fill="#9484ae"/><text x="96" y="368" text-anchor="middle" font-family="Diagram Mono,monospace" font-size="10.5" font-weight="500" fill="white">ODOMETRY</text>
   <rect class="n" x="50" y="394" width="275" height="140" rx="20" fill="#eee9f3"/>
   <text class="ih" x="76" y="432">Odometry</text><text class="ih" x="76" y="455">time series</text>
   <text class="is" x="76" y="479">position</text><text class="is" x="76" y="497">orientation</text><text class="is" x="76" y="515">motion</text>
@@ -59,12 +60,12 @@
   <rect class="n" x="705" y="394" width="245" height="140" rx="20" fill="#fff3d6"/>
   <text class="ih" x="827.5" y="429" text-anchor="middle">LSTM encoder</text><text class="s" x="827.5" y="453" text-anchor="middle">odometry sequence</text>
   <use href="#lstm" x="741" y="466" width="174" height="58"/>
-  <path class="f" d="M950 464h50"/><rect class="n" x="1000" y="434" width="54" height="60" rx="9" fill="#b5a6cb"/><text x="1027" y="469" text-anchor="middle" font-family="DM Mono,monospace" font-weight="700">zₒ</text>
+  <path class="f" d="M950 464h50"/><rect class="n" x="1000" y="434" width="54" height="60" rx="9" fill="#b5a6cb"/><text x="1027" y="469" text-anchor="middle" font-family="Diagram Mono,monospace" font-weight="500">zₒ</text>
 </g>
 
 <!-- lidar lane -->
 <g>
-  <rect x="50" y="570" width="70" height="30" rx="4" fill="#58a99a"/><text x="85" y="590" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" font-weight="700" fill="white">LIDAR</text>
+  <rect x="50" y="570" width="70" height="30" rx="4" fill="#58a99a"/><text x="85" y="590" text-anchor="middle" font-family="Diagram Mono,monospace" font-size="10.5" font-weight="500" fill="white">LIDAR</text>
   <rect class="n" x="50" y="616" width="275" height="120" rx="20" fill="#e1efec"/>
   <text class="ih" x="76" y="654">LiDAR</text><text class="ih" x="76" y="677">time series</text>
   <text class="is" x="76" y="706">3D points</text><text class="is" x="76" y="725">spatial structure</text>
@@ -82,7 +83,7 @@
   <rect class="n" x="705" y="616" width="245" height="120" rx="20" fill="#fff3d6"/>
   <text class="ih" x="827.5" y="648" text-anchor="middle">LSTM encoder</text><text class="s" x="827.5" y="672" text-anchor="middle">LiDAR graph sequence</text>
   <use href="#lstm" x="741" y="680" width="174" height="54"/>
-  <path class="f" d="M950 676h50"/><rect class="n" x="1000" y="646" width="54" height="60" rx="9" fill="#8fc9bf"/><text x="1027" y="681" text-anchor="middle" font-family="DM Mono,monospace" font-weight="700">zₗ</text>
+  <path class="f" d="M950 676h50"/><rect class="n" x="1000" y="646" width="54" height="60" rx="9" fill="#8fc9bf"/><text x="1027" y="681" text-anchor="middle" font-family="Diagram Mono,monospace" font-weight="500">zₗ</text>
 </g>
 
 <!-- fusion -->
@@ -92,7 +93,7 @@
 <g>
   <rect x="1103" y="463" width="35" height="9" rx="3" fill="#7f9eff"/><rect x="1103" y="477" width="35" height="9" rx="3" fill="#b5a6cb"/><rect x="1103" y="491" width="35" height="9" rx="3" fill="#8fc9bf"/>
   <path d="M1138 467h9v10m-9 4h9m-9 14h9v-10" fill="none" stroke="#171717" stroke-width="1.5"/>
-  <circle cx="1164" cy="481" r="16" fill="#f7f5ef" stroke="#171717" stroke-width="1.5"/><text x="1164" y="487" text-anchor="middle" font-family="DM Sans,Arial" font-size="20" font-weight="600">⊕</text>
+  <circle cx="1164" cy="481" r="16" fill="#f7f5ef" stroke="#171717" stroke-width="1.35"/><text x="1164" y="487" text-anchor="middle" font-family="Diagram Sans,sans-serif" font-size="20" font-weight="500">⊕</text>
   <path class="f" d="M1180 481h15"/>
   <rect x="1197" y="457" width="34" height="16" rx="3" fill="#7f9eff"/><rect x="1197" y="473" width="34" height="16" rx="3" fill="#b5a6cb"/><rect x="1197" y="489" width="34" height="16" rx="3" fill="#8fc9bf"/>
   <text class="m" x="1214" y="524" text-anchor="middle">z_joint</text>
