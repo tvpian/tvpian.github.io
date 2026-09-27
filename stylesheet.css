@@ -274,11 +274,6 @@ h1 em { color: var(--cobalt); font-weight: 400; }
 .feature-copy > .case-study-link, .project-copy > .case-study-link { align-self:flex-start; }
 .card-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: auto; }
 .card-links .card-link { margin-top: 0; }
-/* Give Auto-Platoon's primary action a full row; keep secondary links below it. */
-.auto-platoon-card .card-links { display: grid; grid-template-columns: max-content max-content; justify-content: start; align-content: end; column-gap: 18px; row-gap: 10px; }
-.auto-platoon-card .card-links .case-study-link { grid-column: 1 / -1; justify-self: start; }
-.auto-platoon-card .card-links .card-link { margin-top: 0; padding-top: 0; }
-@media (max-width: 420px) { .auto-platoon-card .card-links { grid-template-columns: repeat(2, max-content); } }
 .metric-art { position: relative; display: flex; flex-direction: column; justify-content: center; padding: 28px; background: var(--cobalt); color: white; }
 .metric-number { position: relative; z-index: 2; font: 400 72px/1 'Instrument Serif', Georgia, serif; }
 .metric-label { position: relative; z-index: 2; margin-top: 5px; font: 400 9px 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; }
