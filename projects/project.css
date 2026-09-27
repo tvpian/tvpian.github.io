@@ -329,6 +329,11 @@ footer { min-height: 140px; padding: 40px max(32px, calc((100vw - 1240px)/2)); d
 .project-media.media-natural > video { width:100%; height:auto; min-height:0; max-height:min(82vh,900px); object-fit:contain; object-position:center; filter:none; }
 .project-media.media-natural.diagram-media { padding:clamp(14px,2.4vw,34px); background:#d8d5cc; }
 .project-media.media-natural.diagram-media > img { width:100%; height:auto; min-height:0; padding:clamp(14px,2vw,30px); border:1px solid rgba(18,18,18,.16); background:#f7f5ef; object-fit:contain; filter:none; box-shadow:0 16px 42px rgba(18,18,18,.1); }
+.project-media.media-natural.natsgd-architecture { overflow-x:auto; }
+.project-media.media-natural.natsgd-architecture > img { max-height:none; }
+@media (max-width:700px) { .project-media.media-natural.natsgd-architecture > img { min-width:900px; } }
+.natsgd-output { max-width:980px; margin-inline:auto; }
+.natsgd-output img { width:100%; height:auto; min-height:0; max-height:none; object-fit:contain; background:#f6f3ec; }
 .project-media.media-natural .media-caption { position:static; width:100%; margin:14px 0 0; }
 .figure-grid figure, .research-figure { display:flex; flex-direction:column; }
 .figure-grid img, .research-figure img { width:100%; height:auto; min-height:0; max-height:none; object-fit:contain; object-position:center; background:#f6f3ec; filter:none; }

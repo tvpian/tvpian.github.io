@@ -172,6 +172,31 @@
           "boundary": "hardware- and input-construction-specific; not end-to-end robot reaction latency"
         }
       ]
+    },
+    {
+      "id": "natsgd",
+      "route": "projects/natsgd/",
+      "authors": ["Tharun V. Puthanveettil"],
+      "claims": [
+        {
+          "claim": "Custom Faster R-CNN kitchen-object detector trained, exported, and used to visualize detections",
+          "source": "NatSGD Object Detection Pipeline notebook, cells 11, 19, 25, 32; dataset: Shrestha et al., arXiv:2403.02274",
+          "tier": "implemented and executed",
+          "boundary": "saved inference example is not a held-out detection-performance result"
+        },
+        {
+          "claim": "Language-conditioned object attention and recurrent 16-dimensional state-sequence prediction were implemented",
+          "source": "Original NatSGD Task Embedding notebook, cells 2–8; V0.9C and V0.9D policy notebooks",
+          "tier": "implemented and executed",
+          "boundary": "not the motor-primitive controller or 84% task-success result of Stepputtis et al.; no demonstrated closed-loop success"
+        },
+        {
+          "claim": "Direct gesture conditioning and gesture-conditioned object-attention variants were implemented",
+          "source": "NatSGD Gesture Module and Gesture Module (Attention) notebooks, model cell 6 and execution output",
+          "tier": "implemented / exploratory training",
+          "boundary": "no controlled gesture ablation; attention-variant training reports missing gradients"
+        }
+      ]
     }
   ]
 }
