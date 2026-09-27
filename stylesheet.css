@@ -272,9 +272,8 @@ h1 em { color: var(--cobalt); font-weight: 400; }
 .case-study-link { min-height:44px; margin-top:auto; padding:0 16px; display:inline-flex; align-items:center; justify-content:space-between; gap:18px; border:1px solid var(--ink); background:var(--ink); color:var(--paper); font:600 10px/1 'DM Mono',monospace; letter-spacing:.02em; }
 .case-study-link:hover, .case-study-link:focus-visible { border-color:var(--acid); background:var(--acid); color:#121212; outline:none; }
 .feature-copy > .case-study-link, .project-copy > .case-study-link { align-self:flex-start; }
-.card-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: auto; padding-top: 20px; }
-.card-links .card-link { margin-top: 0; padding-top: 0; }
-.card-links .case-study-link { flex: 0 0 auto; position: relative; z-index: 1; }
+.card-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: auto; }
+.card-links .card-link { margin-top: 0; }
 .metric-art { position: relative; display: flex; flex-direction: column; justify-content: center; padding: 28px; background: var(--cobalt); color: white; }
 .metric-number { position: relative; z-index: 2; font: 400 72px/1 'Instrument Serif', Georgia, serif; }
 .metric-label { position: relative; z-index: 2; margin-top: 5px; font: 400 9px 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; }
