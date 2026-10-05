@@ -1,17 +1,12 @@
-"""Rebuild the CV publications page, preserving the other PDF pages."""
+"""Build the complete three-page CV from its LaTeX source."""
 from pathlib import Path
+import shutil
 import subprocess
 import fitz
 
 root = Path(__file__).resolve().parent
-subprocess.run(['pdflatex', '-interaction=nonstopmode', '-halt-on-error', 'publications.tex'], cwd=root, check=True)
-target = root.parent / 'Tharun_Resume.pdf'
-cv = fitz.open(target)
-publication_page = fitz.open(root / 'publications.pdf')
-assert len(cv) == 3 and len(publication_page) == 1
-cv.delete_page(2)
-cv.insert_pdf(publication_page)
-temporary = target.with_name('Tharun_Resume.updated.pdf')
-cv.save(temporary)
-cv.close()
-temporary.replace(target)
+for _ in range(2):
+    subprocess.run(['pdflatex', '-interaction=nonstopmode', '-halt-on-error', 'cv.tex'], cwd=root, check=True)
+with fitz.open(root / 'cv.pdf') as cv:
+    assert len(cv) <= 3, 'CV exceeds the three-page limit'
+shutil.copyfile(root / 'cv.pdf', root.parent / 'Tharun_Resume.pdf')

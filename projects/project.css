@@ -193,7 +193,7 @@ footer { min-height: 140px; padding: 40px max(32px, calc((100vw - 1240px)/2)); d
 .publication-strip strong { font-size:13px; font-weight:500; line-height:1.55; }
 .author-list { display:flex; flex-wrap:wrap; gap:6px 12px; }
 .author-list a, .author-list span { margin:0; color:var(--ink); font:500 13px/1.55 'DM Sans',sans-serif; letter-spacing:0; text-transform:none; }
-.author-list .self { text-decoration:underline; text-decoration-color:var(--cobalt); text-decoration-thickness:2px; text-underline-offset:4px; }
+.author-list .self { font-weight:700; text-decoration:underline; text-decoration-color:var(--cobalt); text-decoration-thickness:2px; text-underline-offset:4px; }
 .paper-abstract { max-width:980px; margin:0 auto; padding:70px 32px; }
 .paper-abstract p:last-child { margin:0; font:400 clamp(24px,3vw,42px)/1.15 'Instrument Serif',Georgia,serif; letter-spacing:-.025em; }
 .resource-bar { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }

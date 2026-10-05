@@ -1,6 +1,7 @@
-# CV publications-page source
+# CV source
 
-`publications.tex` is the editable source for page 3 of `../Tharun_Resume.pdf`.
-Its baseline text was checked against the existing PDF before applying the October 2026 factual corrections. The original full-document source was not available: the archived Overleaf files differ from the live CV.
+`cv.tex` builds the complete CV. `publications.tex` contains the publication and research-output lists; `resume_common.tex` holds the shared layout and link commands.
 
-Run `python build.py` with pdfLaTeX, Latin Modern, and PyMuPDF installed. This compiles page 3 and replaces only that page in the existing three-page CV, preserving pages 1 and 2. Keep the PDF alongside this directory when rebuilding.
+Run `python build.py` with pdfLaTeX, Latin Modern, and PyMuPDF installed. The script compiles twice, checks the three-page limit, and updates `../Tharun_Resume.pdf`.
+
+The October 5, 2026 source reconstruction preserves the existing public CV wording except for the requested research-focus, thread, role, publication, link, coursework, and writing corrections. The transcript is not included in this public source directory.
