@@ -1,0 +1,104 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[letterpaper,margin=0.60in]{geometry}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\definecolor{accent}{HTML}{274690}
+\definecolor{muted}{HTML}{51565E}
+\definecolor{rulegray}{HTML}{B8BCC2}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,citecolor=accent,pdfborder={0 0 0}}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\raggedright
+\urlstyle{same}
+\emergencystretch=1.5em
+
+\titleformat{\section}{\large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% Optional portrait. Upload photo.jpg and set \showphototrue in the main file.
+\newif\ifshowphoto
+\showphotofalse
+\newcommand{\photofile}{photo.jpg}
+
+\newcommand{\contactline}{%
+  \href{mailto:tharunv.pvit@gmail.com}{tharunv.pvit@gmail.com} $\vert$
+  240-791-1188 $\vert$
+  \href{https://tvpian.github.io/}{Portfolio} $\vert$
+  \href{https://www.linkedin.com/in/tvpian/}{LinkedIn} $\vert$
+  \href{https://github.com/tvpian}{GitHub} $\vert$
+  \href{https://scholar.google.com/citations?user=Vre9wQQAAAAJ\&hl=en}{Scholar}%
+}
+
+\newcommand{\cvheaderplain}[1]{%
+  \begin{center}
+    {\LARGE\bfseries Tharun V. Puthanveettil}\\[3pt]
+    {\small\contactline}\\[5pt]
+    {\normalsize\bfseries #1}
+  \end{center}
+}
+
+\newcommand{\cvheader}[1]{%
+  \ifshowphoto
+    \IfFileExists{\photofile}{%
+      \begin{tabularx}{\textwidth}{@{}X r@{}}
+        \begin{minipage}[c]{0.82\textwidth}
+          {\LARGE\bfseries Tharun V. Puthanveettil}\\[3pt]
+          {\small\contactline}\\[5pt]
+          {\normalsize\bfseries #1}
+        \end{minipage} &
+        \raisebox{-0.5\height}{\includegraphics[width=0.78in,height=0.78in,keepaspectratio]{\photofile}}
+      \end{tabularx}
+    }{\cvheaderplain{#1}}
+  \else
+    \cvheaderplain{#1}
+  \fi
+}
+
+\newcommand{\roleentry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \textbf{#2}\\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}\vspace{-2pt}
+}
+
+\newenvironment{tightitems}{%
+  \begin{itemize}[leftmargin=15pt,itemsep=2.1pt,topsep=3pt,parsep=0pt,partopsep=0pt]
+}{\end{itemize}\vspace{1pt}}
+
+\newenvironment{compactitems}{%
+  \begin{itemize}[leftmargin=15pt,itemsep=1.3pt,topsep=2pt,parsep=0pt,partopsep=0pt]
+}{\end{itemize}\vspace{0pt}}
+
+\newcommand{\projectentry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} $\vert$ \textit{#2} & #3
+  \end{tabularx}\vspace{-2pt}
+}
+
+\newcommand{\researchentry}[3]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & \status{#2}\\[-1pt]
+    \multicolumn{2}{@{}l@{}}{\textit{#3}}
+  \end{tabularx}\vspace{-2pt}
+}
+
+\newcommand{\evidence}[2]{\nobreak\hspace{0.15em}{\footnotesize\href{#1}{[\MakeUppercase{#2}]}}}
+\newcommand{\status}[1]{\textcolor{muted}{\footnotesize\MakeUppercase{#1}}}
+
+\newcommand{\pageheader}[1]{%
+  \fancyhead[L]{\small Tharun V. Puthanveettil}%
+  \fancyhead[R]{\small #1}%
+  \renewcommand{\headrulewidth}{0.3pt}%
+}
