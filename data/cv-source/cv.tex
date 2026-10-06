@@ -1,66 +1,68 @@
 \documentclass[10pt]{article}
 \input{resume_common.tex}
-\hypersetup{pdftitle={Tharun V. Puthanveettil - Research CV},pdfauthor={Tharun V. Puthanveettil}}
+\hypersetup{pdftitle={Tharun V. Puthanveettil – Research CV},pdfauthor={Tharun V. Puthanveettil}}
 \pagestyle{fancy}\fancyhf{}\pageheader{Research CV}\cfoot{\small\thepage}
 \newcommand{\thread}[3]{\par\vspace{4pt}\textbf{#1}\hfill{\scriptsize #2}\par\textit{#3}\par}
 \begin{document}
 \cvheader{Human-Inspired Robot Learning | Multimodal Learning | Human–Robot Interaction}
-\fontsize{9.35}{10.85}\selectfont
+\fontsize{10}{12}\selectfont
 \section{Research Focus}
-I want to build robots that understand the people they work with and keep learning from them over time. My research takes inspiration from how people learn and understand one another: a robot should recognize what it does not yet know, learn it from the right person through demonstration, correction, or instruction, and keep what matters. I approach this through multimodal understanding of people, learning from human intervention, explainability of learned policies, and representation and predictive models, evaluated on physical robots.
+I want to build robots that understand the people they work with and keep learning from them over time. I take inspiration from how people learn: they notice what they cannot yet do, learn it from the right person through demonstration, correction, or instruction, and keep what matters. I am interested in robots that grow the same way, adding small specialized skills on top of an understanding that keeps developing, and in what this requires of robot learning architectures. So far I have worked on multimodal understanding of people, learning from human intervention, explainability of learned policies, and predictive models, tested on physical robots.
 
 \section{Research Threads}
 \thread{Understanding People}{PRIOR WORK · 2021–2024}{How can a robot recognize what people are doing and what they mean from incomplete, multimodal evidence?}
 \begin{compactitems}
-\item Multi-view action recognition and fall detection from human pose under occlusion with GCN–transformer models; under the reported occlusion protocol, multi-view F1 reached 0.82 versus 0.76 for single view (graduate course project). \evidence{https://tvpian.github.io/projects/multimodal-perception/}{PoseFusion}
-\item \href{https://arxiv.org/abs/2405.11655}{Track Anything Rapter}: a person specifies a target by click, box, image, or text; foundation-model perception and visual servoing close the loop on a drone.
-\item Exploratory policy combining demonstration, speech, and gesture for robot instruction on the \href{https://tvpian.github.io/projects/natsgd/}{NatSGD dataset provided by Snehesh Shrestha (UMD)}; task success and the benefit of gesture remain unvalidated.
+\item Designed GCN–transformer models for action recognition and fall detection from multi-view human pose. Under occlusion, fusing views raised F1 from 0.76 to 0.82 (graduate course project). \evidence{https://tvpian.github.io/projects/multimodal-perception/}{PoseFusion}
+\item Co-developed \href{https://arxiv.org/abs/2405.11655}{Track Anything Rapter}, in which a person picks a target by click, box, image, or text and a drone follows it using foundation-model perception and visual servoing.
+\item Implemented an exploratory policy that learns from demonstration, speech, and gesture on the \href{https://tvpian.github.io/projects/natsgd/}{NatSGD dataset (Snehesh Shrestha, UMD)}. Whether gesture helps is not yet validated.
 \end{compactitems}
-\thread{Learning from People}{SYSTEM IMPLEMENTED; EVALUATION MANUAL}{How can robots improve from people's demonstrations and corrections without discarding prior capability?}
+\thread{Learning from People}{SYSTEM IMPLEMENTED; EVALUATION MANUAL}{How can robots improve from people's demonstrations and corrections without losing what they already do well?}
 \begin{compactitems}
-\item Connects takeover, correction capture, data review, conversion, retraining, testing, and controlled rollout through common data and policy interfaces; automated policy evaluation is not yet complete. \evidence{https://tvpian.github.io/\#continual-learning}{Overview}
-\item Developing a portable egocentric demonstration interface that reuses the platform's synchronization, review, and dataset-conversion infrastructure (interface in development). \evidence{https://tvpian.github.io/\#egocentric}{Overview}
+\item Built a workflow in which people demonstrate tasks, take over when the robot fails, and have their corrections reviewed and added back into training before a new policy is rolled out. \evidence{https://tvpian.github.io/\#continual-learning}{Overview}
+\item Built a step-level control interface through which people and AI models operate the arm with the same small, safety-checked actions. Every step is recorded, so human and model runs can be compared and reused for training.
+\item Developing a portable egocentric interface that records human demonstrations through the same data pipeline (interface in development). \evidence{https://tvpian.github.io/\#egocentric}{Overview}
 \end{compactitems}
-\thread{Policy Explainability and Representation}{EXPERIMENTS IN PROGRESS}{What has a policy learned, and which observations, prompts, states, and priors shape its actions?}
+\thread{Policy Explainability and Representation}{EXPERIMENTS IN PROGRESS}{What has a policy learned, and what shapes its actions?}
 \begin{compactitems}
-\item Uses attention maps, Grad-CAM, state-vector ablations, prompt comparisons, and pretraining/self-supervised representation comparisons as behavioral diagnostics rather than causal explanations. \evidence{https://tvpian.github.io/\#explainability}{Overview}
+\item Studied what drives learned policies using attention maps, Grad-CAM, input ablations, prompt comparisons, and self-supervised versus pretrained representations. These are diagnostics, not causal explanations. \evidence{https://tvpian.github.io/\#explainability}{Overview}
 \end{compactitems}
 \thread{Predictive Models, Inverse Dynamics, and Transfer}{OFFLINE EVALUATION COMPLETED}{How can predicted outcomes and inverse dynamics support action learning on physical robots?}
 \begin{compactitems}
-\item Adapted a published video-action architecture by retraining its action head on teleoperation data and completed offline evaluation. Physical validation and simulator-trained inverse dynamics remain future work. \evidence{https://tvpian.github.io/\#world-models}{Overview}
+\item Adapted a published video-action architecture by retraining its action head on teleoperation data and evaluated it offline. Physical validation is next. \evidence{https://tvpian.github.io/\#world-models}{Overview}
 \end{compactitems}
 \section{Education}
-\roleentry{Master of Engineering in Robotics, GPA: 3.9/4.0}{Aug. 2022 - May 2024}{University of Maryland, College Park}{Maryland, USA}
+\roleentry{Master of Engineering in Robotics, GPA: 3.9/4.0}{Aug. 2022 – May 2024}{University of Maryland, College Park}{Maryland, USA}
 \par\vspace{3pt}\textbf{Selected coursework:} Advanced Techniques in Visual Learning and Recognition; Perception for Autonomous Robots; Planning for Autonomous Robots; Control of Robotic Systems; Fundamentals for Artificial Intelligence and Deep Learning Framework.
 \par\vspace{4pt}
-\roleentry{B.Tech. in Electronics and Communication Engineering, GPA: 8.59/10.0}{Jul. 2014 - Apr. 2018}{Vellore Institute of Technology}{India}
+\roleentry{B.Tech. in Electronics and Communication Engineering, GPA: 8.59/10.0}{Jul. 2014 – Apr. 2018}{Vellore Institute of Technology}{India}
 \newpage
 \section{Research and Professional Experience}
-\roleentry{Robotics Engineer – Robot Learning and Deformable Manipulation}{Jun. 2024 - Present}{General Motors R\&D}{Michigan, USA}
+\roleentry{Robotics Engineer – Robot Learning and Deformable Manipulation}{Jun. 2024 – Present}{General Motors R\&D}{Michigan, USA}
 \begin{compactitems}
-\item Architected and implemented a \href{https://tvpian.github.io/#current}{modular ROS 2 robot-learning platform} connecting bimanual teleoperation, multimodal perception, synchronized data capture, simulation, dataset conversion, policy training, manual evaluation, staged testing, and physical deployment.
-\item Led the human-correction workflow (takeover, correction capture, review, retraining, controlled rollout) and the policy explainability and representation studies summarized under Research Threads; designed common data, policy, and deployment interfaces so each stage can be studied independently.
-\item Built task-conditioned detection, segmentation, tracking, and pose-servoing services with foundation models; reduced perception latency by approximately 35\% and sustained 30–40 FPS through embedding reuse and temporal mask propagation.
-\item Developed force-aware bimanual manipulation of deformable linear objects using impedance control and force-torque feedback; quantified a twofold increase in failures without elastic-tension regulation.
-\item Created a digital twin and behavior-tree-driven synthetic-data workflow to characterize policy degradation under sensing, timing, dynamics, actuation, contact, and visual shift.
-\item Architected the Cartesian motion-policy, safety, and evidence pipeline; supervised its extension to dual-arm collection and rollout with admittance-based compliance, synchronized RGB–wrench data contracts, matched collection/deployment control, and measured-state reseeding.
-\item Evaluated action-chunking and open-source vision-language-action policies while developing measures of partial progress, failure type, recovery, repeatability, and compliance sensitivity.
+\item Architected and implemented a \href{https://tvpian.github.io/#current}{modular ROS 2 platform for bimanual robot learning}, from teleoperated demonstration and synchronized data capture to training, simulation, staged testing, and physical deployment. Shared interfaces let devices, learning methods, and simulators change without rebuilding the workflow.
+\item Led the human-correction workflow, the step-level control interface, and the policy explainability and representation studies described under Research Threads.
+\item Built foundation-model services for task-conditioned detection, segmentation, tracking, and pose servoing. Reusing embeddings and propagating masks over time cut perception latency by about 35\% and sustained 30–40 FPS.
+\item Developed force-aware bimanual manipulation of deformable linear objects using impedance control and force-torque feedback. Without elastic-tension regulation, failures doubled.
+\item Built a calibrated digital twin and a behavior-tree-driven synthetic-data workflow to test how policies degrade under changes in sensing, timing, contact, and appearance.
+\item Designed the Cartesian motion-control and safety layer for learned policies, and supervised its extension to compliant (admittance-controlled) dual-arm data collection and rollout.
+\item Compared action-chunking and open-source vision-language-action policies while developing evaluation measures beyond success rate (partial progress, failure type, recovery, repeatability).
 \end{compactitems}
-\roleentry{Researcher - AI and Robotics}{Feb. 2023 - Mar. 2024}{CATT Laboratory, University of Maryland}{Maryland, USA}
+\roleentry{Researcher – AI and Robotics}{Feb. 2023 – Mar. 2024}{CATT Laboratory, University of Maryland}{Maryland, USA}
 \begin{compactitems}
-\item Served as core architect of a \href{https://doi.org/10.1007/978-3-031-74835-6_15}{multimodal sequential anomaly-detection pipeline} using modality-specific LiDAR, odometry, and network encoders with reconstruction-based scoring. The published system reported 98\% accuracy versus 72\% for LiDAR alone, and 97\% with half the training data.
+\item Architected the fusion pipeline for \href{https://doi.org/10.1007/978-3-031-74835-6_15}{multimodal anomaly detection}, with separate LiDAR, odometry, and network encoders and reconstruction-based scoring. The published system reached 98\% accuracy versus 72\% for LiDAR alone, and 97\% with half the training data.
 \item Co-developed \href{https://arxiv.org/abs/2405.11655}{Track Anything Rapter}, a \href{https://github.com/tvpian/Project-TAR}{ROS 2 aerial system} for multimodal target specification (see Research Threads).
 \end{compactitems}
-\roleentry{Researcher - Collaborative Robotics and Computer Vision}{Jun. 2021 - Jan. 2023}{Indian Institute of Science and University of Maryland}{India and USA}
+\roleentry{Researcher – Collaborative Robotics and Computer Vision}{Jun. 2021 – Jan. 2023}{Indian Institute of Science and University of Maryland}{India and USA}
 \begin{compactitems}
-\item Developed a \href{https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming}{vision-guided precision-weeding system} combining crop/weed detection, root and plant-spread estimation, workspace adaptation, hybrid inverse kinematics, \href{https://drive.google.com/file/d/1IvKSo8U6aEWXKw8ucpV-9Hd1IqdPomFb/view?usp=sharing}{closed-loop control}, and \href{https://github.com/tvpian/Position_Based_Torque_Controller_for_Safe_Robotic_Weeding}{end-effector design}.
-\item Developed synthetic-data and augmentation pipelines for weed localization; improved robustness by 20–30\% through hard-negative sampling and structured distractors. Co-designed a dual-purpose end effector and adaptive position/torque-control methods for delicate plant geometry.
+\item Developed a \href{https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming}{vision-guided precision-weeding robot} that estimates plant roots and spread, then plans with hybrid inverse kinematics to reach weeds while reducing contact with crops.
+\item Built synthetic-data and augmentation pipelines for weed localization. Hard-negative sampling and structured distractors improved robustness by 20–30\%.
+\item Co-designed a \href{https://github.com/tvpian/Position_Based_Torque_Controller_for_Safe_Robotic_Weeding}{dual-purpose end effector} (plucking plus spraying or watering) and adaptive \href{https://drive.google.com/file/d/1IvKSo8U6aEWXKw8ucpV-9Hd1IqdPomFb/view?usp=sharing}{position/torque control} for delicate plants.
 \item Implemented an exploratory \href{https://www.snehesh.com/natsgd/}{demonstration, speech, and gesture policy} (see Research Threads).
 \item Developed and evaluated a \href{https://github.com/tvpian/Monocular_Depth_Estimation_using_Transfer_Learning}{U-Net monocular depth model} in an IROS 2021 challenge setting.
 \end{compactitems}
-\roleentry{Project Engineer – AI Innovation}{Jul. 2018 - May 2021}{CTO Office, Wipro Digital}{Bangalore, India}
+\roleentry{Project Engineer – AI Innovation}{Jul. 2018 – May 2021}{CTO Office, Wipro Digital}{Bangalore, India}
 \begin{compactitems}
-\item Served as AI project lead for applied-research prototypes in computer vision, HCI, recommendation, generative modeling, and mobile inference; coordinated quarterly prototype selection and delivery.
+\item Led applied-research prototypes in computer vision, HCI, recommendation, generative modeling, and mobile inference, and coordinated quarterly prototype selection and delivery.
 \item Built tool tracking, mobile vehicle recognition, photogrammetry, \href{https://drive.google.com/file/d/1YryajvaO5w4Blw56dToFsm54rEQHvLkJ/view?usp=sharing}{human-pose estimation}, \href{https://github.com/tvpian/Virtual_Try-On}{virtual try-on}, and \href{https://github.com/tvpian/My-Style}{recommendation} components for industrial and retail workflows.
 \end{compactitems}
 \par\vspace{5pt}\textbf{Selected Earlier Technical Projects}\par
@@ -74,7 +76,7 @@ I want to build robots that understand the people they work with and keep learni
   \item Built \href{https://github.com/tvpian/Maze_Runner}{visual-cue-based maze navigation} in \href{https://github.com/tvpian/Maze_Solver}{Gazebo} and an \href{https://youtu.be/5vNxQM7fV6A}{onboard-perception retrieval robot} using sensor fusion and visual servoing.
 \end{compactitems}
 
-\projectentry{Reinforcement-Learning Cricket Simulation}{adaptive agents and simulation}{2020 - 2024}
+\projectentry{Reinforcement-Learning Cricket Simulation}{adaptive agents and simulation}{2020}
 \begin{compactitems}
   \item Built a simulated bowler agent that adapts to batting styles and field configurations. \evidence{https://github.com/tvpian/RL_Cricket_Simulation_Engine}{code}
 \end{compactitems}
