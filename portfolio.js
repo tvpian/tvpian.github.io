@@ -305,7 +305,7 @@ function initReveals(elements) {
   }
   revealItems.forEach((item, index) => {
     item.classList.add('reveal-ready');
-    item.style.setProperty('--reveal-delay', `${Math.min(index % 3, 2) * 40}ms`);
+    item.style.setProperty('--reveal-delay', `${Math.min(index % 4, 3) * 55}ms`);
   });
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
