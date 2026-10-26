@@ -3,11 +3,12 @@
 \hypersetup{pdftitle={Tharun V. Puthanveettil – Research CV},pdfauthor={Tharun V. Puthanveettil}}
 \pagestyle{fancy}\fancyhf{}\pageheader{Research CV}\cfoot{\small\thepage}
 \newcommand{\thread}[3]{\par\vspace{4pt}\textbf{#1}\hfill{\scriptsize #2}\par\textit{#3}\par}
+\renewcommand{\evidence}[2]{\nobreak\hspace{0.15em}\mbox{\footnotesize\href{#1}{#2}}}
 \begin{document}
 \cvheader{Human-Inspired Robot Learning | Multimodal Learning | Human–Robot Interaction}
 \fontsize{10}{12}\selectfont
 \section{Research Focus}
-I want to build robots that understand the people they work with and keep learning from them over time. I take inspiration from how people learn: they notice what they cannot yet do, learn it from the right person through demonstration, correction, or instruction, and keep what matters. I am interested in robots that grow the same way, adding small specialized skills on top of an understanding that keeps developing, and in what this requires of robot learning architectures. So far I have worked on multimodal understanding of people, learning from human intervention, explainability of learned policies, and predictive models, tested on physical robots.
+I want to build robots that understand the people they work with and keep learning from them over time. I take inspiration from how people learn: they notice what they cannot yet do, learn it from the right person through demonstration, correction, or instruction, and keep what matters. I want to investigate how robot-learning architectures can build context and associations across tasks, people, and environments, so that acquiring one skill makes the next easier to learn. My work spans multimodal human understanding, learning from intervention, policy explainability and predictive models, with physical-robot, simulation and offline evaluations.
 
 \section{Research Threads}
 \thread{Understanding People}{PRIOR WORK · 2021–2024}{How can a robot recognize what people are doing and what they mean from incomplete, multimodal evidence?}
@@ -16,19 +17,22 @@ I want to build robots that understand the people they work with and keep learni
 \item Co-developed \href{https://arxiv.org/abs/2405.11655}{Track Anything Rapter}, in which a person picks a target by click, box, image, or text and a drone follows it using foundation-model perception and visual servoing.
 \item Implemented an exploratory policy that learns from demonstration, speech, and gesture on the \href{https://tvpian.github.io/projects/natsgd/}{NatSGD dataset (Snehesh Shrestha, UMD)}. Whether gesture helps is not yet validated.
 \end{compactitems}
-\thread{Learning from People}{SYSTEM IMPLEMENTED; EVALUATION MANUAL}{How can robots improve from people's demonstrations and corrections without losing what they already do well?}
+\thread{Learning from People}{PHYSICAL WORKFLOW; SIMULATION STUDIES}{How can robots improve from people's demonstrations and corrections without losing what they already do well?}
 \begin{compactitems}
-\item Built a workflow in which people demonstrate tasks, take over when the robot fails, and have their corrections reviewed and added back into training before a new policy is rolled out. \evidence{https://tvpian.github.io/\#continual-learning}{Overview}
+\item Built a workflow in which people demonstrate tasks, take over when the robot fails, and have their corrections reviewed and added back into training before a new policy is rolled out. Evaluation remains manual. \evidence{https://tvpian.github.io/\#continual-learning}{Overview}
 \item Built a step-level control interface through which people and AI models operate the arm with the same small, safety-checked actions. Every step is recorded, so human and model runs can be compared and reused for training.
 \item Developing a portable egocentric interface that records human demonstrations through the same data pipeline (interface in development). \evidence{https://tvpian.github.io/\#egocentric}{Overview}
+\item Compared teacher–student training and learned auxiliary heads in simulation, testing whether policies retain useful guidance when privileged training inputs are withdrawn.
 \end{compactitems}
 \thread{Policy Explainability and Representation}{EXPERIMENTS IN PROGRESS}{What has a policy learned, and what shapes its actions?}
 \begin{compactitems}
 \item Studied what drives learned policies using attention maps, Grad-CAM, input ablations, prompt comparisons, and self-supervised versus pretrained representations. These are diagnostics, not causal explanations. \evidence{https://tvpian.github.io/\#explainability}{Overview}
+\item Conducted controlled simulation studies using activation patching and counterfactual scene edits to test how information in policy representations affects actions. Compared these interventions with attribution diagnostics and behavioral tests.
 \end{compactitems}
-\thread{Predictive Models, Inverse Dynamics, and Transfer}{OFFLINE EVALUATION COMPLETED}{How can predicted outcomes and inverse dynamics support action learning on physical robots?}
+\thread{Predictive Models, Inverse Dynamics, and Transfer}{OFFLINE AND SIMULATION STUDIES}{How can predicted outcomes and inverse dynamics support action learning on physical robots?}
 \begin{compactitems}
-\item Adapted a published video-action architecture by retraining its action head on teleoperation data and evaluated it offline. Physical validation is next. \evidence{https://tvpian.github.io/\#world-models}{Overview}
+\item Retrained a published video-action model's action head on teleoperation data (offline evaluation completed). In simulation, trained image-based inverse dynamics and compared inferred-action policies with recorded-label and executed-command controls. \evidence{https://tvpian.github.io/\#world-models}{Overview}
+\item Fine-tuned a world-action model in simulation, assessing future-feature prediction, instruction grounding and failure signals separately from task success. Physical validation remains pending.
 \end{compactitems}
 \section{Education}
 \roleentry{Master of Engineering in Robotics, GPA: 3.9/4.0}{Aug. 2022 – May 2024}{University of Maryland, College Park}{Maryland, USA}
@@ -37,7 +41,7 @@ I want to build robots that understand the people they work with and keep learni
 \roleentry{B.Tech. in Electronics and Communication Engineering, GPA: 8.59/10.0}{Jul. 2014 – Apr. 2018}{Vellore Institute of Technology}{India}
 \newpage
 \section{Research and Professional Experience}
-\roleentry{Robotics Engineer – Robot Learning and Deformable Manipulation}{Jun. 2024 – Present}{General Motors R\&D}{Michigan, USA}
+\roleentry{Robotics Engineer – Robot Learning and Deformable Manipulation}{Jun. 2024 – Present}{Optimal — assigned to General Motors R\&D}{Michigan, USA}
 \begin{compactitems}
 \item Architected and implemented a \href{https://tvpian.github.io/#current}{modular ROS 2 platform for bimanual robot learning}, from teleoperated demonstration and synchronized data capture to training, simulation, staged testing, and physical deployment. Shared interfaces let devices, learning methods, and simulators change without rebuilding the workflow.
 \item Led the human-correction workflow, the step-level control interface, and the policy explainability and representation studies described under Research Threads.
@@ -49,12 +53,12 @@ I want to build robots that understand the people they work with and keep learni
 \end{compactitems}
 \roleentry{Researcher – AI and Robotics}{Feb. 2023 – Mar. 2024}{CATT Laboratory, University of Maryland}{Maryland, USA}
 \begin{compactitems}
-\item Architected the fusion pipeline for \href{https://doi.org/10.1007/978-3-031-74835-6_15}{multimodal anomaly detection}, with separate LiDAR, odometry, and network encoders and reconstruction-based scoring. The published system reached 98\% accuracy versus 72\% for LiDAR alone, and 97\% with half the training data.
+\item Architected the fusion pipeline for \href{https://doi.org/10.1007/978-3-031-74835-6_15}{multimodal anomaly detection}, with separate LiDAR, odometry, and network encoders and reconstruction-based scoring. The published system achieved up to 98\% accuracy with vector-based reconstruction loss versus 72\% with scalar-based loss, and 97\% with half the training data.
 \item Co-developed \href{https://arxiv.org/abs/2405.11655}{Track Anything Rapter}, a \href{https://github.com/tvpian/Project-TAR}{ROS 2 aerial system} for multimodal target specification (see Research Threads).
 \end{compactitems}
 \roleentry{Researcher – Collaborative Robotics and Computer Vision}{Jun. 2021 – Jan. 2023}{Indian Institute of Science and University of Maryland}{India and USA}
 \begin{compactitems}
-\item Developed a \href{https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming}{vision-guided precision-weeding robot} that estimates plant roots and spread, then plans with hybrid inverse kinematics to reach weeds while reducing contact with crops.
+\item Developed a \href{https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming}{vision-guided precision-weeding robot} that estimates plant roots and spread, then plans with hybrid inverse kinematics to reach weeds while reducing contact with crops. First-author work, ICSR + AI 2025.
 \item Built synthetic-data and augmentation pipelines for weed localization. Hard-negative sampling and structured distractors improved robustness by 20–30\%.
 \item Co-designed a \href{https://github.com/tvpian/Position_Based_Torque_Controller_for_Safe_Robotic_Weeding}{dual-purpose end effector} (plucking plus spraying or watering) and adaptive \href{https://drive.google.com/file/d/1IvKSo8U6aEWXKw8ucpV-9Hd1IqdPomFb/view?usp=sharing}{position/torque control} for delicate plants.
 \item Implemented an exploratory \href{https://www.snehesh.com/natsgd/}{demonstration, speech, and gesture policy} (see Research Threads).
