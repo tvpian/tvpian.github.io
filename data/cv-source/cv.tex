@@ -8,7 +8,7 @@
 \cvheader{Human-Inspired Robot Learning | Multimodal Learning | Human–Robot Interaction}
 \fontsize{10}{12}\selectfont
 \section{Research Focus}
-I want to build robots that understand the people they work with and keep learning from them over time. I take inspiration from how people learn: they notice what they cannot yet do, learn it from the right person through demonstration, correction, or instruction, and keep what matters. I want to investigate how robot-learning architectures can build context and associations across tasks, people, and environments, so that acquiring one skill makes the next easier to learn. My work spans multimodal human understanding, learning from intervention, policy explainability and predictive models, with physical-robot, simulation and offline evaluations.
+I want to build robots that understand the people they work with and keep learning from them over time. I take inspiration from how people learn: we build on experience, recognize what a new situation requires, identify gaps in what we know, and acquire and retain useful knowledge. I want to investigate how robot-learning architectures can accumulate and use contextual knowledge across tasks, people, and environments, so that acquiring one skill makes the next easier to learn. My work spans multimodal human understanding, learning from intervention, policy explainability and predictive models, with physical-robot, simulation and offline evaluations.
 
 \section{Research Threads}
 \thread{Understanding People}{PRIOR WORK · 2021–2024}{How can a robot recognize what people are doing and what they mean from incomplete, multimodal evidence?}
@@ -44,9 +44,9 @@ I want to build robots that understand the people they work with and keep learni
 \roleentry{Robotics Engineer – Robot Learning and Deformable Manipulation}{Jun. 2024 – Present}{Optimal — assigned to General Motors R\&D}{Michigan, USA}
 \begin{compactitems}
 \item Architected and implemented a \href{https://tvpian.github.io/#current}{modular ROS 2 platform for bimanual robot learning}, from teleoperated demonstration and synchronized data capture to training, simulation, staged testing, and physical deployment. Shared interfaces let devices, learning methods, and simulators change without rebuilding the workflow.
-\item Led the human-correction workflow, the step-level control interface, and the policy explainability and representation studies described under Research Threads.
+\item Developed human-correction and step-level control workflows, enabling comparable human and policy rollouts and analysis of failures and interventions.
 \item Built foundation-model services for task-conditioned detection, segmentation, tracking, and pose servoing. Reusing embeddings and propagating masks over time cut perception latency by about 35\% and sustained 30–40 FPS.
-\item Developed force-aware bimanual manipulation of deformable linear objects using impedance control and force-torque feedback. Without elastic-tension regulation, failures doubled.
+\item Developed force-aware bimanual manipulation of deformable linear objects using impedance control and force-torque feedback, incorporating elastic-tension regulation to support consistent manipulation.
 \item Built a calibrated digital twin and a behavior-tree-driven synthetic-data workflow to test how policies degrade under changes in sensing, timing, contact, and appearance.
 \item Designed the Cartesian motion-control and safety layer for learned policies, and supervised its extension to compliant (admittance-controlled) dual-arm data collection and rollout.
 \item Compared action-chunking and open-source vision-language-action policies while developing evaluation measures beyond success rate (partial progress, failure type, recovery, repeatability).
@@ -59,7 +59,7 @@ I want to build robots that understand the people they work with and keep learni
 \roleentry{Researcher – Collaborative Robotics and Computer Vision}{Jun. 2021 – Jan. 2023}{Indian Institute of Science and University of Maryland}{India and USA}
 \begin{compactitems}
 \item Developed a \href{https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming}{vision-guided precision-weeding robot} that estimates plant roots and spread, then plans with hybrid inverse kinematics to reach weeds while reducing contact with crops. First-author work, ICSR + AI 2025.
-\item Built synthetic-data and augmentation pipelines for weed localization. Hard-negative sampling and structured distractors improved robustness by 20–30\%.
+\item Built synthetic-data and augmentation pipelines for weed localization, using hard-negative sampling and structured distractors to improve robustness under challenging backgrounds.
 \item Co-designed a \href{https://github.com/tvpian/Position_Based_Torque_Controller_for_Safe_Robotic_Weeding}{dual-purpose end effector} (plucking plus spraying or watering) and adaptive \href{https://drive.google.com/file/d/1IvKSo8U6aEWXKw8ucpV-9Hd1IqdPomFb/view?usp=sharing}{position/torque control} for delicate plants.
 \item Implemented an exploratory \href{https://www.snehesh.com/natsgd/}{demonstration, speech, and gesture policy} (see Research Threads).
 \item Developed and evaluated a \href{https://github.com/tvpian/Monocular_Depth_Estimation_using_Transfer_Learning}{U-Net monocular depth model} in an IROS 2021 challenge setting.
