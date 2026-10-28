@@ -1003,3 +1003,22 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
 .thread-related a { display: inline; color: inherit; font-size: 12px; line-height: 1.6; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .thread-related a:hover { color: var(--cobalt); }
 @media (max-width: 700px) { .thread-related { margin: 0 22px 22px; } }
+
+/* Desktop opening: one complete introduction before the research cards.
+   Use minimum height so zoom and short windows never crop the content. */
+@media (min-width: 1100px) {
+  .hero {
+    min-height: calc(100svh - var(--landing-header-height, 88px));
+    grid-template-columns: 1.18fr .82fr;
+    gap: clamp(32px, 4vw, 64px);
+    padding-block: clamp(24px, 4svh, 48px);
+    box-sizing: border-box;
+  }
+  .hero h1 { font-size: clamp(42px, 5.8svh, 60px); }
+  .hero .hero-intro { margin-top: 20px; font-size: clamp(16px, 1.9svh, 18px); line-height: 1.55; }
+  .hero .hero-actions { margin-top: 24px; }
+  .hero .portrait-frame {
+    min-height: 0;
+    height: clamp(320px, 65svh, 580px);
+  }
+}

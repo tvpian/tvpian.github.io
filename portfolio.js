@@ -415,3 +415,13 @@ if (productTabs.length && productPanels.length) {
     swipeStartX = null;
   });
 }
+
+// Account for the real header height after fonts load or the window changes.
+const landingHeader = document.querySelector('.site-header');
+if (landingHeader && 'ResizeObserver' in window) {
+  const landingHeaderObserver = new ResizeObserver(([entry]) => {
+    const height = entry.target.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--landing-header-height', `${height}px`);
+  });
+  landingHeaderObserver.observe(landingHeader);
+}
