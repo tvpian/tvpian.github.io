@@ -242,6 +242,8 @@ const spotlightResearchDirection = (hash, updateHash = true) => {
 
 focusLinks.forEach((link) => {
   link.addEventListener('click', (event) => {
+    const target = document.getElementById(link.hash.slice(1));
+    if (!target || !researchDirections?.contains(target)) return;
     event.preventDefault();
     spotlightResearchDirection(link.hash);
   });

@@ -984,3 +984,15 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
   .diagram-ready .cwl-thread, .diagram-ready .cwl-concept-thread path, .diagram-ready path.cwl-concept-thread { stroke-dashoffset: 0 !important; }
   .diagram-ready .cwl-band rect, .diagram-ready .cwl-gate path, .diagram-ready .cwl-gate-label, .diagram-ready .cwl-concept-gate, .diagram-ready .cwl-concept-stop, .diagram-ready .cwl-concept-head, .diagram-ready .cwl-concept-bracket, .diagram-ready .cwl-hot rect, .diagram-ready .cwl-delta rect { opacity: 1 !important; transform: none !important; }
 }
+
+/* PhD research narrative: plain cross-project navigation. */
+.thread-work-links { padding: 24px 7%; border-block: 1px solid rgba(120,120,120,.2); }
+.thread-work-links p { margin: .65rem 0; line-height: 1.65; }
+.thread-work-links a { text-decoration: underline; text-underline-offset: .2em; }
+.role-assignment { font-size: .85rem; margin-top: .4rem; opacity: .8; }
+
+.illustrative-diagnostic summary, .earlier-publications summary { cursor: pointer; padding: 1.25rem 0; font-weight: 600; }
+.earlier-publications { margin-bottom: 2rem; }
+
+.thread-work-links { display: block; width: auto; overflow: visible; }
+.thread-work-links a { display: inline; white-space: normal; min-height: 0; }
