@@ -1026,8 +1026,8 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
 /* Let desktop scrolling settle at chapter boundaries without trapping readers
    inside sections that are taller than the viewport. */
 @media (min-width: 1100px) and (prefers-reduced-motion: no-preference) {
-  html { scroll-snap-type: y proximity; }
-  .site-header, main > section:not(.hero) { scroll-snap-align: start; scroll-snap-stop: normal; }
+  html { scroll-snap-type: y mandatory; }
+  .site-header, main > section:not(.hero), body > footer { scroll-snap-align: start; scroll-snap-stop: always; }
   .current-work-live__questions,
   .work-section > .featured-work,
   .work-section > .project-grid,
@@ -1060,3 +1060,17 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
 
 @media (min-width: 1100px) and (max-height: 800px) { .research-overview { padding-block: 32px; gap: 24px; } .research-overview .focus-strip .thread-question { font-size: 13px; } }
 .research-overview .focus-strip article > a:hover .thread-question, .research-overview .focus-strip article > a:focus-visible .thread-question { color: var(--paper); }
+
+/* Each desktop chapter owns at least one viewport. Oversized chapters retain
+   their natural height: no fixed-height containers or clipped content. */
+@media (min-width: 1100px) {
+  main > section:not(.hero) { min-height: 100svh; box-sizing: border-box; }
+}
+/* Top-level chapters define the stops, rather than competing nested targets. */
+@media (min-width: 1100px) and (prefers-reduced-motion: no-preference) {
+  .current-work-live__questions,
+  .work-section > .featured-work,
+  .work-section > .project-grid,
+  .work-section > .system-spotlight,
+  .work-section > .role-spotlight { scroll-snap-align: none; }
+}
