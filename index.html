@@ -17,7 +17,7 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=20261028-section-scroll">
+  <link rel="stylesheet" href="stylesheet.css?v=20261028-research-overview">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <script src="theme.js?v=20260925-research-map" defer></script>
   <script src="portfolio.js?v=20261028-desktop-landing" defer></script>
@@ -79,22 +79,18 @@
       </div>
     </section>
 
-    <section class="focus-strip" aria-label="Research threads">
-      <article><a href="#hri" data-focus-link><span class="focus-index">01</span><div><h2>Understanding<br>People</h2><p>Multimodal understanding of people and human–robot interaction (HRI).</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><details class="thread-related"><summary>Explore related work</summary><ul><li><a href="projects/multimodal-perception/">PoseFusion (graduate course project)</a></li><li><a href="projects/track-anything-rapter/">Track Anything Rapter</a></li><li><a href="projects/natsgd/">NatSGD prototype</a></li></ul></details></article>
-      <article><a href="#continual-learning" data-focus-link><span class="focus-index">02</span><div><h2>Learning from<br>People</h2><p>Demonstrations, corrections, continual learning, and egocentric interfaces.</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><details class="thread-related"><summary>Explore related work</summary><ul><li><a href="#continual-learning">Human correction and simulation studies</a></li><li><a href="#egocentric">Egocentric interface (in development)</a></li></ul></details></article>
-      <article><a href="#explainability" data-focus-link><span class="focus-index">03</span><div><h2>Policy Explainability<br>and Representation</h2><p>What representations encode, how they shape actions, and whether understanding them can improve learning.</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><details class="thread-related"><summary>Explore related work</summary><ul><li><a href="#explainability">Diagnostics and controlled simulation interventions</a></li></ul></details></article>
-      <article><a href="#world-models" data-focus-link><span class="focus-index">04</span><div><h2>Predictive Models,<br>Inverse Dynamics,<br>and Transfer</h2><p>World models, inverse dynamics, and real-to-sim-to-real transfer, with validation boundaries kept explicit.</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><details class="thread-related"><summary>Explore related work</summary><ul><li><a href="#world-models">Offline and simulation studies</a></li><li><a href="#sim-real">Real–sim–real experiments</a></li></ul></details></article>
-    </section>
-
-
-
-
-
-    <section class="principles-strip" aria-label="Questions guiding the research">
-      <p>Questions guiding the research</p>
-      <div><span>01</span>What representations support understanding of people, tasks, and environments?</div>
-      <div><span>02</span>How can a robot adapt through experience without losing prior capability?</div>
-      <div><span>03</span>How should capability be evaluated beyond task-level success?</div>
+    <section class="research-overview" id="research-direction" aria-labelledby="research-direction-title">
+      <header class="research-overview__heading">
+        <p class="eyebrow"><span></span>Research direction</p>
+        <h2 id="research-direction-title">Four connected research threads.</h2>
+      </header>
+    <div class="focus-strip">
+      <article><a href="#hri" data-focus-link><span class="focus-index">01</span><div><h2>Understanding<br>People</h2><p class="thread-question">How can a robot recognize what people are doing and what they mean from incomplete, multimodal evidence?</p><p class="thread-topics">Multimodal perception · human–robot interaction (HRI)</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><p class="thread-evidence-label">Related work</p><ul><li><a href="projects/multimodal-perception/">PoseFusion (graduate course project)</a></li><li><a href="projects/track-anything-rapter/">Track Anything Rapter</a></li><li><a href="projects/natsgd/">NatSGD prototype</a></li></ul></div></article>
+      <article><a href="#continual-learning" data-focus-link><span class="focus-index">02</span><div><h2>Learning from<br>People</h2><p class="thread-question">How can robots improve from demonstrations and corrections without losing what they already do well?</p><p class="thread-topics">Continual learning · egocentric interfaces</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><p class="thread-evidence-label">Related work</p><ul><li><a href="#continual-learning">Human correction and simulation studies</a></li><li><a href="#egocentric">Egocentric interface (in development)</a></li></ul></div></article>
+      <article><a href="#explainability" data-focus-link><span class="focus-index">03</span><div><h2>Policy Explainability<br>and Representation</h2><p class="thread-question">What has a policy learned, and what shapes its actions?</p><p class="thread-topics">Interpretability · representation learning</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><p class="thread-evidence-label">Related work</p><ul><li><a href="#explainability">Diagnostics and controlled simulation interventions</a></li></ul></div></article>
+      <article><a href="#world-models" data-focus-link><span class="focus-index">04</span><div><h2>Predictive Models,<br>Inverse Dynamics,<br>and Transfer</h2><p class="thread-question">How can predicted outcomes and inverse dynamics support action learning on physical robots?</p><p class="thread-topics">World models · inverse dynamics · transfer</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><p class="thread-evidence-label">Related work</p><ul><li><a href="#world-models">Offline and simulation studies</a></li><li><a href="#sim-real">Real–sim–real experiments</a></li></ul></div></article>
+    </div>
+      <p class="research-overview__evaluation"><strong>Across all four:</strong> How should capability be evaluated beyond task-level success?</p>
     </section>
 
     <section class="current-work-live" id="current">

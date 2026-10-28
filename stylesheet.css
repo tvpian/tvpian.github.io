@@ -1034,3 +1034,29 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
   .work-section > .system-spotlight,
   .work-section > .role-spotlight { scroll-snap-align: start; scroll-margin-top: 24px; }
 }
+
+/* One coherent research overview, followed by the research infrastructure. */
+.research-overview { padding: 56px 32px; display: flex; flex-direction: column; justify-content: center; gap: 32px; }
+.research-overview__heading, .research-overview > .focus-strip, .research-overview__evaluation { width: min(1240px, 100%); margin-inline: auto; }
+.research-overview__heading .eyebrow { margin-bottom: 16px; }
+.research-overview__heading h2 { margin: 0; font-size: clamp(36px, 4vw, 54px); line-height: 1.1; }
+.research-overview > .focus-strip { overflow: visible; }
+.research-overview .focus-strip article > a { padding: 24px 20px 30px; gap: 12px; }
+.research-overview .focus-strip .thread-question { font-size: 14px; line-height: 1.55; color: var(--ink); }
+.research-overview .focus-strip .thread-topics { font-size: 11px; line-height: 1.6; }
+.research-overview .thread-related { margin: 0 20px 24px; }
+.research-overview .thread-evidence-label { margin: 12px 0; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+.research-overview .research-overview__evaluation { margin-block: 0; font-size: 14px; line-height: 1.6; color: var(--muted); }
+@media (min-width: 1100px) {
+  .research-overview { min-height: 100svh; box-sizing: border-box; }
+}
+@media (max-width: 700px) {
+  .research-overview { padding: 48px 20px; gap: 24px; }
+  .research-overview > .focus-strip { display: grid; grid-template-columns: 1fr; }
+  .research-overview .focus-strip article { min-height: 0; }
+  .research-overview .focus-strip article + article { border-left: 0; border-top: 1px solid var(--line); }
+  .research-overview .focus-strip article > a { min-height: 0; }
+}
+
+@media (min-width: 1100px) and (max-height: 800px) { .research-overview { padding-block: 32px; gap: 24px; } .research-overview .focus-strip .thread-question { font-size: 13px; } }
+.research-overview .focus-strip article > a:hover .thread-question, .research-overview .focus-strip article > a:focus-visible .thread-question { color: var(--paper); }
