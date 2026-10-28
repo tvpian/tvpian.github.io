@@ -1022,3 +1022,15 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
     height: clamp(320px, 65svh, 580px);
   }
 }
+
+/* Let desktop scrolling settle at chapter boundaries without trapping readers
+   inside sections that are taller than the viewport. */
+@media (min-width: 1100px) and (prefers-reduced-motion: no-preference) {
+  html { scroll-snap-type: y proximity; }
+  .site-header, main > section:not(.hero) { scroll-snap-align: start; scroll-snap-stop: normal; }
+  .current-work-live__questions,
+  .work-section > .featured-work,
+  .work-section > .project-grid,
+  .work-section > .system-spotlight,
+  .work-section > .role-spotlight { scroll-snap-align: start; scroll-margin-top: 24px; }
+}
