@@ -986,13 +986,20 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
 }
 
 /* PhD research narrative: plain cross-project navigation. */
-.thread-work-links { padding: 24px 7%; border-block: 1px solid rgba(120,120,120,.2); }
-.thread-work-links p { margin: .65rem 0; line-height: 1.65; }
-.thread-work-links a { text-decoration: underline; text-underline-offset: .2em; }
 .role-assignment { font-size: .85rem; margin-top: .4rem; opacity: .8; }
 
 .illustrative-diagnostic summary, .earlier-publications summary { cursor: pointer; padding: 1.25rem 0; font-weight: 600; }
 .earlier-publications { margin-bottom: 2rem; }
 
-.thread-work-links { display: block; width: auto; overflow: visible; }
-.thread-work-links a { display: inline; white-space: normal; min-height: 0; }
+
+/* Keep each research thread and its evidence in one compact card. */
+.focus-strip article { display: flex; flex-direction: column; }
+.focus-strip article > a { flex: 1; }
+.thread-related { margin: 0 clamp(24px, 3.6vw, 56px) 24px; border-top: 1px solid var(--line); }
+.thread-related summary { padding: 14px 0 6px; cursor: pointer; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.thread-related summary:hover, .thread-related summary:focus-visible { color: var(--cobalt); }
+.thread-related ul { list-style: none; padding: 0; margin: 6px 0 0; }
+.thread-related li + li { margin-top: 9px; }
+.thread-related a { display: inline; color: inherit; font-size: 12px; line-height: 1.6; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.thread-related a:hover { color: var(--cobalt); }
+@media (max-width: 700px) { .thread-related { margin: 0 22px 22px; } }
