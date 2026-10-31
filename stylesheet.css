@@ -1074,3 +1074,6 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
   .work-section > .system-spotlight,
   .work-section > .role-spotlight { scroll-snap-align: none; }
 }
+
+/* Evidence links follow each research question without repeated labels. */
+.research-overview .thread-related { padding-top: 12px; }
