@@ -3,45 +3,6 @@
   "policy": "Every quantitative claim identifies its source, evidence tier, and interpretation boundary. Reconstructed graphics are not presented as rerun experiments.",
   "projects": [
     {
-      "id": "robot-learning-platform",
-      "route": "projects/robot-learning-platform/",
-      "authors": [
-        "Tharun V. Puthanveettil"
-      ],
-      "claims": [
-        {
-          "claim": "114/114 episodes accepted; ~125 episodes/hour; 337,420 messages; zero dropped messages and SHA mismatches",
-          "source": "Uploaded robot-learning research update; controlled simulation-cell collection session",
-          "tier": "software qualification / simulation data",
-          "boundary": "single session; not a policy-success result"
-        },
-        {
-          "claim": "47 pass, 58 warn, 9 fail initial QC verdicts; all nine failures traced to a gripper-command rate-check false positive",
-          "source": "Uploaded research update and collection record",
-          "tier": "software qualification",
-          "boundary": "checker diagnosis, not data-quality improvement"
-        },
-        {
-          "claim": "ACT 18.5 ms median warm inference; compact VLA 142.7 ms on RTX 6000 Ada",
-          "source": "Uploaded training log index and server stress measurements",
-          "tier": "offline system measurement",
-          "boundary": "one hardware configuration; loopback, not live control latency"
-        },
-        {
-          "claim": "0.0164 rad offline action MAE and 0/5 closed-loop success",
-          "source": "Uploaded inference-streaming experiments",
-          "tier": "simulation closed loop",
-          "boundary": "early checkpoint; demonstrates metric/behavior gap"
-        },
-        {
-          "claim": "512 kinematic configurations with zero flange disagreement; 68/68 scenes compiled; worst composition deviation 0.000715 mm; 705 tests passed on one clean rebuild",
-          "source": "Uploaded simulation-parity and clean-host reports",
-          "tier": "software qualification / simulation offline",
-          "boundary": "geometry and software parity do not establish visual or contact parity"
-        }
-      ]
-    },
-    {
       "id": "multimodal-perception",
       "route": "projects/multimodal-perception/",
       "authors": [
@@ -81,7 +42,7 @@
       ],
       "claims": [
         {
-          "claim": "Mean DTW 0.62–1.65 m across reported target, query, platform and obstruction cases",
+          "claim": "Mean DTW 0.62\u20131.65 m across reported target, query, platform and obstruction cases",
           "source": "TAR project report Table 1 and arXiv:2405.11655",
           "tier": "physical trajectory evaluation",
           "boundary": "system-level metric; does not isolate subsystem error"
@@ -176,7 +137,9 @@
     {
       "id": "natsgd",
       "route": "projects/natsgd/",
-      "authors": ["Tharun V. Puthanveettil"],
+      "authors": [
+        "Tharun V. Puthanveettil"
+      ],
       "claims": [
         {
           "claim": "Custom Faster R-CNN kitchen-object detector trained, exported, and used to visualize detections",
@@ -186,7 +149,7 @@
         },
         {
           "claim": "Language-conditioned object attention and recurrent 16-dimensional state-sequence prediction were implemented",
-          "source": "Original NatSGD Task Embedding notebook, cells 2–8; V0.9C and V0.9D policy notebooks",
+          "source": "Original NatSGD Task Embedding notebook, cells 2\u20138; V0.9C and V0.9D policy notebooks",
           "tier": "implemented and executed",
           "boundary": "not the motor-primitive controller or 84% task-success result of Stepputtis et al.; no demonstrated closed-loop success"
         },
