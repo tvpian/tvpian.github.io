@@ -1077,3 +1077,37 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
 
 /* Evidence links follow each research question without repeated labels. */
 .research-overview .thread-related { padding-top: 12px; }
+
+/* Shared action rows for project cards, case studies, and software projects. */
+.project-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px 18px;
+  margin-top: 28px;
+  padding-top: 0;
+}
+.project-actions > a {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  min-height: 44px;
+  margin: 0;
+  padding-block: 0;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: normal;
+  white-space: nowrap;
+}
+.project-actions > .case-study-link { min-width: 152px; justify-content: space-between; padding-inline: 16px; }
+/* Override the legacy card-link padding and mobile column layout. */
+.card-links.project-actions > .card-link { margin: 0; padding-top: 0; }
+.project-actions > a:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 4px; }
