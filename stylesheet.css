@@ -1133,30 +1133,54 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
   .hero .portrait-frame img { width: min(83%, 350px); bottom: -4%; }
 }
 
-/* Collapse only the additional-project and independent-software sections. */
-.atlas-section:has(> .portfolio-fold:not([open])),
-.product-interlude:has(> .portfolio-fold:not([open])) {
-  min-height: 0 !important;
-  padding-block: 34px;
+/* Secondary project disclosures: one compact group after featured work. */
+.secondary-work-group {
+  padding: 12px max(32px, calc((100vw - 1400px)/2)) 22px;
+  background: #121212;
+  color: #e9e7e1;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
+.secondary-work-group > .atlas-section,
+.secondary-work-group > .product-interlude {
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0;
+  background: transparent;
+}
+.secondary-work-group > section + section { border-top: 1px solid rgba(233,231,225,.23); }
 .portfolio-fold > summary {
+  display: block;
+  padding: 25px 0;
+  list-style: none;
+  cursor: pointer;
+  color: #e9e7e1;
+}
+.portfolio-fold > summary::-webkit-details-marker { display: none; }
+.portfolio-fold > summary h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  list-style: none;
-  cursor: pointer;
+  margin: 0;
   font: 400 36px/1.2 'Instrument Serif', Georgia, serif;
   letter-spacing: -.02em;
 }
-.portfolio-fold > summary::-webkit-details-marker { display: none; }
-.portfolio-fold > summary > span { font: 300 24px/1 'DM Sans', sans-serif; }
-.portfolio-fold[open] > summary > span { transform: rotate(45deg); }
-.portfolio-fold > summary:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 8px; }
-.portfolio-fold__content { padding-top: 42px; }
-.atlas-section .portfolio-fold > summary,
-.product-interlude .portfolio-fold > summary { color: #e9e7e1; }
+.portfolio-fold > summary h2 > span { font: 300 24px/1 'DM Sans', sans-serif; }
+.portfolio-fold[open] > summary h2 > span { transform: rotate(45deg); }
+.portfolio-fold > summary:focus-visible { outline: 2px solid var(--acid); outline-offset: 4px; }
+.portfolio-fold > summary:hover { color: var(--acid); }
+.portfolio-fold__content { padding: 8px 0 42px; }
+.portfolio-fold__intro {
+  max-width: 850px;
+  margin: 0 0 28px;
+  color: rgba(233,231,225,.82);
+  font: 400 15px/1.7 'DM Sans', sans-serif;
+}
+.portfolio-fold__content > .eyebrow { margin-bottom: 12px; }
 @media (max-width: 700px) {
-  .portfolio-fold > summary { font-size: 30px; }
-  .portfolio-fold__content { padding-top: 30px; }
+  .secondary-work-group { padding: 8px 20px 14px; }
+  .portfolio-fold > summary { padding: 23px 0; }
+  .portfolio-fold > summary h2 { font-size: 30px; }
+  .portfolio-fold__content { padding-bottom: 30px; }
 }
