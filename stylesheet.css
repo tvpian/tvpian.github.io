@@ -1111,3 +1111,52 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
 /* Override the legacy card-link padding and mobile column layout. */
 .card-links.project-actions > .card-link { margin: 0; padding-top: 0; }
 .project-actions > a:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 4px; }
+
+
+/* Portrait composition aligned with the reviewed demo. */
+.hero .portrait-frame {
+  height: clamp(390px, 62svh, 580px);
+  min-height: 0;
+  aspect-ratio: auto;
+  transform: none;
+}
+.hero .portrait-frame img { width: 96%; bottom: -2%; transform: translateX(-50%); }
+.hero .portrait-grid { opacity: .7; }
+.hero .portrait-orb-two { width: 37%; right: -5%; bottom: 8%; opacity: .75; }
+.hero .portrait-accent { width: 7%; top: 11%; left: 10%; }
+.hero .portrait-thread { opacity: .36; }
+@media (min-width: 701px) and (max-width: 1099px) {
+  .hero .portrait-frame { height: 440px; }
+}
+@media (max-width: 700px) {
+  .hero .portrait-frame { height: 380px; }
+  .hero .portrait-frame img { width: min(83%, 350px); bottom: -4%; }
+}
+
+/* Collapse only the additional-project and independent-software sections. */
+.atlas-section:has(> .portfolio-fold:not([open])),
+.product-interlude:has(> .portfolio-fold:not([open])) {
+  min-height: 0 !important;
+  padding-block: 34px;
+}
+.portfolio-fold > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  list-style: none;
+  cursor: pointer;
+  font: 400 36px/1.2 'Instrument Serif', Georgia, serif;
+  letter-spacing: -.02em;
+}
+.portfolio-fold > summary::-webkit-details-marker { display: none; }
+.portfolio-fold > summary > span { font: 300 24px/1 'DM Sans', sans-serif; }
+.portfolio-fold[open] > summary > span { transform: rotate(45deg); }
+.portfolio-fold > summary:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 8px; }
+.portfolio-fold__content { padding-top: 42px; }
+.atlas-section .portfolio-fold > summary,
+.product-interlude .portfolio-fold > summary { color: #e9e7e1; }
+@media (max-width: 700px) {
+  .portfolio-fold > summary { font-size: 30px; }
+  .portfolio-fold__content { padding-top: 30px; }
+}
