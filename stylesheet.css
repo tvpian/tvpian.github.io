@@ -1120,7 +1120,15 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
   aspect-ratio: auto;
   transform: none;
 }
-.hero .portrait-frame img { width: 96%; bottom: -2%; transform: translateX(-50%); }
+.hero .portrait-frame img {
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  width: min(86%, 440px);
+  max-height: calc(100% - 48px);
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+}
 .hero .portrait-grid { opacity: .7; }
 .hero .portrait-orb-two { width: 37%; right: -5%; bottom: 8%; opacity: .75; }
 .hero .portrait-accent { width: 7%; top: 11%; left: 10%; }
@@ -1130,7 +1138,7 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
 }
 @media (max-width: 700px) {
   .hero .portrait-frame { height: 380px; }
-  .hero .portrait-frame img { width: min(83%, 350px); bottom: -4%; }
+  .hero .portrait-frame img { width: min(83%, 320px); bottom: auto; }
 }
 
 /* Secondary project disclosures: one compact group after featured work. */
@@ -1184,3 +1192,4 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
   .portfolio-fold > summary h2 { font-size: 30px; }
   .portfolio-fold__content { padding-bottom: 30px; }
 }
+
