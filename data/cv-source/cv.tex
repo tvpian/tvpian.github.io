@@ -11,28 +11,31 @@
 I want to build robots that understand the people they work with and keep learning from them over time. I take inspiration from how people learn: we build on experience, recognize what a new situation requires, identify gaps in what we know, and acquire and retain useful knowledge. I want to investigate how robot-learning architectures can accumulate and use contextual knowledge across tasks, people, and environments, so that acquiring one skill makes the next easier to learn. My work spans multimodal human understanding, learning from intervention, policy explainability and predictive models, with physical-robot, simulation and offline evaluations.
 
 \section{Research Threads}
-\thread{Understanding People}{PRIOR WORK · 2021–2024}{How can a robot recognize what people are doing and what they mean from incomplete, multimodal evidence?}
+\thread{Learning from People}{PHYSICAL ROBOT AND SIMULATION}{How can robots improve from people's demonstrations and corrections without losing what they already do well?}
 \begin{compactitems}
-\item Designed GCN–transformer models for action recognition and fall detection from multi-view human pose. Under occlusion, fusing views raised F1 from 0.76 to 0.82 (graduate course project). \evidence{https://tvpian.github.io/projects/multimodal-perception/}{PoseFusion}
-\item Co-developed \href{https://arxiv.org/abs/2405.11655}{Track Anything Rapter}, in which a person picks a target by click, box, image, or text and a drone follows it using foundation-model perception and visual servoing.
-\item Implemented an exploratory policy that learns from demonstration, speech, and gesture on the \href{https://tvpian.github.io/projects/natsgd/}{NatSGD dataset (Snehesh Shrestha, UMD)}. Whether gesture helps is not yet validated.
-\end{compactitems}
-\thread{Learning from People}{PHYSICAL WORKFLOW; SIMULATION STUDIES}{How can robots improve from people's demonstrations and corrections without losing what they already do well?}
-\begin{compactitems}
-\item Built a workflow in which people demonstrate tasks, take over when the robot fails, and have their corrections reviewed and added back into training before a new policy is rolled out. Evaluation remains manual. \evidence{https://tvpian.github.io/\#continual-learning}{Overview}
+\item Built a workflow in which people demonstrate tasks, take over when the robot fails, and have their corrections reviewed and added back into training before a new policy is rolled out. \evidence{https://tvpian.github.io/\#continual-learning}{Overview}
 \item Built a step-level control interface through which people and AI models operate the arm with the same small, safety-checked actions. Every step is recorded, so human and model runs can be compared and reused for training.
-\item Developing a portable egocentric interface that records human demonstrations through the same data pipeline (interface in development). \evidence{https://tvpian.github.io/\#egocentric}{Overview}
+\item Developing a portable egocentric interface that records human demonstrations through the same data pipeline. \evidence{https://tvpian.github.io/\#egocentric}{Overview}
 \item Compared teacher–student training and learned auxiliary heads in simulation, testing whether policies retain useful guidance when privileged training inputs are withdrawn.
 \end{compactitems}
-\thread{Policy Explainability and Representation}{EXPERIMENTS IN PROGRESS}{What has a policy learned, and what shapes its actions?}
+\thread{Policy Explainability and Representation}{SIMULATION AND PHYSICAL ROBOT}{What has a policy learned, and what shapes its actions?}
 \begin{compactitems}
-\item Studied what drives learned policies using attention maps, Grad-CAM, input ablations, prompt comparisons, and self-supervised versus pretrained representations. These are diagnostics, not causal explanations. \evidence{https://tvpian.github.io/\#explainability}{Overview}
-\item Conducted controlled simulation studies using activation patching and counterfactual scene edits to test how information in policy representations affects actions. Compared these interventions with attribution diagnostics and behavioral tests.
+\item Compared attention maps, Grad-CAM, ablations, prompts and self-supervised versus pretrained representations. \evidence{https://tvpian.github.io/\#explainability}{Overview}
+\item Combined representation probes, key–value activation patching, and counterfactual scene edits across simulation training setups. Word–object information detected by probes did not necessarily guide the action head.
+\item On a real bimanual robot, separated named-object selection from pick completion across instruction wordings in identical layouts. Higher overall success did not imply better named-object selection in these tests.
+\item Camera-blanking tests traced apparent tilt robustness to non-use of the tilted camera in the tested conditions.
 \end{compactitems}
-\thread{Predictive Models, Inverse Dynamics, and Transfer}{OFFLINE AND SIMULATION STUDIES}{How can predicted outcomes and inverse dynamics support action learning on physical robots?}
+\thread{Predictive Models, Inverse Dynamics, and Transfer}{OFFLINE, SIMULATION AND PHYSICAL ROBOT}{How can predicted outcomes and inverse dynamics support action learning on physical robots?}
 \begin{compactitems}
-\item Retrained a published video-action model's action head on teleoperation data (offline evaluation completed). In simulation, trained image-based inverse dynamics and compared inferred-action policies with recorded-label and executed-command controls. \evidence{https://tvpian.github.io/\#world-models}{Overview}
-\item Fine-tuned a world-action model in simulation, assessing future-feature prediction, instruction grounding and failure signals separately from task success. Physical validation remains pending.
+\item Retrained a published video-action model's action head on teleoperation data and tested it offline. In simulation, compared inferred-action policies from image-based inverse dynamics with recorded-label and executed-command controls. \evidence{https://tvpian.github.io/\#world-models}{Overview}
+\item Fine-tuned a world-action model in simulation, separating feature prediction, grounding and failure signals from task success.
+\item On a real bimanual robot, offline open-loop action error did not predict closed-loop task success in the tested comparisons.
+\end{compactitems}
+\thread{Understanding People}{PRIOR WORK · 2021–2024}{How can a robot recognize what people are doing and what they mean from incomplete, multimodal evidence?}
+\begin{compactitems}
+\item Co-developed \href{https://arxiv.org/abs/2405.11655}{Track Anything Rapter}, in which a person picks a target by click, box, image, or text and a drone follows it using foundation-model perception and visual servoing.
+\item Implemented an exploratory policy that learns from demonstration, speech, and gesture on the \href{https://tvpian.github.io/projects/natsgd/}{NatSGD dataset (Snehesh Shrestha, UMD)}.
+\item Designed GCN–transformer models for action recognition and fall detection from multi-view human pose. Under occlusion, fusing views raised F1 from 0.76 to 0.82 (graduate course project). \evidence{https://tvpian.github.io/projects/multimodal-perception/}{PoseFusion}
 \end{compactitems}
 \section{Education}
 \roleentry{Master of Engineering in Robotics, GPA: 3.9/4.0}{Aug. 2022 – May 2024}{University of Maryland, College Park}{Maryland, USA}
@@ -106,3 +109,4 @@ I want to build robots that understand the people they work with and keep learni
 \textbf{FIRST Robotics:} Electrical Programming Head Coach, The Irrational Engineers (Jun.–Jul. 2024; occasional help since); mentored high-school students in controls, computer vision, and software.\par\vspace{3pt}
 \textbf{Writing:} \href{https://tvpian.github.io/human-in-the-loom/}{\textit{Human in the Loom}}, essays on robot learning, embodied intelligence, and credible research practice. \evidence{https://tvpian.substack.com/archive}{Essay archive}
 \end{document}
+
