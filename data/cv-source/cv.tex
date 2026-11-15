@@ -1,11 +1,11 @@
 \documentclass[10pt]{article}
 \input{resume_common.tex}
-\hypersetup{pdftitle={Tharun V. Puthanveettil – Research CV},pdfauthor={Tharun V. Puthanveettil}}
+\hypersetup{pdftitle={Tharun V. Puthanveettil - Research CV},pdfauthor={Tharun V. Puthanveettil}}
 \pagestyle{fancy}\fancyhf{}\pageheader{Research CV}\cfoot{\small\thepage}
 \newcommand{\thread}[3]{\par\vspace{4pt}\textbf{#1}\hfill{\scriptsize #2}\par\textit{#3}\par}
 \renewcommand{\evidence}[2]{\nobreak\hspace{0.15em}\mbox{\footnotesize\href{#1}{#2}}}
 \begin{document}
-\cvheader{Human-Inspired Robot Learning | Multimodal Learning | Human–Robot Interaction}
+\cvheader{Human-Inspired Robot Learning | Multimodal Learning | Human-Robot Interaction}
 \fontsize{10}{12}\selectfont
 \section{Research Focus}
 I want to build robots that understand the people they work with and keep learning from them over time. I take inspiration from how people learn: we build on experience, recognize what a new situation requires, identify gaps in what we know, and acquire and retain useful knowledge. I want to investigate how robot-learning architectures can accumulate and use contextual knowledge across tasks, people, and environments, so that acquiring one skill makes the next easier to learn. My work spans multimodal human understanding, learning from intervention, policy explainability and predictive models, with physical-robot, simulation and offline evaluations.
@@ -35,40 +35,40 @@ I want to build robots that understand the people they work with and keep learni
 \item In a graduate course project, fused camera views for pose-based action recognition and fall detection under occlusion, raising F1 from 0.76 to 0.82. \evidence{https://tvpian.github.io/projects/multimodal-perception/}{PoseFusion}
 \end{compactitems}
 \section{Education}
-\roleentry{Master of Engineering in Robotics, GPA: 3.9/4.0}{Aug. 2022 – May 2024}{University of Maryland, College Park}{Maryland, USA}
+\roleentry{Master of Engineering in Robotics, GPA: 3.9/4.0}{Aug. 2022 - May 2024}{University of Maryland, College Park}{Maryland, USA}
 \par\vspace{3pt}\textbf{Selected coursework:} Advanced Techniques in Visual Learning and Recognition; Perception for Autonomous Robots; Planning for Autonomous Robots; Control of Robotic Systems; Fundamentals for Artificial Intelligence and Deep Learning Framework.
 \par\vspace{4pt}
-\roleentry{B.Tech. in Electronics and Communication Engineering, GPA: 8.59/10.0}{Jul. 2014 – Apr. 2018}{Vellore Institute of Technology}{India}
+\roleentry{B.Tech. in Electronics and Communication Engineering, GPA: 8.59/10.0}{Jul. 2014 - Apr. 2018}{Vellore Institute of Technology}{India}
 \newpage
 \section{Research and Professional Experience}
-\roleentry{Robotics Engineer – Robot Learning and Deformable Manipulation}{Jul. 2024 – Present}{Optimal — assigned to General Motors R\&D}{Michigan, USA}
+\roleentry{Robotics Engineer - Robot Learning and Deformable Manipulation}{Jul. 2024 - Present}{Optimal - assigned to General Motors R\&D}{Michigan, USA}
 \begin{compactitems}
 \item Architected and implemented a \href{https://tvpian.github.io/#current}{modular ROS 2 platform for bimanual robot learning}, from teleoperated demonstration and synchronized data capture to training, simulation, staged testing, and physical deployment. Shared interfaces let devices, learning methods, and simulators change without rebuilding the workflow.
 \item Developed human-correction workflows and an arm-control interface that gives people and AI models the same small, safety-checked actions for comparable rollouts, training reuse and analysis of failures and interventions.
-\item Built foundation-model services for task-conditioned detection, segmentation, tracking, and pose servoing. Reusing embeddings and propagating masks over time cut perception latency by about 35\% and sustained 30–40 FPS.
+\item Built foundation-model services for task-conditioned detection, segmentation, tracking, and pose servoing. Reusing embeddings and propagating masks over time cut perception latency by about 35\% and sustained 30-40 FPS.
 \item Developed force-aware bimanual manipulation of deformable linear objects using impedance control and force-torque feedback, incorporating elastic-tension regulation to support consistent manipulation.
 \item Built a calibrated digital twin and a behavior-tree-driven synthetic-data workflow to test how policies degrade under changes in sensing, timing, contact, and appearance.
 \item Designed the Cartesian motion-control and safety layer for learned policies, and supervised its extension to compliant (admittance-controlled) dual-arm data collection and rollout.
 \item Compared action-chunking and open-source vision-language-action policies while developing evaluation measures beyond success rate (partial progress, failure type, recovery, repeatability).
 \end{compactitems}
-\roleentry{Researcher – AI and Robotics}{Feb. 2023 – May 2024}{CATT Laboratory, University of Maryland}{Maryland, USA}
+\roleentry{Researcher - AI and Robotics}{Feb. 2023 - May 2024}{CATT Laboratory, University of Maryland}{Maryland, USA}
 \begin{compactitems}
 \item Architected the fusion pipeline for \href{https://doi.org/10.1007/978-3-031-74835-6_15}{multimodal anomaly detection}, with separate LiDAR, odometry, and network encoders and reconstruction-based scoring. The published system achieved up to 98\% accuracy with vector-based reconstruction loss versus 72\% with scalar-based loss, and 97\% with half the training data.
 \item Co-developed \href{https://arxiv.org/abs/2405.11655}{Track Anything Rapter}, a \href{https://github.com/tvpian/Project-TAR}{ROS 2 aerial system} for multimodal target specification (see Research Threads).
 \end{compactitems}
-\roleentry{Volunteer Researcher – Multimodal Human–Robot Interaction}{Oct. 2022 – Jun. 2023}{Perception and Robotics Group (PRG), University of Maryland}{Maryland, USA}
+\roleentry{Volunteer Researcher - Multimodal Human-Robot Interaction}{Oct. 2022 - Jun. 2023}{Perception and Robotics Group (PRG), University of Maryland}{Maryland, USA}
 \begin{compactitems}
 \item Implemented an exploratory demonstration, speech, and gesture policy (see Research Threads).
 \item Implemented a 3D human body mesh reconstruction pipeline using the SMPL model.
 \end{compactitems}
-\roleentry{Researcher – Collaborative Robotics and Computer Vision}{May 2021 – Dec. 2021}{Indian Institute of Science}{Bangalore, India}
+\roleentry{Researcher - Collaborative Robotics and Computer Vision}{May 2021 - Dec. 2021}{Indian Institute of Science}{Bangalore, India}
 \begin{compactitems}
 \item Developed a \href{https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming}{vision-guided precision-weeding robot} that estimates plant roots and spread, then plans with hybrid inverse kinematics to reach weeds while reducing contact with crops. First-author work, ICSR + AI 2025.
 \item Built synthetic-data and augmentation pipelines for weed localization, using hard-negative sampling and structured distractors to improve robustness under challenging backgrounds.
 \item Co-designed a \href{https://github.com/tvpian/Position_Based_Torque_Controller_for_Safe_Robotic_Weeding}{dual-purpose end effector} (plucking plus spraying or watering) and adaptive \href{https://drive.google.com/file/d/1IvKSo8U6aEWXKw8ucpV-9Hd1IqdPomFb/view?usp=sharing}{position/torque control} for delicate plants.
 \item Developed and evaluated a \href{https://github.com/tvpian/Monocular_Depth_Estimation_using_Transfer_Learning}{U-Net monocular depth model} in an IROS 2021 challenge setting.
 \end{compactitems}
-\roleentry{Project Engineer – AI Innovation}{Jul. 2018 – Apr. 2021}{CTO Office, Wipro Digital}{Bangalore, India}
+\roleentry{Project Engineer - AI Innovation}{Jul. 2018 - Apr. 2021}{CTO Office, Wipro Digital}{Bangalore, India}
 \begin{compactitems}
 \item Led applied-research prototypes in computer vision, HCI, recommendation, generative modeling, and mobile inference, and coordinated quarterly prototype selection and delivery.
 \item Built tool tracking, mobile vehicle recognition, photogrammetry, \href{https://drive.google.com/file/d/1YryajvaO5w4Blw56dToFsm54rEQHvLkJ/view?usp=sharing}{human-pose estimation}, \href{https://github.com/tvpian/Virtual_Try-On}{virtual try-on}, and \href{https://github.com/tvpian/My-Style}{recommendation} components for industrial and retail workflows.
@@ -97,13 +97,13 @@ I want to build robots that understand the people they work with and keep learni
 \textbf{Simulation and perception:} Isaac Sim/Lab, MuJoCo, Gazebo, OpenCV, Open3D, RGB-D cameras, detection, segmentation, tracking, pose estimation\par\vspace{2pt}
 \textbf{Programming and systems:} Python, C++, SQL, Linux, Docker, Git, REST APIs
 \section{Selected Recognition}
-\href{https://metricsproject.eu/inspection-maintenance/rami-cascade-campaign1-aerial-robots/}{\textbf{3rd place, GNSS-denied navigation benchmark} — RAMI Cascade Campaign for Aerial Robots, IROS 2021, as part of team RIL-IISc.}\nobreak\hspace{0.3em}\href{https://metricsproject.eu/inspection-maintenance/rami-cascade-campaign1-aerial-robots/}{\textbf{Results}}
+\href{https://metricsproject.eu/inspection-maintenance/rami-cascade-campaign1-aerial-robots/}{\textbf{3rd place, GNSS-denied navigation benchmark} - RAMI Cascade Campaign for Aerial Robots, IROS 2021, as part of team RIL-IISc.}\nobreak\hspace{0.3em}\href{https://metricsproject.eu/inspection-maintenance/rami-cascade-campaign1-aerial-robots/}{\textbf{Results}}
 \par\vspace{3pt}\textbf{NRF 2020 showcase:} Led a three-person team developing a retail solution showcased at the National Retail Federation's Retail's Big Show.
 \par\vspace{3pt}\textbf{Top-two proposal selection, 2019:} Proposed a solution for a Japanese company's digital elder-care initiative.
 \section{Intellectual Property, Mentoring, and Communication}
 \textbf{Patents:} Inventor on 11 invention disclosures at General Motors, two on the patent route and three protected as trade secrets; details confidential.\par\vspace{3pt}
 \textbf{Research supervision:} Supervised an engineering intern extending the robot-learning platform for compliant bimanual data collection, learning, analysis, and rollout.\par\vspace{3pt}
-\textbf{FIRST Robotics:} Electrical Programming Head Coach, The Irrational Engineers (Jun.–Jul. 2024; occasional help since); mentored high-school students in controls, computer vision, and software.\par\vspace{3pt}
+\textbf{FIRST Robotics:} Electrical Programming Head Coach, The Irrational Engineers (Jun.-Jul. 2024; occasional help since); mentored high-school students in controls, computer vision, and software.\par\vspace{3pt}
 \textbf{Writing:} \href{https://tvpian.github.io/human-in-the-loom/}{\textit{Human in the Loom}}, essays on robot learning, embodied intelligence, and credible research practice. \evidence{https://tvpian.substack.com/archive}{Essay archive}
 \end{document}
 
