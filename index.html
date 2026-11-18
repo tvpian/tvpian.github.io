@@ -17,7 +17,7 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=research-layout-polish">
+  <link rel="stylesheet" href="stylesheet.css?v=research-chapters">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <script src="theme.js?v=20260925-research-map" defer></script>
   <script src="portfolio.js?v=research-first" defer></script>
@@ -92,12 +92,37 @@
     </section>
 
     <section class="current-work-live research-first" id="current" aria-labelledby="current-work-title">
-      <div class="current-work-live__heading">
-        <div>
-          <p class="eyebrow light"><span></span>Robot learning</p>
-          <h2 id="current-work-title">Current work</h2>
+      <div class="current-work-live__heading research-chapter">
+        <div class="research-chapter__intro">
+          <p class="eyebrow light"><span></span>Current work</p>
+          <h2 id="current-work-title">Learning from people.<br>Understanding policies.</h2>
+          <p>The bimanual robot and its digital twin share a platform I built to study how policies learn from human corrections and what information they use to act.</p>
         </div>
-        <p>I built a ROS 2 platform shared by a physical bimanual robot and its digital twin. It supports studies of how policies learn, what information they use, and where they fail.</p>
+        <figure class="correction-figure">
+          <figcaption><span>The correction loop</span><small>Implemented workflow</small></figcaption>
+          <svg viewBox="0 0 520 216" role="img" aria-labelledby="correction-title correction-desc">
+            <title id="correction-title">From a failed rollout to the next policy</title>
+            <desc id="correction-desc">A person takes over when the policy fails. The correction is recorded, reviewed, and added to demonstrations to train the next policy.</desc>
+            <g class="correction-figure__guides">
+              <path d="M38 54H482M38 146H482M56 26V168M186 26V168M320 26V168M464 26V168"/>
+            </g>
+            <path class="correction-figure__run" d="M56 146H129"/>
+            <path class="correction-figure__intervention" d="M129 146C154 146 160 54 186 54H320C349 54 357 146 387 146H464"/>
+            <path class="correction-figure__return" d="M464 161V195H56V163m-6 7 6-7 6 7"/>
+            <circle class="correction-figure__node" cx="56" cy="146" r="5"/>
+            <circle class="correction-figure__event" cx="129" cy="146" r="5"/>
+            <circle class="correction-figure__correction" cx="186" cy="54" r="5"/>
+            <circle class="correction-figure__correction" cx="320" cy="54" r="5"/>
+            <circle class="correction-figure__node" cx="464" cy="146" r="5"/>
+            <g class="correction-figure__labels">
+              <text x="56" y="128">Policy runs</text>
+              <text x="186" y="36" text-anchor="middle">Human takes over</text>
+              <text x="270" y="84" text-anchor="middle">Review correction</text>
+              <text x="455" y="171" text-anchor="end">Train next policy</text>
+            </g>
+            <text class="correction-figure__event-label" x="129" y="171" text-anchor="middle">Policy fails</text>
+          </svg>
+        </figure>
       </div>
 
       <div class="current-work-live__questions">
@@ -122,31 +147,40 @@
           </li>
         </ol>
 
-        <details class="research-disclosure" id="additional-directions">
-          <summary>Related studies</summary>
-          <ol class="secondary-studies" aria-label="Related research">
-            <li id="egocentric">
-              <div class="study-label"><h3>Egocentric demonstrations</h3><span>In development</span></div>
-              <p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
-            </li>
-            <li id="world-models">
-              <div class="study-label"><h3>Predictive models and inverse dynamics</h3><span>Offline evaluation completed · simulation studies</span></div>
-              <p>Offline tests evaluated a video-action model adapted to teleoperation data. Simulation tests compared actions inferred from video with recorded actions and commands sent to the robot. They assessed future-feature prediction, instruction grounding, and failure signals separately from task success. Physical validation is pending.</p>
-            </li>
-            <li id="sim-real">
-              <div class="study-label"><h3>Transfer between simulation and hardware</h3><span>Active experiments</span></div>
-              <p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
-            </li>
-            <li id="policy-evaluation">
-              <div class="study-label"><h3>Policy evaluation beyond success rate</h3><span>In development</span></div>
-              <p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
-            </li>
-            <li id="representation-studies">
-              <div class="study-label"><h3>What policies retain from training</h3><span>Simulation studies</span></div>
-              <p>Simulation tests compared teacher-student training with learned auxiliary heads to see what policies retain when privileged inputs are removed. Attention maps help diagnose behavior, but they do not by themselves establish a causal explanation.</p>
-            </li>
-          </ol>
-        </details>
+        <section class="study-index" id="additional-directions" aria-labelledby="study-index-title">
+          <h3 id="study-index-title">Related studies</h3>
+          <div class="study-index__columns">
+            <div class="study-index__group study-index__group--people">
+              <h4>Learning from people</h4>
+              <details class="study-index__entry" id="egocentric">
+                <summary><span>Egocentric demonstrations</span><small>In development</small></summary>
+                <p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
+              </details>
+            </div>
+            <div class="study-index__group study-index__group--policies">
+              <h4>Understanding policies</h4>
+              <details class="study-index__entry" id="representation-studies">
+                <summary><span>What policies retain from training</span><small>Simulation studies</small></summary>
+                <p>Simulation tests compared teacher-student training with learned auxiliary heads to see what policies retain when privileged inputs are removed. Attention maps help diagnose behavior, but they do not by themselves establish a causal explanation.</p>
+              </details>
+              <details class="study-index__entry" id="policy-evaluation">
+                <summary><span>Policy evaluation beyond success rate</span><small>In development</small></summary>
+                <p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
+              </details>
+            </div>
+            <div class="study-index__group study-index__group--transfer">
+              <h4>Prediction and transfer</h4>
+              <details class="study-index__entry" id="world-models">
+                <summary><span>Predictive models and inverse dynamics</span><small>Offline evaluation completed · simulation studies</small></summary>
+                <p>Offline tests evaluated a video-action model adapted to teleoperation data. Simulation tests compared actions inferred from video with recorded actions and commands sent to the robot. They assessed future-feature prediction, instruction grounding, and failure signals separately from task success. Physical validation is pending.</p>
+              </details>
+              <details class="study-index__entry" id="sim-real">
+                <summary><span>Transfer between simulation and hardware</span><small>Active experiments</small></summary>
+                <p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
+              </details>
+            </div>
+          </div>
+        </section>
       </div>
 
       <details class="research-disclosure" id="research-platform">
