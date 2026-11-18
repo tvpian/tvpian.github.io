@@ -1239,7 +1239,42 @@ html[data-theme="dark"] .current-work-live__questions li.is-spotlit { background
 .research-disclosure .current-work-live__platform,
 .research-disclosure .current-work-live__attention { margin-top: 0; }
 .research-disclosure .illustrative-diagnostic > summary { color: rgba(233,231,225,.8); }
-.related-projects .hybrid-card { grid-column: auto; }
+/* The weeding feature gets its own row. The smaller studies share the next row. */
+.related-projects .hybrid-card {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.related-projects .hybrid-art {
+  height: auto;
+  min-height: 420px;
+  border-right: 1px solid var(--line);
+  border-bottom: 0;
+}
+.related-projects .related-project-card {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  scroll-margin-top: 24px;
+}
+.related-project-card .project-image {
+  height: clamp(215px, 22vw, 300px);
+  min-height: 0;
+  border-right: 0;
+  border-bottom: 1px solid var(--line);
+}
+.related-project-card .prototype-still img { object-fit: contain; }
+.related-project-card .project-actions { margin-top: auto; padding-top: 24px; }
+@media (max-width: 1050px) {
+  .related-projects .hybrid-card { grid-template-columns: minmax(0, 1fr); }
+  .related-projects .hybrid-art {
+    height: 420px;
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
 @media (min-width: 1100px) {
   main > section.research-overview,
   main > section.research-first { min-height: 0; }
