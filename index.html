@@ -17,7 +17,7 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=weeding-feature-layout">
+  <link rel="stylesheet" href="stylesheet.css?v=research-layout-polish">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <script src="theme.js?v=20260925-research-map" defer></script>
   <script src="portfolio.js?v=research-first" defer></script>
@@ -125,40 +125,27 @@
         <details class="research-disclosure" id="additional-directions">
           <summary>Related studies</summary>
           <ol class="secondary-studies" aria-label="Related research">
-          <li id="egocentric">
-            <div><h3>Egocentric demonstration learning</h3><p><strong class="evidence-state evidence-state--investigating">In development</strong> We are developing a portable egocentric interface for recording human manipulation demonstrations. It reuses the teleoperation, synchronization, data review, and conversion infrastructure I built for the current manipulation system.</p></div>
-            <div class="current-work-live__evidence"><strong>Current state</strong><span>Shared data infrastructure implemented; demonstration-capture hardware and egocentric policy studies in development.</span></div>
-          </li>
-          <li id="world-models">
-            <div><h3>Predictive models, inverse dynamics, and transfer</h3><p><strong class="evidence-state evidence-state--investigating">Offline evaluation completed</strong> I adapted a published video-action architecture to teleoperation data and completed offline evaluation. Physical evaluation has not yet been performed.</p><p><strong>Simulation studies</strong> I trained image-based inverse dynamics and compared inferred-action policies with recorded-label and executed-command controls. I also fine-tuned a world-action model in simulation, assessing future-feature prediction, instruction grounding and failure signals separately from task success. Physical validation remains pending.</p></div>
-            <div class="current-work-live__evidence"><strong>Next validation</strong><span>Physical rollouts and controlled comparison with existing policy approaches.</span></div>
-          </li>
-          <li id="sim-real">
-            <div><h3>Real → sim → real</h3><p><strong class="evidence-state evidence-state--investigating">Active experiments</strong> I use the digital twin to study transfer across sensing, timing, control, contact, and visual variation. Current experiments examine representations and evaluation methods that remain useful when simulated and physical environments do not match closely.</p></div>
-            <figure class="current-work-live__concept" tabindex="0" data-animate-diagram><svg viewBox="0 0 320 170" role="img" aria-label="Physical and simulated backends meet at one interface before entering shared system owners"><text class="cwl-concept-text" x="18" y="44">PHYSICAL</text><path class="cwl-concept-thread" d="M18 56H132M18 124H132M132 90H284"></path><text class="cwl-concept-text" x="18" y="112">SIMULATED</text><path class="cwl-concept-dash" d="M18 124H132M284 90V150H92V124H124"></path><path class="cwl-concept-boundary" d="M132 36V142"></path><text class="cwl-concept-key" x="132" y="24" text-anchor="middle">ONE INTERFACE</text><g class="cwl-concept-gate"><path d="M168 84V96M204 84V96M240 84V96M276 84V96"></path></g><path class="cwl-concept-head" d="M296 90l-12-5v10z"></path></svg><figcaption>The physical robot and simulator share a control interface</figcaption></figure>
-          </li>
-          <li id="policy-evaluation">
-            <div><h3>Policy evaluation beyond success rate</h3><p>How should capability be evaluated beyond task-level success?</p><p><strong class="evidence-state evidence-state--investigating">Methodology in development</strong> I am evaluating leading open-source vision-language-action models across tasks and developing a common methodology for fairer comparison. The work treats aggregate success rate as incomplete and studies partial progress, failure modes, repeatability, recovery behavior, and sensitivity to control conditions.</p></div>
-            <figure class="current-work-live__concept current-work-live__evaluation" data-animate-diagram data-evaluation-state="outcome">
-              <div class="evaluation-modes" role="group" aria-label="Policy evaluation lens">
-                <button type="button" data-evaluation-mode="outcome" aria-pressed="true">Outcome</button>
-                <button type="button" data-evaluation-mode="behavior" aria-pressed="false">Behavior</button>
-                <button type="button" data-evaluation-mode="control" aria-pressed="false">Control</button>
-              </div>
-              <svg viewBox="0 0 320 170" role="img" aria-label="Two policies evaluated on the same task and control conditions across outcome, behavior, and control measures">
-                <text class="cwl-concept-text" x="16" y="48">MODEL A</text><text class="cwl-concept-text" x="16" y="128">MODEL B</text>
-                <g class="cwl-concept-thread"><path d="M16 58H104M16 138H104M188 88H218"></path></g>
-                <rect class="cwl-concept-plate" x="104" y="24" width="84" height="128"></rect>
-                <text class="cwl-concept-key" x="146" y="76" text-anchor="middle">SAME TASK</text><text class="cwl-concept-text" x="146" y="94" text-anchor="middle">+ CONDITIONS</text>
-                <g class="cwl-eval-axis cwl-eval-outcome"><path class="cwl-concept-dash" d="M218 44H302"></path><text class="cwl-concept-key" x="218" y="35">OUTCOME</text><text class="cwl-concept-text" x="218" y="58">completion · progress</text></g>
-                <g class="cwl-eval-axis cwl-eval-behavior"><path class="cwl-concept-dash" d="M218 88H302"></path><text class="cwl-concept-key" x="218" y="79">BEHAVIOR</text><text class="cwl-concept-text" x="218" y="102">failure · recovery</text></g>
-                <g class="cwl-eval-axis cwl-eval-control"><path class="cwl-concept-dash" d="M218 132H302"></path><text class="cwl-concept-key" x="218" y="123">CONTROL</text><text class="cwl-concept-text" x="218" y="146">compliance · repeatability</text></g>
-              </svg>
-              <figcaption><span>Controlled comparison</span><span data-evaluation-status aria-live="polite">Task completion · partial progress</span></figcaption>
-            </figure>
-          </li>
+            <li id="egocentric">
+              <div class="study-label"><h3>Egocentric demonstrations</h3><span>In development</span></div>
+              <p>I am developing a portable interface for recording human manipulation demonstrations. It uses the same recording and review tools as teleoperation.</p>
+            </li>
+            <li id="world-models">
+              <div class="study-label"><h3>Predictive models and inverse dynamics</h3><span>Offline evaluation completed · simulation studies</span></div>
+              <p>I adapted a video-action model to teleoperation data and evaluated it offline. In simulation, I compared actions inferred from video with recorded actions and commands sent to the robot. I evaluated future-feature prediction, instruction grounding, and failure signals separately from task success. Physical validation is pending.</p>
+            </li>
+            <li id="sim-real">
+              <div class="study-label"><h3>Transfer between simulation and hardware</h3><span>Active experiments</span></div>
+              <p>I use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulated and physical environments.</p>
+            </li>
+            <li id="policy-evaluation">
+              <div class="study-label"><h3>Policy evaluation beyond success rate</h3><span>In development</span></div>
+              <p>I am developing a common way to compare policies using partial progress, failure modes, recovery and repeatability as well as task success.</p>
+            </li>
+            <li id="representation-studies">
+              <div class="study-label"><h3>What policies retain from training</h3><span>Simulation studies</span></div>
+              <p>I compared teacher-student training and learned auxiliary heads to see what policies retain when privileged inputs are removed. I use attention maps as diagnostics, but they do not by themselves establish a causal explanation.</p>
+            </li>
           </ol>
-          <p class="research-disclosure__note"><strong>Representation studies:</strong> I compared teacher-student training and learned auxiliary heads in simulation to test what policies retain after privileged training inputs are withdrawn. I use attention maps and other diagnostics to identify what to test, but they do not by themselves establish a causal explanation.</p>
         </details>
       </div>
 
@@ -196,6 +183,25 @@
           <figcaption><span>Shared interfaces across physical and simulated backends</span><span data-diagram-status aria-live="polite">Inspect a stage · policy evaluation is currently manual</span></figcaption>
         </figure>
       </div>
+        <details class="illustrative-diagnostic evaluation-diagram"><summary>Illustrative evaluation criteria</summary>
+            <figure class="current-work-live__concept current-work-live__evaluation" data-animate-diagram data-evaluation-state="outcome">
+              <div class="evaluation-modes" role="group" aria-label="Policy evaluation lens">
+                <button type="button" data-evaluation-mode="outcome" aria-pressed="true">Outcome</button>
+                <button type="button" data-evaluation-mode="behavior" aria-pressed="false">Behavior</button>
+                <button type="button" data-evaluation-mode="control" aria-pressed="false">Control</button>
+              </div>
+              <svg viewBox="0 0 320 170" role="img" aria-label="Two policies evaluated on the same task and control conditions across outcome, behavior, and control measures">
+                <text class="cwl-concept-text" x="16" y="48">MODEL A</text><text class="cwl-concept-text" x="16" y="128">MODEL B</text>
+                <g class="cwl-concept-thread"><path d="M16 58H104M16 138H104M188 88H218"></path></g>
+                <rect class="cwl-concept-plate" x="104" y="24" width="84" height="128"></rect>
+                <text class="cwl-concept-key" x="146" y="76" text-anchor="middle">SAME TASK</text><text class="cwl-concept-text" x="146" y="94" text-anchor="middle">+ CONDITIONS</text>
+                <g class="cwl-eval-axis cwl-eval-outcome"><path class="cwl-concept-dash" d="M218 44H302"></path><text class="cwl-concept-key" x="218" y="35">OUTCOME</text><text class="cwl-concept-text" x="218" y="58">completion · progress</text></g>
+                <g class="cwl-eval-axis cwl-eval-behavior"><path class="cwl-concept-dash" d="M218 88H302"></path><text class="cwl-concept-key" x="218" y="79">BEHAVIOR</text><text class="cwl-concept-text" x="218" y="102">failure · recovery</text></g>
+                <g class="cwl-eval-axis cwl-eval-control"><path class="cwl-concept-dash" d="M218 132H302"></path><text class="cwl-concept-key" x="218" y="123">CONTROL</text><text class="cwl-concept-text" x="218" y="146">compliance · repeatability</text></g>
+              </svg>
+              <figcaption><span>Controlled comparison</span><span data-evaluation-status aria-live="polite">Task completion · partial progress</span></figcaption>
+            </figure>
+        </details>
         <details class="illustrative-diagnostic"><summary>Illustrative policy diagnostics (not measured results)</summary><figure class="current-work-live__attention policy-lab" data-animate-diagram data-attention-state="all" data-policy-input="vision">
         <div class="current-work-live__attention-heading"><p class="eyebrow light"><span></span>Policy analysis instrument</p><p>Select an input source, then compare the nominal and controlled-perturbation views.</p></div>
         <div class="policy-lab__controls">
