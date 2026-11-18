@@ -215,13 +215,13 @@ if (heroSignal) {
   });
 }
 
-const focusLinks = [...document.querySelectorAll('[data-focus-link]')];
-const researchDirections = document.querySelector('.current-work-live__questions > ol');
+const focusLinks = [...document.querySelectorAll('a[href^="#"]')];
+const researchDirections = document.querySelector('.current-work-live__questions');
 let spotlightTimer = 0;
 
 const clearResearchSpotlight = () => {
   window.clearTimeout(spotlightTimer);
-  researchDirections?.classList.remove('has-spotlight');
+  researchDirections?.querySelectorAll('.has-spotlight').forEach((list) => list.classList.remove('has-spotlight'));
   researchDirections?.querySelectorAll('.is-spotlit').forEach((item) => item.classList.remove('is-spotlit'));
 };
 
@@ -231,7 +231,9 @@ const spotlightResearchDirection = (hash, updateHash = true) => {
   if (!target || !researchDirections?.contains(target)) return;
 
   clearResearchSpotlight();
-  researchDirections.classList.add('has-spotlight');
+  const disclosure = target.closest('details');
+  if (disclosure) disclosure.open = true;
+  target.closest('ol')?.classList.add('has-spotlight');
   target.classList.add('is-spotlit');
   target.tabIndex = -1;
   target.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth', block: 'center' });
@@ -250,8 +252,8 @@ focusLinks.forEach((link) => {
 });
 
 addEventListener('pointerdown', (event) => {
-  if (!researchDirections?.classList.contains('has-spotlight')) return;
-  if (event.target.closest('[data-focus-link], .is-spotlit')) return;
+  if (!researchDirections?.querySelector('.has-spotlight')) return;
+  if (event.target.closest('a[href^="#"], .is-spotlit')) return;
   clearResearchSpotlight();
 });
 
@@ -260,7 +262,7 @@ addEventListener('keydown', (event) => {
   if (event.key === 'Escape') clearResearchSpotlight();
 });
 
-if (focusLinks.some((link) => link.hash === location.hash)) {
+if (location.hash) {
   requestAnimationFrame(() => spotlightResearchDirection(location.hash, false));
 }
 
@@ -425,3 +427,4 @@ if (landingHeader && 'ResizeObserver' in window) {
   });
   landingHeaderObserver.observe(landingHeader);
 }
+

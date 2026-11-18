@@ -17,10 +17,10 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=20261101-centered-portrait">
+  <link rel="stylesheet" href="stylesheet.css?v=research-first">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
   <script src="theme.js?v=20260925-research-map" defer></script>
-  <script src="portfolio.js?v=20261028-desktop-landing" defer></script>
+  <script src="portfolio.js?v=research-first" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -47,8 +47,8 @@
   <aside class="research-rail" aria-label="Portfolio chapters" data-research-rail>
     <span class="research-rail__track" aria-hidden="true"><i data-rail-progress></i></span>
     <a href="#top" data-rail-target="top"><i></i><span>Thesis</span></a>
-    <a href="#current" data-rail-target="current"><i></i><span>Platform</span></a>
-    <a href="#work" data-rail-target="work"><i></i><span>Systems</span></a>
+    <a href="#current" data-rail-target="current"><i></i><span>Current work</span></a>
+    <a href="#work" data-rail-target="work"><i></i><span>Projects</span></a>
     <a href="#product" data-rail-target="product"><i></i><span>Tools</span></a>
     <a href="#research" data-rail-target="research"><i></i><span>Evidence</span></a>
     <a href="#about" data-rail-target="about"><i></i><span>Profile</span></a>
@@ -58,9 +58,9 @@
     <section class="hero" id="top">
       <div class="hero-copy">
         <h1>Tharun V. Puthanveettil</h1>
-        <p class="hero-role">Robotics Engineer – Robot Learning and Deformable Manipulation, General Motors R&amp;D</p><p class="role-assignment">Optimal – assigned to General Motors R&amp;D</p>
+        <p class="hero-role">Robotics Engineer · Robot Learning and Deformable Manipulation</p><p class="role-assignment">Optimal, assigned to General Motors R&amp;D</p>
         <p class="hero-intro">
-          I want to build robots that understand the people they work with and keep learning from them over time. I am interested in how interaction helps robots understand people, and how that understanding helps them learn from demonstration, correction, and instruction. My research goal is to investigate how robot-learning architectures can accumulate and use contextual knowledge across tasks, people, and environments, so that acquiring one skill makes the next easier to learn. My work spans multimodal human understanding, learning from intervention, policy explainability and predictive models, with physical-robot, simulation and offline evaluations.
+          I study how robots can understand what people want and carry what they learn from one interaction into the next. I use physical robots and simulation to test how policies learn from demonstrations and corrections, and what information they actually use when they act.
         </p>
         <div class="hero-actions">
           <a class="button" href="#current">Current research <span aria-hidden="true">→</span></a>
@@ -81,34 +81,91 @@
 
     <section class="research-overview" id="research-direction" aria-labelledby="research-direction-title">
       <header class="research-overview__heading">
-        <h2 id="research-direction-title">Research questions.</h2>
+        <h2 id="research-direction-title">Research questions</h2>
       </header>
     <div class="focus-strip">
-      <article><a href="#hri" data-focus-link><span class="focus-index">01</span><div><h2>Understanding<br>People</h2><p class="thread-question">How can robots understand what people are doing and what they intend?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="projects/multimodal-perception/">PoseFusion (graduate course project)</a></li><li><a href="projects/track-anything-rapter/">Track Anything Rapter</a></li><li><a href="projects/natsgd/">NatSGD prototype</a></li></ul></div></article>
-      <article><a href="#continual-learning" data-focus-link><span class="focus-index">02</span><div><h2>Learning from<br>People</h2><p class="thread-question">How can robots learn from demonstrations and corrections while retaining earlier skills?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="#continual-learning">Human correction and simulation studies</a></li><li><a href="#egocentric">Egocentric interface (in development)</a></li></ul></div></article>
-      <article><a href="#explainability" data-focus-link><span class="focus-index">03</span><div><h2>Policy Explainability<br>and Representation</h2><p class="thread-question">What has a policy learned, and how does that shape its behavior?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="#explainability">Diagnostics and controlled simulation interventions</a></li></ul></div></article>
-      <article><a href="#world-models" data-focus-link><span class="focus-index">04</span><div><h2>Predictive Models,<br>Inverse Dynamics,<br>and Transfer</h2><p class="thread-question">How can predicting what happens next help a robot learn how to act?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="#world-models">Offline and simulation studies</a></li><li><a href="#sim-real">Real–sim–real experiments</a></li></ul></div></article>
+      <article><a href="projects/multimodal-perception/"><span class="focus-index">01</span><div><h2>Understanding<br>People</h2><p class="thread-question">How can robots understand what people are doing and what they intend?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="projects/multimodal-perception/">PoseFusion (graduate course project)</a></li><li><a href="projects/track-anything-rapter/">Track Anything Rapter</a></li><li><a href="projects/natsgd/">NatSGD prototype</a></li></ul></div></article>
+      <article><a href="#continual-learning" data-focus-link><span class="focus-index">02</span><div><h2>Learning from<br>People</h2><p class="thread-question">How can robots learn from demonstrations and corrections while retaining earlier skills?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="#continual-learning">Learning from human corrections</a></li><li><a href="#egocentric">Egocentric interface (in development)</a></li></ul></div></article>
+      <article><a href="#explainability" data-focus-link><span class="focus-index">03</span><div><h2>Policy Explainability<br>and Representation</h2><p class="thread-question">What has a policy learned, and how does that shape its behavior?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="#explainability">What a policy uses to act</a></li></ul></div></article>
+      <article><a href="#world-models" data-focus-link><span class="focus-index">04</span><div><h2>Predictive Models,<br>Inverse Dynamics,<br>and Transfer</h2><p class="thread-question">How can predicting what happens next help a robot learn how to act?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="#world-models">Learning actions from video</a></li><li><a href="#sim-real">Real–sim–real experiments</a></li></ul></div></article>
     </div>
     </section>
 
-    <section class="current-work-live" id="current">
+    <section class="current-work-live research-first" id="current" aria-labelledby="current-work-title">
       <div class="current-work-live__heading">
         <div>
-          <p class="eyebrow light"><span></span>Present · Robotics Engineer – Robot Learning and Deformable Manipulation, General Motors R&amp;D</p><p class="role-assignment">Optimal – assigned to General Motors R&amp;D</p>
-          <h2>Research infrastructure</h2>
+          <p class="eyebrow light"><span></span>Robot learning</p>
+          <h2 id="current-work-title">Current work</h2>
         </div>
-        <p>A shared system for studying teleoperation, data collection, learned policies, human intervention, simulation, deployment, and comparative policy evaluation on bimanual manipulation tasks.</p>
+        <p>I built a shared ROS 2 platform for a physical bimanual robot and its digital twin so I can test how policies learn, what they rely on, and where they fail.</p>
       </div>
 
-      <div class="current-work-live__lead">
-        <p>I designed and implemented the workflow from teleoperation and synchronized collection through dataset conversion, policy training, evaluation, testing, and deployment.</p>
-        <div>
-          <p>The physical cell and digital twin use the same operator, recording, review, conversion, and policy interfaces, with separate hardware and physics backends. This supports controlled comparisons between simulation and real deployment.</p>
-          <p>Interventions and failed rollouts can be recorded, reviewed, converted, and returned to training. Policy evaluation is currently performed manually. I am also developing a common evaluation methodology that goes beyond aggregate success rate to compare model behavior more fairly.</p>
-        </div>
+      <div class="current-work-live__questions">
+        <ol class="lead-studies" aria-label="Selected current research">
+          <li id="continual-learning">
+            <span>01</span>
+            <div>
+              <h3>Learning from human corrections</h3>
+              <p><strong class="evidence-state evidence-state--built">Implemented workflow</strong></p>
+              <p>When a policy fails, a person can take control of the arm. I built the workflow to record the correction, review it, and add it to demonstrations for training the next policy.</p>
+              <p>People and policies use the same arm commands, so their actions can be compared step by step. Policy evaluation is currently performed manually. Whether the corrections improve later policies without eroding earlier skills remains an open question.</p>
+            </div>
+          </li>
+          <li id="explainability">
+            <span>02</span>
+            <div>
+              <h3>What information does a policy use to act?</h3>
+              <p><strong class="evidence-state evidence-state--investigating">Simulation and physical robot studies</strong></p>
+              <p>In simulation, I used representation probes and activation patching to test whether policies act on the associations they encode between words and objects. In the policies tested, the action heads did not use those associations.</p>
+              <p>On a bimanual robot, I scored object choice separately from pick completion. In these comparisons, higher task success did not imply better selection of the object named in the instruction.</p>
+            </div>
+          </li>
+        </ol>
+
+        <details class="research-disclosure" id="additional-directions">
+          <summary>Related studies</summary>
+          <ol class="secondary-studies" aria-label="Related research">
+          <li id="egocentric">
+            <div><h3>Egocentric demonstration learning</h3><p><strong class="evidence-state evidence-state--investigating">In development</strong> We are developing a portable egocentric interface for recording human manipulation demonstrations. It reuses the teleoperation, synchronization, data review, and conversion infrastructure I built for the current manipulation system.</p></div>
+            <div class="current-work-live__evidence"><strong>Current state</strong><span>Shared data infrastructure implemented; demonstration-capture hardware and egocentric policy studies in development.</span></div>
+          </li>
+          <li id="world-models">
+            <div><h3>Predictive models, inverse dynamics, and transfer</h3><p><strong class="evidence-state evidence-state--investigating">Offline evaluation completed</strong> I adapted a published video-action architecture to teleoperation data and completed offline evaluation. Physical evaluation has not yet been performed.</p><p><strong>Simulation studies</strong> I trained image-based inverse dynamics and compared inferred-action policies with recorded-label and executed-command controls. I also fine-tuned a world-action model in simulation, assessing future-feature prediction, instruction grounding and failure signals separately from task success. Physical validation remains pending.</p></div>
+            <div class="current-work-live__evidence"><strong>Next validation</strong><span>Physical rollouts and controlled comparison with existing policy approaches.</span></div>
+          </li>
+          <li id="sim-real">
+            <div><h3>Real → sim → real</h3><p><strong class="evidence-state evidence-state--investigating">Active experiments</strong> I use the digital twin to study transfer across sensing, timing, control, contact, and visual variation. Current experiments examine representations and evaluation methods that remain useful when simulated and physical environments do not match closely.</p></div>
+            <figure class="current-work-live__concept" tabindex="0" data-animate-diagram><svg viewBox="0 0 320 170" role="img" aria-label="Physical and simulated backends meet at one interface before entering shared system owners"><text class="cwl-concept-text" x="18" y="44">PHYSICAL</text><path class="cwl-concept-thread" d="M18 56H132M18 124H132M132 90H284"></path><text class="cwl-concept-text" x="18" y="112">SIMULATED</text><path class="cwl-concept-dash" d="M18 124H132M284 90V150H92V124H124"></path><path class="cwl-concept-boundary" d="M132 36V142"></path><text class="cwl-concept-key" x="132" y="24" text-anchor="middle">ONE INTERFACE</text><g class="cwl-concept-gate"><path d="M168 84V96M204 84V96M240 84V96M276 84V96"></path></g><path class="cwl-concept-head" d="M296 90l-12-5v10z"></path></svg><figcaption>The physical robot and simulator share a control interface</figcaption></figure>
+          </li>
+          <li id="policy-evaluation">
+            <div><h3>Policy evaluation beyond success rate</h3><p>How should capability be evaluated beyond task-level success?</p><p><strong class="evidence-state evidence-state--investigating">Methodology in development</strong> I am evaluating leading open-source vision-language-action models across tasks and developing a common methodology for fairer comparison. The work treats aggregate success rate as incomplete and studies partial progress, failure modes, repeatability, recovery behavior, and sensitivity to control conditions.</p></div>
+            <figure class="current-work-live__concept current-work-live__evaluation" data-animate-diagram data-evaluation-state="outcome">
+              <div class="evaluation-modes" role="group" aria-label="Policy evaluation lens">
+                <button type="button" data-evaluation-mode="outcome" aria-pressed="true">Outcome</button>
+                <button type="button" data-evaluation-mode="behavior" aria-pressed="false">Behavior</button>
+                <button type="button" data-evaluation-mode="control" aria-pressed="false">Control</button>
+              </div>
+              <svg viewBox="0 0 320 170" role="img" aria-label="Two policies evaluated on the same task and control conditions across outcome, behavior, and control measures">
+                <text class="cwl-concept-text" x="16" y="48">MODEL A</text><text class="cwl-concept-text" x="16" y="128">MODEL B</text>
+                <g class="cwl-concept-thread"><path d="M16 58H104M16 138H104M188 88H218"></path></g>
+                <rect class="cwl-concept-plate" x="104" y="24" width="84" height="128"></rect>
+                <text class="cwl-concept-key" x="146" y="76" text-anchor="middle">SAME TASK</text><text class="cwl-concept-text" x="146" y="94" text-anchor="middle">+ CONDITIONS</text>
+                <g class="cwl-eval-axis cwl-eval-outcome"><path class="cwl-concept-dash" d="M218 44H302"></path><text class="cwl-concept-key" x="218" y="35">OUTCOME</text><text class="cwl-concept-text" x="218" y="58">completion · progress</text></g>
+                <g class="cwl-eval-axis cwl-eval-behavior"><path class="cwl-concept-dash" d="M218 88H302"></path><text class="cwl-concept-key" x="218" y="79">BEHAVIOR</text><text class="cwl-concept-text" x="218" y="102">failure · recovery</text></g>
+                <g class="cwl-eval-axis cwl-eval-control"><path class="cwl-concept-dash" d="M218 132H302"></path><text class="cwl-concept-key" x="218" y="123">CONTROL</text><text class="cwl-concept-text" x="218" y="146">compliance · repeatability</text></g>
+              </svg>
+              <figcaption><span>Controlled comparison</span><span data-evaluation-status aria-live="polite">Task completion · partial progress</span></figcaption>
+            </figure>
+          </li>
+          </ol>
+          <p class="research-disclosure__note"><strong>Representation studies:</strong> I compared teacher-student training and learned auxiliary heads in simulation to test what policies retain after privileged training inputs are withdrawn. I use attention maps and other diagnostics to identify what to test, but they do not by themselves establish a causal explanation.</p>
+        </details>
       </div>
 
-      <div class="current-work-live__platform">
+      <details class="research-disclosure" id="research-platform">
+        <summary>Platform and evaluation tools</summary>
+        <p class="research-disclosure__note">I designed and implemented the workflow from teleoperation and synchronized recording to dataset conversion, policy training, evaluation, and deployment. The physical robot and digital twin share the operator, data review, and policy interfaces, with separate hardware and physics backends.</p>
+        <div class="current-work-live__platform">
         <div class="current-work-live__platform-heading">
           <p class="eyebrow light"><span></span>The research platform</p>
           <p><strong class="evidence-state evidence-state--built">Implemented</strong> Six shared layers · physical and simulated backends · staged evaluation</p>
@@ -139,63 +196,7 @@
           <figcaption><span>Shared interfaces across physical and simulated backends</span><span data-diagram-status aria-live="polite">Inspect a stage · policy evaluation is currently manual</span></figcaption>
         </figure>
       </div>
-
-      <div class="current-work-live__claims">
-        <article><span>Implemented</span><p>Modular ROS 2 infrastructure for bimanual manipulation, integrating teleoperation, perception, simulation, data capture, training, and deployment.</p></article>
-        <article><span>Continual learning</span><p>Human takeover, correction capture, review, dataset conversion, retraining, manual evaluation, and controlled policy rollout.</p></article>
-        <article><span>Experimental control</span><p>Shared interfaces across the real cell and digital twin, with staged testing and recorded evidence for each policy version.</p></article>
-      </div>
-
-      <div class="current-work-live__questions">
-        <div class="current-work-live__questions-heading">
-          <h3>Current research directions</h3>
-          <div><p>Each line of work is marked by its current stage of development and validation.</p><span class="mobile-hint" aria-hidden="true">Swipe through directions&nbsp; ↔</span></div>
-        </div>
-        <ol>
-          <li id="continual-learning">
-            <span>01</span><div><h4>Continual learning through intervention</h4><p><strong class="evidence-state evidence-state--built">Implemented workflow</strong> Human takeover, correction capture, review, conversion, retraining, testing, and deployment are connected. Evaluation is manual while automated policy evaluation is being developed.</p><p>I built a step-level control interface through which people and AI models operate the arm with the same small, safety-checked actions. Every step is recorded for comparison and reuse in training.</p><p>In simulation, I compared teacher–student training and learned auxiliary heads, testing whether policies retain useful guidance when privileged training inputs are withdrawn.</p></div>
-            <figure class="current-work-live__concept" tabindex="0" data-animate-diagram><svg viewBox="0 0 320 170" role="img" aria-label="Each refused rollout returns as labeled recovery data and advances farther on the next pass"><g class="cwl-concept-guide"><path d="M82 14V156M160 14V156M238 14V156"></path></g><g class="cwl-concept-thread"><path d="M28 140H132M28 96H188M28 52H284"></path></g><g class="cwl-concept-gate"><path d="M60 134V146M96 134V146M60 90V102M96 90V102M132 90V102M168 90V102M60 46V58M96 46V58M132 46V58M168 46V58M204 46V58M240 46V58"></path></g><g class="cwl-concept-stop"><path d="M132 131V149M138 131V149M188 87V105M194 87V105"></path></g><g class="cwl-concept-return"><path d="M138 140H152V118H20V96H28M194 96H208V74H20V52H28"></path></g><path class="cwl-concept-head" d="M296 52l-12-5v10z"></path></svg><figcaption>Refusal becomes the next data campaign</figcaption></figure>
-          </li>
-          <li id="sim-real">
-            <span>02</span><div><h4>Real → sim → real</h4><p><strong class="evidence-state evidence-state--investigating">Active experiments</strong> I use the digital twin to study transfer across sensing, timing, control, contact, and visual variation. Current experiments examine representations and evaluation methods that remain useful when simulated and physical environments do not match closely.</p></div>
-            <figure class="current-work-live__concept" tabindex="0" data-animate-diagram><svg viewBox="0 0 320 170" role="img" aria-label="Physical and simulated backends meet at one interface before entering shared system owners"><text class="cwl-concept-text" x="18" y="44">PHYSICAL</text><path class="cwl-concept-thread" d="M18 56H132M18 124H132M132 90H284"></path><text class="cwl-concept-text" x="18" y="112">SIMULATED</text><path class="cwl-concept-dash" d="M18 124H132M284 90V150H92V124H124"></path><path class="cwl-concept-boundary" d="M132 36V142"></path><text class="cwl-concept-key" x="132" y="24" text-anchor="middle">ONE INTERFACE</text><g class="cwl-concept-gate"><path d="M168 84V96M204 84V96M240 84V96M276 84V96"></path></g><path class="cwl-concept-head" d="M296 90l-12-5v10z"></path></svg><figcaption>Backend substitution · shared owners after the bar</figcaption></figure>
-          </li>
-          <li id="explainability">
-            <span>03</span><div><h4>Policy explainability and representation</h4><p><strong class="evidence-state evidence-state--investigating">Experiments in progress</strong> I use attention maps, Grad-CAM, state-vector ablations, prompt comparisons, and comparisons across self-supervised and pretrained representations to study what influences policy outputs. These are diagnostic tests; they do not by themselves establish a causal explanation.</p><p>I also conducted controlled simulation studies using activation patching and counterfactual scene edits to test how information in policy representations affects actions. I compared these interventions with attribution diagnostics and behavioral tests. A research question is whether this understanding can improve learning.</p></div>
-            <figure class="current-work-live__concept" tabindex="0" data-animate-diagram><svg viewBox="0 0 320 170" role="img" aria-label="Inputs enter a policy; selected inputs are ablated and the output difference is measured"><g class="cwl-concept-thread"><path d="M18 48H126M18 70H126M18 92H126M18 114H126M18 136H126M194 92H216L266 118H292"></path></g><g class="cwl-concept-dash"><path d="M82 70H126M82 114H126M194 92H292"></path></g><g class="cwl-concept-gate"><path d="M82 63V77M82 107V121"></path></g><text class="cwl-concept-key" x="82" y="27" text-anchor="middle">ABLATED</text><rect class="cwl-concept-plate" x="126" y="36" width="68" height="112"></rect><text class="cwl-concept-text" x="160" y="96" text-anchor="middle">POLICY</text><g class="cwl-concept-bracket"><path d="M300 92V118M295 92H305M295 118H305"></path></g><text class="cwl-concept-key" x="309" y="109">Δ</text></svg><figcaption>Cut one input · measure the output response</figcaption></figure>
-          </li>
-          <li id="egocentric">
-            <span>04</span><div><h4>Egocentric demonstration learning</h4><p><strong class="evidence-state evidence-state--investigating">In development</strong> We are developing a portable egocentric interface for recording human manipulation demonstrations. It reuses the teleoperation, synchronization, data review, and conversion infrastructure I built for the current manipulation system.</p></div>
-            <div class="current-work-live__evidence"><strong>Current state</strong><span>Shared data infrastructure implemented; demonstration-capture hardware and egocentric policy studies in development.</span></div>
-          </li>
-          <li id="world-models">
-            <span>05</span><div><h4>Predictive models, inverse dynamics, and transfer</h4><p><strong class="evidence-state evidence-state--investigating">Offline evaluation completed</strong> I adapted a published video-action architecture to teleoperation data and completed offline evaluation. Physical evaluation has not yet been performed.</p><p><strong>Simulation studies</strong> I trained image-based inverse dynamics and compared inferred-action policies with recorded-label and executed-command controls. I also fine-tuned a world-action model in simulation, assessing future-feature prediction, instruction grounding and failure signals separately from task success. Physical validation remains pending.</p></div>
-            <div class="current-work-live__evidence"><strong>Next validation</strong><span>Physical rollouts and controlled comparison with existing policy approaches.</span></div>
-          </li>
-          <li id="policy-evaluation">
-            <span>06</span><div><h4>Policy evaluation beyond success rate</h4><p>How should capability be evaluated beyond task-level success?</p><p><strong class="evidence-state evidence-state--investigating">Methodology in development</strong> I am evaluating leading open-source vision-language-action models across tasks and developing a common methodology for fairer comparison. The work treats aggregate success rate as incomplete and studies partial progress, failure modes, repeatability, recovery behavior, and sensitivity to control conditions.</p></div>
-            <figure class="current-work-live__concept current-work-live__evaluation" data-animate-diagram data-evaluation-state="outcome">
-              <div class="evaluation-modes" role="group" aria-label="Policy evaluation lens">
-                <button type="button" data-evaluation-mode="outcome" aria-pressed="true">Outcome</button>
-                <button type="button" data-evaluation-mode="behavior" aria-pressed="false">Behavior</button>
-                <button type="button" data-evaluation-mode="control" aria-pressed="false">Control</button>
-              </div>
-              <svg viewBox="0 0 320 170" role="img" aria-label="Two policies evaluated on the same task and control conditions across outcome, behavior, and control measures">
-                <text class="cwl-concept-text" x="16" y="48">MODEL A</text><text class="cwl-concept-text" x="16" y="128">MODEL B</text>
-                <g class="cwl-concept-thread"><path d="M16 58H104M16 138H104M188 88H218"></path></g>
-                <rect class="cwl-concept-plate" x="104" y="24" width="84" height="128"></rect>
-                <text class="cwl-concept-key" x="146" y="76" text-anchor="middle">SAME TASK</text><text class="cwl-concept-text" x="146" y="94" text-anchor="middle">+ CONDITIONS</text>
-                <g class="cwl-eval-axis cwl-eval-outcome"><path class="cwl-concept-dash" d="M218 44H302"></path><text class="cwl-concept-key" x="218" y="35">OUTCOME</text><text class="cwl-concept-text" x="218" y="58">completion · progress</text></g>
-                <g class="cwl-eval-axis cwl-eval-behavior"><path class="cwl-concept-dash" d="M218 88H302"></path><text class="cwl-concept-key" x="218" y="79">BEHAVIOR</text><text class="cwl-concept-text" x="218" y="102">failure · recovery</text></g>
-                <g class="cwl-eval-axis cwl-eval-control"><path class="cwl-concept-dash" d="M218 132H302"></path><text class="cwl-concept-key" x="218" y="123">CONTROL</text><text class="cwl-concept-text" x="218" y="146">compliance · repeatability</text></g>
-              </svg>
-              <figcaption><span>Controlled comparison</span><span data-evaluation-status aria-live="polite">Task completion · partial progress</span></figcaption>
-            </figure>
-          </li>
-        </ol>
-      </div>
-
-      <details class="illustrative-diagnostic"><summary>Illustrative diagnostic schematic – not measured research output</summary>      <figure class="current-work-live__attention policy-lab" data-animate-diagram data-attention-state="all" data-policy-input="vision">
+        <details class="illustrative-diagnostic"><summary>Illustrative policy diagnostics (not measured results)</summary><figure class="current-work-live__attention policy-lab" data-animate-diagram data-attention-state="all" data-policy-input="vision">
         <div class="current-work-live__attention-heading"><p class="eyebrow light"><span></span>Policy analysis instrument</p><p>Select an input source, then compare the nominal and controlled-perturbation views.</p></div>
         <div class="policy-lab__controls">
           <div><small>Input under study</small><div class="policy-input-modes" role="group" aria-label="Policy input under study">
@@ -221,34 +222,48 @@
         </svg>
         <figcaption><span>Controlled diagnostic schematic · attribution is not causation</span><span>Illustrative field—not measured output</span></figcaption>
       </figure></details>
+      </details>
     </section>
 
     <section class="work-section" id="work">
       <div class="section-heading">
         <div>
-          <p class="eyebrow"><span></span>Selected systems</p>
-          <h2>Projects and<br>technical contributions.</h2>
+          <p class="eyebrow"><span></span>Research portfolio</p>
+          <h2>Selected projects</h2>
         </div>
-        <p class="section-note">Selected work in robot learning, perception, control, multimodal interaction, and physical deployment.</p>
+        <p class="section-note">Case studies with methods, results, and links to papers or code.</p>
       </div>
 
-      <div class="featured-work">
-        <article class="feature-card feature-dark">
-          <div class="feature-art learning-stack" aria-hidden="true">
-            <div class="learning-core"><small>closed loop</small><strong>Robot<br>learning</strong><span>skill acquisition</span></div>
-            <div class="learning-module module-teleop"><span>01</span><strong>Teleoperate</strong><small>human demonstrations</small></div>
-            <div class="learning-module module-orchestrate"><span>02</span><strong>Orchestrate</strong><small>behavior trees</small></div>
-            <div class="learning-module module-twin"><span>03</span><strong>Mirror</strong><small>digital twin</small></div>
-            <div class="learning-module module-collect"><span>04</span><strong>Collect</strong><small>automatic episodes</small></div>
-            <div class="learning-module module-train"><span>05</span><strong>Learn</strong><small>data → policy</small></div>
-            <span class="learning-loop loop-a"></span><span class="learning-loop loop-b"></span>
-            <span class="system-label">demonstrate → structure → simulate → learn → deploy</span>
-          </div>
-          <div class="feature-copy">
-            <div class="project-meta"><span>Chapter 04</span><span>Real-world robot learning</span></div>
-            <h3>Robot learning for unstructured manipulation</h3>
-            <p>Research and engineering for bimanual manipulation of deformable objects—coupling multimodal perception, force-aware compliant control, human demonstrations, learned action policies, high-fidelity simulation, and real-world ROS 2 deployment.</p>
-            <div class="tags"><span>Deformable objects</span><span>Bimanual systems</span><span>Compliance</span><span>Robot learning</span><span>Sim-to-real</span></div>
+      <article class="system-spotlight tar-spotlight">
+        <div class="spotlight-media motion-frame" data-motion-story>
+          <video muted loop playsinline preload="metadata" poster="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" aria-label="Track Anything Rapter following an AprilTag from a UAV">
+            <source src="imgs/tar.mp4" type="video/mp4">
+          </video>
+          <span class="image-index">Real UAV deployment</span>
+          <div class="motion-sequence" data-system-loop aria-hidden="true"><small>System loop · illustrative</small><span>Specify</span><span>Perceive</span><span>Track</span><span>Act</span><i></i></div>
+        </div>
+        <div class="spotlight-copy">
+          <div class="project-meta"><span>2024 · Preprint</span><span>Physical flight trials</span></div>
+          <h3>Track Anything Rapter</h3>
+          <p>A person can use a click, box, image, or text to tell a drone what to follow. I co-developed the system, implemented the high-level controller, and designed the trajectory evaluation against motion capture.</p>
+          <p class="research-note">Physical flight trials compared target and drone trajectories. Obstruction increased the distance between the aligned trajectories in the reported trials.</p>
+          <div class="spotlight-links project-actions"><a class="case-study-link" href="projects/track-anything-rapter/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://github.com/tvpian/Project-TAR">Code + demos <span aria-hidden="true">↗</span></a><a class="text-link" href="https://arxiv.org/abs/2405.11655">Paper <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="role-spotlight">
+        <div class="role-copy"><p class="eyebrow"><span></span>U-ASTROD · GameSec 2024</p><h3>Multimodal anomaly detection</h3><p>For the ASTROD research program, I architected the fusion pipeline that encoded LiDAR, odometry, and network traffic independently before combining their learned representations in a shared anomaly detector.</p><p class="research-note">The published system paired modality-specific spatiotemporal encoders with feature-wise reconstruction scoring. It achieved up to 98% accuracy with vector-based reconstruction loss versus 72% with scalar-based loss, and 97% with half the training data.</p><div class="spotlight-links project-actions"><a class="case-study-link" href="projects/multimodal-anomaly-detection/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://doi.org/10.1007/978-3-031-74835-6_15">Publication <span aria-hidden="true">↗</span></a></div></div>
+        <figure class="role-figure"><img src="imgs/astrod-architecture.png?v=20260926-3" alt="U-ASTROD process flow with actual network, odometry, and LiDAR samples feeding modality-specific encoders and a shared anomaly detector"><figcaption>U-ASTROD process flow · redrawn from the published architecture</figcaption></figure>
+      </article>
+
+      <div class="project-grid related-projects">
+        <article class="project-card architecture-card">
+          <div class="architecture-art"><img src="imgs/posefusion-architecture.png" alt="PoseFusion architecture showing view-specific pose graphs, GCN encoders, semantic aggregation, and temporal transformer encoding"><span class="image-index">Architecture designed across two studies</span></div>
+          <div class="project-copy">
+            <div class="project-meta"><span>Graduate course project · 2023</span><span>Multi-view learning</span></div>
+            <h3>PoseFusion: action recognition under occlusion</h3>
+            <p>I designed the core architecture for fusing pose data across camera views and paired it with a temporal model. In the reported occlusion tests, combining views raised F1 from 0.76 to 0.82 compared with a single view.</p>
+            <div class="card-links project-actions"><a class="card-link case-study-link" href="projects/multimodal-perception/">Open case study <span aria-hidden="true">→</span></a><a class="card-link" href="https://www.researchgate.net/publication/378143241_Pose_Fusion_-_Multi-View_Pose_Integration_for_Comprehensive_Action_Recognition">Poster ↗</a><a class="card-link" href="https://github.com/tvpian/HPE_for_HAR">Code ↗</a></div>
           </div>
         </article>
 
@@ -282,19 +297,6 @@
             <div class="card-links project-actions"><a class="card-link case-study-link" href="projects/precision-weeding/">Open case study <span aria-hidden="true">→</span></a><a class="card-link hybrid-paper-link" href="https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming">Paper + figures <span aria-hidden="true">↗</span></a></div>
           </div>
         </article>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card architecture-card">
-          <div class="architecture-art"><img src="imgs/posefusion-architecture.png" alt="PoseFusion architecture showing view-specific pose graphs, GCN encoders, semantic aggregation, and temporal transformer encoding"><span class="image-index">Architecture designed across two studies</span></div>
-          <div class="project-copy">
-            <div class="project-meta"><span>Research poster · 2023</span><span>Multi-view learning</span></div>
-            <h3>Action recognition from partial evidence</h3>
-            <p>I defined the core architecture across two studies: pose graphs encode spatial structure through GCNs, transformers model action over time, and attention fuses incomplete evidence across camera views. The work supported privacy-preserving fall detection and multi-view recognition under occlusion—then became the architectural starting point for my multimodal anomaly-detection work.</p>
-            <div class="architecture-proof"><span><strong>0.82</strong> F1 under occlusion</span><span><strong>3 views</strong> fused semantically</span><span><strong>GCN → Transformer</strong> spatial to temporal</span></div>
-            <div class="card-links project-actions"><a class="card-link case-study-link" href="projects/multimodal-perception/">Open case study <span aria-hidden="true">→</span></a><a class="card-link" href="https://www.researchgate.net/publication/378143241_Pose_Fusion_-_Multi-View_Pose_Integration_for_Comprehensive_Action_Recognition">Poster ↗</a><a class="card-link" href="https://github.com/tvpian/HPE_for_HAR">Code ↗</a></div>
-          </div>
-        </article>
 
         <article class="project-card">
           <div class="project-image cobalt motion-frame" data-motion-story>
@@ -324,29 +326,6 @@
         </article>
       </div>
 
-      <article class="system-spotlight tar-spotlight">
-        <div class="spotlight-media motion-frame" data-motion-story>
-          <video muted loop playsinline preload="metadata" poster="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" aria-label="Track Anything Rapter following an AprilTag from a UAV">
-            <source src="imgs/tar.mp4" type="video/mp4">
-          </video>
-          <span class="image-index">Real UAV deployment</span>
-          <div class="motion-sequence" data-system-loop aria-hidden="true"><small>System loop · illustrative</small><span>Specify</span><span>Perceive</span><span>Track</span><span>Act</span><i></i></div>
-        </div>
-        <div class="spotlight-copy">
-          <div class="project-meta"><span>Chapter 03 · 2024</span><span>Multimodal perception → control</span></div>
-          <p class="spotlight-kicker">Track Anything Rapter · TAR</p>
-          <h3>One target.<br>Many ways to specify it.</h3>
-          <p>I co-developed a ROS 2 aerial system that accepts a click, box, image, or text query; combines foundation models for detection and segmentation; then closes the loop through visual servoing on a PX4-enabled VOXL2 M500 drone.</p>
-          <ol class="architecture-flow" aria-label="TAR system architecture">
-            <li><span>01</span>Specify<small>text · image · click · box</small></li>
-            <li><span>02</span>Perceive<small>DINO · CLIP · SAM</small></li>
-            <li><span>03</span>Track<small>target pose · re-detection</small></li>
-            <li><span>04</span>Act<small>visual servoing · PX4</small></li>
-          </ol>
-          <div class="spotlight-links project-actions"><a class="case-study-link" href="projects/track-anything-rapter/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://github.com/tvpian/Project-TAR">Code + demos <span aria-hidden="true">↗</span></a><a class="text-link" href="https://arxiv.org/abs/2405.11655">Paper <span aria-hidden="true">↗</span></a></div>
-        </div>
-      </article>
-
       <article class="system-spotlight hri-spotlight" id="hri">
         <div class="spotlight-copy">
           <div class="project-meta"><span>Chapter 02 · 2021–23</span><span>Formative research exploration</span></div>
@@ -360,11 +339,6 @@
           <img src="imgs/natsgd-context.png" alt="NatSGD overview showing synchronized speech, gesture, visual observations, and robot demonstrations">
           <p><span>Related research context</span>NatSGD later formalized speech, gesture, and synchronized robot demonstrations at UMD. Image: Shrestha et al., CC BY 4.0.</p>
         </div>
-      </article>
-
-      <article class="role-spotlight">
-        <div class="role-copy"><p class="eyebrow"><span></span>Technical module · U-ASTROD</p><h3>Multimodal anomaly detection</h3><p>For the ASTROD research program, I architected the fusion pipeline that encoded LiDAR, odometry, and network traffic independently before combining their learned representations in a shared anomaly detector.</p><p class="research-note">The published system paired modality-specific spatiotemporal encoders with feature-wise reconstruction scoring. It achieved up to 98% accuracy with vector-based reconstruction loss versus 72% with scalar-based loss, and 97% with half the training data.</p><div class="spotlight-links project-actions"><a class="case-study-link" href="projects/multimodal-anomaly-detection/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://doi.org/10.1007/978-3-031-74835-6_15">Publication <span aria-hidden="true">↗</span></a></div></div>
-        <figure class="role-figure"><img src="imgs/astrod-architecture.png?v=20260926-3" alt="U-ASTROD process flow with actual network, odometry, and LiDAR samples feeding modality-specific encoders and a shared anomaly detector"><figcaption>U-ASTROD process flow · redrawn from the published architecture</figcaption></figure>
       </article>
     </section>
 
@@ -566,6 +540,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
