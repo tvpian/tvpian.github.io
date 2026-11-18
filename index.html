@@ -97,7 +97,7 @@
           <p class="eyebrow light"><span></span>Robot learning</p>
           <h2 id="current-work-title">Current work</h2>
         </div>
-        <p>I built a shared ROS 2 platform for a physical bimanual robot and its digital twin so I can test how policies learn, what they rely on, and where they fail.</p>
+        <p>I built a ROS 2 platform shared by a physical bimanual robot and its digital twin. It supports studies of how policies learn, what information they use, and where they fail.</p>
       </div>
 
       <div class="current-work-live__questions">
@@ -107,7 +107,7 @@
             <div>
               <h3>Learning from human corrections</h3>
               <p><strong class="evidence-state evidence-state--built">Implemented workflow</strong></p>
-              <p>When a policy fails, a person can take control of the arm. I built the workflow to record the correction, review it, and add it to demonstrations for training the next policy.</p>
+              <p>When a policy fails, a person can take control of the arm. The workflow records the correction so it can be reviewed and added to the demonstrations used to train the next policy.</p>
               <p>People and policies use the same arm commands, so their actions can be compared step by step. Policy evaluation is currently performed manually. Whether the corrections improve later policies without eroding earlier skills remains an open question.</p>
             </div>
           </li>
@@ -116,8 +116,8 @@
             <div>
               <h3>What information does a policy use to act?</h3>
               <p><strong class="evidence-state evidence-state--investigating">Simulation and physical robot studies</strong></p>
-              <p>In simulation, I used representation probes and activation patching to test whether policies act on the associations they encode between words and objects. In the policies tested, the action heads did not use those associations.</p>
-              <p>On a bimanual robot, I scored object choice separately from pick completion. In these comparisons, higher task success did not imply better selection of the object named in the instruction.</p>
+              <p>In simulation, representation probes showed that the tested policies encoded links between words and objects. Activation patching showed that their action heads did not use those links.</p>
+              <p>Bimanual robot trials measured object choice separately from pick completion. In those trials, higher task success did not necessarily mean the policy was better at choosing the object named in the instruction.</p>
             </div>
           </li>
         </ol>
@@ -127,23 +127,23 @@
           <ol class="secondary-studies" aria-label="Related research">
             <li id="egocentric">
               <div class="study-label"><h3>Egocentric demonstrations</h3><span>In development</span></div>
-              <p>I am developing a portable interface for recording human manipulation demonstrations. It uses the same recording and review tools as teleoperation.</p>
+              <p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
             </li>
             <li id="world-models">
               <div class="study-label"><h3>Predictive models and inverse dynamics</h3><span>Offline evaluation completed · simulation studies</span></div>
-              <p>I adapted a video-action model to teleoperation data and evaluated it offline. In simulation, I compared actions inferred from video with recorded actions and commands sent to the robot. I evaluated future-feature prediction, instruction grounding, and failure signals separately from task success. Physical validation is pending.</p>
+              <p>Offline tests evaluated a video-action model adapted to teleoperation data. Simulation tests compared actions inferred from video with recorded actions and commands sent to the robot. They assessed future-feature prediction, instruction grounding, and failure signals separately from task success. Physical validation is pending.</p>
             </li>
             <li id="sim-real">
               <div class="study-label"><h3>Transfer between simulation and hardware</h3><span>Active experiments</span></div>
-              <p>I use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulated and physical environments.</p>
+              <p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
             </li>
             <li id="policy-evaluation">
               <div class="study-label"><h3>Policy evaluation beyond success rate</h3><span>In development</span></div>
-              <p>I am developing a common way to compare policies using partial progress, failure modes, recovery and repeatability as well as task success.</p>
+              <p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
             </li>
             <li id="representation-studies">
               <div class="study-label"><h3>What policies retain from training</h3><span>Simulation studies</span></div>
-              <p>I compared teacher-student training and learned auxiliary heads to see what policies retain when privileged inputs are removed. I use attention maps as diagnostics, but they do not by themselves establish a causal explanation.</p>
+              <p>Simulation tests compared teacher-student training with learned auxiliary heads to see what policies retain when privileged inputs are removed. Attention maps help diagnose behavior, but they do not by themselves establish a causal explanation.</p>
             </li>
           </ol>
         </details>
