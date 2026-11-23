@@ -19,14 +19,13 @@
     })();
   </script>
   <link rel="stylesheet" href="/stylesheet.css?v=research-chapters">
-  <link rel="stylesheet" href="/drafts/research/research-draft.css?v=4">
+  <link rel="stylesheet" href="/drafts/research/research-draft.css?v=5">
   <link rel="icon" type="image/png" href="https://tvpian.github.io/images/seal_icon.png">
   <script src="https://tvpian.github.io/theme.js?v=20260925-research-map" defer></script>
   <script src="/portfolio.js?v=research-first" defer></script>
-  <script src="/drafts/research/research-draft.js?v=3" defer></script>
+  <script src="/drafts/research/research-draft.js?v=5" defer></script>
 </head>
 <body>
-  <p class="research-draft-note">Research chapter draft <a href="https://tvpian.github.io/">View current homepage</a></p>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -87,7 +86,7 @@
     <section class="research-notebook" id="current" aria-labelledby="rn-title">
       <span id="research-direction"></span>
       <header class="rn-header">
-        <div><p class="eyebrow"><span></span>Research</p><h2 id="rn-title">How robots learn<br>from people.</h2></div>
+        <div><h2 id="rn-title">How robots learn from people.</h2></div>
         <p>Human interaction, learned representations, and prediction, studied on physical robots and in simulation.</p>
       </header>
       <div class="rn-workspace">
@@ -113,26 +112,25 @@
       <defs><pattern id="rn-dot-field" width="28" height="28" patternunits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor" opacity=".15"></circle></pattern></defs>
       <rect width="900" height="280" fill="url(#rn-dot-field)"></rect>
       <path class="rn-path-background" d="M35 220 C150 220 205 95 325 125 S565 255 710 150 S805 75 865 65"></path>
-      <path class="rn-policy-path" d="M35 220 C150 220 205 95 325 125 S435 192 470 185" pathLength="1"></path>
+      <path class="rn-policy-path" d="M35 220 C150 220 205 95 325 125 S435 192 470 185" pathlength="1"></path>
       <circle class="rn-policy-dot" cx="35" cy="220" r="7"></circle>
       <g class="rn-policy-limit"><circle cx="470" cy="185" r="12"></circle><path d="M462 177 478 193 M478 177 462 193"></path></g>
-      <g class="rn-human-segment"><path class="rn-human-path" d="M470 185 C515 176 505 72 610 78 S767 158 830 77" pathLength="1"></path><circle cx="830" cy="77" r="8"></circle><path class="rn-capture-bracket" d="M500 239 V252 H810 V239"></path></g>
+      <g class="rn-human-segment"><path class="rn-human-path" d="M470 185 C515 176 505 72 610 78 S767 158 830 77" pathlength="1"></path><circle cx="830" cy="77" r="8"></circle><path class="rn-capture-bracket" d="M500 239 V252 H810 V239"></path></g>
       <circle class="rn-goal-ring" cx="830" cy="77" r="25"></circle>
       <circle class="rn-goal-ring rn-goal-outer" cx="830" cy="77" r="41"></circle>
     </svg>
-    <span class="rn-concept-caption">A correction can become new training experience.</span><figcaption>Concept illustration, not a recorded rollout.</figcaption>
+    <figcaption>Concept illustration, not a recorded rollout.</figcaption>
   </figure>
   <div class="rn-idea"><p>A person's intervention can be more than a way to finish a task. It can become a demonstration the robot learns from.</p></div>
-  <details class="rn-notes"><summary>Study notes</summary><div><p>When a policy fails, a person can take control of the arm. The workflow records the correction so it can be reviewed and added to the demonstrations used to train the next policy.</p>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-continual-learning">Explore this thread</button><span class="rn-panel-footnote">Egocentric interface in development</span></div><dialog class="rn-reading-panel" id="reading-continual-learning" aria-labelledby="reading-continual-learning-title"><header class="rn-reading-heading"><h3 id="reading-continual-learning-title">Learning from People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>When a policy fails, a person can take control of the arm. The workflow records the correction so it can be reviewed and added to the demonstrations used to train the next policy.</p>
               <p>People and policies use the same arm commands, so their actions can be compared step by step. Policy evaluation is currently performed manually. Whether the corrections improve later policies without eroding earlier skills remains an open question.</p>
-            </div></details>
-  <div class="rn-support"><div><span class="rn-label">In development</span><details id="egocentric"><summary>Egocentric demonstrations</summary><p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
+            <div class="rn-support"><div><span class="rn-label">In development</span><details id="egocentric"><summary>Egocentric demonstrations</summary><p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
               </details></div>
               <div><span class="rn-label">Simulation studies</span><details id="representation-studies"><summary>What policies retain from training</summary><p>Simulation tests compared teacher-student training with learned auxiliary heads to see what policies retain when privileged inputs are removed. Attention maps help diagnose behavior, but they do not by themselves establish a causal explanation.</p>
               </details></div>
             </div>
           
-</section>
+</div></dialog></section>
           
 <section class="rn-panel" id="explainability" data-thread-panel>
   <div class="rn-context"><span>Current work</span><strong class="rn-status">Simulation and physical robot studies</strong></div>
@@ -150,18 +148,17 @@
       <path class="rn-possible-link" d="M495 153 C555 145 573 140 630 140"></path>
       <g class="rn-action-network"><path d="M630 140 C690 140 698 64 770 64 M630 140 C690 140 713 214 800 214"></path><circle cx="630" cy="140" r="18"></circle><rect x="752" y="46" width="36" height="36" rx="4"></rect><circle cx="800" cy="214" r="20"></circle></g>
     </svg>
-    <span class="rn-concept-caption">Representing an object and using that information to act are separate questions.</span><figcaption>Concept illustration, not an attribution map or measured result.</figcaption>
+    <figcaption>Concept illustration, not an attribution map or measured result.</figcaption>
   </figure>
   <div class="rn-idea"><p>A policy can represent which object a word refers to without using that knowledge when it acts. Understanding the representation is only part of the question.</p></div>
-  <details class="rn-notes"><summary>Study notes</summary><div><p>In simulation, representation probes showed that the tested policies encoded links between words and objects. Activation patching showed that their action heads did not use those links.</p>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-explainability">Explore this thread</button><span class="rn-panel-footnote">Simulation and physical robot studies</span></div><dialog class="rn-reading-panel" id="reading-explainability" aria-labelledby="reading-explainability-title"><header class="rn-reading-heading"><h3 id="reading-explainability-title">Policy Explainability and Representation</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>In simulation, representation probes showed that the tested policies encoded links between words and objects. Activation patching showed that their action heads did not use those links.</p>
               <p>Bimanual robot trials measured object choice separately from pick completion. In those trials, higher task success did not necessarily mean the policy was better at choosing the object named in the instruction.</p>
-            </div></details>
-  <div class="rn-support"><div><span class="rn-label">In development</span><details id="policy-evaluation"><summary>Policy evaluation beyond success rate</summary><p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
+            <div class="rn-support"><div><span class="rn-label">In development</span><details id="policy-evaluation"><summary>Policy evaluation beyond success rate</summary><p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
               </details></div>
               <div><span class="rn-label">Research tools</span><div class="rn-links"><a href="#research-platform">Policy diagnostics and evaluation tools</a></div></div>
             </div>
           
-</section>
+</div></dialog></section>
           
 <section class="rn-panel" id="world-models" data-thread-panel>
   <div class="rn-context"><span>Current work</span><strong class="rn-status">Offline evaluation completed · simulation studies</strong></div>
@@ -180,14 +177,13 @@
     <span class="rn-concept-caption">A prediction and an action need separate tests.</span><figcaption>Concept illustration, not model output.</figcaption>
   </figure>
   <div class="rn-idea"><p>What might happen next, and what action could make it happen? Predictive models and inverse dynamics approach action learning from those two directions.</p></div>
-  <details class="rn-notes"><summary>Study notes</summary><div><p>Offline tests evaluated a video-action model adapted to teleoperation data. Simulation tests compared actions inferred from video with recorded actions and commands sent to the robot. They assessed future-feature prediction, instruction grounding, and failure signals separately from task success.</p>
-              </div></details>
-  <div class="rn-support"><div><span class="rn-label">Active experiments</span><details id="sim-real"><summary>Transfer between simulation and hardware</summary><p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-world-models">Explore this thread</button><span class="rn-panel-footnote">Physical validation is pending.</span></div><dialog class="rn-reading-panel" id="reading-world-models" aria-labelledby="reading-world-models-title"><header class="rn-reading-heading"><h3 id="reading-world-models-title">Predictive Models, Inverse Dynamics, and Transfer</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Offline tests evaluated a video-action model adapted to teleoperation data. Simulation tests compared actions inferred from video with recorded actions and commands sent to the robot. They assessed future-feature prediction, instruction grounding, and failure signals separately from task success.</p>
+              <div class="rn-support"><div><span class="rn-label">Active experiments</span><details id="sim-real"><summary>Transfer between simulation and hardware</summary><p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
               </details></div>
               <div><span class="rn-label">Validation boundary</span><h4>Offline and simulation evidence</h4><p>Physical validation is pending.</p></div>
             </div>
           
-</section>
+</div></dialog></section>
           
 <section class="rn-panel" id="understanding-people" data-thread-panel>
   <div class="rn-context"><span>Prior work · 2021–2024</span><strong class="rn-status">Multimodal perception and HRI</strong></div>
@@ -198,12 +194,11 @@
     <figcaption><span>Track Anything Rapter</span><a href="https://tvpian.github.io/projects/track-anything-rapter/">Explore the project</a></figcaption>
   </figure>
   <div class="rn-idea"><p>A click, an image, a phrase, or a gesture can express an intention. The challenge is turning that incomplete evidence into something a robot can act on.</p></div>
-  <div class="rn-links rn-prior-links"><a href="https://tvpian.github.io/projects/multimodal-perception/">PoseFusion (graduate course project)</a><a href="https://tvpian.github.io/projects/natsgd/">NatSGD prototype</a></div>
-  <details class="rn-notes"><summary>Research context and contributions</summary><div><article class="rn-project"><div><span class="rn-label">Physical flight trials</span><h4><a href="https://tvpian.github.io/projects/track-anything-rapter/">Track Anything Rapter</a></h4></div><p>A person can use a click, box, image, or text to tell a drone what to follow. Co-developed the system, implemented the high-level controller, and designed the trajectory evaluation against motion capture.</p></article>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-understanding-people">Explore this thread</button><span class="rn-panel-footnote">PoseFusion · TAR · NatSGD</span></div><dialog class="rn-reading-panel" id="reading-understanding-people" aria-labelledby="reading-understanding-people-title"><header class="rn-reading-heading"><h3 id="reading-understanding-people-title">Understanding People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><article class="rn-project"><div><span class="rn-label">Physical flight trials</span><h4><a href="https://tvpian.github.io/projects/track-anything-rapter/">Track Anything Rapter</a></h4></div><p>A person can use a click, box, image, or text to tell a drone what to follow. Co-developed the system, implemented the high-level controller, and designed the trajectory evaluation against motion capture.</p></article>
               <article class="rn-project"><div><span class="rn-label">Exploratory prototype</span><h4><a href="https://tvpian.github.io/projects/natsgd/">NatSGD prototype</a></h4></div><p>An exploratory demonstration, speech, and gesture policy on the NatSGD dataset provided by Snehesh Shrestha (UMD). Task success and the benefit of gesture remain unvalidated.</p></article>
               <article class="rn-project"><div><span class="rn-label">Graduate course project</span><h4><a href="https://tvpian.github.io/projects/multimodal-perception/">PoseFusion</a></h4></div><p>Multi-view pose fusion for action recognition under occlusion. In the reported tests, combining views raised F1 from 0.76 to 0.82 compared with a single view.</p></article>
-            </div></details>
-</section>
+            <div class="rn-links rn-prior-links"><a href="https://tvpian.github.io/projects/multimodal-perception/">PoseFusion (graduate course project)</a><a href="https://tvpian.github.io/projects/natsgd/">NatSGD prototype</a></div>
+  </div></dialog></section>
         <section class="rn-panel rn-platform-panel" id="research-platform" data-thread-panel>
   <div class="rn-context"><span>Shared foundation</span><strong class="rn-status">Implemented</strong></div>
   <h3 class="rn-question">From demonstrations to physical experiments.</h3>
@@ -223,7 +218,7 @@
     <figcaption>Platform schematic.</figcaption>
   </figure>
   <div class="rn-idea"><p>Shared interfaces connect the physical robot and its digital twin, so the studies can move between simulation and hardware without rebuilding the workflow.</p></div>
-  <details class="rn-notes rn-platform-notes"><summary>Platform details and illustrative evaluation tools</summary><div class="rn-platform-detail-content"><p class="rn-platform-intro">I designed and implemented the workflow from teleoperation and synchronized recording to dataset conversion, policy training, evaluation, and deployment. The physical robot and digital twin share the operator, data review, and policy interfaces, with separate hardware and physics backends.</p>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-research-platform">Platform details</button><span class="rn-panel-footnote">Policy evaluation is currently performed manually.</span></div><dialog class="rn-reading-panel" id="reading-research-platform" aria-labelledby="reading-research-platform-title"><header class="rn-reading-heading"><h3 id="reading-research-platform-title">Platform details and evaluation tools</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p class="rn-platform-intro">I designed and implemented the workflow from teleoperation and synchronized recording to dataset conversion, policy training, evaluation, and deployment. The physical robot and digital twin share the operator, data review, and policy interfaces, with separate hardware and physics backends.</p>
         <div class="rn-platform-body"><div class="current-work-live__platform">
         <div class="current-work-live__platform-heading">
           <p class="eyebrow light"><span></span>The research platform</p>
@@ -275,8 +270,7 @@
         <figcaption><span>Controlled diagnostic schematic · attribution is not causation</span><span>Illustrative field—not measured output</span></figcaption>
       </figure></details>
       </div>
-</div></details>
-</section></div>
+</div></dialog></section></div>
       </div>
       </section>
 
@@ -570,23 +564,8 @@
       </a>
     </section>
 
-    <section class="about-section" id="about">
-      <div><p class="eyebrow"><span></span>Research direction</p><blockquote>Robots that can understand people and learn from them.</blockquote></div>
-      <div class="about-copy">
-        <p>My long-term aim is to develop algorithms that allow robots to interpret human intent in ways that support action and learning.</p>
-        <p>My work approaches this problem through policy understanding, representation learning, world models, embodied experience, human interaction, continual learning, and rigorous evaluation.</p>
-        <p>I am particularly interested in methods that remain interpretable and testable when they move from offline benchmarks to physical systems.</p>
-        <p>I hold an M.Eng. in Robotics from the University of Maryland and bring experience across academic research, industrial R&amp;D, and real-world robotics deployment.</p>
-        <div class="about-links"><a href="https://scholar.google.com/citations?user=Vre9wQQAAAAJ&amp;hl=en">Google Scholar ↗</a><a href="https://www.linkedin.com/in/tvpian/">LinkedIn ↗</a><a href="https://github.com/tvpian">GitHub ↗</a></div>
-      </div>
-    </section>
-
-    <section class="contact-section">
-      <p class="eyebrow light"><span></span>Collaborate</p>
-      <h2>Research and engineering<br>collaboration.</h2>
-      <a class="button button-light" href="mailto:tharunv.pvit@gmail.com">Contact me <span aria-hidden="true">→</span></a>
-    </section>
-  </main>
+    <section class="about-contact" id="about" aria-labelledby="about-contact-title"><h2 id="about-contact-title">About and contact</h2><div class="about-contact-copy"><p>I hold an M.Eng. in Robotics from the University of Maryland and bring experience across academic research, industrial R&amp;D, and real-world robotics deployment.</p><div class="about-links"><a href="https://scholar.google.com/citations?user=Vre9wQQAAAAJ&amp;hl=en">Google Scholar ↗</a><a href="https://www.linkedin.com/in/tvpian/">LinkedIn ↗</a><a href="https://github.com/tvpian">GitHub ↗</a><a href="mailto:tharunv.pvit@gmail.com">Email</a></div>
+      </div></section></main>
 
   <footer>
     <div class="identity"><span class="identity-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Tharun V Puthanveettil</span></div>

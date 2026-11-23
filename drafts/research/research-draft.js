@@ -33,8 +33,10 @@
     }
     chapter.classList.add('rn-enhanced');
     if (target.matches('details')) target.open = true;
+    const reading = target.closest('.rn-reading-panel');
+    if (reading && !reading.open) reading.showModal();
     if (update) history.pushState(null, '', '#' + id);
-    if (scroll) target.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
+    if (scroll) (target.closest('.rn-reading-panel') ? target : chapter).scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
     if (focus) target.focus({preventScroll: true});
     return true;
   }
@@ -71,7 +73,7 @@
   fromHash();
   if (location.hash) requestAnimationFrame(() => {
     const target = document.getElementById(location.hash.slice(1));
-    if (target && chapter.contains(target)) target.scrollIntoView({behavior: 'instant', block: 'start'});
+    if (target && chapter.contains(target)) (target.closest('.rn-reading-panel') ? target : chapter).scrollIntoView({behavior: 'instant', block: 'start'});
   });
 })();
 
@@ -83,7 +85,7 @@
   const alignEntry = () => requestAnimationFrame(() => {
     if (location.hash !== initialHash) return;
     const target = document.getElementById(initialHash.slice(1));
-    if (target && root.contains(target)) target.scrollIntoView({behavior: 'instant', block: 'start'});
+    if (target && root.contains(target)) (target.closest('.rn-reading-panel') ? target : root).scrollIntoView({behavior: 'instant', block: 'start'});
   });
   if (document.readyState === 'complete') alignEntry();
   else addEventListener('load', alignEntry, {once: true});
@@ -156,4 +158,22 @@
   new MutationObserver(refresh).observe(root, {attributes: true, attributeFilter: ['hidden', 'open'], subtree: true});
   preference.addEventListener('change', refresh);
   addEventListener('visibilitychange', refresh);
+})();
+
+
+(() => {
+  const root = document.querySelector('.research-notebook');
+  if (!root) return;
+  root.querySelectorAll('[data-open-reading]').forEach(button => {
+    const dialog = document.getElementById(button.dataset.openReading);
+    button.addEventListener('click', () => dialog.showModal());
+  });
+  root.querySelectorAll('.rn-reading-panel').forEach(dialog => {
+    dialog.querySelector('[data-close-reading]').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      if (event.target !== dialog) return;
+      const box = dialog.getBoundingClientRect();
+      if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+    });
+  });
 })();
