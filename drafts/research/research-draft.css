@@ -321,7 +321,7 @@ html[data-theme="dark"] .research-notebook { --rn-blue: #a8b9ff; --rn-green: #c9
 .research-notebook .rn-reading-body .rn-support { margin-top: 1.5rem; }
 .research-notebook .rn-reading-body .rn-platform-body { max-width: 100%; overflow: hidden; }
 .rn-reading-panel button:focus-visible { outline: 2px solid var(--rn-blue); outline-offset: 3px; }
-.about-contact { padding: 4rem max(2rem,calc((100vw - 1220px)/2)); display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; border-top: 1px solid var(--line); background: var(--paper-deep); }
+.about-contact { padding: 4rem max(32px,calc((100vw - 1400px)/2)); display: grid; grid-template-columns: 1.05fr .95fr; gap: 8vw; border-top: 1px solid var(--line); background: var(--paper-deep); }
 .about-contact h2 { margin: 0; font: 400 clamp(2.2rem,3vw,3.2rem)/1.05 'Instrument Serif',Georgia,serif; }
 .about-contact-copy > p { margin: 0; max-width: 65ch; font-size: 1rem; line-height: 1.7; color: var(--muted); }
 .about-contact .about-links { margin-top: 1.5rem; font-size: .9375rem; }
@@ -370,8 +370,12 @@ html[data-theme="dark"] .research-notebook { --rn-blue: #a8b9ff; --rn-green: #c9
  body:has(.research-notebook) .publication-window { height: 100%; min-height: 0; }
  body:has(.research-notebook) main > section.about-contact { min-height: 0; height: 12rem; padding-block: 1.5rem; align-items: center; scroll-snap-align: none; scroll-margin-top: calc(100svh - 19rem); }
  body:has(.research-notebook) .about-contact h2 { font-size: 2.3rem; }
- body:has(.research-notebook) .about-contact .about-links { margin-top: 1rem; }
+ body:has(.research-notebook) .about-contact-copy > p { font-size: .9375rem; line-height: 1.6; }
+ body:has(.research-notebook) .about-contact .about-links { margin-top: 1rem; gap: 14px 24px; }
  body:has(.research-notebook) footer { height: 7rem; min-height: 0; padding-block: 1.25rem; scroll-snap-align: none; }
+}
+@media (min-width: 701px) and (max-width: 999px) {
+ .about-contact { grid-template-columns: 1fr; gap: 1.3rem; }
 }
 @media (max-width: 700px) {
  .research-notebook .rn-panel-footer { margin-top: 1rem; }
