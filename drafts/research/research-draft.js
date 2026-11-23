@@ -6,7 +6,7 @@
   const nav = chapter.querySelector('.rn-tabs');
   const mobile = matchMedia('(max-width: 700px)');
   nav.setAttribute('role', 'tablist');
-  nav.setAttribute('aria-label', 'Research threads');
+  nav.setAttribute('aria-label', 'Research threads and shared platform');
   const setOrientation = () => nav.setAttribute('aria-orientation', mobile.matches ? 'horizontal' : 'vertical');
   setOrientation();
   mobile.addEventListener('change', setOrientation);
@@ -87,29 +87,6 @@
   });
   if (document.readyState === 'complete') alignEntry();
   else addEventListener('load', alignEntry, {once: true});
-  root.querySelector('[data-correction-toggle]')?.addEventListener('click', event => {
-    const button = event.currentTarget;
-    const figure = button.closest('[data-correction]');
-    const shown = figure.dataset.correction !== 'shown';
-    figure.dataset.correction = shown ? 'shown' : 'hidden';
-    button.setAttribute('aria-pressed', String(shown));
-    button.textContent = shown ? 'Compare without correction' : 'Show a human correction';
-    figure.querySelector('.rn-correction-caption').textContent = shown ? 'A correction can become new training experience.' : 'A policy can reach a point where a person needs to take over.';
-  });
-  root.querySelectorAll('[data-policy-lens]').forEach(button => button.addEventListener('click', () => {
-    const figure = button.closest('[data-lens]');
-    figure.dataset.lens = button.dataset.policyLens;
-    figure.querySelectorAll('[data-policy-lens]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    figure.querySelector('.rn-lens-caption').textContent = button.dataset.policyLens === 'encoding' ? 'A representation can contain a link between a word and an object.' : 'A separate test asks whether that information changes the action.';
-  }));
-  root.querySelector('[data-future-toggle]')?.addEventListener('click', event => {
-    const button = event.currentTarget;
-    const figure = button.closest('[data-future]');
-    const shown = figure.dataset.future !== 'shown';
-    figure.dataset.future = shown ? 'shown' : 'hidden';
-    button.setAttribute('aria-pressed', String(shown));
-    button.textContent = shown ? 'Show only the observation' : 'Show a possible future';
-  });
   root.querySelector('[data-load-research-video]')?.addEventListener('click', event => {
     const figure = event.currentTarget.closest('figure');
     const host = figure.querySelector('.rn-video-host');
@@ -147,4 +124,36 @@
     event.preventDefault();
     closeDisclosure(open);
   });
+})();
+
+
+(() => {
+  const root = document.querySelector('.research-notebook');
+  if (!root) return;
+  const figures = [...root.querySelectorAll('[data-rn-animation]')];
+  const preference = matchMedia('(prefers-reduced-motion: reduce)');
+  const onscreen = new Set();
+  function update(figure) {
+    const visible = onscreen.has(figure) && !figure.closest('.rn-panel')?.hidden && !document.hidden;
+    if (preference.matches) {
+      figure.classList.remove('rn-motion-entered', 'rn-motion-playing');
+      return;
+    }
+    if (visible) figure.classList.add('rn-motion-entered');
+    figure.classList.toggle('rn-motion-playing', visible);
+  }
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) onscreen.add(entry.target);
+        else onscreen.delete(entry.target);
+        update(entry.target);
+      });
+    }, {threshold: .2});
+    figures.forEach(figure => observer.observe(figure));
+  }
+  const refresh = () => figures.forEach(update);
+  new MutationObserver(refresh).observe(root, {attributes: true, attributeFilter: ['hidden', 'open'], subtree: true});
+  preference.addEventListener('change', refresh);
+  addEventListener('visibilitychange', refresh);
 })();

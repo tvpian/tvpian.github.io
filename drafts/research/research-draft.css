@@ -199,3 +199,100 @@ html[data-theme="dark"] .research-notebook .rn-correction .rn-concept-labels > s
 @media (prefers-reduced-motion:reduce) {
  .research-notebook :is(.rn-human-segment,.rn-encoding-network,.rn-action-network,.rn-future-objects,.rn-inferred-action) { transition: none; }
 }
+
+
+/* Palette and motion belong to the research chapter in both site themes. */
+.research-notebook { --rn-blue: #2446b0; --rn-green: #365f2c; --rn-orange: #ae3924; --research-accent: var(--rn-blue); }
+html[data-theme="dark"] .research-notebook { --rn-blue: #a8b9ff; --rn-green: #c9f479; --rn-orange: #ffac95; }
+.research-notebook .rn-nav { padding-right: 1.5rem; }
+.research-notebook .rn-tab { padding-block: .85rem; }
+.research-notebook .rn-tab > strong { font-size: 1.5rem; }
+.research-notebook .rn-foundation-label { margin: 1rem 0 .2rem; padding: 1rem 0 0 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font: 500 .8125rem/1.5 'DM Sans',sans-serif; }
+.research-notebook .rn-context > span { color: var(--rn-blue); }
+.research-notebook :is(.rn-correction,.rn-policy-concept) .rn-concept-labels > span:first-child { color: var(--rn-blue); }
+.research-notebook .rn-correction .rn-concept-labels > span:last-child { color: var(--rn-green); }
+.research-notebook .rn-policy-concept .rn-concept-labels > span:last-child { color: var(--rn-orange); }
+.research-notebook .rn-prediction-concept .rn-concept-labels > span:last-child { color: var(--rn-blue); }
+.research-notebook .rn-policy-path { stroke: var(--rn-blue); }
+.research-notebook .rn-policy-dot { fill: var(--rn-blue); }
+.research-notebook .rn-policy-limit { stroke: var(--rn-orange); }
+.research-notebook :is(.rn-human-path,.rn-capture-bracket) { stroke: var(--rn-green); }
+.research-notebook .rn-human-segment > circle { fill: var(--rn-green); }
+.research-notebook .rn-encoding-network { stroke: var(--rn-blue); }
+.research-notebook .rn-action-network { stroke: var(--rn-orange); opacity: 1; }
+.research-notebook .rn-future-objects { stroke: var(--rn-blue); }
+.research-notebook .rn-inferred-action { stroke: var(--rn-orange); }
+.research-notebook .rn-concept-caption { display: block; color: var(--muted); font: 400 .9375rem/1.5 'DM Sans',sans-serif; margin-top: .8rem; }
+.research-notebook .rn-platform-concept .rn-concept-labels { color: var(--rn-blue); }
+.research-notebook .rn-platform-concept .rn-concept-labels > span:last-child { color: var(--rn-green); }
+.research-notebook .rn-platform-guides { stroke: var(--muted); opacity: .2; stroke-dasharray: 2 6; }
+.research-notebook .rn-platform-trunk { stroke: var(--ink); stroke-width: 2; }
+.research-notebook .rn-platform-physical { stroke: var(--rn-blue); stroke-width: 3; }
+.research-notebook .rn-platform-twin { stroke: var(--rn-green); stroke-width: 3; }
+.research-notebook .rn-platform-hub { fill: var(--paper); stroke: var(--ink); stroke-width: 1; }
+.research-notebook .rn-platform-hub circle:last-child { fill: none; opacity: .2; }
+.research-notebook .rn-physical-node { fill: var(--rn-blue); }
+.research-notebook .rn-twin-node { fill: var(--rn-green); }
+.research-notebook .rn-platform-detail-content { max-width: none !important; }
+.research-notebook .rn-platform-body { background: transparent; color: var(--ink); padding: 0; }
+.research-notebook .rn-platform-body .rn-close-disclosure { color: var(--rn-blue); }
+.research-notebook .rn-platform-body :is(.current-work-live__platform,.current-work-live__platform-heading,.current-work-live__attention) { border-color: var(--line); }
+.research-notebook .rn-platform-body :is(.eyebrow,.current-work-live__platform-heading > p:last-child,.current-work-live__attention-heading > p:last-child,.policy-lab__question,figcaption) { color: var(--muted); }
+.research-notebook .rn-platform-body .evidence-state { background: var(--rn-green); color: var(--paper); }
+.research-notebook .rn-platform-body .illustrative-diagnostic > summary { color: var(--ink); }
+.research-notebook .rn-platform-body svg text { fill: var(--ink); }
+.research-notebook .rn-platform-body :is(.cwl-sub,.cwl-field-label,.cwl-concept-text) { fill: var(--muted); }
+.research-notebook .rn-platform-body :is(.cwl-guide path,.cwl-concept-guide path) { stroke: var(--rn-blue); opacity: .3; }
+.research-notebook .rn-platform-body .cwl-band rect { fill: var(--paper-deep); stroke: var(--line); }
+.research-notebook .rn-platform-body :is(.cwl-thread,.cwl-concept-thread path) { stroke: var(--ink); }
+.research-notebook .rn-platform-body :is(.cwl-gate path,.cwl-concept-gate path,.cwl-concept-bracket path,.cwl-support) { stroke: var(--rn-green); }
+.research-notebook .rn-platform-body :is(.cwl-return,.cwl-return-head,.cwl-concept-return path,.cwl-concept-dash) { stroke: var(--rn-blue); }
+.research-notebook .rn-platform-body :is(.cwl-gate-label,.cwl-return-label,.cwl-concept-key,.cwl-concept-head) { fill: var(--rn-blue); }
+.research-notebook .rn-platform-body .cwl-cell-base { fill: var(--ink); opacity: .06; }
+.research-notebook .rn-platform-body .cwl-field { stroke: var(--line); }
+.research-notebook .rn-platform-body .cwl-hot rect { fill: var(--rn-blue); }
+.research-notebook .rn-platform-body .cwl-delta rect { fill: var(--rn-orange); }
+.research-notebook .rn-platform-body .policy-lab__question { background: var(--paper-deep); border-color: var(--rn-green); }
+.research-notebook .rn-platform-body .policy-lab__question strong { color: var(--rn-green); }
+.research-notebook .rn-platform-body :is(.cwl-eval-axis,.cwl-attention-panel) { opacity: 1; }
+.research-notebook .rn-platform-body .current-work-live__platform-heading { flex-wrap: wrap; }
+.research-notebook .rn-platform-body .current-work-live__platform-heading > p:last-child { max-width: 60ch; line-height: 1.7; }
+.research-notebook .rn-platform-body .current-work-live__attention-heading { flex-wrap: wrap; }
+.research-notebook .rn-platform-body .current-work-live__attention { padding: 1rem; }
+.research-notebook .rn-platform-body .current-work-live__platform-figure { margin: 0; padding: 1rem; }
+.research-notebook .rn-platform-body .current-work-live__platform-figure figcaption { flex-wrap: wrap; gap: .5rem; }
+.research-notebook .rn-platform-body :is(svg,.cwl-concept-dash,.cwl-return) { animation: none; }
+/* Each illustration plays once on entry, then stays readable. */
+@media (prefers-reduced-motion: no-preference) {
+ .research-notebook .rn-motion-entered .rn-policy-path { stroke-dasharray: 1; animation: rn-trace .8s ease-out both; }
+ .research-notebook .rn-motion-entered .rn-human-path { stroke-dasharray: 1; animation: rn-trace 1.3s .9s ease-in-out both; }
+ .research-notebook .rn-motion-entered .rn-human-segment > circle { animation: rn-reveal .6s 1.8s both; }
+ .research-notebook .rn-motion-entered .rn-capture-bracket { animation: rn-reveal .7s 2.1s both; }
+ .research-notebook .rn-motion-entered .rn-encoding-network { animation: rn-encoding 3.6s ease both; }
+ .research-notebook .rn-motion-entered .rn-action-network { animation: rn-action 3.6s ease both; }
+ .research-notebook .rn-motion-entered .rn-future-objects path { animation: rn-reveal 1s 1s both; }
+ .research-notebook .rn-motion-entered .rn-future-objects path:nth-child(2) { animation-delay: 1.5s; }
+ .research-notebook .rn-motion-entered .rn-future-objects path:nth-child(3) { animation-delay: 2s; }
+ .research-notebook .rn-motion-entered .rn-inferred-action { animation: rn-reveal 1s 2.4s both; }
+ .research-notebook .rn-motion-entered .rn-platform-trunk { stroke-dasharray: 1; animation: rn-trace .8s ease both; }
+ .research-notebook .rn-motion-entered :is(.rn-platform-physical,.rn-platform-twin) { stroke-dasharray: 1; animation: rn-trace 1.6s .7s ease both; }
+ .research-notebook .rn-motion-entered .rn-platform-endpoints { animation: rn-reveal .8s 1.7s both; }
+ .research-notebook .rn-motion-entered .cwl-eval-outcome { animation: rn-lens 3.8s both; }
+ .research-notebook .rn-motion-entered .cwl-eval-behavior { animation: rn-lens 3.8s .6s both; }
+ .research-notebook .rn-motion-entered .cwl-eval-control { animation: rn-lens 3.8s 1s both; }
+ .research-notebook .rn-motion-entered .cwl-attention-all { animation: rn-reveal 1s .6s both; }
+ .research-notebook .rn-motion-entered .cwl-attention-ablated { animation: rn-reveal 1s 1.4s both; }
+ .research-notebook .rn-motion-entered .cwl-attention-delta { animation: rn-reveal 1s 2.2s both; }
+ .research-notebook .rn-motion-entered:not(.rn-motion-playing) * { animation-play-state: paused; }
+}
+@keyframes rn-trace { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes rn-reveal { from { opacity: 0; } }
+@keyframes rn-encoding { 0% { opacity: .2; } 30%,60% { opacity: 1; } 100% { opacity: .65; } }
+@keyframes rn-action { 0%,40% { opacity: .15; } 80%,100% { opacity: 1; } }
+@keyframes rn-lens { 0% { opacity: .2; } 40%,100% { opacity: 1; } }
+@media (max-width: 700px) {
+ .research-notebook .rn-tab > strong { font-size: 1.35rem; }
+ .research-notebook .rn-foundation-label,.research-notebook .rn-platform-tab { grid-column: 1 / -1; }
+ .research-notebook .rn-foundation-label { margin-top: .4rem; padding: .65rem 0 0 .7rem; }
+ .research-notebook .rn-platform-body .current-work-live__platform-heading { padding: 1rem; }
+}
