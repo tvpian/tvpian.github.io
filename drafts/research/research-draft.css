@@ -205,6 +205,8 @@ html[data-theme="dark"] .research-notebook .rn-correction .rn-concept-labels > s
 .research-notebook { --rn-blue: #2446b0; --rn-green: #365f2c; --rn-orange: #ae3924; --research-accent: var(--rn-blue); }
 html[data-theme="dark"] .research-notebook { --rn-blue: #a8b9ff; --rn-green: #c9f479; --rn-orange: #ffac95; }
 .research-notebook .rn-nav { padding-right: 1.5rem; }
+.research-notebook .rn-panel:focus { outline: none; }
+.research-notebook .rn-panel:focus-visible { box-shadow: inset 2px 0 var(--rn-blue); }
 .research-notebook .rn-tab { padding-block: .85rem; }
 .research-notebook .rn-tab > strong { font-size: 1.5rem; }
 .research-notebook .rn-foundation-label { margin: 1rem 0 .2rem; padding: 1rem 0 0 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font: 500 .8125rem/1.5 'DM Sans',sans-serif; }
