@@ -19,11 +19,11 @@
     })();
   </script>
   <link rel="stylesheet" href="/stylesheet.css?v=research-chapters">
-  <link rel="stylesheet" href="/drafts/research/research-draft.css?v=1">
+  <link rel="stylesheet" href="/drafts/research/research-draft.css?v=2">
   <link rel="icon" type="image/png" href="https://tvpian.github.io/images/seal_icon.png">
   <script src="https://tvpian.github.io/theme.js?v=20260925-research-map" defer></script>
   <script src="/portfolio.js?v=research-first" defer></script>
-  <script src="/drafts/research/research-draft.js?v=1" defer></script>
+  <script src="/drafts/research/research-draft.js?v=2" defer></script>
 </head>
 <body>
   <p class="research-draft-note">Research chapter draft <a href="https://tvpian.github.io/">View current homepage</a></p>
@@ -101,81 +101,112 @@
           </div>
         </nav>
         <div class="rn-panels">
-          <section class="rn-panel" id="continual-learning" data-thread-panel>
-            <div class="rn-context"><span>Current work</span><strong class="rn-status">Implemented workflow</strong></div>
-            <h3 class="rn-question">How can robots learn from demonstrations and corrections while retaining earlier skills?</h3>
-            <div class="rn-study">
-              <div class="rn-copy"><h4>Learning from human corrections</h4><p>When a policy fails, a person can take control of the arm. The workflow records the correction so it can be reviewed and added to the demonstrations used to train the next policy.</p>
+          
+<section class="rn-panel" id="continual-learning" data-thread-panel>
+  <div class="rn-context"><span>Current work</span><strong class="rn-status">Implemented workflow</strong></div>
+  <h3 class="rn-question">How can robots learn from demonstrations and corrections while retaining earlier skills?</h3>
+  <figure class="rn-concept rn-correction" data-correction="shown">
+    <div class="rn-concept-labels"><span>A policy reaches its limit</span><span>A person shows another way</span></div>
+    <svg viewBox="0 0 900 280" role="img" aria-labelledby="rn-correction-title rn-correction-desc">
+      <title id="rn-correction-title">A correction can become a demonstration</title>
+      <desc id="rn-correction-desc">An illustrative policy path stops short. A human correction continues toward the goal. The corrected segment can be recorded, reviewed, and used for training.</desc>
+      <defs><pattern id="rn-dot-field" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor" opacity=".15"/></pattern></defs>
+      <rect width="900" height="280" fill="url(#rn-dot-field)"/>
+      <path class="rn-path-background" d="M35 220 C150 220 205 95 325 125 S565 255 710 150 S805 75 865 65"/>
+      <path class="rn-policy-path" d="M35 220 C150 220 205 95 325 125 S435 192 470 185"/>
+      <circle class="rn-policy-dot" cx="35" cy="220" r="7"/>
+      <g class="rn-policy-limit"><circle cx="470" cy="185" r="12"/><path d="M462 177 478 193 M478 177 462 193"/></g>
+      <g class="rn-human-segment"><path class="rn-human-path" d="M470 185 C515 176 505 72 610 78 S767 158 830 77"/><circle cx="830" cy="77" r="8"/><path class="rn-capture-bracket" d="M500 239 V252 H810 V239"/></g>
+      <circle class="rn-goal-ring" cx="830" cy="77" r="25"/>
+      <circle class="rn-goal-ring rn-goal-outer" cx="830" cy="77" r="41"/>
+    </svg>
+    <div class="rn-concept-controls"><button type="button" data-correction-toggle aria-pressed="true">Compare without correction</button><span class="rn-correction-caption" aria-live="polite">A correction can become new training experience.</span></div>
+    <figcaption>Concept illustration, not a recorded rollout.</figcaption>
+  </figure>
+  <div class="rn-idea"><p>A person's intervention can be more than a way to finish a task. It can become a demonstration the robot learns from.</p></div>
+  <details class="rn-notes"><summary>Study notes</summary><div><p>When a policy fails, a person can take control of the arm. The workflow records the correction so it can be reviewed and added to the demonstrations used to train the next policy.</p>
               <p>People and policies use the same arm commands, so their actions can be compared step by step. Policy evaluation is currently performed manually. Whether the corrections improve later policies without eroding earlier skills remains an open question.</p>
-            </div>
-              <figure class="rn-figure">
-                <p class="rn-figure-title">From intervention to training</p>
-                <div class="rn-flow">
-                  <div><strong>Policy runs</strong><small>Shared arm commands</small></div>
-                  <div class="rn-intervention"><strong>A person takes over</strong><small>The correction is recorded</small></div>
-                  <div><strong>Review the correction</strong><small>Add it to demonstrations</small></div>
-                  <div><strong>Train the next policy</strong><small>Then roll it out</small></div>
-                </div>
-                <figcaption>Workflow schematic. Improvement without losing earlier skills remains an open question.</figcaption>
-              </figure>
-            </div>
-            <div class="rn-support"><div><span class="rn-label">In development</span><h4>Egocentric demonstrations</h4><details id="egocentric"><summary>Read study details</summary><p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
+            </div></details>
+  <div class="rn-support"><div><span class="rn-label">In development</span><details id="egocentric"><summary>Egocentric demonstrations</summary><p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
               </details></div>
-              <div><span class="rn-label">Simulation studies</span><h4>What policies retain from training</h4><details id="representation-studies"><summary>Read study details</summary><p>Simulation tests compared teacher-student training with learned auxiliary heads to see what policies retain when privileged inputs are removed. Attention maps help diagnose behavior, but they do not by themselves establish a causal explanation.</p>
+              <div><span class="rn-label">Simulation studies</span><details id="representation-studies"><summary>What policies retain from training</summary><p>Simulation tests compared teacher-student training with learned auxiliary heads to see what policies retain when privileged inputs are removed. Attention maps help diagnose behavior, but they do not by themselves establish a causal explanation.</p>
               </details></div>
             </div>
-          </section>
-          <section class="rn-panel" id="explainability" data-thread-panel>
-            <div class="rn-context"><span>Current work</span><strong class="rn-status">Simulation and physical robot studies</strong></div>
-            <h3 class="rn-question">What has a policy learned, and how does that shape its behavior?</h3>
-            <div class="rn-study">
-              <div class="rn-copy"><h4>What information does a policy use to act?</h4><p>In simulation, representation probes showed that the tested policies encoded links between words and objects. Activation patching showed that their action heads did not use those links.</p>
+          
+</section>
+          
+<section class="rn-panel" id="explainability" data-thread-panel>
+  <div class="rn-context"><span>Current work</span><strong class="rn-status">Simulation and physical robot studies</strong></div>
+  <h3 class="rn-question">What has a policy learned, and how does that shape its behavior?</h3>
+  <figure class="rn-concept rn-policy-concept" data-lens="encoding">
+    <div class="rn-concept-labels"><span>What the policy represents</span><span>What guides its action</span></div>
+    <svg viewBox="0 0 900 280" role="img" aria-labelledby="rn-grounding-title rn-grounding-desc">
+      <title id="rn-grounding-title">Knowing a word and acting on it are separate questions</title>
+      <desc id="rn-grounding-desc">A conceptual network connects a word to an object representation. A separate path leads to action. The controls highlight the distinction between information being encoded and being used.</desc>
+      <path class="rn-network-guide" d="M50 140H850"/>
+      <g class="rn-encoding-network">
+        <path d="M65 140 212 62 345 106 470 67 M65 140 212 198 345 106 M212 62 212 198 380 220 470 158 M345 106 470 158"/>
+        <circle cx="65" cy="140" r="20"/><circle cx="212" cy="62" r="12"/><circle cx="212" cy="198" r="12"/><circle cx="345" cy="106" r="25"/><circle cx="380" cy="220" r="12"/><circle cx="470" cy="67" r="12"/><circle cx="470" cy="158" r="12"/>
+      </g>
+      <path class="rn-possible-link" d="M495 153 C555 145 573 140 630 140"/>
+      <g class="rn-action-network"><path d="M630 140 C690 140 698 64 770 64 M630 140 C690 140 713 214 800 214"/><circle cx="630" cy="140" r="18"/><rect x="752" y="46" width="36" height="36" rx="4"/><circle cx="800" cy="214" r="20"/></g>
+    </svg>
+    <div class="rn-concept-controls"><div class="rn-lens-switch" role="group" aria-label="Inspect the distinction"><button type="button" data-policy-lens="encoding" aria-pressed="true">Encoded</button><button type="button" data-policy-lens="action" aria-pressed="false">Used for action</button></div><span class="rn-lens-caption" aria-live="polite">A representation can contain a link between a word and an object.</span></div>
+    <figcaption>Concept illustration, not an attribution map or measured result.</figcaption>
+  </figure>
+  <div class="rn-idea"><p>A policy can represent which object a word refers to without using that knowledge when it acts. Understanding the representation is only part of the question.</p></div>
+  <details class="rn-notes"><summary>Study notes</summary><div><p>In simulation, representation probes showed that the tested policies encoded links between words and objects. Activation patching showed that their action heads did not use those links.</p>
               <p>Bimanual robot trials measured object choice separately from pick completion. In those trials, higher task success did not necessarily mean the policy was better at choosing the object named in the instruction.</p>
-            </div>
-              <figure class="rn-figure">
-                <p class="rn-figure-title">Encoded does not mean used</p>
-                <div class="rn-probe">
-                  <div><strong>Representation probes</strong><small>Test for links between words and objects</small></div>
-                  <div class="rn-probe-action"><strong>Activation patching</strong><small>Test whether those links guide actions</small></div>
-                </div>
-                <figcaption>Study schematic. The findings describe the policies tested.</figcaption>
-              </figure>
-            </div>
-            <div class="rn-support"><div><span class="rn-label">In development</span><h4>Policy evaluation beyond success rate</h4><details id="policy-evaluation"><summary>Read study details</summary><p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
+            </div></details>
+  <div class="rn-support"><div><span class="rn-label">In development</span><details id="policy-evaluation"><summary>Policy evaluation beyond success rate</summary><p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
               </details></div>
-              <div><span class="rn-label">Research tools</span><h4>Inspecting policy behavior</h4><div class="rn-links"><a href="#research-platform">Policy diagnostics and evaluation tools</a></div></div>
+              <div><span class="rn-label">Research tools</span><div class="rn-links"><a href="#research-platform">Policy diagnostics and evaluation tools</a></div></div>
             </div>
-          </section>
-          <section class="rn-panel" id="world-models" data-thread-panel>
-            <div class="rn-context"><span>Current work</span><strong class="rn-status">Offline evaluation completed · simulation studies</strong></div>
-            <h3 class="rn-question">How can predicting what happens next help a robot learn how to act?</h3>
-            <div class="rn-study">
-              <div class="rn-copy"><h4>Predictive models and inverse dynamics</h4><p>Offline tests evaluated a video-action model adapted to teleoperation data. Simulation tests compared actions inferred from video with recorded actions and commands sent to the robot. They assessed future-feature prediction, instruction grounding, and failure signals separately from task success.</p>
-              </div>
-              <figure class="rn-figure">
-                <p class="rn-figure-title">From video to action</p>
-                <div class="rn-flow">
-                  <div><strong>Video observations</strong><small>Image-based action inference</small></div>
-                  <div><strong>Inferred actions</strong><small>Compared with recorded actions</small></div>
-                  <div><strong>Control comparisons</strong><small>Commands sent to the robot</small></div>
-                </div>
-                <figcaption>Study schematic. Prediction and instruction grounding are assessed separately from task success.</figcaption>
-              </figure>
-            </div>
-            <div class="rn-support"><div><span class="rn-label">Active experiments</span><h4>Transfer between simulation and hardware</h4><details id="sim-real"><summary>Read study details</summary><p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
+          
+</section>
+          
+<section class="rn-panel" id="world-models" data-thread-panel>
+  <div class="rn-context"><span>Current work</span><strong class="rn-status">Offline evaluation completed · simulation studies</strong></div>
+  <h3 class="rn-question">How can predicting what happens next help a robot learn how to act?</h3>
+  <figure class="rn-concept rn-prediction-concept" data-future="shown">
+    <div class="rn-concept-labels"><span>An observation</span><span>A possible future</span></div>
+    <svg viewBox="0 0 900 280" role="img" aria-labelledby="rn-future-title rn-future-desc">
+      <title id="rn-future-title">From a possible future to the action that could produce it</title>
+      <desc id="rn-future-desc">A solid object marks an observed state. Translucent copies illustrate possible future states. A curved line represents an inferred action, not a measured trajectory or model prediction.</desc>
+      <path class="rn-scene-plane" d="M70 210 275 90 H835 L630 210 Z"/>
+      <g class="rn-observed-object"><path d="m145 154 49-27 55 28-48 28z m0 0v-55l49-27v55 m0-55 55 28v55 m-48 28v-55l48-28 m-104 0 56 29"/></g>
+      <g class="rn-future-objects"><path opacity=".18" d="m338 146 49-27 55 28-48 28z m0 0V91l49-27v55 m0-55 55 28v55 m-48 28v-55l48-28 m-104 0 56 29"/><path opacity=".4" d="m517 130 49-27 55 28-48 28z m0 0V75l49-27v55 m0-55 55 28v55 m-48 28v-55l48-28 m-104 0 56 29"/><path opacity=".8" d="m701 110 49-27 55 28-48 28z m0 0V55l49-27v55 m0-55 55 28v55 m-48 28V83l48-28 m-104 0 56 29"/></g>
+      <path class="rn-inferred-action" d="M203 238 C350 260 521 218 732 186"/>
+      <path class="rn-inferred-action" d="m718 178 14 8-11 12"/>
+    </svg>
+    <div class="rn-concept-controls"><button type="button" data-future-toggle aria-pressed="true">Show only the observation</button><span>A prediction and an action need separate tests.</span></div>
+    <figcaption>Concept illustration, not model output.</figcaption>
+  </figure>
+  <div class="rn-idea"><p>What might happen next, and what action could make it happen? Predictive models and inverse dynamics approach action learning from those two directions.</p></div>
+  <details class="rn-notes"><summary>Study notes</summary><div><p>Offline tests evaluated a video-action model adapted to teleoperation data. Simulation tests compared actions inferred from video with recorded actions and commands sent to the robot. They assessed future-feature prediction, instruction grounding, and failure signals separately from task success.</p>
+              </div></details>
+  <div class="rn-support"><div><span class="rn-label">Active experiments</span><details id="sim-real"><summary>Transfer between simulation and hardware</summary><p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
               </details></div>
               <div><span class="rn-label">Validation boundary</span><h4>Offline and simulation evidence</h4><p>Physical validation is pending.</p></div>
             </div>
-          </section>
-          <section class="rn-panel" id="understanding-people" data-thread-panel>
-            <div class="rn-context"><span>Prior work · 2021–2024</span><strong class="rn-status">Multimodal perception and HRI</strong></div>
-            <h3 class="rn-question">How can robots understand what people are doing and what they intend?</h3>
-            <div class="rn-projects">
-              <article class="rn-project"><div><span class="rn-label">Physical flight trials</span><h4><a href="https://tvpian.github.io/projects/track-anything-rapter/">Track Anything Rapter</a></h4></div><p>A person can use a click, box, image, or text to tell a drone what to follow. Co-developed the system, implemented the high-level controller, and designed the trajectory evaluation against motion capture.</p></article>
+          
+</section>
+          
+<section class="rn-panel" id="understanding-people" data-thread-panel>
+  <div class="rn-context"><span>Prior work · 2021–2024</span><strong class="rn-status">Multimodal perception and HRI</strong></div>
+  <h3 class="rn-question">How can robots understand what people are doing and what they intend?</h3>
+  <figure class="rn-public-media">
+    <div class="rn-video-host"><button type="button" class="rn-video-start" data-load-research-video aria-label="Play the public Track Anything Rapter flight trial"><img src="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" alt="Track Anything Rapter aerial tracking demonstration" loading="lazy"><span>Play public flight trial</span></button></div>
+    <template data-research-video><video controls muted playsinline preload="none" poster="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" aria-label="Public Track Anything Rapter UAV tracking trial"><source src="https://tvpian.github.io/imgs/tar.mp4" type="video/mp4"></video></template>
+    <figcaption><span>Track Anything Rapter</span><a href="https://tvpian.github.io/projects/track-anything-rapter/">Explore the project</a></figcaption>
+  </figure>
+  <div class="rn-idea"><p>A click, an image, a phrase, or a gesture can express an intention. The challenge is turning that incomplete evidence into something a robot can act on.</p></div>
+  <div class="rn-links rn-prior-links"><a href="https://tvpian.github.io/projects/multimodal-perception/">PoseFusion (graduate course project)</a><a href="https://tvpian.github.io/projects/natsgd/">NatSGD prototype</a></div>
+  <details class="rn-notes"><summary>Research context and contributions</summary><div><article class="rn-project"><div><span class="rn-label">Physical flight trials</span><h4><a href="https://tvpian.github.io/projects/track-anything-rapter/">Track Anything Rapter</a></h4></div><p>A person can use a click, box, image, or text to tell a drone what to follow. Co-developed the system, implemented the high-level controller, and designed the trajectory evaluation against motion capture.</p></article>
               <article class="rn-project"><div><span class="rn-label">Exploratory prototype</span><h4><a href="https://tvpian.github.io/projects/natsgd/">NatSGD prototype</a></h4></div><p>An exploratory demonstration, speech, and gesture policy on the NatSGD dataset provided by Snehesh Shrestha (UMD). Task success and the benefit of gesture remain unvalidated.</p></article>
               <article class="rn-project"><div><span class="rn-label">Graduate course project</span><h4><a href="https://tvpian.github.io/projects/multimodal-perception/">PoseFusion</a></h4></div><p>Multi-view pose fusion for action recognition under occlusion. In the reported tests, combining views raised F1 from 0.76 to 0.82 compared with a single view.</p></article>
-            </div>
-          </section>
+            </div></details>
+</section>
         </div>
       </div>
       <details class="rn-platform" id="research-platform">
@@ -577,6 +608,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
