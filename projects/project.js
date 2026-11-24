@@ -14,7 +14,7 @@ if ('IntersectionObserver' in window && !reduceMotion.matches) {
       else entry.target.pause();
     });
   }, { rootMargin: '100px 0px', threshold: .2 });
-  videos.forEach((video) => observer.observe(video));
+  videos.filter(video => !video.hasAttribute('data-manual-play')).forEach(video => observer.observe(video));
 }
 
 document.querySelectorAll('[data-year]').forEach((node) => {
@@ -112,3 +112,13 @@ if (expandableFigures.length && typeof HTMLDialogElement !== 'undefined') {
   });
 }
 
+
+document.querySelectorAll('[data-close-media-sequence]').forEach(button => {
+  button.addEventListener('click', () => {
+    const sequence = button.closest('details');
+    sequence.open = false;
+    const summary = sequence.querySelector('summary');
+    summary.focus({preventScroll: true});
+    if (summary.getBoundingClientRect().top < 0) summary.scrollIntoView({block: 'center', behavior: 'smooth'});
+  });
+});
