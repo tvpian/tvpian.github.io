@@ -17,10 +17,12 @@
       } catch (_error) {}
     })();
   </script>
-  <link rel="stylesheet" href="stylesheet.css?v=research-chapters">
-  <link rel="icon" type="image/png" href="images/seal_icon.png">
-  <script src="theme.js?v=20260925-research-map" defer></script>
-  <script src="portfolio.js?v=research-first" defer></script>
+  <link rel="stylesheet" href="/stylesheet.css?v=research-chapters">
+  <link rel="stylesheet" href="/research.css?v=20261124-homepage">
+  <link rel="icon" type="image/png" href="https://tvpian.github.io/images/seal_icon.png">
+  <script src="https://tvpian.github.io/theme.js?v=20260925-research-map" defer></script>
+  <script src="/portfolio.js?v=research-first" defer></script>
+  <script src="/research.js?v=20261124-homepage" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -35,12 +37,12 @@
       <a href="#work">Projects</a>
       <a href="#research">Publications</a>
       <a href="#atlas">Archive</a>
-      <a href="#stories">Writing</a>
-      <a href="#about">About</a>
-    </nav>
+      <a href="#experience">Experience</a>
+    <a href="#stories">Writing</a>
+      </nav>
     <div class="header-actions">
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme"><span aria-hidden="true"></span></button>
-      <a class="header-cta" href="mailto:tharunv.pvit@gmail.com">Contact <span aria-hidden="true">↗</span></a>
+      <a class="header-cta" href="mailto:tharunv.pvit@gmail.com">Contact <span aria-hidden="true"></span></a>
     </div>
   </header>
 
@@ -51,7 +53,7 @@
     <a href="#work" data-rail-target="work"><i></i><span>Projects</span></a>
     <a href="#product" data-rail-target="product"><i></i><span>Tools</span></a>
     <a href="#research" data-rail-target="research"><i></i><span>Evidence</span></a>
-    <a href="#about" data-rail-target="about"><i></i><span>Profile</span></a>
+    <a href="#contact" data-rail-target="contact" aria-label="Contact"><i></i><span>Contact</span></a>
   </aside>
 
   <main id="main">
@@ -62,15 +64,15 @@
         <p class="hero-intro">
           I study how robots can understand what people want and carry what they learn from one interaction into the next. I use physical robots and simulation to test how policies learn from demonstrations and corrections, and what information they actually use when they act.
         </p>
-        <div class="hero-actions">
+        <p class="hero-background">M.Eng. in Robotics, University of Maryland</p><div class="hero-actions">
           <a class="button" href="#current">Current research <span aria-hidden="true">→</span></a>
-          <a class="text-link" href="data/Tharun_Resume.pdf">Research CV <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://tvpian.github.io/data/Tharun_Resume.pdf">Research CV <span aria-hidden="true"></span></a>
         </div>
       </div>
 
       <div class="hero-portrait">
         <div class="portrait-frame" data-depth-scene>
-          <img src="imgs/tvp_full_portfolio.png" alt="Tharun speaking at an event" data-depth="0.34">
+          <img src="https://tvpian.github.io/imgs/tvp_full_portfolio.png" alt="Tharun speaking at an event" data-depth="0.34">
           <div class="portrait-grid" aria-hidden="true" data-depth="-0.08"></div>
           <div class="portrait-orb portrait-orb-two" aria-hidden="true" data-depth="0.26"></div>
           <div class="portrait-accent" aria-hidden="true" data-depth="0.18"></div>
@@ -79,121 +81,151 @@
       </div>
     </section>
 
-    <section class="research-overview" id="research-direction" aria-labelledby="research-direction-title">
-      <header class="research-overview__heading">
-        <h2 id="research-direction-title">Research questions</h2>
+
+    <section class="research-notebook" id="current" aria-labelledby="rn-title">
+      <span id="research-direction"></span>
+      <header class="rn-header">
+        <p class="eyebrow">Research</p><div><h2 id="rn-title">How robots learn from people.</h2></div>
+        <p>Human interaction, learned representations, and prediction, studied on physical robots and in simulation.</p>
       </header>
-    <div class="focus-strip">
-      <article><a href="projects/multimodal-perception/"><span class="focus-index">01</span><div><h2>Understanding<br>People</h2><p class="thread-question">How can robots understand what people are doing and what they intend?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="projects/multimodal-perception/">PoseFusion (graduate course project)</a></li><li><a href="projects/track-anything-rapter/">Track Anything Rapter</a></li><li><a href="projects/natsgd/">NatSGD prototype</a></li></ul></div></article>
-      <article><a href="#continual-learning" data-focus-link><span class="focus-index">02</span><div><h2>Learning from<br>People</h2><p class="thread-question">How can robots learn from demonstrations and corrections while retaining earlier skills?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="#continual-learning">Learning from human corrections</a></li><li><a href="#egocentric">Egocentric interface (in development)</a></li></ul></div></article>
-      <article><a href="#explainability" data-focus-link><span class="focus-index">03</span><div><h2>Policy Explainability<br>and Representation</h2><p class="thread-question">What has a policy learned, and how does that shape its behavior?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="#explainability">What a policy uses to act</a></li></ul></div></article>
-      <article><a href="#world-models" data-focus-link><span class="focus-index">04</span><div><h2>Predictive Models,<br>Inverse Dynamics,<br>and Transfer</h2><p class="thread-question">How can predicting what happens next help a robot learn how to act?</p></div><i class="focus-strip__arrow" aria-hidden="true">↘</i></a><div class="thread-related"><ul><li><a href="#world-models">Learning actions from video</a></li><li><a href="#sim-real">Real–sim–real experiments</a></li></ul></div></article>
-    </div>
-    </section>
-
-    <section class="current-work-live research-first" id="current" aria-labelledby="current-work-title">
-      <div class="current-work-live__heading research-chapter">
-        <div class="research-chapter__intro">
-          <p class="eyebrow light"><span></span>Current work</p>
-          <h2 id="current-work-title">Learning from people.<br>Understanding policies.</h2>
-          <p>The bimanual robot and its digital twin share a platform I built to study how policies learn from human corrections and what information they use to act.</p>
-        </div>
-        <figure class="correction-figure">
-          <figcaption><span>The correction loop</span><small>Implemented workflow</small></figcaption>
-          <svg viewBox="0 0 520 216" role="img" aria-labelledby="correction-title correction-desc">
-            <title id="correction-title">From a failed rollout to the next policy</title>
-            <desc id="correction-desc">A person takes over when the policy fails. The correction is recorded, reviewed, and added to demonstrations to train the next policy.</desc>
-            <g class="correction-figure__guides">
-              <path d="M38 54H482M38 146H482M56 26V168M186 26V168M320 26V168M464 26V168"/>
-            </g>
-            <path class="correction-figure__run" d="M56 146H129"/>
-            <path class="correction-figure__intervention" d="M129 146C154 146 160 54 186 54H320C349 54 357 146 387 146H464"/>
-            <path class="correction-figure__return" d="M464 161V195H56V163m-6 7 6-7 6 7"/>
-            <circle class="correction-figure__node" cx="56" cy="146" r="5"/>
-            <circle class="correction-figure__event" cx="129" cy="146" r="5"/>
-            <circle class="correction-figure__correction" cx="186" cy="54" r="5"/>
-            <circle class="correction-figure__correction" cx="320" cy="54" r="5"/>
-            <circle class="correction-figure__node" cx="464" cy="146" r="5"/>
-            <g class="correction-figure__labels">
-              <text x="56" y="128">Policy runs</text>
-              <text x="186" y="36" text-anchor="middle">Human takes over</text>
-              <text x="270" y="84" text-anchor="middle">Review correction</text>
-              <text x="455" y="171" text-anchor="end">Train next policy</text>
-            </g>
-            <text class="correction-figure__event-label" x="129" y="171" text-anchor="middle">Policy fails</text>
-          </svg>
-        </figure>
-      </div>
-
-      <div class="current-work-live__questions">
-        <ol class="lead-studies" aria-label="Selected current research">
-          <li id="continual-learning">
-            <span>01</span>
-            <div>
-              <h3>Learning from human corrections</h3>
-              <p><strong class="evidence-state evidence-state--built">Implemented workflow</strong></p>
-              <p>When a policy fails, a person can take control of the arm. The workflow records the correction so it can be reviewed and added to the demonstrations used to train the next policy.</p>
+      <div class="rn-workspace">
+        <nav class="rn-nav" aria-label="Explore the research">
+          <p class="rn-nav-label">Four connected research threads</p>
+          <div class="rn-tabs">
+            <a class="rn-tab" id="rn-tab-understanding" href="#understanding-people" data-thread><strong>Understanding People</strong><span>Multimodal perception and HRI</span></a>
+            <a class="rn-tab" id="rn-tab-learning" href="#continual-learning" data-thread><strong>Learning from People</strong><span>Corrections, continual learning, egocentric demonstrations</span></a>
+            <a class="rn-tab" id="rn-tab-policies" href="#explainability" data-thread><strong>Policy Explainability and Representation</strong><span>What a policy encodes and uses</span></a>
+            <a class="rn-tab" id="rn-tab-prediction" href="#world-models" data-thread><strong>Predictive Models, Inverse Dynamics, and Transfer</strong><span>World models, action learning, real–sim–real</span></a>
+          <p class="rn-foundation-label">Shared foundation</p><a class="rn-tab rn-platform-tab" id="rn-tab-platform" href="#research-platform" data-thread><strong>Research platform</strong><span>Physical and simulated experiments</span></a></div>
+        </nav>
+        <div class="rn-panels">
+          
+<section class="rn-panel" id="continual-learning" data-thread-panel>
+  <div class="rn-context"><span>Current work</span><strong class="rn-status">Implemented workflow</strong></div>
+  <h3 class="rn-question">How can robots learn from demonstrations and corrections while retaining earlier skills?</h3>
+  <figure class="rn-concept rn-correction" data-rn-animation="correction">
+    <div class="rn-concept-labels"><span>A policy reaches its limit</span><span>A person shows another way</span></div>
+    <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-correction-title rn-correction-desc">
+      <title id="rn-correction-title">A correction can become a demonstration</title>
+      <desc id="rn-correction-desc">An illustrative policy path stops short. A human correction continues toward the goal. The corrected segment can be recorded, reviewed, and used for training.</desc>
+      <defs><pattern id="rn-dot-field" width="28" height="28" patternunits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor" opacity=".15"></circle></pattern></defs>
+      <rect width="900" height="280" fill="url(#rn-dot-field)"></rect>
+      <path class="rn-path-background" d="M35 220 C150 220 205 95 325 125 S565 255 710 150 S805 75 865 65"></path>
+      <path class="rn-policy-path" d="M35 220 C150 220 205 95 325 125 S435 192 470 185" pathlength="1"></path>
+      <circle class="rn-policy-dot" cx="35" cy="220" r="7"></circle>
+      <g class="rn-policy-limit"><circle cx="470" cy="185" r="12"></circle><path d="M462 177 478 193 M478 177 462 193"></path></g>
+      <g class="rn-human-segment"><path class="rn-human-path" d="M470 185 C515 176 505 72 610 78 S767 158 830 77" pathlength="1"></path><circle cx="830" cy="77" r="8"></circle><path class="rn-capture-bracket" d="M500 239 V252 H810 V239"></path></g>
+      <circle class="rn-goal-ring" cx="830" cy="77" r="25"></circle>
+      <circle class="rn-goal-ring rn-goal-outer" cx="830" cy="77" r="41"></circle>
+    </svg>
+    <figcaption>Concept illustration, not a recorded rollout.</figcaption>
+  </figure>
+  <div class="rn-idea"><p>A person's intervention can be more than a way to finish a task. It can become a demonstration the robot learns from.</p></div>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-continual-learning">Explore this thread</button><span class="rn-panel-footnote">Egocentric interface in development</span></div><dialog class="rn-reading-panel" id="reading-continual-learning" aria-labelledby="reading-continual-learning-title"><header class="rn-reading-heading"><h3 id="reading-continual-learning-title">Learning from People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>When a policy fails, a person can take control of the arm. The workflow records the correction so it can be reviewed and added to the demonstrations used to train the next policy.</p>
               <p>People and policies use the same arm commands, so their actions can be compared step by step. Policy evaluation is currently performed manually. Whether the corrections improve later policies without eroding earlier skills remains an open question.</p>
+            <div class="rn-support"><div><span class="rn-label">In development</span><details id="egocentric"><summary>Egocentric demonstrations</summary><p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
+              </details></div>
+              <div><span class="rn-label">Simulation studies</span><details id="representation-studies"><summary>What policies retain from training</summary><p>Simulation tests compared teacher-student training with learned auxiliary heads to see what policies retain when privileged inputs are removed. Attention maps help diagnose behavior, but they do not by themselves establish a causal explanation.</p>
+              </details></div>
             </div>
-          </li>
-          <li id="explainability">
-            <span>02</span>
-            <div>
-              <h3>What information does a policy use to act?</h3>
-              <p><strong class="evidence-state evidence-state--investigating">Simulation and physical robot studies</strong></p>
-              <p>In simulation, representation probes showed that the tested policies encoded links between words and objects. Activation patching showed that their action heads did not use those links.</p>
+          
+</div></dialog></section>
+          
+<section class="rn-panel" id="explainability" data-thread-panel>
+  <div class="rn-context"><span>Current work</span><strong class="rn-status">Simulation and physical robot studies</strong></div>
+  <h3 class="rn-question">What has a policy learned, and how does that shape its behavior?</h3>
+  <figure class="rn-concept rn-policy-concept" data-rn-animation="grounding">
+    <div class="rn-concept-labels"><span>What the policy represents</span><span>What guides its action</span></div>
+    <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-grounding-title rn-grounding-desc">
+      <title id="rn-grounding-title">Knowing a word and acting on it are separate questions</title>
+      <desc id="rn-grounding-desc">A conceptual network connects a word to an object representation. A separate path leads to action. The controls highlight the distinction between information being encoded and being used.</desc>
+      <path class="rn-network-guide" d="M50 140H850"></path>
+      <g class="rn-encoding-network">
+        <path d="M65 140 212 62 345 106 470 67 M65 140 212 198 345 106 M212 62 212 198 380 220 470 158 M345 106 470 158"></path>
+        <circle cx="65" cy="140" r="20"></circle><circle cx="212" cy="62" r="12"></circle><circle cx="212" cy="198" r="12"></circle><circle cx="345" cy="106" r="25"></circle><circle cx="380" cy="220" r="12"></circle><circle cx="470" cy="67" r="12"></circle><circle cx="470" cy="158" r="12"></circle>
+      </g>
+      <path class="rn-possible-link" d="M495 153 C555 145 573 140 630 140"></path>
+      <g class="rn-action-network"><path d="M630 140 C690 140 698 64 770 64 M630 140 C690 140 713 214 800 214"></path><circle cx="630" cy="140" r="18"></circle><rect x="752" y="46" width="36" height="36" rx="4"></rect><circle cx="800" cy="214" r="20"></circle></g>
+    </svg>
+    <figcaption>Concept illustration, not an attribution map or measured result.</figcaption>
+  </figure>
+  <div class="rn-idea"><p>A policy can represent which object a word refers to without using that knowledge when it acts. Understanding the representation is only part of the question.</p></div>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-explainability">Explore this thread</button><span class="rn-panel-footnote">Simulation and physical robot studies</span></div><dialog class="rn-reading-panel" id="reading-explainability" aria-labelledby="reading-explainability-title"><header class="rn-reading-heading"><h3 id="reading-explainability-title">Policy Explainability and Representation</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>In simulation, representation probes showed that the tested policies encoded links between words and objects. Activation patching showed that their action heads did not use those links.</p>
               <p>Bimanual robot trials measured object choice separately from pick completion. In those trials, higher task success did not necessarily mean the policy was better at choosing the object named in the instruction.</p>
+            <div class="rn-support"><div><span class="rn-label">In development</span><details id="policy-evaluation"><summary>Policy evaluation beyond success rate</summary><p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
+              </details></div>
+              <div><span class="rn-label">Research tools</span><div class="rn-links"><a href="#research-platform">Policy diagnostics and evaluation tools</a></div></div>
             </div>
-          </li>
-        </ol>
-
-        <section class="study-index" id="additional-directions" aria-labelledby="study-index-title">
-          <h3 id="study-index-title">Related studies</h3>
-          <div class="study-index__columns">
-            <div class="study-index__group study-index__group--people">
-              <h4>Learning from people</h4>
-              <details class="study-index__entry" id="egocentric">
-                <summary><span>Egocentric demonstrations</span><small>In development</small></summary>
-                <p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
-              </details>
+          
+</div></dialog></section>
+          
+<section class="rn-panel" id="world-models" data-thread-panel>
+  <div class="rn-context"><span>Current work</span><strong class="rn-status">Offline evaluation completed · simulation studies</strong></div>
+  <h3 class="rn-question">How can predicting what happens next help a robot learn how to act?</h3>
+  <figure class="rn-concept rn-prediction-concept" data-rn-animation="prediction">
+    <div class="rn-concept-labels"><span>An observation</span><span>A possible future</span></div>
+    <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-future-title rn-future-desc">
+      <title id="rn-future-title">From a possible future to the action that could produce it</title>
+      <desc id="rn-future-desc">A solid object marks an observed state. Translucent copies illustrate possible future states. A curved line represents an inferred action, not a measured trajectory or model prediction.</desc>
+      <path class="rn-scene-plane" d="M70 210 275 90 H835 L630 210 Z"></path>
+      <g class="rn-observed-object"><path d="m145 154 49-27 55 28-48 28z m0 0v-55l49-27v55 m0-55 55 28v55 m-48 28v-55l48-28 m-104 0 56 29"></path></g>
+      <g class="rn-future-objects"><path opacity=".18" d="m338 146 49-27 55 28-48 28z m0 0V91l49-27v55 m0-55 55 28v55 m-48 28v-55l48-28 m-104 0 56 29"></path><path opacity=".4" d="m517 130 49-27 55 28-48 28z m0 0V75l49-27v55 m0-55 55 28v55 m-48 28v-55l48-28 m-104 0 56 29"></path><path opacity=".8" d="m701 110 49-27 55 28-48 28z m0 0V55l49-27v55 m0-55 55 28v55 m-48 28V83l48-28 m-104 0 56 29"></path></g>
+      <path class="rn-inferred-action" d="M203 238 C350 260 521 218 732 186"></path>
+      <path class="rn-inferred-action" d="m718 178 14 8-11 12"></path>
+    </svg>
+    <span class="rn-concept-caption">A prediction and an action need separate tests.</span><figcaption>Concept illustration, not model output.</figcaption>
+  </figure>
+  <div class="rn-idea"><p>What might happen next, and what action could make it happen? Predictive models and inverse dynamics approach action learning from those two directions.</p></div>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-world-models">Explore this thread</button><span class="rn-panel-footnote">Physical validation is pending.</span></div><dialog class="rn-reading-panel" id="reading-world-models" aria-labelledby="reading-world-models-title"><header class="rn-reading-heading"><h3 id="reading-world-models-title">Predictive Models, Inverse Dynamics, and Transfer</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Offline tests evaluated a video-action model adapted to teleoperation data. Simulation tests compared actions inferred from video with recorded actions and commands sent to the robot. They assessed future-feature prediction, instruction grounding, and failure signals separately from task success.</p>
+              <div class="rn-support"><div><span class="rn-label">Active experiments</span><details id="sim-real"><summary>Transfer between simulation and hardware</summary><p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
+              </details></div>
+              <div><span class="rn-label">Validation boundary</span><h4>Offline and simulation evidence</h4><p>Physical validation is pending.</p></div>
             </div>
-            <div class="study-index__group study-index__group--policies">
-              <h4>Understanding policies</h4>
-              <details class="study-index__entry" id="representation-studies">
-                <summary><span>What policies retain from training</span><small>Simulation studies</small></summary>
-                <p>Simulation tests compared teacher-student training with learned auxiliary heads to see what policies retain when privileged inputs are removed. Attention maps help diagnose behavior, but they do not by themselves establish a causal explanation.</p>
-              </details>
-              <details class="study-index__entry" id="policy-evaluation">
-                <summary><span>Policy evaluation beyond success rate</span><small>In development</small></summary>
-                <p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
-              </details>
-            </div>
-            <div class="study-index__group study-index__group--transfer">
-              <h4>Prediction and transfer</h4>
-              <details class="study-index__entry" id="world-models">
-                <summary><span>Predictive models and inverse dynamics</span><small>Offline evaluation completed · simulation studies</small></summary>
-                <p>Offline tests evaluated a video-action model adapted to teleoperation data. Simulation tests compared actions inferred from video with recorded actions and commands sent to the robot. They assessed future-feature prediction, instruction grounding, and failure signals separately from task success. Physical validation is pending.</p>
-              </details>
-              <details class="study-index__entry" id="sim-real">
-                <summary><span>Transfer between simulation and hardware</span><small>Active experiments</small></summary>
-                <p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
-              </details>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <details class="research-disclosure" id="research-platform">
-        <summary>Platform and evaluation tools</summary>
-        <p class="research-disclosure__note">I designed and implemented the workflow from teleoperation and synchronized recording to dataset conversion, policy training, evaluation, and deployment. The physical robot and digital twin share the operator, data review, and policy interfaces, with separate hardware and physics backends.</p>
-        <div class="current-work-live__platform">
+          
+</div></dialog></section>
+          
+<section class="rn-panel" id="understanding-people" data-thread-panel>
+  <div class="rn-context"><span>Prior work · 2021–2024</span><strong class="rn-status">Multimodal perception and HRI</strong></div>
+  <h3 class="rn-question">How can robots understand what people are doing and what they intend?</h3>
+  <figure class="rn-public-media">
+    <div class="rn-video-host"><button type="button" class="rn-video-start" data-load-research-video aria-label="Play the public Track Anything Rapter flight trial"><img src="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" alt="Track Anything Rapter aerial tracking demonstration" loading="lazy"><span>Play public flight trial</span></button></div>
+    <template data-research-video><video controls muted playsinline preload="none" poster="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" aria-label="Public Track Anything Rapter UAV tracking trial"><source src="https://tvpian.github.io/imgs/tar.mp4" type="video/mp4"></source></video></template>
+    <figcaption><span>Track Anything Rapter</span><a href="https://tvpian.github.io/projects/track-anything-rapter/">Explore the project</a></figcaption>
+  </figure>
+  <div class="rn-idea"><p>A click, an image, a phrase, or a gesture can express an intention. The challenge is turning that incomplete evidence into something a robot can act on.</p></div>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-understanding-people">Explore this thread</button><span class="rn-panel-footnote">PoseFusion · TAR · NatSGD</span></div><dialog class="rn-reading-panel" id="reading-understanding-people" aria-labelledby="reading-understanding-people-title"><header class="rn-reading-heading"><h3 id="reading-understanding-people-title">Understanding People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><article class="rn-project"><div><span class="rn-label">Physical flight trials</span><h4><a href="https://tvpian.github.io/projects/track-anything-rapter/">Track Anything Rapter</a></h4></div><p>A person can use a click, box, image, or text to tell a drone what to follow. Co-developed the system, implemented the high-level controller, and designed the trajectory evaluation against motion capture.</p></article>
+              <article class="rn-project"><div><span class="rn-label">Exploratory prototype</span><h4><a href="https://tvpian.github.io/projects/natsgd/">NatSGD prototype</a></h4></div><p>An exploratory demonstration, speech, and gesture policy on the NatSGD dataset provided by Snehesh Shrestha (UMD). Task success and the benefit of gesture remain unvalidated.</p></article>
+              <article class="rn-project"><div><span class="rn-label">Graduate course project</span><h4><a href="https://tvpian.github.io/projects/multimodal-perception/">PoseFusion</a></h4></div><p>Multi-view pose fusion for action recognition under occlusion. In the reported tests, combining views raised F1 from 0.76 to 0.82 compared with a single view.</p></article>
+            <div class="rn-links rn-prior-links"><a href="https://tvpian.github.io/projects/multimodal-perception/">PoseFusion (graduate course project)</a><a href="https://tvpian.github.io/projects/natsgd/">NatSGD prototype</a></div>
+  </div></dialog></section>
+        <section class="rn-panel rn-platform-panel" id="research-platform" data-thread-panel>
+  <div class="rn-context"><span>Shared foundation</span><strong class="rn-status">Implemented</strong></div>
+  <h3 class="rn-question">From demonstrations to physical experiments.</h3>
+  <figure class="rn-concept rn-platform-concept" data-rn-animation="platform">
+    <div class="rn-concept-labels"><span>Physical robot</span><span>Digital twin</span></div>
+    <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-platform-title rn-platform-desc">
+      <title id="rn-platform-title">Shared interfaces connect physical and simulated experiments</title>
+      <desc id="rn-platform-desc">The physical robot and digital twin connect to the same operator, recording, review, and policy interfaces, with separate hardware and physics backends.</desc>
+      <g class="rn-platform-guides"><path d="M140 45V245 M760 45V245 M40 85H860 M40 230H860"></path></g>
+      <path class="rn-platform-trunk" pathlength="1" d="M450 230V150"></path>
+      <path class="rn-platform-physical" pathlength="1" d="M450 150C450 95 140 160 140 85"></path>
+      <path class="rn-platform-twin" pathlength="1" d="M450 150C450 95 760 160 760 85"></path>
+      <g class="rn-platform-hub"><circle cx="450" cy="230" r="23"></circle><circle cx="450" cy="230" r="41"></circle></g>
+      <g class="rn-platform-endpoints"><circle class="rn-physical-node" cx="140" cy="85" r="10"></circle><circle class="rn-twin-node" cx="760" cy="85" r="10"></circle></g>
+    </svg>
+    <div class="rn-concept-caption">Shared recording, review, and policy interfaces.</div>
+    <figcaption>Platform schematic.</figcaption>
+  </figure>
+  <div class="rn-idea"><p>Shared interfaces connect the physical robot and its digital twin, so the studies can move between simulation and hardware without rebuilding the workflow.</p></div>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-research-platform">Platform details</button><span class="rn-panel-footnote">Policy evaluation is currently performed manually.</span></div><dialog class="rn-reading-panel" id="reading-research-platform" aria-labelledby="reading-research-platform-title"><header class="rn-reading-heading"><h3 id="reading-research-platform-title">Platform details and evaluation tools</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p class="rn-platform-intro">I designed and implemented the workflow from teleoperation and synchronized recording to dataset conversion, policy training, evaluation, and deployment. The physical robot and digital twin share the operator, data review, and policy interfaces, with separate hardware and physics backends.</p>
+        <div class="rn-platform-body"><div class="current-work-live__platform">
         <div class="current-work-live__platform-heading">
           <p class="eyebrow light"><span></span>The research platform</p>
           <p><strong class="evidence-state evidence-state--built">Implemented</strong> Six shared layers · physical and simulated backends · staged evaluation</p>
         </div>
 
-        <figure class="current-work-live__platform-figure" data-animate-diagram>
-          <svg viewBox="0 0 1200 620" role="img" aria-labelledby="current-platform-title current-platform-desc">
+        <figure class="current-work-live__platform-figure">
+          <svg viewbox="0 0 1200 620" role="img" aria-labelledby="current-platform-title current-platform-desc">
             <title id="current-platform-title">The gated research platform</title>
             <desc id="current-platform-desc">Six shared platform layers crossed by seven promotion gates. One evidence path descends through the system and a failed authorization returns to capture as recovery data.</desc>
             <g class="cwl-guide"><path d="M268 38V528M408 38V528M548 38V528M688 38V528M828 38V528M968 38V528M1108 38V528"></path></g>
@@ -205,26 +237,13 @@
             <g class="cwl-gate-label" text-anchor="middle"><text x="268" y="552">RECORD</text><text x="408" y="552">QC</text><text x="548" y="552">REVIEW</text><text x="688" y="552">FREEZE</text><text x="828" y="552">CONVERT</text><text x="968" y="552">SHADOW</text><text x="1108" y="552">AUTHORIZE</text></g>
             <path class="cwl-return" d="M1156 486H1180V592H174V322H192"></path><path class="cwl-return-head" d="M182 316L196 322L182 328"></path>
             <text class="cwl-return-label" x="676" y="586" text-anchor="middle">RECOVER · RELABEL · RELEARN</text>
-            <g class="cwl-stage-hits">
-              <rect class="cwl-stage-hit" x="8" y="38" width="1150" height="76" tabindex="0" role="button" aria-label="Operate: multi-arm teleoperation" data-stage="0" data-stage-label="Operate · multi-arm teleoperation"></rect>
-              <rect class="cwl-stage-hit" x="8" y="120" width="1150" height="76" tabindex="0" role="button" aria-label="Perceive: scene state" data-stage="1" data-stage-label="Perceive · scene state"></rect>
-              <rect class="cwl-stage-hit" x="8" y="202" width="1150" height="76" tabindex="0" role="button" aria-label="Twin: physical-authoritative simulation" data-stage="2" data-stage-label="Twin · physical-authoritative simulation"></rect>
-              <rect class="cwl-stage-hit" x="8" y="284" width="1150" height="76" tabindex="0" role="button" aria-label="Capture: synchronized evidence" data-stage="3" data-stage-label="Capture · synchronized evidence"></rect>
-              <rect class="cwl-stage-hit" x="8" y="366" width="1150" height="76" tabindex="0" role="button" aria-label="Evaluate: learned policies with manual review" data-stage="4" data-stage-label="Evaluate · learned policies · manual review"></rect>
-              <rect class="cwl-stage-hit" x="8" y="448" width="1150" height="76" tabindex="0" role="button" aria-label="Orchestrate: confirmation-gated skills" data-stage="5" data-stage-label="Orchestrate · confirmation-gated skills"></rect>
-            </g>
-          </svg>
-          <figcaption><span>Shared interfaces across physical and simulated backends</span><span data-diagram-status aria-live="polite">Inspect a stage · policy evaluation is currently manual</span></figcaption>
+            </svg>
+          <figcaption><span>Shared interfaces across physical and simulated backends</span><span data-diagram-status aria-live="polite">Shared physical and simulated interfaces · manual policy evaluation</span></figcaption>
         </figure>
       </div>
         <details class="illustrative-diagnostic evaluation-diagram"><summary>Illustrative evaluation criteria</summary>
-            <figure class="current-work-live__concept current-work-live__evaluation" data-animate-diagram data-evaluation-state="outcome">
-              <div class="evaluation-modes" role="group" aria-label="Policy evaluation lens">
-                <button type="button" data-evaluation-mode="outcome" aria-pressed="true">Outcome</button>
-                <button type="button" data-evaluation-mode="behavior" aria-pressed="false">Behavior</button>
-                <button type="button" data-evaluation-mode="control" aria-pressed="false">Control</button>
-              </div>
-              <svg viewBox="0 0 320 170" role="img" aria-label="Two policies evaluated on the same task and control conditions across outcome, behavior, and control measures">
+            <figure class="current-work-live__concept current-work-live__evaluation" data-evaluation-state="control" data-rn-animation="evaluation">
+              <svg viewbox="0 0 320 170" role="img" aria-label="Two policies evaluated on the same task and control conditions across outcome, behavior, and control measures">
                 <text class="cwl-concept-text" x="16" y="48">MODEL A</text><text class="cwl-concept-text" x="16" y="128">MODEL B</text>
                 <g class="cwl-concept-thread"><path d="M16 58H104M16 138H104M188 88H218"></path></g>
                 <rect class="cwl-concept-plate" x="104" y="24" width="84" height="128"></rect>
@@ -233,28 +252,15 @@
                 <g class="cwl-eval-axis cwl-eval-behavior"><path class="cwl-concept-dash" d="M218 88H302"></path><text class="cwl-concept-key" x="218" y="79">BEHAVIOR</text><text class="cwl-concept-text" x="218" y="102">failure · recovery</text></g>
                 <g class="cwl-eval-axis cwl-eval-control"><path class="cwl-concept-dash" d="M218 132H302"></path><text class="cwl-concept-key" x="218" y="123">CONTROL</text><text class="cwl-concept-text" x="218" y="146">compliance · repeatability</text></g>
               </svg>
-              <figcaption><span>Controlled comparison</span><span data-evaluation-status aria-live="polite">Task completion · partial progress</span></figcaption>
+              <figcaption><span>Controlled comparison</span><span data-evaluation-status aria-live="polite">Outcome · behavior · control</span></figcaption>
             </figure>
         </details>
-        <details class="illustrative-diagnostic"><summary>Illustrative policy diagnostics (not measured results)</summary><figure class="current-work-live__attention policy-lab" data-animate-diagram data-attention-state="all" data-policy-input="vision">
-        <div class="current-work-live__attention-heading"><p class="eyebrow light"><span></span>Policy analysis instrument</p><p>Select an input source, then compare the nominal and controlled-perturbation views.</p></div>
-        <div class="policy-lab__controls">
-          <div><small>Input under study</small><div class="policy-input-modes" role="group" aria-label="Policy input under study">
-            <button type="button" data-policy-input-mode="vision" aria-pressed="true">Vision</button>
-            <button type="button" data-policy-input-mode="prompt" aria-pressed="false">Prompt</button>
-            <button type="button" data-policy-input-mode="state" aria-pressed="false">Robot state</button>
-            <button type="button" data-policy-input-mode="pretraining" aria-pressed="false">Pretraining</button>
-          </div></div>
-          <div><small>Diagnostic view</small><div class="attention-modes" role="group" aria-label="Policy comparison view">
-            <button type="button" data-attention-mode="all" aria-pressed="true">Nominal</button>
-            <button type="button" data-attention-mode="ablated" aria-pressed="false">Perturbed</button>
-            <button type="button" data-attention-mode="delta" aria-pressed="false">Difference</button>
-          </div></div>
-        </div>
-        <p class="policy-lab__question" data-policy-input-status aria-live="polite"><strong>Vision</strong> Which regions redirect the policy response when visual evidence changes?</p>
-        <svg viewBox="0 0 1040 270" role="img" aria-labelledby="current-attention-title current-attention-desc">
+        <details class="illustrative-diagnostic"><summary>Illustrative policy diagnostics (not measured results)</summary><figure class="current-work-live__attention policy-lab" data-attention-state="delta" data-policy-input="vision" data-rn-animation="diagnostic">
+        <div class="current-work-live__attention-heading"><p class="eyebrow light"><span></span>Policy analysis instrument</p><p>An illustrative comparison of the nominal view, controlled perturbation, and resulting difference.</p></div>
+        <p class="policy-lab__question"><strong>Vision</strong> Which regions redirect the policy response when visual evidence changes?</p>
+        <svg viewbox="0 0 1040 270" role="img" aria-labelledby="current-attention-title current-attention-desc">
           <title id="current-attention-title">Attention routing under input ablation</title><desc id="current-attention-desc">Four cell fields compare the input, attention with all inputs, attention after one input is ablated, and the resulting difference.</desc>
-          <defs><pattern id="current-grid" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="18" height="18" class="cwl-cell-base"></rect></pattern></defs>
+          <defs><pattern id="current-grid" width="22" height="22" patternunits="userSpaceOnUse"><rect width="18" height="18" class="cwl-cell-base"></rect></pattern></defs>
           <g class="cwl-attention-panel cwl-attention-input" transform="translate(18 34)"><rect class="cwl-field" width="220" height="154" fill="url(#current-grid)"></rect><rect class="cwl-support" x="108" y="44" width="68" height="54"></rect><text class="cwl-field-label" y="190">INPUT FIELD</text></g>
           <g class="cwl-attention-panel cwl-attention-all" transform="translate(280 34)"><rect class="cwl-field" width="220" height="154" fill="url(#current-grid)"></rect><g class="cwl-hot"><rect x="110" y="44" width="18" height="18" opacity=".45"></rect><rect x="132" y="44" width="18" height="18" opacity=".72"></rect><rect x="154" y="44" width="18" height="18" opacity=".48"></rect><rect x="110" y="66" width="18" height="18" opacity=".7"></rect><rect x="132" y="66" width="18" height="18" opacity="1"></rect><rect x="154" y="66" width="18" height="18" opacity=".76"></rect><rect x="132" y="88" width="18" height="18" opacity=".55"></rect></g><rect class="cwl-support" x="108" y="44" width="68" height="54"></rect><text class="cwl-field-label" y="190">ATTENTION · ALL INPUTS</text></g>
           <g class="cwl-attention-panel cwl-attention-ablated" transform="translate(542 34)"><rect class="cwl-field" width="220" height="154" fill="url(#current-grid)"></rect><g class="cwl-hot"><rect x="22" y="66" width="18" height="18" opacity=".4"></rect><rect x="44" y="66" width="18" height="18" opacity=".68"></rect><rect x="66" y="66" width="18" height="18" opacity=".52"></rect><rect x="44" y="88" width="18" height="18" opacity=".82"></rect><rect x="66" y="88" width="18" height="18" opacity=".62"></rect><rect x="88" y="110" width="18" height="18" opacity=".42"></rect></g><rect class="cwl-support" x="108" y="44" width="68" height="54"></rect><text class="cwl-field-label" y="190">ATTENTION · ONE ABLATED</text></g>
@@ -262,8 +268,10 @@
         </svg>
         <figcaption><span>Controlled diagnostic schematic · attribution is not causation</span><span>Illustrative field—not measured output</span></figcaption>
       </figure></details>
-      </details>
-    </section>
+      </div>
+</div></dialog></section></div>
+      </div>
+      </section>
 
     <section class="work-section" id="work">
       <div class="section-heading">
@@ -277,8 +285,8 @@
       <article class="system-spotlight tar-spotlight">
         <div class="spotlight-media motion-frame" data-motion-story>
           <video muted loop playsinline preload="metadata" poster="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" aria-label="Track Anything Rapter following an AprilTag from a UAV">
-            <source src="imgs/tar.mp4" type="video/mp4">
-          </video>
+            <source src="https://tvpian.github.io/imgs/tar.mp4" type="video/mp4">
+          </source></video>
           <span class="image-index">Real UAV deployment</span>
           <div class="motion-sequence" data-system-loop aria-hidden="true"><small>System loop · illustrative</small><span>Specify</span><span>Perceive</span><span>Track</span><span>Act</span><i></i></div>
         </div>
@@ -287,37 +295,37 @@
           <h3>Track Anything Rapter</h3>
           <p>A person can use a click, box, image, or text to tell a drone what to follow. I co-developed the system, implemented the high-level controller, and designed the trajectory evaluation against motion capture.</p>
           <p class="research-note">Physical flight trials compared target and drone trajectories. Obstruction increased the distance between the aligned trajectories in the reported trials.</p>
-          <div class="spotlight-links project-actions"><a class="case-study-link" href="projects/track-anything-rapter/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://github.com/tvpian/Project-TAR">Code + demos <span aria-hidden="true">↗</span></a><a class="text-link" href="https://arxiv.org/abs/2405.11655">Paper <span aria-hidden="true">↗</span></a></div>
+          <div class="spotlight-links project-actions"><a class="case-study-link" href="https://tvpian.github.io/projects/track-anything-rapter/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://github.com/tvpian/Project-TAR">Code + demos <span aria-hidden="true"></span></a><a class="text-link" href="https://arxiv.org/abs/2405.11655">Paper <span aria-hidden="true"></span></a></div>
         </div>
       </article>
 
       <article class="role-spotlight">
-        <div class="role-copy"><p class="eyebrow"><span></span>U-ASTROD · GameSec 2024</p><h3>Multimodal anomaly detection</h3><p>For the ASTROD research program, I architected the fusion pipeline that encoded LiDAR, odometry, and network traffic independently before combining their learned representations in a shared anomaly detector.</p><p class="research-note">The published system paired modality-specific spatiotemporal encoders with feature-wise reconstruction scoring. It achieved up to 98% accuracy with vector-based reconstruction loss versus 72% with scalar-based loss, and 97% with half the training data.</p><div class="spotlight-links project-actions"><a class="case-study-link" href="projects/multimodal-anomaly-detection/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://doi.org/10.1007/978-3-031-74835-6_15">Publication <span aria-hidden="true">↗</span></a></div></div>
-        <figure class="role-figure"><img src="imgs/astrod-architecture.png?v=20260926-3" alt="U-ASTROD process flow with actual network, odometry, and LiDAR samples feeding modality-specific encoders and a shared anomaly detector"><figcaption>U-ASTROD process flow · redrawn from the published architecture</figcaption></figure>
+        <div class="role-copy"><p class="eyebrow"><span></span>U-ASTROD · GameSec 2024</p><h3>Multimodal anomaly detection</h3><p>For the ASTROD research program, I architected the fusion pipeline that encoded LiDAR, odometry, and network traffic independently before combining their learned representations in a shared anomaly detector.</p><p class="research-note">The published system paired modality-specific spatiotemporal encoders with feature-wise reconstruction scoring. It achieved up to 98% accuracy with vector-based reconstruction loss versus 72% with scalar-based loss, and 97% with half the training data.</p><div class="spotlight-links project-actions"><a class="case-study-link" href="https://tvpian.github.io/projects/multimodal-anomaly-detection/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://doi.org/10.1007/978-3-031-74835-6_15">Publication <span aria-hidden="true"></span></a></div></div>
+        <figure class="role-figure"><img src="https://tvpian.github.io/imgs/astrod-architecture.png?v=20260926-3" alt="U-ASTROD process flow with actual network, odometry, and LiDAR samples feeding modality-specific encoders and a shared anomaly detector"><figcaption>U-ASTROD process flow · redrawn from the published architecture</figcaption></figure>
       </article>
 
       <div class="project-grid related-projects">
         <article class="project-card architecture-card">
-          <div class="architecture-art"><img src="imgs/posefusion-architecture.png" alt="PoseFusion architecture showing view-specific pose graphs, GCN encoders, semantic aggregation, and temporal transformer encoding"><span class="image-index">Architecture designed across two studies</span></div>
+          <div class="architecture-art"><img src="https://tvpian.github.io/imgs/posefusion-architecture.png" alt="PoseFusion architecture showing view-specific pose graphs, GCN encoders, semantic aggregation, and temporal transformer encoding"><span class="image-index">Architecture designed across two studies</span></div>
           <div class="project-copy">
             <div class="project-meta"><span>Graduate course project · 2023</span><span>Multi-view learning</span></div>
             <h3>PoseFusion: action recognition under occlusion</h3>
             <p>I designed the core architecture for fusing pose data across camera views and paired it with a temporal model. In the reported occlusion tests, combining views raised F1 from 0.76 to 0.82 compared with a single view.</p>
-            <div class="card-links project-actions"><a class="card-link case-study-link" href="projects/multimodal-perception/">Open case study <span aria-hidden="true">→</span></a><a class="card-link" href="https://www.researchgate.net/publication/378143241_Pose_Fusion_-_Multi-View_Pose_Integration_for_Comprehensive_Action_Recognition">Poster ↗</a><a class="card-link" href="https://github.com/tvpian/HPE_for_HAR">Code ↗</a></div>
+            <div class="card-links project-actions"><a class="card-link case-study-link" href="https://tvpian.github.io/projects/multimodal-perception/">Open case study <span aria-hidden="true">→</span></a><a class="card-link" href="https://www.researchgate.net/publication/378143241_Pose_Fusion_-_Multi-View_Pose_Integration_for_Comprehensive_Action_Recognition">Poster </a><a class="card-link" href="https://github.com/tvpian/HPE_for_HAR">Code </a></div>
           </div>
         </article>
 
         <article class="feature-card hybrid-card" id="hybrid-ik-card">
           <div class="feature-art hybrid-art">
             <div class="hybrid-video motion-frame" data-motion-story>
-              <video muted loop playsinline preload="metadata" poster="imgs/autonomous_weeding.jpg" aria-label="Vision-guided agricultural robot operating around plants">
-              <source src="imgs/autonomous_weeding.mp4" type="video/mp4">
-              </video>
+              <video muted loop playsinline preload="metadata" poster="https://tvpian.github.io/imgs/autonomous_weeding.jpg" aria-label="Vision-guided agricultural robot operating around plants">
+              <source src="https://tvpian.github.io/imgs/autonomous_weeding.mp4" type="video/mp4">
+              </source></video>
               <span class="image-index">Physical deployment</span>
               <div class="motion-sequence" data-system-loop aria-hidden="true"><small>System loop · illustrative</small><span>Observe</span><span>Estimate</span><span>Plan</span><span>Act</span><i></i></div>
             </div>
-            <figure><img src="imgs/hybrid-ik-system.png" alt="Paper figure showing plant vision feeding root detection, weed spread estimation, workspace extraction, hybrid IK, and flower-carpet planning"><figcaption>From pixels to a plant-safe plan</figcaption></figure>
-            <figure><img src="imgs/hybrid-ik-leaf-area.png" alt="Paper figure showing the visual pipeline from RGB channels through thresholding and elliptical closing to stem localization"><figcaption>Geometry recovered before motion</figcaption></figure>
+            <figure><img src="https://tvpian.github.io/imgs/hybrid-ik-system.png" alt="Paper figure showing plant vision feeding root detection, weed spread estimation, workspace extraction, hybrid IK, and flower-carpet planning"><figcaption>From pixels to a plant-safe plan</figcaption></figure>
+            <figure><img src="https://tvpian.github.io/imgs/hybrid-ik-leaf-area.png" alt="Paper figure showing the visual pipeline from RGB channels through thresholding and elliptical closing to stem localization"><figcaption>Geometry recovered before motion</figcaption></figure>
           </div>
           <div class="feature-copy">
             <div class="project-meta"><span>Chapter 02 · 2021–23</span><span>Collaborative agricultural robotics</span></div>
@@ -327,20 +335,20 @@
             <div class="aggrip-module">
               <div class="aggrip-motion motion-frame">
                 <video muted loop playsinline preload="metadata" aria-label="CAD animation of the AGGRIP precision-weeding end effector">
-                  <source src="imgs/aggrip.mp4" type="video/mp4">
-                </video>
+                  <source src="https://tvpian.github.io/imgs/aggrip.mp4" type="video/mp4">
+                </source></video>
                 <span>AGGRIP · CAD concept</span>
               </div>
               <div class="aggrip-copy"><small>End-effector co-design</small><h4>Precision weeding end effector</h4><p>I co-designed this gripper with a mechanical engineer as part of the same research program. Vision-adaptive control positions the tool to reduce contact with non-weed plants, while the end effector combines mechanical plucking with targeted spraying or watering.</p><div><span>Pluck + spray</span><span>Pluck + water</span><span>Minimal crop contact</span></div></div>
             </div>
             <div class="tags"><span>Vision</span><span>Hybrid IK</span><span>Manipulation</span><span>Adaptive control</span><span>Plant–robot interaction</span></div>
-            <div class="card-links project-actions"><a class="card-link case-study-link" href="projects/precision-weeding/">Open case study <span aria-hidden="true">→</span></a><a class="card-link hybrid-paper-link" href="https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming">Paper + figures <span aria-hidden="true">↗</span></a></div>
+            <div class="card-links project-actions"><a class="card-link case-study-link" href="https://tvpian.github.io/projects/precision-weeding/">Open case study <span aria-hidden="true">→</span></a><a class="card-link hybrid-paper-link" href="https://www.researchgate.net/publication/399369200_Vision_Based_Hybrid_IK_Task_Planning_with_Feedforward_Neural_Network_for_Collaborative_Plant-Robot_Interaction_in_Precision_Farming">Paper + figures <span aria-hidden="true"></span></a></div>
           </div>
         </article>
 
         <article class="project-card related-project-card" id="auto-platoon-card">
           <div class="project-image cobalt motion-frame" data-motion-story>
-            <video muted loop playsinline preload="none" poster="imgs/ap.png" aria-hidden="true"><source src="imgs/ap.mp4" type="video/mp4"></video>
+            <video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/ap.png" aria-hidden="true"><source src="https://tvpian.github.io/imgs/ap.mp4" type="video/mp4"></source></video>
             <div class="motion-sequence" data-system-loop aria-hidden="true"><small>System loop · illustrative</small><span>Detect</span><span>Track</span><span>Estimate</span><span>Follow</span><i></i></div>
             
           </div>
@@ -348,20 +356,20 @@
             <div class="project-meta"><span>Chapter 03 · 2023</span><span>Connected vehicles</span></div>
             <h3>Software-latched multi-robot autonomy</h3>
             <p>A safety-aware leader–follower stack combining learned detection, feature-based tracking, monocular depth, Kalman state estimation, cooperative sensing, and explicit engage–disengage transitions.</p>
-            <div class="card-links project-actions"><a class="card-link case-study-link" href="projects/auto-platoon/">Open case study <span aria-hidden="true">→</span></a><a class="card-link" href="https://arxiv.org/abs/2405.11659">Paper <span aria-hidden="true">↗</span></a><a class="card-link" href="https://github.com/tvpian/Auto-Platoon">Code <span aria-hidden="true">↗</span></a></div>
+            <div class="card-links project-actions"><a class="card-link case-study-link" href="https://tvpian.github.io/projects/auto-platoon/">Open case study <span aria-hidden="true">→</span></a><a class="card-link" href="https://arxiv.org/abs/2405.11659">Paper <span aria-hidden="true"></span></a><a class="card-link" href="https://github.com/tvpian/Auto-Platoon">Code <span aria-hidden="true"></span></a></div>
           </div>
         </article>
 
         <article class="project-card related-project-card" id="wall-climbing-card">
           <div class="project-image vermilion prototype-still">
-            <img src="imgs/wall_climber.jpg" alt="Three-actuator soft robot positioned along a pipe surface">
+            <img src="https://tvpian.github.io/imgs/wall_climber.jpg" alt="Three-actuator soft robot positioned along a pipe surface">
             <span class="image-index">Prototype still</span>
           </div>
           <div class="project-copy">
             <div class="project-meta"><span>Chapter 01 · 2017</span><span>Soft robotics · published</span></div>
             <h3>Pneumatic wall-climbing robot</h3>
             <p>A lightweight inspection prototype built around three single-bending pneumatic actuators—moving compliance from a control objective into the robot’s physical design.</p>
-            <div class="card-links project-actions"><a class="card-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YsMSGLbcyi4C">View publication <span aria-hidden="true">↗</span></a></div>
+            <div class="card-links project-actions"><a class="card-link" href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YsMSGLbcyi4C">View publication <span aria-hidden="true"></span></a></div>
           </div>
         </article>
       </div>
@@ -373,10 +381,10 @@
           <h3>Learning robot actions from demonstrations, speech, and gesture</h3>
           <p>Using the NatSGD dataset provided by Snehesh Shrestha (UMD), I implemented a kitchen-object detector, a language-conditioned recurrent policy, and two experimental gesture pathways. The notebooks establish working model and training prototypes, while task success and the benefit of gesture remain unvalidated.</p>
           <p class="research-note"><strong>Contribution boundary:</strong> I did the notebook implementation; the NatSGD dataset and paper belong to Shrestha and his co-authors. The model builds on Stepputtis et al.'s language-conditioned imitation-learning method.</p>
-          <div class="spotlight-links project-actions"><a class="case-study-link" href="projects/natsgd/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://www.snehesh.com/natsgd/">Dataset and paper <span aria-hidden="true">↗</span></a></div>
+          <div class="spotlight-links project-actions"><a class="case-study-link" href="https://tvpian.github.io/projects/natsgd/">Open case study <span aria-hidden="true">→</span></a><a class="text-link" href="https://www.snehesh.com/natsgd/">Dataset and paper <span aria-hidden="true"></span></a></div>
         </div>
         <div class="research-context-image">
-          <img src="imgs/natsgd-context.png" alt="NatSGD overview showing synchronized speech, gesture, visual observations, and robot demonstrations">
+          <img src="https://tvpian.github.io/imgs/natsgd-context.png" alt="NatSGD overview showing synchronized speech, gesture, visual observations, and robot demonstrations">
           <p><span>Related research context</span>NatSGD later formalized speech, gesture, and synchronized robot demonstrations at UMD. Image: Shrestha et al., CC BY 4.0.</p>
         </div>
       </article>
@@ -400,24 +408,24 @@
 
       <div class="atlas-list">
         <article class="atlas-item" data-category="embodied"><div class="atlas-number">01</div><div><span>Current research platform</span><h3>Robot Learning for Unstructured Manipulation</h3></div><p>Bimanual manipulation through multimodal perception, compliance, learned policies, simulation, and real-world deployment.</p><div class="atlas-no-media current-stack-mini" aria-hidden="true"><span>demonstrate</span><i></i><strong>learn</strong><i></i><span>deploy</span></div></article>
-        <article class="atlas-item" data-category="human embodied"><div class="atlas-number">02</div><div><span>Multimodal HRI · exploratory</span><h3><a href="projects/natsgd/">Learning Actions from Human Intent ↗</a></h3></div><p>My language-conditioned policy and gesture-grounding experiments on the NatSGD dataset.</p><img src="imgs/natsgd-context.png" alt="NatSGD dataset overview showing synchronized speech, gesture, visual observations, and robot demonstrations"></article>
-        <article class="atlas-item" data-category="embodied human"><div class="atlas-number">03</div><div><span>Plant–robot interaction</span><h3><a href="projects/precision-weeding/">Vision-Guided Precision Weeding ↗</a></h3></div><p>Weed perception, adaptive control, plant-safe hybrid-IK planning, and a co-designed end effector.</p><video muted loop playsinline preload="none" poster="imgs/autonomous_weeding.jpg" aria-hidden="true"><source src="imgs/autonomous_weeding.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="autonomy embodied"><div class="atlas-number">04</div><div><span>Connected autonomy</span><h3><a href="projects/auto-platoon/">Auto-Platoon ↗</a></h3></div><p>Bio-inspired leader–follower coordination using software latching.</p><video muted loop playsinline preload="none" poster="imgs/ap.png" aria-hidden="true"><source src="imgs/ap.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">05</div><div><span>Multimodal UAV · preprint</span><h3><a href="projects/track-anything-rapter/">Track Anything Rapter ↗</a></h3></div><p>Click, image, text, and box-conditioned tracking with foundation models and visual servoing.</p><img src="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" alt="TAR multimodal detection and tracking examples"></article>
-        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">06</div><div><span>Aerial robotics</span><h3><a href="imgs/orb.mp4">ORB-SLAM Drone Localization ↗</a></h3></div><p>Vision-based localization for aerial asset inspection and management.</p><video muted loop playsinline preload="none" poster="imgs/orb.png" aria-hidden="true"><source src="imgs/orb.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="perception autonomy"><div class="atlas-number">07</div><div><span>Aerial inspection</span><h3><a href="imgs/surface_crack.mp4">Surface Defect Detection ↗</a></h3></div><p>YOLO-based visual inspection for detecting structural surface defects.</p><video muted loop playsinline preload="none" poster="imgs/surface_crack.png" aria-hidden="true"><source src="imgs/surface_crack.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="perception"><div class="atlas-number">08</div><div><span>Image understanding</span><h3><a href="https://github.com/tvpian/SLIC-Image-Segmentation">SLIC Image Segmentation ↗</a></h3></div><p>Superpixel segmentation for compact image representation.</p><video muted loop playsinline preload="none" poster="imgs/slic.png" aria-hidden="true"><source src="imgs/slic.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="perception"><div class="atlas-number">09</div><div><span>Representation learning</span><h3><a href="https://github.com/tvpian/Image-Outpainting">Implicit Neural Representation ↗</a></h3></div><p>Image outpainting through coordinate-conditioned neural representations.</p><video muted loop playsinline preload="none" poster="imgs/inr.png" aria-hidden="true"><source src="imgs/inr.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="perception"><div class="atlas-number">10</div><div><span>3D perception</span><h3><a href="https://github.com/tvpian/Monocular_Depth_Estimation_using_Transfer_Learning">Monocular Depth Estimation ↗</a></h3></div><p>Transfer learning for estimating scene depth from a single camera.</p><video muted loop playsinline preload="none" poster="imgs/depth-from-video.jpg" aria-hidden="true"><source src="imgs/Monocular_Depth_Estimation_vid.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="human perception"><div class="atlas-number">11</div><div><span>Applied AI</span><h3><a href="https://github.com/tvpian/Virtual_Try-On">Virtual Try-On ↗</a></h3></div><p>Visual apparel synthesis and personalized style evaluation.</p><video muted loop playsinline preload="none" poster="imgs/v_tryon.png" aria-hidden="true"><source src="imgs/v_tryon.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="human perception"><div class="atlas-number">12</div><div><span>Egocentric interaction</span><h3><a href="https://github.com/tvpian/AI_Cricket_Coach">AI Cricket Coach ↗</a></h3></div><p>Action recognition and immersive feedback for batting practice.</p><video muted loop playsinline preload="none" poster="imgs/AICC_4.png" aria-hidden="true"><source src="imgs/AICC.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="human"><div class="atlas-number">13</div><div><span>Product intelligence</span><h3><a href="https://github.com/tvpian/My-Style">My Style ↗</a></h3></div><p>An AI-assisted shopping and personal-style application.</p><video muted loop playsinline preload="none" poster="imgs/my_style.jpg" aria-hidden="true"><source src="imgs/my_style.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="human autonomy"><div class="atlas-number">14</div><div><span>Reinforcement learning</span><h3><a href="https://github.com/tvpian/RL_Cricket_Simulation_Engine">RL Cricket Simulation ↗</a></h3></div><p>A bowler agent that adapts to batting styles and field configurations.</p><video muted loop playsinline preload="none" poster="imgs/RL_cs.png" aria-hidden="true"><source src="imgs/RL_cs.mp4" type="video/mp4"></video></article>
-        <article class="atlas-item" data-category="embodied"><div class="atlas-number">15</div><div><span>Soft robotics · published</span><h3><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YsMSGLbcyi4C">Wall-Climbing Robot ↗</a></h3></div><p>A lightweight soft-robotic prototype for pipe inspection.</p><img src="imgs/wall_climber.gif" alt="Wall-climbing soft robot in motion"></article>
-        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">16</div><div><span>Cyber-physical security · published</span><h3><a href="projects/multimodal-anomaly-detection/">Multimodal Anomaly Detection ↗</a></h3></div><p>Modality-specific LiDAR, odometry, and network encoders fused for abnormal-behavior detection.</p><img src="imgs/astrod-architecture.png?v=20260926-3" alt="U-ASTROD multimodal fusion architecture"></article>
-        <article class="atlas-item" data-category="product human"><div class="atlas-number">17</div><div><span>Local-first product</span><h3><a href="https://github.com/tvpian/Ultranote_Lite">UltraNote Lite ↗</a></h3></div><p>A self-hosted workspace for daily capture, research, projects, and human–agent collaboration.</p><img src="imgs/ultranote-research.png" alt="UltraNote research workspace"></article>
-        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">18</div><div><span>IROS 2021 workshop poster</span><h3><a href="https://www.researchgate.net/publication/378143055_Event_Based_Dynamic_Obstacle_Avoidance_For_Outdoor_Environments">Event-Based Dynamic Obstacle Avoidance ↗</a></h3></div><p>An exploratory outdoor-safety concept using asynchronous event streams.</p><div class="atlas-no-media event-stream-mini" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><span>events → safe action</span></div></article>
-        <article class="atlas-item" data-category="product human"><div class="atlas-number">19</div><div><span>Local-first product</span><h3><a href="https://github.com/tvpian/Intra-Chat">Intra-Chat ↗</a></h3></div><p>A LAN-hosted team hub for conversation, project knowledge, files, and equipment records.</p><img src="https://raw.githubusercontent.com/tvpian/Intra-Chat/main/docs/screenshots/02-chat.png" alt="Intra-Chat team conversation interface"></article>
+        <article class="atlas-item" data-category="human embodied"><div class="atlas-number">02</div><div><span>Multimodal HRI · exploratory</span><h3><a href="https://tvpian.github.io/projects/natsgd/">Learning Actions from Human Intent </a></h3></div><p>My language-conditioned policy and gesture-grounding experiments on the NatSGD dataset.</p><img src="https://tvpian.github.io/imgs/natsgd-context.png" alt="NatSGD dataset overview showing synchronized speech, gesture, visual observations, and robot demonstrations"></article>
+        <article class="atlas-item" data-category="embodied human"><div class="atlas-number">03</div><div><span>Plant–robot interaction</span><h3><a href="https://tvpian.github.io/projects/precision-weeding/">Vision-Guided Precision Weeding </a></h3></div><p>Weed perception, adaptive control, plant-safe hybrid-IK planning, and a co-designed end effector.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/autonomous_weeding.jpg" aria-hidden="true"><source src="https://tvpian.github.io/imgs/autonomous_weeding.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="autonomy embodied"><div class="atlas-number">04</div><div><span>Connected autonomy</span><h3><a href="https://tvpian.github.io/projects/auto-platoon/">Auto-Platoon </a></h3></div><p>Bio-inspired leader–follower coordination using software latching.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/ap.png" aria-hidden="true"><source src="https://tvpian.github.io/imgs/ap.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">05</div><div><span>Multimodal UAV · preprint</span><h3><a href="https://tvpian.github.io/projects/track-anything-rapter/">Track Anything Rapter </a></h3></div><p>Click, image, text, and box-conditioned tracking with foundation models and visual servoing.</p><img src="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" alt="TAR multimodal detection and tracking examples"></article>
+        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">06</div><div><span>Aerial robotics</span><h3><a href="https://tvpian.github.io/imgs/orb.mp4">ORB-SLAM Drone Localization </a></h3></div><p>Vision-based localization for aerial asset inspection and management.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/orb.png" aria-hidden="true"><source src="https://tvpian.github.io/imgs/orb.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="perception autonomy"><div class="atlas-number">07</div><div><span>Aerial inspection</span><h3><a href="https://tvpian.github.io/imgs/surface_crack.mp4">Surface Defect Detection </a></h3></div><p>YOLO-based visual inspection for detecting structural surface defects.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/surface_crack.png" aria-hidden="true"><source src="https://tvpian.github.io/imgs/surface_crack.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="perception"><div class="atlas-number">08</div><div><span>Image understanding</span><h3><a href="https://github.com/tvpian/SLIC-Image-Segmentation">SLIC Image Segmentation </a></h3></div><p>Superpixel segmentation for compact image representation.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/slic.png" aria-hidden="true"><source src="https://tvpian.github.io/imgs/slic.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="perception"><div class="atlas-number">09</div><div><span>Representation learning</span><h3><a href="https://github.com/tvpian/Image-Outpainting">Implicit Neural Representation </a></h3></div><p>Image outpainting through coordinate-conditioned neural representations.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/inr.png" aria-hidden="true"><source src="https://tvpian.github.io/imgs/inr.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="perception"><div class="atlas-number">10</div><div><span>3D perception</span><h3><a href="https://github.com/tvpian/Monocular_Depth_Estimation_using_Transfer_Learning">Monocular Depth Estimation </a></h3></div><p>Transfer learning for estimating scene depth from a single camera.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/depth-from-video.jpg" aria-hidden="true"><source src="https://tvpian.github.io/imgs/Monocular_Depth_Estimation_vid.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="human perception"><div class="atlas-number">11</div><div><span>Applied AI</span><h3><a href="https://github.com/tvpian/Virtual_Try-On">Virtual Try-On </a></h3></div><p>Visual apparel synthesis and personalized style evaluation.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/v_tryon.png" aria-hidden="true"><source src="https://tvpian.github.io/imgs/v_tryon.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="human perception"><div class="atlas-number">12</div><div><span>Egocentric interaction</span><h3><a href="https://github.com/tvpian/AI_Cricket_Coach">AI Cricket Coach </a></h3></div><p>Action recognition and immersive feedback for batting practice.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/AICC_4.png" aria-hidden="true"><source src="https://tvpian.github.io/imgs/AICC.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="human"><div class="atlas-number">13</div><div><span>Product intelligence</span><h3><a href="https://github.com/tvpian/My-Style">My Style </a></h3></div><p>An AI-assisted shopping and personal-style application.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/my_style.jpg" aria-hidden="true"><source src="https://tvpian.github.io/imgs/my_style.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="human autonomy"><div class="atlas-number">14</div><div><span>Reinforcement learning</span><h3><a href="https://github.com/tvpian/RL_Cricket_Simulation_Engine">RL Cricket Simulation </a></h3></div><p>A bowler agent that adapts to batting styles and field configurations.</p><video muted loop playsinline preload="none" poster="https://tvpian.github.io/imgs/RL_cs.png" aria-hidden="true"><source src="https://tvpian.github.io/imgs/RL_cs.mp4" type="video/mp4"></source></video></article>
+        <article class="atlas-item" data-category="embodied"><div class="atlas-number">15</div><div><span>Soft robotics · published</span><h3><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YsMSGLbcyi4C">Wall-Climbing Robot </a></h3></div><p>A lightweight soft-robotic prototype for pipe inspection.</p><img src="https://tvpian.github.io/imgs/wall_climber.gif" alt="Wall-climbing soft robot in motion"></article>
+        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">16</div><div><span>Cyber-physical security · published</span><h3><a href="https://tvpian.github.io/projects/multimodal-anomaly-detection/">Multimodal Anomaly Detection </a></h3></div><p>Modality-specific LiDAR, odometry, and network encoders fused for abnormal-behavior detection.</p><img src="https://tvpian.github.io/imgs/astrod-architecture.png?v=20260926-3" alt="U-ASTROD multimodal fusion architecture"></article>
+        <article class="atlas-item" data-category="product human"><div class="atlas-number">17</div><div><span>Local-first product</span><h3><a href="https://github.com/tvpian/Ultranote_Lite">UltraNote Lite </a></h3></div><p>A self-hosted workspace for daily capture, research, projects, and human–agent collaboration.</p><img src="https://tvpian.github.io/imgs/ultranote-research.png" alt="UltraNote research workspace"></article>
+        <article class="atlas-item" data-category="autonomy perception"><div class="atlas-number">18</div><div><span>IROS 2021 workshop poster</span><h3><a href="https://www.researchgate.net/publication/378143055_Event_Based_Dynamic_Obstacle_Avoidance_For_Outdoor_Environments">Event-Based Dynamic Obstacle Avoidance </a></h3></div><p>An exploratory outdoor-safety concept using asynchronous event streams.</p><div class="atlas-no-media event-stream-mini" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><span>events → safe action</span></div></article>
+        <article class="atlas-item" data-category="product human"><div class="atlas-number">19</div><div><span>Local-first product</span><h3><a href="https://github.com/tvpian/Intra-Chat">Intra-Chat </a></h3></div><p>A LAN-hosted team hub for conversation, project knowledge, files, and equipment records.</p><img src="https://raw.githubusercontent.com/tvpian/Intra-Chat/main/docs/screenshots/02-chat.png" alt="Intra-Chat team conversation interface"></article>
       </div>
     
         </div>
@@ -447,13 +455,13 @@
               <blockquote>“The notebook I wanted<br>but couldn’t find.”</blockquote>
               <p>A single-user workspace for daily notes, tasks, projects, journaling, and research capture. It occupies the space between heavyweight cloud tools and bare Markdown: fast enough for every thought, structured enough for long-running work, and owned entirely by the person using it.</p>
               <div class="product-principles"><span><strong>Local first</strong>No cloud, account, telemetry, or data lock-in.</span><span><strong>Capture first</strong>One shortcut routes a task, note, journal entry, or idea.</span><span><strong>Agent ready</strong>People and coding agents share one durable project record.</span></div>
-              <div class="spotlight-links project-actions"><a class="button button-light" href="https://github.com/tvpian/Ultranote_Lite">Explore UltraNote <span aria-hidden="true">↗</span></a><a class="text-link product-doc-link" href="https://github.com/tvpian/Ultranote_Lite/blob/main/AGENT_GUIDE.md">Agent architecture <span aria-hidden="true">↗</span></a></div>
+              <div class="spotlight-links project-actions"><a class="button button-light" href="https://github.com/tvpian/Ultranote_Lite">Explore UltraNote <span aria-hidden="true"></span></a><a class="text-link product-doc-link" href="https://github.com/tvpian/Ultranote_Lite/blob/main/AGENT_GUIDE.md">Agent architecture <span aria-hidden="true"></span></a></div>
             </div>
 
             <div class="product-gallery ultranote-gallery">
-              <figure class="product-screen ultranote-screen screen-today"><img src="imgs/ultranote-today.png" alt="UltraNote Today workspace with daily notes, project tasks, scratchpad, and journal"><figcaption>Today · one rolling page</figcaption></figure>
-              <figure class="product-screen ultranote-screen screen-research"><img src="imgs/ultranote-research.png" alt="UltraNote research workspace with capture inbox, topic maps, paper notes, and monthly synthesis"><figcaption>Research · capture to synthesis</figcaption></figure>
-              <figure class="product-screen ultranote-screen screen-mobile"><img src="imgs/ultranote-mobile.png" alt="UltraNote mobile Today view as an installable progressive web application"><figcaption>Mobile · a real capture flow</figcaption></figure>
+              <figure class="product-screen ultranote-screen screen-today"><img src="https://tvpian.github.io/imgs/ultranote-today.png" alt="UltraNote Today workspace with daily notes, project tasks, scratchpad, and journal"><figcaption>Today · one rolling page</figcaption></figure>
+              <figure class="product-screen ultranote-screen screen-research"><img src="https://tvpian.github.io/imgs/ultranote-research.png" alt="UltraNote research workspace with capture inbox, topic maps, paper notes, and monthly synthesis"><figcaption>Research · capture to synthesis</figcaption></figure>
+              <figure class="product-screen ultranote-screen screen-mobile"><img src="https://tvpian.github.io/imgs/ultranote-mobile.png" alt="UltraNote mobile Today view as an installable progressive web application"><figcaption>Mobile · a real capture flow</figcaption></figure>
             </div>
           </article>
 
@@ -472,7 +480,7 @@
               <blockquote>“The operating layer<br>for a physical team.”</blockquote>
               <p>An actively developed, self-hosted team hub for labs, workshops, and robotics crews. It keeps conversation, technical knowledge, files, equipment, and agent-generated context on the local network—without external accounts, cloud dependency, or telemetry.</p>
               <div class="product-principles"><span><strong>Durable memory</strong>Turn chat into manuals and project knowledge.</span><span><strong>Built for the bench</strong>Track equipment, owners, status, and check-outs.</span><span><strong>Agent ready</strong>Scoped keys let scripts and agents push knowledge.</span></div>
-              <div class="spotlight-links project-actions"><a class="button intrachat-button" href="https://github.com/tvpian/Intra-Chat">Explore Intra-Chat <span aria-hidden="true">↗</span></a><a class="text-link intrachat-doc-link" href="https://github.com/tvpian/Intra-Chat/blob/main/docs/AGENT_INTEGRATION.md">Agent API <span aria-hidden="true">↗</span></a></div>
+              <div class="spotlight-links project-actions"><a class="button intrachat-button" href="https://github.com/tvpian/Intra-Chat">Explore Intra-Chat <span aria-hidden="true"></span></a><a class="text-link intrachat-doc-link" href="https://github.com/tvpian/Intra-Chat/blob/main/docs/AGENT_INTEGRATION.md">Agent API <span aria-hidden="true"></span></a></div>
             </div>
 
             <div class="product-gallery intrachat-gallery">
@@ -509,20 +517,20 @@
       </div>
 
       <div class="research-grid">
-        <article class="paper-card paper-featured"><div class="paper-top"><span>2026 · Chapter 03</span><span>Autonomous CPS</span></div><h3>Efficient Integration of Domain Knowledge and Data-Driven Methods for Securing Autonomous Cyber-Physical Systems</h3><p class="paper-authors">A. Zoulkarni, M. Noorani, J. S. Baras, J. Mirenzi, <strong>T. V. Puthanveettil</strong>, C. D. Grody</p><p>IEEE ROSE 2026 · DOI: <a href="https://doi.org/10.1109/ROSE69181.2026.11570974">10.1109/ROSE69181.2026.11570974</a></p><p class="paper-question">How can domain structure and learned evidence work together to secure autonomous systems?</p><p>Connects first-principles system knowledge with data-driven detection for more efficient cyber-physical security.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:aqlVkmm33-oC">Scholar ↗</a></div></article>
-        <article class="paper-card paper-featured"><div class="paper-top"><span>2025 · Chapter 02</span><span>Precision farming</span></div><h3>Vision Based Hybrid IK Task Planning with Feedforward Neural Network for Collaborative Plant-Robot Interaction in Precision Farming</h3><p class="paper-authors"><strong>V. P. Tharun</strong>, A. R. Chowdhury</p><p>International Conference on Social Robotics + AI (ICSR + AI 2025), LNAI 16132, pp. 253–267, Springer, 2026 · DOI: <a href="https://doi.org/10.1007/978-981-95-2382-5_18">10.1007/978-981-95-2382-5_18</a></p><p class="paper-question">How can vision and learned task planning make plant–robot interaction more collaborative?</p><p>Combines vision, hybrid inverse kinematics, and a feedforward network for precision-farming task execution.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:M3ejUd6NZC8C">Scholar ↗</a></div></article>
-        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 03</span><span>Real-world evaluation</span></div><h3>Multimodal Anomaly Detection for Autonomous Cyber-Physical Systems Empowering Real-World Evaluation</h3><p class="paper-authors">M. Noorani, <strong>T. V. Puthanveettil</strong>, A. Zoulkarni, J. Mirenzi, C. D. Grody, J. S. Baras</p><p>GameSec 2024, LNCS 14908, pp. 306–325 · DOI: <a href="https://doi.org/10.1007/978-3-031-74835-6_15">10.1007/978-3-031-74835-6_15</a></p><p class="paper-question">How should autonomous systems be evaluated when abnormal behavior appears across multiple modalities?</p><p>Architected the multimodal fusion pipeline within a team framework for anomaly detection and evaluation beyond controlled laboratory conditions.</p><div class="paper-links"><a href="https://doi.org/10.1007/978-3-031-74835-6_15">Publication ↗</a><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YOwf2qJgpHMC">Scholar ↗</a></div></article>
-        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 03</span><span>Multi-agent autonomy · preprint</span></div><h3>Auto-Platoon: Freight by Example</h3><p class="paper-authors"><strong>T. V. Puthanveettil</strong>, A. Singh, Y. Jain, V. Bukka, S. Arjun S</p><p class="paper-question">How can autonomous followers coordinate reliably with a leader in dynamic environments?</p><p>Introduces software latching and a layered perception–decision–control architecture for real-time multi-agent coordination.</p><div class="paper-links"><a href="https://arxiv.org/abs/2405.11659">Paper ↗</a><a href="https://github.com/tvpian/Auto-Platoon">Code ↗</a></div></article>
-        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 03</span><span>Multimodal UAV · preprint</span></div><h3>Track Anything Rapter (TAR)</h3><p class="paper-authors"><strong>T. V. Puthanveettil</strong>, F. Obaid ur Rahman</p><p class="paper-question">Can a UAV track what a person means, regardless of how they specify it?</p><p>Combines DINO, CLIP, SAM, multimodal queries, visual servoing, and motion control on a PX4-enabled aerial platform.</p><div class="paper-links"><a href="https://arxiv.org/abs/2405.11655">Paper ↗</a><a href="https://github.com/tvpian/Project-TAR">Code + demos ↗</a></div></article>
-        <article class="paper-card"><div class="paper-top"><span>2017 · Chapter 01</span><span>Soft robotics</span></div><h3>Wall-Climbing Robot Using Soft Robotics</h3><p class="paper-authors">L. P. Pratap, P. M. Shailendrasingh, A. Anand, <strong>V. P. Tharun</strong></p><p class="paper-question">Can compliant mechanisms produce a lightweight inspection robot for difficult pipe surfaces?</p><p>Develops a soft-robotic wall-climbing prototype for inspection inside and outside pipes.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YsMSGLbcyi4C">Scholar ↗</a></div></article>
+        <article class="paper-card paper-featured"><div class="paper-top"><span>2026 · Chapter 03</span><span>Autonomous CPS</span></div><h3>Efficient Integration of Domain Knowledge and Data-Driven Methods for Securing Autonomous Cyber-Physical Systems</h3><p class="paper-authors">A. Zoulkarni, M. Noorani, J. S. Baras, J. Mirenzi, <strong>T. V. Puthanveettil</strong>, C. D. Grody</p><p>IEEE ROSE 2026 · DOI: <a href="https://doi.org/10.1109/ROSE69181.2026.11570974">10.1109/ROSE69181.2026.11570974</a></p><p class="paper-question">How can domain structure and learned evidence work together to secure autonomous systems?</p><p>Connects first-principles system knowledge with data-driven detection for more efficient cyber-physical security.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:aqlVkmm33-oC">Scholar </a></div></article>
+        <article class="paper-card paper-featured"><div class="paper-top"><span>2025 · Chapter 02</span><span>Precision farming</span></div><h3>Vision Based Hybrid IK Task Planning with Feedforward Neural Network for Collaborative Plant-Robot Interaction in Precision Farming</h3><p class="paper-authors"><strong>V. P. Tharun</strong>, A. R. Chowdhury</p><p>International Conference on Social Robotics + AI (ICSR + AI 2025), LNAI 16132, pp. 253–267, Springer, 2026 · DOI: <a href="https://doi.org/10.1007/978-981-95-2382-5_18">10.1007/978-981-95-2382-5_18</a></p><p class="paper-question">How can vision and learned task planning make plant–robot interaction more collaborative?</p><p>Combines vision, hybrid inverse kinematics, and a feedforward network for precision-farming task execution.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:M3ejUd6NZC8C">Scholar </a></div></article>
+        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 03</span><span>Real-world evaluation</span></div><h3>Multimodal Anomaly Detection for Autonomous Cyber-Physical Systems Empowering Real-World Evaluation</h3><p class="paper-authors">M. Noorani, <strong>T. V. Puthanveettil</strong>, A. Zoulkarni, J. Mirenzi, C. D. Grody, J. S. Baras</p><p>GameSec 2024, LNCS 14908, pp. 306–325 · DOI: <a href="https://doi.org/10.1007/978-3-031-74835-6_15">10.1007/978-3-031-74835-6_15</a></p><p class="paper-question">How should autonomous systems be evaluated when abnormal behavior appears across multiple modalities?</p><p>Architected the multimodal fusion pipeline within a team framework for anomaly detection and evaluation beyond controlled laboratory conditions.</p><div class="paper-links"><a href="https://doi.org/10.1007/978-3-031-74835-6_15">Publication </a><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YOwf2qJgpHMC">Scholar </a></div></article>
+        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 03</span><span>Multi-agent autonomy · preprint</span></div><h3>Auto-Platoon: Freight by Example</h3><p class="paper-authors"><strong>T. V. Puthanveettil</strong>, A. Singh, Y. Jain, V. Bukka, S. Arjun S</p><p class="paper-question">How can autonomous followers coordinate reliably with a leader in dynamic environments?</p><p>Introduces software latching and a layered perception–decision–control architecture for real-time multi-agent coordination.</p><div class="paper-links"><a href="https://arxiv.org/abs/2405.11659">Paper </a><a href="https://github.com/tvpian/Auto-Platoon">Code </a></div></article>
+        <article class="paper-card paper-featured"><div class="paper-top"><span>2024 · Chapter 03</span><span>Multimodal UAV · preprint</span></div><h3>Track Anything Rapter (TAR)</h3><p class="paper-authors"><strong>T. V. Puthanveettil</strong>, F. Obaid ur Rahman</p><p class="paper-question">Can a UAV track what a person means, regardless of how they specify it?</p><p>Combines DINO, CLIP, SAM, multimodal queries, visual servoing, and motion control on a PX4-enabled aerial platform.</p><div class="paper-links"><a href="https://arxiv.org/abs/2405.11655">Paper </a><a href="https://github.com/tvpian/Project-TAR">Code + demos </a></div></article>
+        <article class="paper-card"><div class="paper-top"><span>2017 · Chapter 01</span><span>Soft robotics</span></div><h3>Wall-Climbing Robot Using Soft Robotics</h3><p class="paper-authors">L. P. Pratap, P. M. Shailendrasingh, A. Anand, <strong>V. P. Tharun</strong></p><p class="paper-question">Can compliant mechanisms produce a lightweight inspection robot for difficult pipe surfaces?</p><p>Develops a soft-robotic wall-climbing prototype for inspection inside and outside pipes.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:YsMSGLbcyi4C">Scholar </a></div></article>
       </div>
-      <details class="earlier-publications"><summary>Earlier data-mining and forecasting publications</summary><div class="research-grid">        <article class="paper-card"><div class="paper-top"><span>2021 · Chapter 01</span><span>Forecasting</span></div><h3>A Univariate Data Analysis Approach for Rainfall Forecasting</h3><p class="paper-authors"><strong>V. P. Tharun</strong>, P. Ramya, S. Renuga Devi</p><p class="paper-question">How can lightweight time-series analysis provide useful early warning of unexpected rainfall?</p><p>Develops an efficient and implementable approach for short-term rainfall forecasting.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:0EnyYjriUFMC">Scholar ↗</a></div></article>
-        <article class="paper-card"><div class="paper-top"><span>2019 · Chapter 01</span><span>Regression</span></div><h3>Prediction of Rainfall Using Data Mining Techniques</h3><p class="paper-authors"><strong>V. P. Tharun</strong>, R. Prakash, S. R. Devi</p><p class="paper-question">How do regression and statistical models compare when predicting regional rainfall intensity?</p><p>Evaluates multiple regression approaches using relative error on rainfall data from Coonoor.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:_kc_bZDykSQC">Scholar ↗</a></div></article>
-        <article class="paper-card"><div class="paper-top"><span>2018 · Chapter 01</span><span>Classification</span></div><h3>A Comparative Study of Various Classification Techniques to Determine Water Quality</h3><p class="paper-authors">R. Prakash, <strong>V. P. Tharun</strong>, S. R. Devi</p><p class="paper-question">Which classical learning method best characterizes groundwater quality from measured samples?</p><p>Compares decision trees, K-nearest neighbours, and support-vector machines on groundwater data.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:hqOjcs7Dif8C">Scholar ↗</a></div></article>
-        <article class="paper-card"><div class="paper-top"><span>2018 · Chapter 01</span><span>Assessment</span></div><h3>Water Quality Assessment Using Data Mining Techniques</h3><p class="paper-authors">P. Ramya, <strong>V. P. Tharun</strong>, S. Renuga Devi</p><p class="paper-question">How can data-mining methods turn raw water measurements into an actionable quality assessment?</p><p>Applies classical learning techniques to environmental water-quality analysis.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:8k81kl-MbHgC">Scholar ↗</a></div></article>
-        <article class="paper-card"><div class="paper-top"><span>2018 · Chapter 01</span><span>Time series</span></div><h3>Rainfall Forecasting Using Time Series Analysis</h3><p class="paper-authors"><strong>V. P. Tharun</strong>, P. Ramya, S. Renuga Devi</p><p class="paper-question">What temporal structure in historical rainfall can be converted into a practical forecast?</p><p>Uses time-series analysis to model and forecast rainfall patterns.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:5nxA0vEk-isC">Scholar ↗</a></div></article>
+      <details class="earlier-publications"><summary>Earlier data-mining and forecasting publications</summary><div class="research-grid">        <article class="paper-card"><div class="paper-top"><span>2021 · Chapter 01</span><span>Forecasting</span></div><h3>A Univariate Data Analysis Approach for Rainfall Forecasting</h3><p class="paper-authors"><strong>V. P. Tharun</strong>, P. Ramya, S. Renuga Devi</p><p class="paper-question">How can lightweight time-series analysis provide useful early warning of unexpected rainfall?</p><p>Develops an efficient and implementable approach for short-term rainfall forecasting.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:0EnyYjriUFMC">Scholar </a></div></article>
+        <article class="paper-card"><div class="paper-top"><span>2019 · Chapter 01</span><span>Regression</span></div><h3>Prediction of Rainfall Using Data Mining Techniques</h3><p class="paper-authors"><strong>V. P. Tharun</strong>, R. Prakash, S. R. Devi</p><p class="paper-question">How do regression and statistical models compare when predicting regional rainfall intensity?</p><p>Evaluates multiple regression approaches using relative error on rainfall data from Coonoor.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:_kc_bZDykSQC">Scholar </a></div></article>
+        <article class="paper-card"><div class="paper-top"><span>2018 · Chapter 01</span><span>Classification</span></div><h3>A Comparative Study of Various Classification Techniques to Determine Water Quality</h3><p class="paper-authors">R. Prakash, <strong>V. P. Tharun</strong>, S. R. Devi</p><p class="paper-question">Which classical learning method best characterizes groundwater quality from measured samples?</p><p>Compares decision trees, K-nearest neighbours, and support-vector machines on groundwater data.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:hqOjcs7Dif8C">Scholar </a></div></article>
+        <article class="paper-card"><div class="paper-top"><span>2018 · Chapter 01</span><span>Assessment</span></div><h3>Water Quality Assessment Using Data Mining Techniques</h3><p class="paper-authors">P. Ramya, <strong>V. P. Tharun</strong>, S. Renuga Devi</p><p class="paper-question">How can data-mining methods turn raw water measurements into an actionable quality assessment?</p><p>Applies classical learning techniques to environmental water-quality analysis.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:8k81kl-MbHgC">Scholar </a></div></article>
+        <article class="paper-card"><div class="paper-top"><span>2018 · Chapter 01</span><span>Time series</span></div><h3>Rainfall Forecasting Using Time Series Analysis</h3><p class="paper-authors"><strong>V. P. Tharun</strong>, P. Ramya, S. Renuga Devi</p><p class="paper-question">What temporal structure in historical rainfall can be converted into a practical forecast?</p><p>Uses time-series analysis to model and forecast rainfall patterns.</p><div class="paper-links"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=Vre9wQQAAAAJ&amp;citation_for_view=Vre9wQQAAAAJ:5nxA0vEk-isC">Scholar </a></div></article>
 </div></details>
-      <a class="scholar-link" href="https://scholar.google.com/citations?user=Vre9wQQAAAAJ&amp;hl=en">View complete Google Scholar profile <span aria-hidden="true">↗</span></a>
+      <a class="scholar-link" href="https://scholar.google.com/citations?user=Vre9wQQAAAAJ&amp;hl=en">View complete Google Scholar profile <span aria-hidden="true"></span></a>
     </section>
 
     
@@ -547,40 +555,16 @@
         <h2>Writing on robotics, AI, and their human context.</h2>
         <p>I write about the assumptions behind models and demonstrations, the engineering between a benchmark and deployment, and the human consequences of technical choices.</p>
         <p>Human in the Loom is an independent publication for longer essays on these themes.</p>
-        <div class="writing-links"><a class="button" href="human-in-the-loom/">Enter Human in the Loom <span aria-hidden="true">→</span></a><a class="text-link" href="https://open.substack.com/pub/humanintheloom/p/how-do-you-engineer-hype-inside-the">Read a recent story <span aria-hidden="true">↗</span></a></div>
+        <div class="writing-links"><a class="button" href="https://tvpian.github.io/human-in-the-loom/">Enter Human in the Loom <span aria-hidden="true">→</span></a><a class="text-link" href="https://open.substack.com/pub/humanintheloom/p/how-do-you-engineer-hype-inside-the">Read a recent story <span aria-hidden="true"></span></a></div>
       </div>
-      <a class="publication-window" href="human-in-the-loom/" aria-label="Visit Human in the Loom">
-        <div class="publication-bar"><span>Human in the Loom</span><span>Independent publication ↗</span></div>
+      <a class="publication-window" href="https://tvpian.github.io/human-in-the-loom/" aria-label="Visit Human in the Loom">
+        <div class="publication-bar"><span>Human in the Loom</span><span>Independent publication </span></div>
         <div class="publication-art" aria-hidden="true"><span class="publication-orb pub-one"></span><span class="publication-orb pub-two"></span><span class="publication-thread pub-thread-one"></span><span class="publication-thread pub-thread-two"></span><p>technology is<br>never woven<br>alone</p></div>
       </a>
     </section>
 
-    <section class="about-section" id="about">
-      <div><p class="eyebrow"><span></span>Research direction</p><blockquote>Robots that can understand people and learn from them.</blockquote></div>
-      <div class="about-copy">
-        <p>My long-term aim is to develop algorithms that allow robots to interpret human intent in ways that support action and learning.</p>
-        <p>My work approaches this problem through policy understanding, representation learning, world models, embodied experience, human interaction, continual learning, and rigorous evaluation.</p>
-        <p>I am particularly interested in methods that remain interpretable and testable when they move from offline benchmarks to physical systems.</p>
-        <p>I hold an M.Eng. in Robotics from the University of Maryland and bring experience across academic research, industrial R&amp;D, and real-world robotics deployment.</p>
-        <div class="about-links"><a href="https://scholar.google.com/citations?user=Vre9wQQAAAAJ&amp;hl=en">Google Scholar ↗</a><a href="https://www.linkedin.com/in/tvpian/">LinkedIn ↗</a><a href="https://github.com/tvpian">GitHub ↗</a></div>
-      </div>
-    </section>
+    </main>
 
-    <section class="contact-section">
-      <p class="eyebrow light"><span></span>Collaborate</p>
-      <h2>Research and engineering<br>collaboration.</h2>
-      <a class="button button-light" href="mailto:tharunv.pvit@gmail.com">Contact me <span aria-hidden="true">→</span></a>
-    </section>
-  </main>
-
-  <footer>
-    <div class="identity"><span class="identity-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Tharun V Puthanveettil</span></div>
-    <p>Robotics R&amp;D · Human-inspired robot learning</p>
-    <p>© 2026 Tharun Vadakke Puthanveettil</p>
-  </footer>
-</body>
+  <footer id="contact" class="portfolio-footer" aria-label="Contact and professional profiles"><span id="about" class="legacy-about-anchor" aria-hidden="true"></span><div class="identity"><span class="identity-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Tharun V. Puthanveettil</span></div><a href="mailto:tharunv.pvit@gmail.com" class="contact-email">tharunv.pvit@gmail.com</a><nav class="contact-profiles" aria-label="Professional profiles"><a href="https://scholar.google.com/citations?user=Vre9wQQAAAAJ&amp;hl=en">Google Scholar </a><a href="https://www.linkedin.com/in/tvpian/">LinkedIn </a><a href="https://github.com/tvpian">GitHub </a></nav>
+      <p class="footer-copyright">© 2026</p></footer></body>
 </html>
-
-
-
-
