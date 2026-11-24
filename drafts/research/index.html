@@ -19,11 +19,11 @@
     })();
   </script>
   <link rel="stylesheet" href="/stylesheet.css?v=research-chapters">
-  <link rel="stylesheet" href="/drafts/research/research-draft.css?v=20261124-project-accents">
+  <link rel="stylesheet" href="/drafts/research/research-draft.css?v=20261124-research-clarity">
   <link rel="icon" type="image/png" href="https://tvpian.github.io/images/seal_icon.png">
   <script src="https://tvpian.github.io/theme.js?v=20260925-research-map" defer></script>
   <script src="/portfolio.js?v=research-first" defer></script>
-  <script src="/drafts/research/research-draft.js?v=5" defer></script>
+  <script src="/drafts/research/research-draft.js?v=20261124-research-clarity" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -104,27 +104,27 @@
 <section class="rn-panel" id="continual-learning" data-thread-panel>
   <div class="rn-context"><span>Current work</span><strong class="rn-status">Implemented workflow</strong></div>
   <h3 class="rn-question">How can robots learn from demonstrations and corrections while retaining earlier skills?</h3>
-  <figure class="rn-concept rn-correction" data-rn-animation="correction">
-    <div class="rn-concept-labels"><span>A policy reaches its limit</span><span>A person shows another way</span></div>
-    <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-correction-title rn-correction-desc">
-      <title id="rn-correction-title">A correction can become a demonstration</title>
-      <desc id="rn-correction-desc">An illustrative policy path stops short. A human correction continues toward the goal. The corrected segment can be recorded, reviewed, and used for training.</desc>
-      <defs><pattern id="rn-dot-field" width="28" height="28" patternunits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor" opacity=".15"></circle></pattern></defs>
-      <rect width="900" height="280" fill="url(#rn-dot-field)"></rect>
-      <path class="rn-path-background" d="M35 220 C150 220 205 95 325 125 S565 255 710 150 S805 75 865 65"></path>
-      <path class="rn-policy-path" d="M35 220 C150 220 205 95 325 125 S435 192 470 185" pathlength="1"></path>
-      <circle class="rn-policy-dot" cx="35" cy="220" r="7"></circle>
-      <g class="rn-policy-limit"><circle cx="470" cy="185" r="12"></circle><path d="M462 177 478 193 M478 177 462 193"></path></g>
-      <g class="rn-human-segment"><path class="rn-human-path" d="M470 185 C515 176 505 72 610 78 S767 158 830 77" pathlength="1"></path><circle cx="830" cy="77" r="8"></circle><path class="rn-capture-bracket" d="M500 239 V252 H810 V239"></path></g>
-      <circle class="rn-goal-ring" cx="830" cy="77" r="25"></circle>
-      <circle class="rn-goal-ring rn-goal-outer" cx="830" cy="77" r="41"></circle>
-    </svg>
-    <figcaption>Concept illustration, not a recorded rollout.</figcaption>
-  </figure>
-  <div class="rn-idea"><p>A person's intervention can be more than a way to finish a task. It can become a demonstration the robot learns from.</p></div>
-  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-continual-learning">Explore this thread</button><span class="rn-panel-footnote">Egocentric interface in development</span></div><dialog class="rn-reading-panel" id="reading-continual-learning" aria-labelledby="reading-continual-learning-title"><header class="rn-reading-heading"><h3 id="reading-continual-learning-title">Learning from People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>When a policy fails, a person can take control of the arm. The workflow records the correction so it can be reviewed and added to the demonstrations used to train the next policy.</p>
-              <p>People and policies use the same arm commands, so their actions can be compared step by step. Policy evaluation is currently performed manually. Whether the corrections improve later policies without eroding earlier skills remains an open question.</p>
-            <div class="rn-support"><div><span class="rn-label">In development</span><details id="egocentric"><summary>Egocentric demonstrations</summary><p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
+  <figure class="rn-concept ri-concept" data-rn-animation="correction">
+  <div class="rn-concept-labels ri-labels-three"><span>Robot attempt</span><span>Human correction</span><span>Review and retrain</span></div>
+  <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-correction-title rn-correction-desc">
+    <title id="rn-correction-title">A human correction returns to training</title>
+    <desc id="rn-correction-desc">A robot attempt stops short of an object. A person supplies a corrected segment, which is recorded and reviewed before retraining. The return path illustrates the workflow, not a measured improvement.</desc>
+    <path class="ri-guide" d="M40 206H860"></path>
+    <g class="ri-arm ri-blue"><path d="M64 210H140 M102 206V184L154 108L220 134 M147 108L92 87 M220 134L238 130 M236 119V142 M248 120V141"></path><circle cx="102" cy="184" r="10"></circle><circle cx="154" cy="108" r="10"></circle></g>
+    <path class="ri-flow ri-blue ri-draw-one" pathlength="1" d="M245 142C290 142 293 171 329 171"></path>
+    <g class="ri-stop"><circle cx="330" cy="171" r="14"></circle><path d="M324 165L336 177 M336 165L324 177"></path></g>
+    <g class="ri-hand ri-green"><path d="M414 125V89C414 78 430 78 430 89V119 M430 116V104C430 94 445 94 445 104V120 M445 116V109C445 99 460 99 460 109V124 M460 121C460 111 475 112 475 123V148C475 168 462 183 445 183H435C421 183 410 176 401 165L387 149C380 139 390 130 399 137L414 148V125"></path></g>
+    <path class="ri-flow ri-green ri-draw-two" pathlength="1" d="M354 173C410 227 472 207 531 158"></path>
+    <g class="ri-object ri-green"><path d="M524 138L546 126L569 138L546 151Z M524 138V165L546 178L569 165V138 M546 151V178"></path></g>
+    <path class="ri-flow ri-green ri-draw-three" pathlength="1" d="M593 153H671"></path><path class="ri-green ri-arrow" d="M659 145L671 153L659 161"></path>
+    <g class="ri-record"><rect x="700" y="83" width="112" height="118" rx="5"></rect><path d="M718 106H790 M718 129H770 M718 151H789 M718 174H758"></path><path class="ri-green ri-reveal-three" d="M774 173L783 182L801 161"></path></g>
+    <path class="ri-return ri-draw-four" pathlength="1" d="M754 219V245H105V222"></path><path class="ri-return" d="M98 233L105 222L112 233"></path>
+  </svg>
+  <figcaption>Concept illustration, not a recorded rollout.</figcaption>
+</figure>
+
+<div class="rn-idea"><p>A person's intervention can be more than a way to finish a task. It can become a demonstration the robot learns from.</p></div>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-continual-learning">Explore this thread</button><span class="rn-panel-footnote">Egocentric interface in development</span></div><dialog class="rn-reading-panel" id="reading-continual-learning" aria-labelledby="reading-continual-learning-title"><header class="rn-reading-heading"><h3 id="reading-continual-learning-title">Learning from People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Robots learning from people need a way to turn individual interventions into reusable experience. This ongoing work investigates a correction loop connecting demonstrations, policy failure, human takeover and retraining. People and policies use the same bounded arm commands, so their rollouts can be compared step by step and reused for training. The implemented workflow records corrections for review before they are added to the demonstrations used to train the next policy. Policy evaluation is currently performed manually. Whether the corrections improve later policies without eroding earlier skills remains an open question.</p><p>Related simulation studies compare teacher-student training with learned auxiliary heads to examine what policies retain when privileged training inputs are removed. A portable egocentric interface is also in development to extend demonstration capture beyond teleoperation. Together, these efforts investigate how different forms of human guidance can support continuing learning through a shared recording and review workflow.</p><div class="rn-support"><div><span class="rn-label">In development</span><details id="egocentric"><summary>Egocentric demonstrations</summary><p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
               </details></div>
               <div><span class="rn-label">Simulation studies</span><details id="representation-studies"><summary>What policies retain from training</summary><p>Simulation tests compared teacher-student training with learned auxiliary heads to see what policies retain when privileged inputs are removed. Attention maps help diagnose behavior, but they do not by themselves establish a causal explanation.</p>
               </details></div>
@@ -135,25 +135,26 @@
 <section class="rn-panel" id="explainability" data-thread-panel>
   <div class="rn-context"><span>Current work</span><strong class="rn-status">Simulation and physical robot studies</strong></div>
   <h3 class="rn-question">What has a policy learned, and how does that shape its behavior?</h3>
-  <figure class="rn-concept rn-policy-concept" data-rn-animation="grounding">
-    <div class="rn-concept-labels"><span>What the policy represents</span><span>What guides its action</span></div>
-    <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-grounding-title rn-grounding-desc">
-      <title id="rn-grounding-title">Knowing a word and acting on it are separate questions</title>
-      <desc id="rn-grounding-desc">A conceptual network connects a word to an object representation. A separate path leads to action. The controls highlight the distinction between information being encoded and being used.</desc>
-      <path class="rn-network-guide" d="M50 140H850"></path>
-      <g class="rn-encoding-network">
-        <path d="M65 140 212 62 345 106 470 67 M65 140 212 198 345 106 M212 62 212 198 380 220 470 158 M345 106 470 158"></path>
-        <circle cx="65" cy="140" r="20"></circle><circle cx="212" cy="62" r="12"></circle><circle cx="212" cy="198" r="12"></circle><circle cx="345" cy="106" r="25"></circle><circle cx="380" cy="220" r="12"></circle><circle cx="470" cy="67" r="12"></circle><circle cx="470" cy="158" r="12"></circle>
-      </g>
-      <path class="rn-possible-link" d="M495 153 C555 145 573 140 630 140"></path>
-      <g class="rn-action-network"><path d="M630 140 C690 140 698 64 770 64 M630 140 C690 140 713 214 800 214"></path><circle cx="630" cy="140" r="18"></circle><rect x="752" y="46" width="36" height="36" rx="4"></rect><circle cx="800" cy="214" r="20"></circle></g>
-    </svg>
-    <figcaption>Concept illustration, not an attribution map or measured result.</figcaption>
-  </figure>
-  <div class="rn-idea"><p>A policy can represent which object a word refers to without using that knowledge when it acts. Understanding the representation is only part of the question.</p></div>
-  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-explainability">Explore this thread</button><span class="rn-panel-footnote">Simulation and physical robot studies</span></div><dialog class="rn-reading-panel" id="reading-explainability" aria-labelledby="reading-explainability-title"><header class="rn-reading-heading"><h3 id="reading-explainability-title">Policy Explainability and Representation</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>In simulation, representation probes showed that the tested policies encoded links between words and objects. Activation patching showed that their action heads did not use those links.</p>
-              <p>Bimanual robot trials measured object choice separately from pick completion. In those trials, higher task success did not necessarily mean the policy was better at choosing the object named in the instruction.</p>
-            <div class="rn-support"><div><span class="rn-label">In development</span><details id="policy-evaluation"><summary>Policy evaluation beyond success rate</summary><p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
+  <figure class="rn-concept ri-concept" data-rn-animation="grounding">
+  <div class="rn-concept-labels ri-labels-three"><span>Instruction</span><span>Representation</span><span>Action choice</span></div>
+  <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-grounding-title rn-grounding-desc">
+    <title id="rn-grounding-title">Encoding an instruction and using it are different tests</title>
+    <desc id="rn-grounding-desc">A blue-object instruction activates a corresponding feature in a conceptual policy representation. A separate action path selects another object. The diagram illustrates why encoded information and behavioral use must be tested separately.</desc>
+    <g class="ri-bubble"><path d="M42 69H230V147H114L87 172V147H42Z"></path><text class="ri-cue" x="136" y="119" text-anchor="middle">blue</text></g>
+    <path class="ri-flow ri-blue ri-draw-one" pathlength="1" d="M247 109H333"></path><path class="ri-blue ri-arrow" d="M321 101L333 109L321 117"></path>
+    <g class="ri-features"><rect x="359" y="69" width="35" height="120" rx="3"></rect><rect class="ri-feature-hit ri-reveal-two" x="407" y="91" width="35" height="98" rx="3"></rect><rect x="455" y="119" width="35" height="70" rx="3"></rect><rect x="503" y="147" width="35" height="42" rx="3"></rect></g>
+    <path class="ri-possible" d="M555 109C632 109 652 69 756 69"></path>
+    <path class="ri-flow ri-orange ri-draw-three" pathlength="1" d="M555 158C646 158 649 201 755 201"></path><path class="ri-orange ri-arrow ri-reveal-three" d="M743 193L755 201L743 209"></path>
+    <g class="ri-target-blue"><rect x="780" y="43" width="53" height="53" rx="4"></rect></g>
+    <g class="ri-target-orange ri-reveal-three"><circle cx="806" cy="201" r="29"></circle></g>
+    <path class="ri-bracket" d="M359 214V230H538V214 M756 247H851"></path>
+  </svg>
+  <div class="ri-meaning"><span>Is the information encoded?</span><span>Does it guide the action?</span></div>
+  <figcaption>Concept illustration, not an attribution map or measured result.</figcaption>
+</figure>
+
+<div class="rn-idea"><p>A policy can represent which object a word refers to without using that knowledge when it acts. Understanding the representation is only part of the question.</p></div>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-explainability">Explore this thread</button><span class="rn-panel-footnote">Simulation and physical robot studies</span></div><dialog class="rn-reading-panel" id="reading-explainability" aria-labelledby="reading-explainability-title"><header class="rn-reading-heading"><h3 id="reading-explainability-title">Policy Explainability and Representation</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Information can be available within a policy without determining what it does. This ongoing work examines that distinction through representation probes and activation patching in simulation, alongside instruction-conditioned trials on a bimanual robot. In the policies tested in simulation, associations between words and objects were present in the representations but were not used by the action heads. Physical trials separated object choice from pick completion. In those trials, higher task success did not necessarily mean the policy was better at choosing the object named in the instruction.</p><p>These findings motivate testing the information a policy encodes separately from the information that guides its actions. Current work develops evaluation beyond success rate, including partial progress, recovery and repeatability. The broader research question is whether understanding learned representations can help improve learning itself. The findings reported here remain scoped to the tested policies and comparisons.</p><div class="rn-support"><div><span class="rn-label">In development</span><details id="policy-evaluation"><summary>Policy evaluation beyond success rate</summary><p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
               </details></div>
               <div><span class="rn-label">Research tools</span><div class="rn-links"><a href="#research-platform">Policy diagnostics and evaluation tools</a></div></div>
             </div>
@@ -163,22 +164,25 @@
 <section class="rn-panel" id="world-models" data-thread-panel>
   <div class="rn-context"><span>Current work</span><strong class="rn-status">Offline evaluation completed · simulation studies</strong></div>
   <h3 class="rn-question">How can predicting what happens next help a robot learn how to act?</h3>
-  <figure class="rn-concept rn-prediction-concept" data-rn-animation="prediction">
-    <div class="rn-concept-labels"><span>An observation</span><span>A possible future</span></div>
-    <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-future-title rn-future-desc">
-      <title id="rn-future-title">From a possible future to the action that could produce it</title>
-      <desc id="rn-future-desc">A solid object marks an observed state. Translucent copies illustrate possible future states. A curved line represents an inferred action, not a measured trajectory or model prediction.</desc>
-      <path class="rn-scene-plane" d="M70 210 275 90 H835 L630 210 Z"></path>
-      <g class="rn-observed-object"><path d="m145 154 49-27 55 28-48 28z m0 0v-55l49-27v55 m0-55 55 28v55 m-48 28v-55l48-28 m-104 0 56 29"></path></g>
-      <g class="rn-future-objects"><path opacity=".18" d="m338 146 49-27 55 28-48 28z m0 0V91l49-27v55 m0-55 55 28v55 m-48 28v-55l48-28 m-104 0 56 29"></path><path opacity=".4" d="m517 130 49-27 55 28-48 28z m0 0V75l49-27v55 m0-55 55 28v55 m-48 28v-55l48-28 m-104 0 56 29"></path><path opacity=".8" d="m701 110 49-27 55 28-48 28z m0 0V55l49-27v55 m0-55 55 28v55 m-48 28V83l48-28 m-104 0 56 29"></path></g>
-      <path class="rn-inferred-action" d="M203 238 C350 260 521 218 732 186"></path>
-      <path class="rn-inferred-action" d="m718 178 14 8-11 12"></path>
-    </svg>
-    <span class="rn-concept-caption">A prediction and an action need separate tests.</span><figcaption>Concept illustration, not model output.</figcaption>
-  </figure>
-  <div class="rn-idea"><p>What might happen next, and what action could make it happen? Predictive models and inverse dynamics approach action learning from those two directions.</p></div>
-  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-world-models">Explore this thread</button><span class="rn-panel-footnote">Physical validation is pending.</span></div><dialog class="rn-reading-panel" id="reading-world-models" aria-labelledby="reading-world-models-title"><header class="rn-reading-heading"><h3 id="reading-world-models-title">Predictive Models, Inverse Dynamics, and Transfer</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Offline tests evaluated a video-action model adapted to teleoperation data. Simulation tests compared actions inferred from video with recorded actions and commands sent to the robot. They assessed future-feature prediction, instruction grounding, and failure signals separately from task success.</p>
-              <div class="rn-support"><div><span class="rn-label">Active experiments</span><details id="sim-real"><summary>Transfer between simulation and hardware</summary><p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
+  <figure class="rn-concept ri-concept" data-rn-animation="prediction">
+  <div class="rn-concept-labels"><span>Observed state</span><span>Possible future</span></div>
+  <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-future-title rn-future-desc">
+    <title id="rn-future-title">Predict a change, then infer an action that could connect the states</title>
+    <desc id="rn-future-desc">Two tabletop scenes show an observed object and an illustrative future position. A forward path represents prediction. Both scenes connect to an action symbol below, representing inverse dynamics. These are conceptual states rather than model outputs.</desc>
+    <g class="ri-frame"><path d="M53 93V54H94 M310 54H349V93 M53 166V205H94 M310 205H349V166 M551 93V54H592 M808 54H847V93 M551 166V205H592 M808 205H847V166"></path></g>
+    <path class="ri-guide" d="M79 177H324 M577 177H821"></path>
+    <g class="ri-target-blue"><rect x="123" y="117" width="52" height="52" rx="4"></rect></g><circle class="ri-goal" cx="268" cy="143" r="29"></circle>
+    <g class="ri-future ri-reveal-two"><rect x="741" y="91" width="52" height="52" rx="4"></rect></g><rect class="ri-ghost" x="621" y="117" width="52" height="52" rx="4"></rect>
+    <path class="ri-flow ri-blue ri-draw-one" pathlength="1" d="M367 114C417 60 483 60 533 114"></path><path class="ri-blue ri-arrow" d="M520 110L533 114L530 100"></path>
+    <path class="ri-flow ri-green ri-draw-three" pathlength="1" d="M200 216V245H407 M700 216V245H493"></path>
+    <g class="ri-action ri-reveal-three"><path d="M424 246H476 M465 235L476 246L465 257 M438 218V231 M428 218H448"></path></g>
+  </svg>
+  <div class="ri-meaning ri-meaning-center">Infer the action that could connect them.</div>
+  <figcaption>Concept illustration, not model output.</figcaption>
+</figure>
+
+<div class="rn-idea"><p>What might happen next, and what action could make it happen? Predictive models and inverse dynamics approach action learning from those two directions.</p></div>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-world-models">Explore this thread</button><span class="rn-panel-footnote">Physical validation is pending.</span></div><dialog class="rn-reading-panel" id="reading-world-models" aria-labelledby="reading-world-models-title"><header class="rn-reading-heading"><h3 id="reading-world-models-title">Predictive Models, Inverse Dynamics, and Transfer</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Video describes how a scene changes, but useful predictions do not by themselves establish that useful actions have been learned. This work investigates predictive models and inverse dynamics as complementary routes from visual experience to action. A published video-action model was adapted to teleoperation data and evaluated offline. In simulation, actions inferred from video were compared with recorded actions and commands sent to the robot. Future-feature prediction, instruction grounding and failure signals were assessed separately from task success.</p><p>The evidence so far is limited to offline and simulation studies. Physical validation is pending. Active experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware. The central question is which parts of a predictive or action representation remain useful when a policy must operate in a different setting.</p><div class="rn-support"><div><span class="rn-label">Active experiments</span><details id="sim-real"><summary>Transfer between simulation and hardware</summary><p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
               </details></div>
               <div><span class="rn-label">Validation boundary</span><h4>Offline and simulation evidence</h4><p>Physical validation is pending.</p></div>
             </div>
@@ -188,38 +192,53 @@
 <section class="rn-panel" id="understanding-people" data-thread-panel>
   <div class="rn-context"><span>Prior work · 2021–2024</span><strong class="rn-status">Multimodal perception and HRI</strong></div>
   <h3 class="rn-question">How can robots understand what people are doing and what they intend?</h3>
-  <figure class="rn-public-media">
+  <figure class="rn-concept ri-concept" data-rn-animation="understanding">
+  <div class="rn-concept-labels ri-labels-three"><span>Speech, gesture, pose</span><span>Human intent</span><span>Robot response</span></div>
+  <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-human-cues-title rn-human-cues-desc">
+    <title id="rn-human-cues-title">Turn incomplete human cues into something a robot can act on</title>
+    <desc id="rn-human-cues-desc">Speech, a pointing gesture and a skeletal pose provide complementary clues. Their paths converge on an intended object, followed by a robot response. The illustration represents the research question, not a single implemented system.</desc>
+    <g class="ri-bubble"><path d="M35 29H179V82H103L84 100V82H35Z"></path><path d="M56 48H154 M56 64H127"></path></g>
+    <g class="ri-hand ri-green"><path d="M63 145H134C147 145 147 160 134 160H104 M104 160L117 164C129 168 127 180 116 180H96 M96 180L107 183C118 186 115 198 105 198H81L57 176H41V151H63"></path></g>
+    <g class="ri-pose"><circle cx="216" cy="151" r="12"></circle><path d="M216 163V207 M190 183L216 175L240 190 M216 207L197 240 M216 207L239 237"></path></g>
+    <path class="ri-flow ri-blue ri-draw-one" pathlength="1" d="M196 59C315 59 309 115 397 126"></path><path class="ri-flow ri-green ri-draw-two" pathlength="1" d="M151 157H397"></path><path class="ri-flow ri-blue ri-draw-two" pathlength="1" d="M254 214C321 214 321 177 397 163"></path>
+    <g class="ri-intent ri-reveal-two"><circle cx="447" cy="143" r="47"></circle><rect x="427" y="123" width="40" height="40" rx="4"></rect></g>
+    <path class="ri-flow ri-blue ri-draw-three" pathlength="1" d="M512 143H617"></path><path class="ri-blue ri-arrow" d="M605 135L617 143L605 151"></path>
+    <g class="ri-arm ri-blue"><path d="M704 221H788 M745 217V187L694 126L650 142 M650 142L637 138 M635 128V149 M624 128V148"></path><circle cx="745" cy="187" r="10"></circle><circle cx="694" cy="126" r="10"></circle></g>
+    <rect class="ri-target-blue ri-reveal-three" x="619" y="171" width="36" height="36" rx="4"></rect>
+  </svg>
+  <figcaption>Concept illustration of the research question, not a single implemented system.</figcaption>
+</figure>
+
+<div class="rn-idea"><p>A click, an image, a phrase, or a gesture can express an intention. The challenge is turning that incomplete evidence into something a robot can act on.</p></div>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-understanding-people">Explore this thread</button><span class="rn-panel-footnote">PoseFusion · TAR · NatSGD</span></div><dialog class="rn-reading-panel" id="reading-understanding-people" aria-labelledby="reading-understanding-people-title"><header class="rn-reading-heading"><h3 id="reading-understanding-people-title">Understanding People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Understanding people requires combining incomplete observations with the different ways a person can express an intention. This line of work examines that problem through multi-view pose recognition and multimodal instruction for embodied systems. PoseFusion, a UMD graduate course project, tested camera-view fusion for action recognition under occlusion. In the reported tests, combining views raised F1 from 0.76 to 0.82 compared with a single view. In the co-developed Track Anything Rapter system, work on the high-level controller connected target specification by click, box, image or text to aerial tracking. A trajectory evaluation compared the physical flight trials against motion capture.</p><p>An exploratory policy on the NatSGD dataset provided by Snehesh Shrestha (UMD) combined demonstration, speech and gesture. Task success and the benefit of gesture remain unvalidated. Together, these studies motivate the continuing question of how complementary human cues can support both understanding and action when the evidence is incomplete.</p><figure class="rn-public-media">
     <div class="rn-video-host"><button type="button" class="rn-video-start" data-load-research-video aria-label="Play the public Track Anything Rapter flight trial"><img src="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" alt="Track Anything Rapter aerial tracking demonstration" loading="lazy"><span>Play public flight trial</span></button></div>
     <template data-research-video><video controls muted playsinline preload="none" poster="https://raw.githubusercontent.com/tvpian/Project-TAR/main/FollowAnything/Images_and_videos_for_Github_visualizations/teaser.png" aria-label="Public Track Anything Rapter UAV tracking trial"><source src="https://tvpian.github.io/imgs/tar.mp4" type="video/mp4"></source></video></template>
     <figcaption><span>Track Anything Rapter</span><a href="https://tvpian.github.io/projects/track-anything-rapter/">Explore the project</a></figcaption>
   </figure>
-  <div class="rn-idea"><p>A click, an image, a phrase, or a gesture can express an intention. The challenge is turning that incomplete evidence into something a robot can act on.</p></div>
-  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-understanding-people">Explore this thread</button><span class="rn-panel-footnote">PoseFusion · TAR · NatSGD</span></div><dialog class="rn-reading-panel" id="reading-understanding-people" aria-labelledby="reading-understanding-people-title"><header class="rn-reading-heading"><h3 id="reading-understanding-people-title">Understanding People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><article class="rn-project"><div><span class="rn-label">Physical flight trials</span><h4><a href="https://tvpian.github.io/projects/track-anything-rapter/">Track Anything Rapter</a></h4></div><p>A person can use a click, box, image, or text to tell a drone what to follow. Co-developed the system, implemented the high-level controller, and designed the trajectory evaluation against motion capture.</p></article>
-              <article class="rn-project"><div><span class="rn-label">Exploratory prototype</span><h4><a href="https://tvpian.github.io/projects/natsgd/">NatSGD prototype</a></h4></div><p>An exploratory demonstration, speech, and gesture policy on the NatSGD dataset provided by Snehesh Shrestha (UMD). Task success and the benefit of gesture remain unvalidated.</p></article>
-              <article class="rn-project"><div><span class="rn-label">Graduate course project</span><h4><a href="https://tvpian.github.io/projects/multimodal-perception/">PoseFusion</a></h4></div><p>Multi-view pose fusion for action recognition under occlusion. In the reported tests, combining views raised F1 from 0.76 to 0.82 compared with a single view.</p></article>
-            <div class="rn-links rn-prior-links"><a href="https://tvpian.github.io/projects/multimodal-perception/">PoseFusion (graduate course project)</a><a href="https://tvpian.github.io/projects/natsgd/">NatSGD prototype</a></div>
-  </div></dialog></section>
+  <article class="rn-reference"><div><span class="rn-label">Physical flight trials</span><h4><a href="https://tvpian.github.io/projects/track-anything-rapter/">Track Anything Rapter</a></h4></div></article>
+              <article class="rn-reference"><div><span class="rn-label">Exploratory prototype</span><h4><a href="https://tvpian.github.io/projects/natsgd/">NatSGD prototype</a></h4></div></article>
+              <article class="rn-reference"><div><span class="rn-label">Graduate course project</span><h4><a href="https://tvpian.github.io/projects/multimodal-perception/">PoseFusion</a></h4></div></article>
+            </div></dialog></section>
         <section class="rn-panel rn-platform-panel" id="research-platform" data-thread-panel>
   <div class="rn-context"><span>Shared foundation</span><strong class="rn-status">Implemented</strong></div>
   <h3 class="rn-question">From demonstrations to physical experiments.</h3>
-  <figure class="rn-concept rn-platform-concept" data-rn-animation="platform">
-    <div class="rn-concept-labels"><span>Physical robot</span><span>Digital twin</span></div>
-    <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-platform-title rn-platform-desc">
-      <title id="rn-platform-title">Shared interfaces connect physical and simulated experiments</title>
-      <desc id="rn-platform-desc">The physical robot and digital twin connect to the same operator, recording, review, and policy interfaces, with separate hardware and physics backends.</desc>
-      <g class="rn-platform-guides"><path d="M140 45V245 M760 45V245 M40 85H860 M40 230H860"></path></g>
-      <path class="rn-platform-trunk" pathlength="1" d="M450 230V150"></path>
-      <path class="rn-platform-physical" pathlength="1" d="M450 150C450 95 140 160 140 85"></path>
-      <path class="rn-platform-twin" pathlength="1" d="M450 150C450 95 760 160 760 85"></path>
-      <g class="rn-platform-hub"><circle cx="450" cy="230" r="23"></circle><circle cx="450" cy="230" r="41"></circle></g>
-      <g class="rn-platform-endpoints"><circle class="rn-physical-node" cx="140" cy="85" r="10"></circle><circle class="rn-twin-node" cx="760" cy="85" r="10"></circle></g>
-    </svg>
-    <div class="rn-concept-caption">Shared recording, review, and policy interfaces.</div>
-    <figcaption>Platform schematic.</figcaption>
-  </figure>
-  <div class="rn-idea"><p>Shared interfaces connect the physical robot and its digital twin, so the studies can move between simulation and hardware without rebuilding the workflow.</p></div>
-  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-research-platform">Platform details</button><span class="rn-panel-footnote">Policy evaluation is currently performed manually.</span></div><dialog class="rn-reading-panel" id="reading-research-platform" aria-labelledby="reading-research-platform-title"><header class="rn-reading-heading"><h3 id="reading-research-platform-title">Platform details and evaluation tools</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p class="rn-platform-intro">I designed and implemented the workflow from teleoperation and synchronized recording to dataset conversion, policy training, evaluation, and deployment. The physical robot and digital twin share the operator, data review, and policy interfaces, with separate hardware and physics backends.</p>
-        <div class="rn-platform-body"><div class="current-work-live__platform">
+  <figure class="rn-concept ri-concept" data-rn-animation="platform">
+  <div class="rn-concept-labels ri-labels-three"><span>Physical robot</span><span>Shared interfaces</span><span>Digital twin</span></div>
+  <svg viewbox="0 0 900 280" role="img" aria-labelledby="rn-platform-title rn-platform-desc">
+    <title id="rn-platform-title">Use the same controls, data review and policy interfaces in both settings</title>
+    <desc id="rn-platform-desc">A solid robot arm and its dashed digital twin connect to a common interface. Moving signals illustrate shared control, recording, review and policy interfaces, with separate physical and simulation backends.</desc>
+    <path class="ri-guide" d="M40 214H265 M635 214H860"></path>
+    <g class="ri-arm ri-blue"><path d="M97 209H181 M140 205V177L196 96L252 116 M252 116L267 112 M267 101V126 M279 102V125"></path><circle cx="140" cy="177" r="10"></circle><circle cx="196" cy="96" r="10"></circle></g>
+    <g class="ri-arm ri-twin"><path d="M719 209H803 M760 205V177L704 96L648 116 M648 116L633 112 M633 101V126 M621 102V125"></path><circle cx="760" cy="177" r="10"></circle><circle cx="704" cy="96" r="10"></circle></g>
+    <path class="ri-flow ri-blue ri-draw-one" pathlength="1" d="M300 145H389"></path><path class="ri-flow ri-green ri-draw-two" pathlength="1" d="M511 145H600"></path>
+    <g class="ri-record ri-interface"><rect x="396" y="77" width="108" height="126" rx="5"></rect><path d="M412 103H488 M412 128H488 M412 153H488 M412 178H466"></path><circle class="ri-signal ri-reveal-two" cx="479" cy="177" r="5"></circle></g>
+    <path class="ri-return ri-draw-three" pathlength="1" d="M760 228V249H140V228"></path>
+  </svg>
+  <div class="ri-meaning ri-meaning-center">Shared controls, recording, review and policies.</div>
+  <figcaption>Platform schematic.</figcaption>
+</figure>
+<div class="rn-idea"><p>Shared interfaces connect the physical robot and its digital twin, so the studies can move between simulation and hardware without rebuilding the workflow.</p></div>
+  <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-research-platform">Platform details</button><span class="rn-panel-footnote">Policy evaluation is currently performed manually.</span></div><dialog class="rn-reading-panel" id="reading-research-platform" aria-labelledby="reading-research-platform-title"><header class="rn-reading-heading"><h3 id="reading-research-platform-title">Platform details and evaluation tools</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p class="rn-platform-intro">Comparing robot-learning methods requires a workflow that keeps demonstrations, policy behavior and deployment conditions connected. The research platform was designed and implemented to link teleoperation and synchronized recording to dataset conversion, policy training, evaluation and physical deployment. The physical robot and digital twin share operator, data review and policy interfaces, with separate hardware and physics backends. This supports moving experiments between simulation and hardware without rebuilding the surrounding workflow.</p><p>Policy evaluation is currently performed manually. The platform provides the experimental setting for the research threads above and for developing evaluation measures that examine behavior beyond task success. The shared infrastructure is implemented; the research questions studied through it remain open at the stages described in each thread.</p><div class="rn-platform-body"><div class="current-work-live__platform">
         <div class="current-work-live__platform-heading">
           <p class="eyebrow light"><span></span>The research platform</p>
           <p><strong class="evidence-state evidence-state--built">Implemented</strong> Six shared layers · physical and simulated backends · staged evaluation</p>

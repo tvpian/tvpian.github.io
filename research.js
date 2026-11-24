@@ -97,8 +97,8 @@
     video.focus();
     video.play().catch(() => {});
   });
-  const pauseHiddenMedia = () => root.querySelectorAll('.rn-panel[hidden] video').forEach(video => video.pause());
-  new MutationObserver(pauseHiddenMedia).observe(root, {attributes: true, attributeFilter: ['hidden'], subtree: true});
+  const pauseHiddenMedia = () => root.querySelectorAll('.rn-panel[hidden] video, .rn-reading-panel:not([open]) video').forEach(video => video.pause());
+  new MutationObserver(pauseHiddenMedia).observe(root, {attributes: true, attributeFilter: ['hidden', 'open'], subtree: true});
   function closeDisclosure(disclosure) {
     const summary = disclosure.querySelector(':scope > summary');
     disclosure.open = false;
