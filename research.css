@@ -564,3 +564,17 @@ html[data-theme="dark"] body:has(.research-notebook) { --project-blue: #315cff; 
  .research-notebook .ra-motion-note { align-items:start; }
  .research-notebook .ra-scene svg { min-height:0; }
 }
+
+/* Alternative outcomes are questions, with neutral outlines and no success marks. */
+.research-notebook .ra-scene [data-static-hide],
+.research-notebook .ra-scene :is([data-route="baseline-action"],[data-route="return"],[data-route="train"]) { opacity:0; }
+.research-notebook .ra-scene .ra-case-frame { stroke:var(--line);stroke-width:1; }
+.research-notebook .ra-scene .ra-test-label { font:500 28px 'DM Sans',sans-serif;fill:var(--muted);stroke:none;text-anchor:middle; }
+.research-notebook .ra-scene .ra-skill-tests g text { font:500 43px 'Instrument Serif',Georgia,serif;fill:currentColor;stroke:none;text-anchor:middle; }
+.research-notebook .ra-scene .ra-skill-tests rect { stroke-width:1.5; }
+@media (max-width:700px) {
+ .research-notebook .ra-scene .ra-test-label { font-size:34px; }
+}
+
+.research-notebook .ra-scene .ra-skill-tests .ra-test-label { font-size:26px; }
+@media (max-width:700px) { .research-notebook .ra-scene .ra-skill-tests .ra-test-label { font-size:30px; } }

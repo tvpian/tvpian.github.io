@@ -174,7 +174,7 @@
     const labels = [...figure.querySelectorAll('.ra-labels > span')];
     const staticLabels = labels.map(label => label.textContent);
     const kind = figure.dataset.rnAnimation;
-    const cycle = kind === 'prediction' ? 14000 : 12000;
+    const cycle = ['prediction','correction'].includes(kind) ? 14000 : 12000;
     const button = figure.querySelector('[data-pause-motion]');
     button.hidden = false;
 
@@ -216,12 +216,12 @@
 
     function render(milliseconds, still = false) {
       const t = still ? 9.4 : (milliseconds % cycle)/1000;
-      const fade = 1 - smooth(ramp(t, 10.1, 11.2));
+      const fade = 1 - smooth(ramp(t,kind==='correction'?12:10.1,kind==='correction'?13.2:11.2));
       if (kind === 'correction') {
         const attempt = smooth(ramp(t,.4,1.9));
         const correct = smooth(ramp(t,2.5,4.3));
         let tip = t<2.5 ? quadratic([187,116],[215,102],[247,154],attempt) : quadratic([247,154],[266,117],[308,154],correct);
-        tip = point(tip, [187,116], smooth(ramp(t,10,11.3)));
+        tip = point(tip, [187,116], smooth(ramp(t,12,13.3)));
         arm('correction-arm', tip);
         show('stop', ramp(t,1.7,2) * (1-ramp(t,3,3.4)));
         show('human-cursor', ramp(t,2.1,2.4) * (1-ramp(t,4.3,4.8)));
@@ -230,25 +230,33 @@
         flow('capture',t,4.4,5.5,fade);
         trace('recorded-path',ramp(t,5,5.8)); show('recorded-path',fade);
         show('review-check',ramp(t,5.7,6.2)*fade);
-        flow('train',t,6.3,7.5,fade); show('new-policy',ramp(t,7.4,7.9)*fade);
-        flow('return',t,8,9.3,fade);
-        phase([t<2?'Policy attempt':t<4.6?'Human takeover':'Correction captured',t<5.7?'Review the correction':'Correction reviewed',t<7.9?'Train the next policy':'Ready for next rollout'],[t<4.6?0:t<6.3?1:2]);
+        flow('train',t,6.3,7.5,fade*(1-ramp(t,8.95,9.5))); show('new-policy',ramp(t,7.4,7.9)*fade);
+        flow('return',t,8,9.3,fade*(1-ramp(t,9.2,9.7)));
+        const tests=ramp(t,9.1,9.75)*fade;
+        show('policy-card',(1-ramp(t,9,9.5))+(1-fade)*ramp(t,9,9.5));
+        show('skill-tests',still?1:tests);
+        if(still) show('policy-card',0);
+        phase([t<2?'Policy attempt':t<4.6?'Human takeover':'Correction captured',t<5.7?'Review the correction':'Correction reviewed',t<7.9?'Train the next policy':t<9.4?'Return to rollout':'Test both skills'],[t<4.6?0:t<6.3?1:2]);
       } else if (kind === 'grounding') {
-        const cue = ramp(t,1.1,1.6), patch = smooth(ramp(t,5.5,6.15));
-        const before = smooth(ramp(t,2.85,3.95))*(1-smooth(ramp(t,4.75,5.45)));
-        const after = smooth(ramp(t,6.95,8.2))*(1-smooth(ramp(t,10.1,11.2)));
-        const second = t>=5.45;
+        const cue=ramp(t,1.05,1.55), patch=smooth(ramp(t,5.25,6.05));
+        const baselineFade=1-ramp(t,4.45,5.15);
+        const options=ramp(t,6.8,7.35)*fade;
         flow('encode',t,.35,1.6,fade);
-        show('feature-blue',cue*(1-patch)*fade); show('feature-patched',patch*.85*fade);
-        show('readout',ramp(t,1.55,2.1)*(1-ramp(t,5.1,5.55))*fade);
-        show('patch',ramp(t,5.1,5.5)*fade);
+        show('feature-blue',cue*(1-patch)*fade);
+        show('feature-patched',patch*.85*fade);
+        show('readout',ramp(t,1.55,2.1)*baselineFade*fade);
+        show('patch',ramp(t,4.75,5.25)*fade);
         move('patch',0,patch*12);
-        flow('act',t,second?6.3:2.55,second?7.45:3.55,fade);
-        show('choice',Math.max(ramp(t,3.75,4.15)*(1-ramp(t,4.85,5.4)),ramp(t,7.85,8.25))*fade);
-        show('first-choice',ramp(t,4.85,5.45)*(1-ramp(t,8,8.25))*fade);
-        const y=118+Math.max(before,after)*26;
-        nodes['choice-gripper'].setAttribute('d',`M807 83V${y} M789 ${y+36}V${y}H825V${y+36}`);
-        phase(['“Pick blue”',t<1.8?'Probe the features':t<5.1?'Probe reads blue':t<6.2?'Swap in orange cue':'Patched: orange',t<3.8?'Watch the choice':t<5.45?'Chooses orange':t<8.1?'Run policy again':'Same choice'],[t<1.6?0:t<2.55||t>=5.1&&t<6.3?1:2]);
+        show('baseline',baselineFade+(1-fade)*(1-baselineFade));
+        show('baseline-choice',ramp(t,3.2,3.85));
+        flow('baseline-action',t,2.45,3.45,baselineFade);
+        const y=118+smooth(ramp(t,3.05,3.75))*27;
+        nodes['choice-gripper'].setAttribute('d',`M702 82V${y} M684 ${y+33}V${y}H720V${y+33}`);
+        show('outcomes',options);
+        flow('patch-out',t,6,6.5,fade);
+        flow('unchanged',t,6.5,7.35,fade);
+        flow('changed',t,6.5,7.35,fade);
+        phase(['“Pick blue”',t<1.75?'Probe the features':t<4.65?'Probe reads blue':t<6.05?'Swap the internal cue':'Cue changed to orange',t<3.65?'Watch the choice':t<4.9?'Baseline: blue':t<6.8?'What changes?':'Two possible outcomes'],[t<1.5?0:t<2.45||t>=4.65&&t<6.05?1:2]);
       } else if (kind === 'prediction') {
         const second = t >= 7, local = second ? t-7 : t;
         const strength = 1-smooth(ramp(local,5.9,6.7));
@@ -262,7 +270,7 @@
         trace('future-trace',future); show('future-trace',ramp(local,1.5,1.8)*strength);
         flow('from-present',local,3.15,4.25,strength); flow('from-future',local,3.15,4.25,strength);
         show('inferred-vector',ramp(local,4.15,4.45)*strength);
-        phase(['Same starting scene',local<1.45?'Possible future':second?'Box moves up':'Box moves right',local<4.25?'Infer an action':second?'Move up':'Move right'],[local<.9?0:local<3.15?1:2]);
+        phase(['Same starting scene',local<1.45?'Possible future':second?'Box moves up':'Box moves right',local<4.25?'Infer an action':local<5.15?(second?'Move up':'Move right'):'Would it work?'],[local<.9?0:local<3.15?1:2]);
         if(still){
           move('future-object',60,0); show('future-object',1);
           nodes['future-trace'].setAttribute('d','M451 172.5h60'); trace('future-trace',1); show('future-trace',.7);

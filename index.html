@@ -18,11 +18,11 @@
     })();
   </script>
   <link rel="stylesheet" href="/stylesheet.css?v=research-chapters">
-  <link rel="stylesheet" href="/research.css?v=20261124-research-motion-cases">
+  <link rel="stylesheet" href="/research.css?v=20261124-research-question-loops">
   <link rel="icon" type="image/png" href="https://tvpian.github.io/images/seal_icon.png">
   <script src="https://tvpian.github.io/theme.js?v=20260925-research-map" defer></script>
   <script src="/portfolio.js?v=research-first" defer></script>
-  <script src="/research.js?v=20261124-research-motion-cases" defer></script>
+  <script src="/research.js?v=20261124-research-question-loops" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -105,9 +105,9 @@
   <h3 class="rn-question">How can robots learn from demonstrations and corrections while retaining earlier skills?</h3>
   <figure class="rn-concept ri-concept ra-scene" data-rn-animation="correction">
       <div class="ra-stage">
-      <div class="rn-concept-labels ra-labels" aria-hidden="true"><span>Attempt and intervene</span><span>Review the correction</span><span>Train the next policy</span></div>
+      <div class="rn-concept-labels ra-labels" aria-hidden="true"><span>Human correction</span><span>Review and retrain</span><span>Test both skills</span></div>
       <svg viewbox="0 0 900 300" role="img" aria-labelledby="ra-correction-title ra-correction-desc">
-        <title id="ra-correction-title">A correction becomes training experience</title><desc id="ra-correction-desc">The robot stops short. A human-guided segment continues to the target, is captured for review, then returns through training to the next rollout. The loop illustrates the workflow, not a measured improvement.</desc>
+        <title id="ra-correction-title">Can a robot learn a correction and retain an earlier skill?</title><desc id="ra-correction-desc">The robot stops short. A human-guided segment continues to the target, is captured for review, then returns through training to the next rollout. This motivates two separate tests: does the updated policy handle the new situation, and does it retain the earlier skill? Neither outcome is shown.</desc>
         <path class="ra-ground" d="M42 236H370"></path>
       <path class="ra-trajectory ra-blue" d="M187 116Q215 102 247 154"></path>
       <path class="ra-trajectory ra-green" data-an="correction-trace" pathlength="1" d="M247 154Q266 117 308 154"></path>
@@ -118,13 +118,18 @@
       <g class="ra-document ra-blue"><rect x="482" y="92" width="102" height="120" rx="5"></rect><path class="ra-muted-line" d="M499 111H565 M499 127H543"></path>
       <path class="ra-green" data-an="recorded-path" pathlength="1" d="M500 181Q514 160 527 173T563 151"></path>
       <g class="ra-green" data-an="review-check"><path d="M548 191L555 198L568 181"></path></g></g>
-      <g class="ra-policy ra-blue"><rect x="736" y="99" width="102" height="103" rx="5"></rect><path class="ra-muted-line" d="M756 120H815 M756 139H806 M756 158H814"></path>
-      <path class="ra-green" data-an="new-policy" d="M756 179H815"></path></g><path class="ra-track ra-green" d="M326 176C390 176 410 152 482 152"></path>
+      <g class="ra-policy ra-blue" data-an="policy-card" data-static-hide=""><rect x="736" y="99" width="102" height="103" rx="5"></rect><path class="ra-muted-line" d="M756 120H815 M756 139H806 M756 158H814"></path>
+      <path class="ra-green" data-an="new-policy" d="M756 179H815"></path></g>
+      <g class="ra-skill-tests" data-an="skill-tests">
+        <g class="ra-green"><rect x="613" y="110" width="117" height="81" rx="5"></rect><text x="672" y="162">?</text></g>
+        <g class="ra-blue"><rect x="757" y="110" width="117" height="81" rx="5"></rect><text x="816" y="162">?</text></g>
+        <text class="ra-test-label" x="672" y="222">New case</text><text class="ra-test-label" x="816" y="222">Prior skill</text>
+      </g><path class="ra-track ra-green" d="M326 176C390 176 410 152 482 152"></path>
       <path class="ra-flow ra-green" data-route="capture" pathlength="1" d="M326 176C390 176 410 152 482 152"></path>
-      <circle class="ra-packet ra-fill-green" data-dot="capture" r="4"></circle><path class="ra-track ra-green" d="M584 152H736"></path>
+      <circle class="ra-packet ra-fill-green" data-dot="capture" r="4"></circle>
       <path class="ra-flow ra-green" data-route="train" pathlength="1" d="M584 152H736"></path>
-      <circle class="ra-packet ra-fill-green" data-dot="train" r="4"></circle><path class="ra-track ra-blue" d="M786 202V265H100V222"></path>
-      <path class="ra-flow ra-blue" data-route="return" pathlength="1" d="M786 202V265H100V222"></path>
+      <circle class="ra-packet ra-fill-green" data-dot="train" r="4"></circle>
+      <path class="ra-flow ra-blue" data-route="return" pathlength="1" d="M838 175H884V265H100V222"></path>
       <circle class="ra-packet ra-fill-blue" data-dot="return" r="4"></circle><g class="ra-arm ra-blue" data-arm="correction-arm" data-base="100,222">
       <path class="ra-base" d="M64 233H136 M100 229V222"></path>
       <path data-link="" d="M100 222L188.18 152.94L308 130"></path>
@@ -135,9 +140,9 @@
     </g>
       </svg>
       </div>
-      <figcaption class="ra-motion-note"><span>Concept illustration, not a recorded rollout.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause a correction becomes training experience animation">Pause motion</button></figcaption>
+      <figcaption class="ra-motion-note"><span>Concept illustration, not a recorded rollout.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause can a robot learn a correction and retain an earlier skill? animation">Pause motion</button></figcaption>
     </figure>
-<div class="rn-idea"><p>A person's intervention can be more than a way to finish a task. It can become a demonstration the robot learns from.</p></div>
+<div class="rn-idea"><p>A correction gives the robot a new example to learn from. The next question is whether it can handle that case while keeping its earlier skills.</p></div>
   <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-continual-learning">Explore this thread</button><span class="rn-panel-footnote">Egocentric interface in development</span></div><dialog class="rn-reading-panel" id="reading-continual-learning" aria-labelledby="reading-continual-learning-title"><header class="rn-reading-heading"><h3 id="reading-continual-learning-title">Learning from People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Robots learning from people need a way to turn individual interventions into reusable experience. This ongoing work investigates a correction loop connecting demonstrations, policy failure, human takeover and retraining. People and policies use the same bounded arm commands, so their rollouts can be compared step by step and reused for training. The implemented workflow records corrections for review before they are added to the demonstrations used to train the next policy. Policy evaluation is currently performed manually. Whether the corrections improve later policies without eroding earlier skills remains an open question.</p><p>Related simulation studies compare teacher-student training with learned auxiliary heads to examine what policies retain when privileged training inputs are removed. A portable egocentric interface is also in development to extend demonstration capture beyond teleoperation. Together, these efforts investigate how different forms of human guidance can support continuing learning through a shared recording and review workflow.</p><div class="rn-support"><div><span class="rn-label">In development</span><details id="egocentric"><summary>Egocentric demonstrations</summary><p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
               </details></div>
               <div><span class="rn-label">Simulation studies</span><details id="representation-studies"><summary>What policies retain from training</summary><p>Simulation tests compared teacher-student training with learned auxiliary heads to see what policies retain when privileged inputs are removed. Attention maps help diagnose behavior, but they do not by themselves establish a causal explanation.</p>
@@ -151,30 +156,53 @@
   <h3 class="rn-question">What has a policy learned, and how does that shape its behavior?</h3>
   <figure class="rn-concept ri-concept ra-scene" data-rn-animation="grounding">
       <div class="ra-stage">
-      <div class="rn-concept-labels ra-labels" aria-hidden="true"><span>“Pick blue”</span><span>Probe and patch</span><span>Same choice</span></div>
+      <div class="rn-concept-labels ra-labels" aria-hidden="true"><span>Same instruction</span><span>Intervene on the cue</span><span>Two possible outcomes</span></div>
       <svg viewbox="0 0 900 300" role="img" aria-labelledby="ra-grounding-title ra-grounding-desc">
-        <title id="ra-grounding-title">A policy can encode the cue without using it to choose</title><desc id="ra-grounding-desc">With the instruction and scene held fixed, a probe reads blue from the policy representation, yet the gripper chooses orange. The test swaps the cue-carrying activation with one from an orange instruction and runs the policy again. The gripper still chooses orange in this illustrative example. A probe alone can reveal what is encoded, but a controlled intervention tests whether that information affects the action.</desc>
+        <title id="ra-grounding-title">Which information actually guides the policy’s action?</title><desc id="ra-grounding-desc">The baseline instruction is pick blue. A probe reads the target cue from the internal representation. To test whether the policy uses that cue, swap in the cue from a matched orange instruction while keeping the original instruction and scene fixed. The diagram shows two possible outcomes, not findings: the choice can stay blue or switch to orange. The result of the intervention would guide what to test next.</desc>
         <g class="ra-speech ra-blue"><path d="M33 105H228V177H118L89 200V177H33Z"></path><text x="131" y="151" class="ra-word" text-anchor="middle">pick blue</text></g>
       <g class="ra-features ra-blue"><rect x="367" y="113" width="30" height="57" rx="3"></rect><rect x="405" y="113" width="30" height="57" rx="3"></rect><rect x="443" y="113" width="30" height="57" rx="3"></rect><rect x="481" y="113" width="30" height="57" rx="3"></rect></g>
-      <rect class="ra-feature-active ra-fill-blue" data-an="feature-blue" x="405" y="113" width="30" height="57" rx="3"></rect>
+      <rect class="ra-feature-active ra-fill-blue" data-an="feature-blue" data-static-hide="" x="405" y="113" width="30" height="57" rx="3"></rect>
       <rect class="ra-feature-active ra-fill-orange" data-an="feature-patched" x="405" y="113" width="30" height="57" rx="3"></rect>
       <g class="ra-intervention ra-orange" data-an="patch"><rect x="405" y="58" width="30" height="28" rx="3"></rect><path d="M420 89V101 M413 94L420 101L427 94"></path></g>
-      <g class="ra-probe ra-blue" data-an="readout"><path d="M420 172V208"></path><circle cx="420" cy="224" r="13"></circle><path d="M430 234L446 250"></path></g>
-      <path class="ra-ground" d="M653 230H855"></path>
-      <rect class="ra-target ra-blue" x="673" y="184" width="40" height="40" rx="3"></rect>
-      <rect class="ra-target ra-orange" x="787" y="184" width="40" height="40" rx="3"></rect>
-      <rect class="ra-choice ra-orange" data-an="choice" x="778" y="175" width="58" height="58" rx="7"></rect>
-      <rect class="ra-ghost ra-orange" data-an="first-choice" x="778" y="175" width="58" height="58" rx="7"></rect>
-      <g class="ra-gripper ra-orange"><path data-an="choice-gripper" d="M807 83V144 M789 180V144H825V180"></path><circle class="ra-joint" cx="807" cy="83" r="5"></circle></g><path class="ra-track ra-blue" d="M228 140H367"></path>
+      <g class="ra-probe ra-blue" data-an="readout" data-static-hide=""><path d="M420 172V208"></path><circle cx="420" cy="224" r="13"></circle><path d="M430 234L446 250"></path></g>
+      <g data-an="baseline" data-static-hide="">
+        <path class="ra-ground" d="M665 227H856"></path>
+        <rect class="ra-target ra-blue" x="681" y="181" width="42" height="42" rx="4"></rect>
+        <rect class="ra-target ra-orange" x="791" y="181" width="42" height="42" rx="4"></rect>
+        <rect class="ra-choice ra-blue" data-an="baseline-choice" x="671" y="171" width="62" height="62" rx="7"></rect>
+        <g class="ra-gripper ra-blue"><path data-an="choice-gripper" d="M702 82V145 M684 178V145H720V178"></path><circle class="ra-joint" cx="702" cy="82" r="5"></circle></g>
+      </g>
+      <g class="ra-outcomes" data-an="outcomes">
+        <rect class="ra-case-frame" x="660" y="43" width="184" height="72" rx="7"></rect>
+        <g class="ra-blue">
+          <rect class="ra-target ra-blue" x="683" y="62" width="34" height="34" rx="3"></rect>
+          <rect class="ra-target ra-orange" x="787" y="62" width="34" height="34" rx="3"></rect>
+          <rect class="ra-choice" x="675" y="54" width="50" height="50" rx="7"></rect>
+        </g>
+        <text class="ra-test-label" x="752" y="139">Stays blue</text>
+        <rect class="ra-case-frame" x="660" y="158" width="184" height="72" rx="7"></rect>
+        <g class="ra-orange">
+          <rect class="ra-target ra-blue" x="683" y="177" width="34" height="34" rx="3"></rect>
+          <rect class="ra-target ra-orange" x="787" y="177" width="34" height="34" rx="3"></rect>
+          <rect class="ra-choice" x="779" y="169" width="50" height="50" rx="7"></rect>
+        </g>
+        <text class="ra-test-label" x="752" y="254">Switches to orange</text>
+      </g><path class="ra-track ra-blue" d="M228 140H367"></path>
       <path class="ra-flow ra-blue" data-route="encode" pathlength="1" d="M228 140H367"></path>
-      <circle class="ra-packet ra-fill-blue" data-dot="encode" r="4"></circle><path class="ra-track ra-orange" d="M511 140C605 140 610 83 807 83"></path>
-      <path class="ra-flow ra-orange" data-route="act" pathlength="1" d="M511 140C605 140 610 83 807 83"></path>
-      <circle class="ra-packet ra-fill-orange" data-dot="act" r="4"></circle>
+      <circle class="ra-packet ra-fill-blue" data-dot="encode" r="4"></circle>
+      <path class="ra-flow ra-blue" data-route="baseline-action" pathlength="1" d="M511 141C584 141 603 82 702 82"></path>
+      <circle class="ra-packet ra-fill-blue" data-dot="baseline-action" r="4"></circle>
+      <path class="ra-flow ra-blue" data-route="patch-out" pathlength="1" d="M511 141H573"></path>
+      <circle class="ra-packet ra-fill-blue" data-dot="patch-out" r="4"></circle>
+      <path class="ra-flow ra-blue" data-route="unchanged" pathlength="1" d="M573 141Q604 141 604 111T641 79H660"></path>
+      <circle class="ra-packet ra-fill-blue" data-dot="unchanged" r="4"></circle>
+      <path class="ra-flow ra-orange" data-route="changed" pathlength="1" d="M573 141Q604 141 604 168T641 194H660"></path>
+      <circle class="ra-packet ra-fill-orange" data-dot="changed" r="4"></circle>
       </svg>
       </div>
-      <figcaption class="ra-motion-note"><span>Concept illustration, not an attribution map or measured result.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause a policy can encode the cue without using it to choose animation">Pause motion</button></figcaption>
+      <figcaption class="ra-motion-note"><span>Concept illustration, not an attribution map or measured result.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause which information actually guides the policy’s action? animation">Pause motion</button></figcaption>
     </figure>
-<div class="rn-idea"><p>A policy can represent which object a word refers to without using that knowledge when it acts. Understanding the representation is only part of the question.</p></div>
+<div class="rn-idea"><p>A probe asks what information is present inside the policy. An intervention tests whether changing that information changes what the robot does.</p></div>
   <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-explainability">Explore this thread</button><span class="rn-panel-footnote">Simulation and physical robot studies</span></div><dialog class="rn-reading-panel" id="reading-explainability" aria-labelledby="reading-explainability-title"><header class="rn-reading-heading"><h3 id="reading-explainability-title">Policy Explainability and Representation</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Information can be available within a policy without determining what it does. This ongoing work examines that distinction through representation probes and activation patching in simulation, alongside instruction-conditioned trials on a bimanual robot. In the policies tested in simulation, associations between words and objects were present in the representations but were not used by the action heads. Physical trials separated object choice from pick completion. In those trials, higher task success did not necessarily mean the policy was better at choosing the object named in the instruction.</p><p>These findings motivate testing the information a policy encodes separately from the information that guides its actions. Current work develops evaluation beyond success rate, including partial progress, recovery and repeatability. The broader research question is whether understanding learned representations can help improve learning itself. The findings reported here remain scoped to the tested policies and comparisons.</p><div class="rn-support"><div><span class="rn-label">In development</span><details id="policy-evaluation"><summary>Policy evaluation beyond success rate</summary><p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
               </details></div>
               <div><span class="rn-label">Research tools</span><div class="rn-links"><a href="#research-platform">Policy diagnostics and evaluation tools</a></div></div>
@@ -189,7 +217,7 @@
       <div class="ra-stage">
       <div class="rn-concept-labels ra-labels" aria-hidden="true"><span>Same starting scene</span><span>Possible future</span><span>Candidate action</span></div>
       <svg viewbox="0 0 900 300" role="img" aria-labelledby="ra-prediction-title ra-prediction-desc">
-        <title id="ra-prediction-title">A different predicted change suggests a different action</title><desc id="ra-prediction-desc">Two examples begin at the same observed box position. In one possible overhead view, the box moves right and the inferred action points right. In the other, the box moves up in the image and the inferred action points up. The scenes are hypothetical and the arrows represent candidate actions, not unique solutions or evidence of execution.</desc>
+        <title id="ra-prediction-title">What action could bring about a predicted future?</title><desc id="ra-prediction-desc">Two examples begin at the same observed box position. In one possible overhead view, the box moves right and the inferred action points right. In the other, the box moves up in the image and the inferred action points up. The arrows are candidate actions. An execution test is still needed to see whether an action produces the expected change in a given setting.</desc>
         <g class="ra-frame"><path d="M46 85V58H73 M224 58H251V85 M46 219V246H73 M224 246H251V219 M348 85V58H375 M526 58H553V85 M348 219V246H375 M526 246H553V219"></path></g>
       <rect class="ra-target ra-blue" x="127" y="151" width="43" height="43" rx="4"></rect>
       <rect class="ra-ghost" x="429" y="151" width="43" height="43" rx="4"></rect>
@@ -205,7 +233,7 @@
       <circle class="ra-packet ra-fill-green" data-dot="from-future" r="4"></circle>
       </svg>
       </div>
-      <figcaption class="ra-motion-note"><span>Concept illustration, not model output.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause a different predicted change suggests a different action animation">Pause motion</button></figcaption>
+      <figcaption class="ra-motion-note"><span>Concept illustration, not model output.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause what action could bring about a predicted future? animation">Pause motion</button></figcaption>
     </figure>
 <div class="rn-idea"><p>What might happen next, and what action could make it happen? Predictive models and inverse dynamics approach action learning from those two directions.</p></div>
   <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-world-models">Explore this thread</button><span class="rn-panel-footnote">Physical validation is pending.</span></div><dialog class="rn-reading-panel" id="reading-world-models" aria-labelledby="reading-world-models-title"><header class="rn-reading-heading"><h3 id="reading-world-models-title">Predictive Models, Inverse Dynamics, and Transfer</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Video describes how a scene changes, but useful predictions do not by themselves establish that useful actions have been learned. This work investigates predictive models and inverse dynamics as complementary routes from visual experience to action. A published video-action model was adapted to teleoperation data and evaluated offline. In simulation, actions inferred from video were compared with recorded actions and commands sent to the robot. Future-feature prediction, instruction grounding and failure signals were assessed separately from task success.</p><p>The evidence so far is limited to offline and simulation studies. Physical validation is pending. Active experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware. The central question is which parts of a predictive or action representation remain useful when a policy must operate in a different setting.</p><div class="rn-support"><div><span class="rn-label">Active experiments</span><details id="sim-real"><summary>Transfer between simulation and hardware</summary><p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
