@@ -60,7 +60,7 @@ traceSystems.forEach((system) => {
   });
 });
 
-const expandableFigures = [...document.querySelectorAll('.evidence-gallery figure, .research-figure, .figure-grid figure')]
+const expandableFigures = [...document.querySelectorAll('.evidence-gallery figure, .research-figure, .figure-grid figure, .paper-figure, .project-media.diagram-media')]
   .filter((figure) => figure.querySelector('img'));
 
 if (expandableFigures.length && typeof HTMLDialogElement !== 'undefined') {
@@ -72,6 +72,7 @@ if (expandableFigures.length && typeof HTMLDialogElement !== 'undefined') {
       <img alt="">
       <div class="figure-lightbox__bar">
         <span></span>
+        <a class="figure-lightbox__original" target="_blank" rel="noopener">Original image</a>
         <button class="figure-lightbox__close" type="button">Close</button>
       </div>
     </div>`;
@@ -86,6 +87,7 @@ if (expandableFigures.length && typeof HTMLDialogElement !== 'undefined') {
     const caption = figure.querySelector('figcaption');
     lightboxImage.src = source.currentSrc || source.src;
     lightboxImage.alt = source.alt;
+    dialog.querySelector('.figure-lightbox__original').href = lightboxImage.src;
     lightboxCaption.textContent = caption?.innerText || source.alt;
     dialog.showModal();
   };
@@ -109,3 +111,4 @@ if (expandableFigures.length && typeof HTMLDialogElement !== 'undefined') {
     if (event.target === dialog) dialog.close();
   });
 }
+
