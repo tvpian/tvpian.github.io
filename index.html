@@ -18,11 +18,11 @@
     })();
   </script>
   <link rel="stylesheet" href="/stylesheet.css?v=research-chapters">
-  <link rel="stylesheet" href="/research.css?v=20261124-research-motion-v2">
+  <link rel="stylesheet" href="/research.css?v=20261124-research-motion-cases">
   <link rel="icon" type="image/png" href="https://tvpian.github.io/images/seal_icon.png">
   <script src="https://tvpian.github.io/theme.js?v=20260925-research-map" defer></script>
   <script src="/portfolio.js?v=research-first" defer></script>
-  <script src="/research.js?v=20261124-research-motion-v2" defer></script>
+  <script src="/research.js?v=20261124-research-motion-cases" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -104,7 +104,8 @@
   <div class="rn-context"><span>Current work</span><strong class="rn-status">Implemented workflow</strong></div>
   <h3 class="rn-question">How can robots learn from demonstrations and corrections while retaining earlier skills?</h3>
   <figure class="rn-concept ri-concept ra-scene" data-rn-animation="correction">
-      <div class="rn-concept-labels ra-labels"><span>Attempt and intervene</span><span>Review the correction</span><span>Train the next policy</span></div>
+      <div class="ra-stage">
+      <div class="rn-concept-labels ra-labels" aria-hidden="true"><span>Attempt and intervene</span><span>Review the correction</span><span>Train the next policy</span></div>
       <svg viewbox="0 0 900 300" role="img" aria-labelledby="ra-correction-title ra-correction-desc">
         <title id="ra-correction-title">A correction becomes training experience</title><desc id="ra-correction-desc">The robot stops short. A human-guided segment continues to the target, is captured for review, then returns through training to the next rollout. The loop illustrates the workflow, not a measured improvement.</desc>
         <path class="ra-ground" d="M42 236H370"></path>
@@ -133,8 +134,8 @@
       <path data-grip="" d="M308 130V141 M298 154V141H318V154"></path>
     </g>
       </svg>
-      <div class="ra-motion-note"><span class="ra-phase" data-phase="" aria-hidden="true">A correction becomes experience for the next rollout.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause a correction becomes training experience animation">Pause motion</button></div>
-      <figcaption>Concept illustration, not a recorded rollout.</figcaption>
+      </div>
+      <figcaption class="ra-motion-note"><span>Concept illustration, not a recorded rollout.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause a correction becomes training experience animation">Pause motion</button></figcaption>
     </figure>
 <div class="rn-idea"><p>A person's intervention can be more than a way to finish a task. It can become a demonstration the robot learns from.</p></div>
   <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-continual-learning">Explore this thread</button><span class="rn-panel-footnote">Egocentric interface in development</span></div><dialog class="rn-reading-panel" id="reading-continual-learning" aria-labelledby="reading-continual-learning-title"><header class="rn-reading-heading"><h3 id="reading-continual-learning-title">Learning from People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Robots learning from people need a way to turn individual interventions into reusable experience. This ongoing work investigates a correction loop connecting demonstrations, policy failure, human takeover and retraining. People and policies use the same bounded arm commands, so their rollouts can be compared step by step and reused for training. The implemented workflow records corrections for review before they are added to the demonstrations used to train the next policy. Policy evaluation is currently performed manually. Whether the corrections improve later policies without eroding earlier skills remains an open question.</p><p>Related simulation studies compare teacher-student training with learned auxiliary heads to examine what policies retain when privileged training inputs are removed. A portable egocentric interface is also in development to extend demonstration capture beyond teleoperation. Together, these efforts investigate how different forms of human guidance can support continuing learning through a shared recording and review workflow.</p><div class="rn-support"><div><span class="rn-label">In development</span><details id="egocentric"><summary>Egocentric demonstrations</summary><p>A portable interface is designed to capture human manipulation demonstrations using the same recording and review tools as teleoperation.</p>
@@ -149,28 +150,29 @@
   <div class="rn-context"><span>Current work</span><strong class="rn-status">Simulation and physical robot studies</strong></div>
   <h3 class="rn-question">What has a policy learned, and how does that shape its behavior?</h3>
   <figure class="rn-concept ri-concept ra-scene" data-rn-animation="grounding">
-      <div class="rn-concept-labels ra-labels"><span>Read the instruction</span><span>Probe and intervene</span><span>Test the action</span></div>
+      <div class="ra-stage">
+      <div class="rn-concept-labels ra-labels" aria-hidden="true"><span>“Pick blue”</span><span>Probe and patch</span><span>Same choice</span></div>
       <svg viewbox="0 0 900 300" role="img" aria-labelledby="ra-grounding-title ra-grounding-desc">
-        <title id="ra-grounding-title">Encoding a cue does not establish that it guides action</title><desc id="ra-grounding-desc">A blue-object instruction is represented in the policy. A probe reads out that information. An intervention changes the internal representation while the illustrative action can stay on the other object. The two objects have the same shape so color is the relevant difference.</desc>
-        <g class="ra-speech ra-blue"><path d="M42 100H226V170H113L88 190V170H42Z"></path><text x="134" y="145" class="ra-word" text-anchor="middle">blue</text></g>
-      <g class="ra-features ra-blue"><rect x="367" y="113" width="29" height="57" rx="3"></rect><rect x="404" y="113" width="29" height="57" rx="3"></rect><rect x="441" y="113" width="29" height="57" rx="3"></rect><rect x="478" y="113" width="29" height="57" rx="3"></rect></g>
-      <rect class="ra-feature-active ra-fill-blue" data-an="feature-blue" x="404" y="113" width="29" height="57" rx="3"></rect>
-      <rect class="ra-feature-active ra-fill-green" data-an="feature-patched" x="404" y="113" width="29" height="57" rx="3"></rect>
-      <g class="ra-intervention ra-green" data-an="patch"><rect x="404" y="42" width="29" height="25" rx="3"></rect><path d="M418 74V99 M412 91L418 99L424 91"></path></g>
-      <path class="ra-track ra-blue" d="M419 188V240H711V216"></path>
-      <g class="ra-probe ra-blue" data-an="readout"><circle cx="419" cy="240" r="7"></circle><path d="M408 240H430 M419 229V251"></path></g>
-      <path class="ra-ground" d="M665 216H853"></path>
-      <rect class="ra-target ra-blue" x="693" y="174" width="36" height="36" rx="3"></rect>
-      <rect class="ra-target ra-orange" x="799" y="174" width="36" height="36" rx="3"></rect>
-      <rect class="ra-choice ra-orange" data-an="choice" x="791" y="166" width="52" height="52" rx="7"></rect>
-      <g class="ra-gripper ra-orange"><path data-an="choice-gripper" d="M817 83V139 M801 167V139H833V167"></path><circle class="ra-joint" cx="817" cy="83" r="5"></circle></g><path class="ra-track ra-blue" d="M226 140H367"></path>
-      <path class="ra-flow ra-blue" data-route="encode" pathlength="1" d="M226 140H367"></path>
-      <circle class="ra-packet ra-fill-blue" data-dot="encode" r="4"></circle><path class="ra-track ra-orange" d="M507 140C605 140 610 83 817 83"></path>
-      <path class="ra-flow ra-orange" data-route="act" pathlength="1" d="M507 140C605 140 610 83 817 83"></path>
+        <title id="ra-grounding-title">A policy can encode the cue without using it to choose</title><desc id="ra-grounding-desc">With the instruction and scene held fixed, a probe reads blue from the policy representation, yet the gripper chooses orange. The test swaps the cue-carrying activation with one from an orange instruction and runs the policy again. The gripper still chooses orange in this illustrative example. A probe alone can reveal what is encoded, but a controlled intervention tests whether that information affects the action.</desc>
+        <g class="ra-speech ra-blue"><path d="M33 105H228V177H118L89 200V177H33Z"></path><text x="131" y="151" class="ra-word" text-anchor="middle">pick blue</text></g>
+      <g class="ra-features ra-blue"><rect x="367" y="113" width="30" height="57" rx="3"></rect><rect x="405" y="113" width="30" height="57" rx="3"></rect><rect x="443" y="113" width="30" height="57" rx="3"></rect><rect x="481" y="113" width="30" height="57" rx="3"></rect></g>
+      <rect class="ra-feature-active ra-fill-blue" data-an="feature-blue" x="405" y="113" width="30" height="57" rx="3"></rect>
+      <rect class="ra-feature-active ra-fill-orange" data-an="feature-patched" x="405" y="113" width="30" height="57" rx="3"></rect>
+      <g class="ra-intervention ra-orange" data-an="patch"><rect x="405" y="58" width="30" height="28" rx="3"></rect><path d="M420 89V101 M413 94L420 101L427 94"></path></g>
+      <g class="ra-probe ra-blue" data-an="readout"><path d="M420 172V208"></path><circle cx="420" cy="224" r="13"></circle><path d="M430 234L446 250"></path></g>
+      <path class="ra-ground" d="M653 230H855"></path>
+      <rect class="ra-target ra-blue" x="673" y="184" width="40" height="40" rx="3"></rect>
+      <rect class="ra-target ra-orange" x="787" y="184" width="40" height="40" rx="3"></rect>
+      <rect class="ra-choice ra-orange" data-an="choice" x="778" y="175" width="58" height="58" rx="7"></rect>
+      <rect class="ra-ghost ra-orange" data-an="first-choice" x="778" y="175" width="58" height="58" rx="7"></rect>
+      <g class="ra-gripper ra-orange"><path data-an="choice-gripper" d="M807 83V144 M789 180V144H825V180"></path><circle class="ra-joint" cx="807" cy="83" r="5"></circle></g><path class="ra-track ra-blue" d="M228 140H367"></path>
+      <path class="ra-flow ra-blue" data-route="encode" pathlength="1" d="M228 140H367"></path>
+      <circle class="ra-packet ra-fill-blue" data-dot="encode" r="4"></circle><path class="ra-track ra-orange" d="M511 140C605 140 610 83 807 83"></path>
+      <path class="ra-flow ra-orange" data-route="act" pathlength="1" d="M511 140C605 140 610 83 807 83"></path>
       <circle class="ra-packet ra-fill-orange" data-dot="act" r="4"></circle>
       </svg>
-      <div class="ra-motion-note"><span class="ra-phase" data-phase="" aria-hidden="true">What is encoded and what guides action are different tests.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause encoding a cue does not establish that it guides action animation">Pause motion</button></div>
-      <figcaption>Concept illustration, not an attribution map or measured result.</figcaption>
+      </div>
+      <figcaption class="ra-motion-note"><span>Concept illustration, not an attribution map or measured result.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause a policy can encode the cue without using it to choose animation">Pause motion</button></figcaption>
     </figure>
 <div class="rn-idea"><p>A policy can represent which object a word refers to without using that knowledge when it acts. Understanding the representation is only part of the question.</p></div>
   <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-explainability">Explore this thread</button><span class="rn-panel-footnote">Simulation and physical robot studies</span></div><dialog class="rn-reading-panel" id="reading-explainability" aria-labelledby="reading-explainability-title"><header class="rn-reading-heading"><h3 id="reading-explainability-title">Policy Explainability and Representation</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Information can be available within a policy without determining what it does. This ongoing work examines that distinction through representation probes and activation patching in simulation, alongside instruction-conditioned trials on a bimanual robot. In the policies tested in simulation, associations between words and objects were present in the representations but were not used by the action heads. Physical trials separated object choice from pick completion. In those trials, higher task success did not necessarily mean the policy was better at choosing the object named in the instruction.</p><p>These findings motivate testing the information a policy encodes separately from the information that guides its actions. Current work develops evaluation beyond success rate, including partial progress, recovery and repeatability. The broader research question is whether understanding learned representations can help improve learning itself. The findings reported here remain scoped to the tested policies and comparisons.</p><div class="rn-support"><div><span class="rn-label">In development</span><details id="policy-evaluation"><summary>Policy evaluation beyond success rate</summary><p>The goal is to compare policies on partial progress, failure modes, recovery and repeatability as well as task success.</p>
@@ -184,26 +186,26 @@
   <div class="rn-context"><span>Current work</span><strong class="rn-status">Offline evaluation completed · simulation studies</strong></div>
   <h3 class="rn-question">How can predicting what happens next help a robot learn how to act?</h3>
   <figure class="rn-concept ri-concept ra-scene" data-rn-animation="prediction">
-      <div class="rn-concept-labels ra-labels"><span>Observed scene</span><span>Predicted future</span></div>
+      <div class="ra-stage">
+      <div class="rn-concept-labels ra-labels" aria-hidden="true"><span>Same starting scene</span><span>Possible future</span><span>Candidate action</span></div>
       <svg viewbox="0 0 900 300" role="img" aria-labelledby="ra-prediction-title ra-prediction-desc">
-        <title id="ra-prediction-title">Prediction and inverse dynamics ask complementary questions</title><desc id="ra-prediction-desc">An observed scene stays fixed while the model imagines an object moving in a future scene. The two states then provide inputs for inferring a candidate action. The future and action are illustrative, and useful prediction alone does not establish successful execution.</desc>
-        <g class="ra-frame"><path d="M55 78V53H80 M330 53H355V78 M55 193V218H80 M330 218H355V193 M545 78V53H570 M820 53H845V78 M545 193V218H570 M820 218H845V193"></path></g>
-      <path class="ra-ground" d="M80 179H330 M570 179H820"></path>
-      <rect class="ra-target ra-blue" x="120" y="137" width="36" height="36" rx="3"></rect>
-      <rect class="ra-goal" x="260" y="137" width="36" height="36" rx="3"></rect>
-      <rect class="ra-ghost ra-blue" x="610" y="137" width="36" height="36" rx="3"></rect>
-      <rect class="ra-predicted ra-blue" data-an="future-object" x="750" y="137" width="36" height="36" rx="3"></rect>
-      <path class="ra-trajectory ra-blue" data-an="future-trace" pathlength="1" d="M628 124Q690 91 768 124"></path>
-      <g class="ra-action ra-green"><rect x="400" y="236" width="100" height="41" rx="20"></rect><path data-an="inferred-vector" d="M420 256H479 M469 247L479 256L469 265"></path></g><path class="ra-track ra-blue" d="M373 100Q450 47 527 100"></path>
-      <path class="ra-flow ra-blue" data-route="predict" pathlength="1" d="M373 100Q450 47 527 100"></path>
-      <circle class="ra-packet ra-fill-blue" data-dot="predict" r="4"></circle><path class="ra-track ra-green" d="M205 228V257H386"></path>
-      <path class="ra-flow ra-green" data-route="inverse-left" pathlength="1" d="M205 228V257H386"></path>
-      <circle class="ra-packet ra-fill-green" data-dot="inverse-left" r="4"></circle><path class="ra-track ra-green" d="M695 228V257H514"></path>
-      <path class="ra-flow ra-green" data-route="inverse-right" pathlength="1" d="M695 228V257H514"></path>
-      <circle class="ra-packet ra-fill-green" data-dot="inverse-right" r="4"></circle>
+        <title id="ra-prediction-title">A different predicted change suggests a different action</title><desc id="ra-prediction-desc">Two examples begin at the same observed box position. In one possible overhead view, the box moves right and the inferred action points right. In the other, the box moves up in the image and the inferred action points up. The scenes are hypothetical and the arrows represent candidate actions, not unique solutions or evidence of execution.</desc>
+        <g class="ra-frame"><path d="M46 85V58H73 M224 58H251V85 M46 219V246H73 M224 246H251V219 M348 85V58H375 M526 58H553V85 M348 219V246H375 M526 246H553V219"></path></g>
+      <rect class="ra-target ra-blue" x="127" y="151" width="43" height="43" rx="4"></rect>
+      <rect class="ra-ghost" x="429" y="151" width="43" height="43" rx="4"></rect>
+      <path class="ra-trajectory ra-blue" data-an="future-trace" pathlength="1" d="M451 172.5H511"></path>
+      <rect class="ra-predicted ra-blue" data-an="future-object" x="429" y="151" width="43" height="43" rx="4" transform="translate(60 0)"></rect>
+      <path class="ra-blue ra-arrowhead" data-an="predict-head" d="M328 116L338 125L328 134"></path>
+      <g class="ra-action ra-green"><circle cx="740" cy="151" r="46"></circle><path data-an="inferred-vector" d="M716 151H764 M754 141L764 151L754 161"></path></g><path class="ra-track ra-blue" d="M260 125H338"></path>
+      <path class="ra-flow ra-blue" data-route="predict" pathlength="1" d="M260 125H338"></path>
+      <circle class="ra-packet ra-fill-blue" data-dot="predict" r="4"></circle><path class="ra-track ra-green" d="M149 246V270H711Q740 270 740 241V197"></path>
+      <path class="ra-flow ra-green" data-route="from-present" pathlength="1" d="M149 246V270H711Q740 270 740 241V197"></path>
+      <circle class="ra-packet ra-fill-green" data-dot="from-present" r="4"></circle><path class="ra-track ra-green" d="M553 151H694"></path>
+      <path class="ra-flow ra-green" data-route="from-future" pathlength="1" d="M553 151H694"></path>
+      <circle class="ra-packet ra-fill-green" data-dot="from-future" r="4"></circle>
       </svg>
-      <div class="ra-motion-note"><span class="ra-phase" data-phase="" aria-hidden="true">A predicted future suggests an action to test, not proof of success.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause prediction and inverse dynamics ask complementary questions animation">Pause motion</button></div>
-      <figcaption>Concept illustration, not model output.</figcaption>
+      </div>
+      <figcaption class="ra-motion-note"><span>Concept illustration, not model output.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause a different predicted change suggests a different action animation">Pause motion</button></figcaption>
     </figure>
 <div class="rn-idea"><p>What might happen next, and what action could make it happen? Predictive models and inverse dynamics approach action learning from those two directions.</p></div>
   <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-world-models">Explore this thread</button><span class="rn-panel-footnote">Physical validation is pending.</span></div><dialog class="rn-reading-panel" id="reading-world-models" aria-labelledby="reading-world-models-title"><header class="rn-reading-heading"><h3 id="reading-world-models-title">Predictive Models, Inverse Dynamics, and Transfer</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Video describes how a scene changes, but useful predictions do not by themselves establish that useful actions have been learned. This work investigates predictive models and inverse dynamics as complementary routes from visual experience to action. A published video-action model was adapted to teleoperation data and evaluated offline. In simulation, actions inferred from video were compared with recorded actions and commands sent to the robot. Future-feature prediction, instruction grounding and failure signals were assessed separately from task success.</p><p>The evidence so far is limited to offline and simulation studies. Physical validation is pending. Active experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware. The central question is which parts of a predictive or action representation remain useful when a policy must operate in a different setting.</p><div class="rn-support"><div><span class="rn-label">Active experiments</span><details id="sim-real"><summary>Transfer between simulation and hardware</summary><p>Experiments use a digital twin to study how changes in sensing, timing, contact and appearance affect transfer between simulation and hardware.</p>
@@ -217,36 +219,31 @@
   <div class="rn-context"><span>Prior work · 2021–2024</span><strong class="rn-status">Multimodal perception and HRI</strong></div>
   <h3 class="rn-question">How can robots understand what people are doing and what they intend?</h3>
   <figure class="rn-concept ri-concept ra-scene" data-rn-animation="understanding">
-      <div class="rn-concept-labels ra-labels"><span>Complementary human cues</span><span>An intended target</span><span>A physical response</span></div>
+      <div class="ra-stage">
+      <div class="rn-concept-labels ra-labels" aria-hidden="true"><span>Speech + pointing</span><span>One target</span><span>Robot reaches</span></div>
       <svg viewbox="0 0 900 300" role="img" aria-labelledby="ra-understanding-title ra-understanding-desc">
-        <title id="ra-understanding-title">Combine human cues into an actionable intention</title><desc id="ra-understanding-desc">Speech, a pointing gesture and a human pose contribute complementary evidence. The cues converge on an intended target before a robot reaches toward it. This illustrates the shared research question, not an integrated system or a measured result.</desc>
-        <g class="ra-speech ra-blue"><path d="M34 35H202V94H119L99 111V94H34Z"></path><text class="ra-small-word" x="118" y="75" text-anchor="middle">that one</text></g>
-      <g class="ra-pointer ra-green" data-an="gesture"><path d="M50 159H114C128 159 128 173 114 173H88 M88 173L104 177C115 180 113 190 103 190H83 M83 190L98 194C109 197 105 207 96 207H70L48 186H33V162H50"></path></g>
-      <g class="ra-person ra-blue"><circle cx="220" cy="181" r="11"></circle><path d="M220 192V228 M220 228L203 255 M220 228L239 254 M220 202L199 215"></path><path data-an="pose-limb" d="M220 202L243 191L260 172"></path><circle cx="243" cy="191" r="3"></circle></g>
-      <g class="ra-fusion ra-blue"><circle cx="443" cy="150" r="43"></circle><path class="ra-muted-line" d="M423 150H463 M443 130V170"></path></g>
-      <circle class="ra-target-ring ra-green" data-an="intent-ring" cx="443" cy="150" r="29"></circle>
-      <rect class="ra-target ra-blue" x="733" y="161" width="36" height="36" rx="3"></rect>
-      <rect class="ra-neutral-object" x="807" y="161" width="36" height="36" rx="3"></rect>
-      <rect class="ra-choice ra-blue" data-an="intended-object" x="726" y="154" width="50" height="50" rx="7"></rect>
-      <path class="ra-ground" d="M706 211H861"></path><path class="ra-track ra-blue" d="M202 65C306 65 321 120 404 132"></path>
-      <path class="ra-flow ra-blue" data-route="speech" pathlength="1" d="M202 65C306 65 321 120 404 132"></path>
-      <circle class="ra-packet ra-fill-blue" data-dot="speech" r="4"></circle><path class="ra-track ra-green" d="M128 166C240 140 300 151 400 151"></path>
-      <path class="ra-flow ra-green" data-route="gesture" pathlength="1" d="M128 166C240 140 300 151 400 151"></path>
-      <circle class="ra-packet ra-fill-green" data-dot="gesture" r="4"></circle><path class="ra-track ra-blue" d="M260 172C314 202 340 185 404 169"></path>
-      <path class="ra-flow ra-blue" data-route="pose" pathlength="1" d="M260 172C314 202 340 185 404 169"></path>
-      <circle class="ra-packet ra-fill-blue" data-dot="pose" r="4"></circle><path class="ra-track ra-blue" d="M486 150C577 150 650 178 726 178"></path>
-      <path class="ra-flow ra-blue" data-route="intent" pathlength="1" d="M486 150C577 150 650 178 726 178"></path>
-      <circle class="ra-packet ra-fill-blue" data-dot="intent" r="4"></circle><g class="ra-arm ra-blue" data-arm="intent-arm" data-base="637,244">
-      <path class="ra-base" d="M601 255H673 M637 251V244"></path>
-      <path data-link="" d="M637 244L629.22 132.27L751 125"></path>
-      <circle class="ra-joint" cx="637" cy="244" r="8"></circle>
-      <circle class="ra-joint" data-elbow="" cx="629.22" cy="132.27" r="8"></circle>
-      <circle class="ra-joint" data-wrist="" cx="751" cy="125" r="5"></circle>
-      <path data-grip="" d="M751 125V136 M741 149V136H761V149"></path>
+        <title id="ra-understanding-title">Pointing resolves what “that one” refers to</title><desc id="ra-understanding-desc">Two identical objects fit the spoken instruction “that one,” so the robot waits. The person points at one object. With the same words and objects, the additional cue singles out the intended target and the robot reaches toward that object. This is a concept illustration, not a demonstration of a single implemented system.</desc>
+        <g class="ra-speech ra-blue"><path d="M44 49H218V91L247 118L196 112H44Z"></path><text class="ra-word" x="131" y="91" text-anchor="middle">that one</text></g>
+      <g class="ra-person ra-blue"><circle cx="310" cy="91" r="18"></circle><path d="M310 109V181 M310 181L283 232 M310 181L337 232 M310 124L284 156L280 180"></path><path data-an="pose-limb" d="M310 124L350 133L380 150"></path><circle data-an="pointer-tip" class="ra-fill-green ra-pointer-tip" cx="380" cy="150" r="5"></circle></g>
+      <path class="ra-ground" d="M467 213H640"></path>
+      <rect class="ra-target ra-blue" x="482" y="161" width="42" height="42" rx="4"></rect>
+      <rect class="ra-target ra-blue" x="575" y="161" width="42" height="42" rx="4"></rect>
+      <g class="ra-options ra-blue" data-an="ambiguity"><rect x="473" y="152" width="60" height="60" rx="8"></rect><rect x="566" y="152" width="60" height="60" rx="8"></rect><text x="549" y="144" text-anchor="middle">?</text></g>
+      <rect class="ra-choice ra-green" data-an="intended-object" x="473" y="152" width="60" height="60" rx="8"></rect>
+      <path class="ra-flow ra-green" data-route="gesture" pathlength="1" d="M380 150L473 174"></path>
+      <circle class="ra-packet ra-fill-green" data-dot="gesture" r="4"></circle>
+      <path class="ra-flow ra-green" data-route="intent" pathlength="1" d="M503 213V267H696V247"></path>
+      <circle class="ra-packet ra-fill-green" data-dot="intent" r="4"></circle><g class="ra-arm ra-blue" data-arm="intent-arm" data-base="696,236">
+      <path class="ra-base" d="M660 247H732 M696 243V236"></path>
+      <path data-link="" d="M696 236L623.58 150.56L503 132"></path>
+      <circle class="ra-joint" cx="696" cy="236" r="8"></circle>
+      <circle class="ra-joint" data-elbow="" cx="623.58" cy="150.56" r="8"></circle>
+      <circle class="ra-joint" data-wrist="" cx="503" cy="132" r="5"></circle>
+      <path data-grip="" d="M503 132V143 M493 156V143H513V156"></path>
     </g>
       </svg>
-      <div class="ra-motion-note"><span class="ra-phase" data-phase="" aria-hidden="true">Connect what a person expresses to what a robot should act on.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause combine human cues into an actionable intention animation">Pause motion</button></div>
-      <figcaption>Concept illustration of the research question, not a single implemented system.</figcaption>
+      </div>
+      <figcaption class="ra-motion-note"><span>Concept illustration of the research question, not a single implemented system.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause pointing resolves what “that one” refers to animation">Pause motion</button></figcaption>
     </figure>
 <div class="rn-idea"><p>A click, an image, a phrase, or a gesture can express an intention. The challenge is turning that incomplete evidence into something a robot can act on.</p></div>
   <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-understanding-people">Explore this thread</button><span class="rn-panel-footnote">PoseFusion · TAR · NatSGD</span></div><dialog class="rn-reading-panel" id="reading-understanding-people" aria-labelledby="reading-understanding-people-title"><header class="rn-reading-heading"><h3 id="reading-understanding-people-title">Understanding People</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p>Understanding people requires combining incomplete observations with the different ways a person can express an intention. This line of work examines that problem through multi-view pose recognition and multimodal instruction for embodied systems. PoseFusion, a UMD graduate course project, tested camera-view fusion for action recognition under occlusion. In the reported tests, combining views raised F1 from 0.76 to 0.82 compared with a single view. In the co-developed Track Anything Rapter system, work on the high-level controller connected target specification by click, box, image or text to aerial tracking. A trajectory evaluation compared the physical flight trials against motion capture.</p><p>An exploratory policy on the NatSGD dataset provided by Snehesh Shrestha (UMD) combined demonstration, speech and gesture. Task success and the benefit of gesture remain unvalidated. Together, these studies motivate the continuing question of how complementary human cues can support both understanding and action when the evidence is incomplete.</p><figure class="rn-public-media">
@@ -262,7 +259,8 @@
   <div class="rn-context"><span>Shared foundation</span><strong class="rn-status">Implemented</strong></div>
   <h3 class="rn-question">From demonstrations to physical experiments.</h3>
   <figure class="rn-concept ri-concept ra-scene" data-rn-animation="platform">
-      <div class="rn-concept-labels ra-labels"><span>Physical robot</span><span>Shared interfaces</span><span>Digital twin</span></div>
+      <div class="ra-stage">
+      <div class="rn-concept-labels ra-labels" aria-hidden="true"><span>Physical robot</span><span>Shared interfaces</span><span>Digital twin</span></div>
       <svg viewbox="0 0 900 300" role="img" aria-labelledby="ra-platform-title ra-platform-desc">
         <title id="ra-platform-title">Shared interfaces connect experiments in both settings</title><desc id="ra-platform-desc">A common interface sends commands to separate physical and simulation backends. Both arms move, then recordings return for review and policy training. Matching motion is a conceptual illustration of shared interfaces, not a measured demonstration of sim-to-real agreement.</desc>
         <path class="ra-ground" d="M47 242H307 M593 242H853"></path>
@@ -296,8 +294,8 @@
       <path data-grip="" d="M638 130V141 M628 154V141H648V154"></path>
     </g>
       </svg>
-      <div class="ra-motion-note"><span class="ra-phase" data-phase="" aria-hidden="true">Shared controls and review, with separate physical and simulation backends.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause shared interfaces connect experiments in both settings animation">Pause motion</button></div>
-      <figcaption>Platform schematic.</figcaption>
+      </div>
+      <figcaption class="ra-motion-note"><span>Platform schematic.</span><button type="button" class="ra-pause" data-pause-motion="" hidden="hidden" aria-pressed="false" aria-label="Pause shared interfaces connect experiments in both settings animation">Pause motion</button></figcaption>
     </figure>
 <div class="rn-idea"><p>Shared interfaces connect the physical robot and its digital twin, so the studies can move between simulation and hardware without rebuilding the workflow.</p></div>
   <div class="rn-panel-footer"><button type="button" class="rn-open-reading" data-open-reading="reading-research-platform">Platform details</button><span class="rn-panel-footnote">Policy evaluation is currently performed manually.</span></div><dialog class="rn-reading-panel" id="reading-research-platform" aria-labelledby="reading-research-platform-title"><header class="rn-reading-heading"><h3 id="reading-research-platform-title">Platform details and evaluation tools</h3><button type="button" data-close-reading>Close</button></header><div class="rn-reading-body"><p class="rn-platform-intro">Comparing robot-learning methods requires a workflow that keeps demonstrations, policy behavior and deployment conditions connected. The research platform was designed and implemented to link teleoperation and synchronized recording to dataset conversion, policy training, evaluation and physical deployment. The physical robot and digital twin share operator, data review and policy interfaces, with separate hardware and physics backends. This supports moving experiments between simulation and hardware without rebuilding the surrounding workflow.</p><p>Policy evaluation is currently performed manually. The platform provides the experimental setting for the research threads above and for developing evaluation measures that examine behavior beyond task success. The shared infrastructure is implemented; the research questions studied through it remain open at the stages described in each thread.</p><div class="rn-platform-body"><div class="current-work-live__platform">
