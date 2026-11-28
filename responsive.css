@@ -1,0 +1,260 @@
+/* Small-screen layouts. The approved desktop styles remain the default. */
+.responsive-menu-toggle, .responsive-only { display: none; }
+/* Existing nav rules give links display:flex, so explicitly protect desktop. */
+@media (min-width: 768px) {
+  header[data-responsive-header] > nav[id] > a.responsive-only { display: none; }
+}
+
+/* Tablets: space for adjacent text and media, with natural vertical scrolling. */
+@media (min-width: 768px) and (max-width: 1099px) {
+  body:has(.research-notebook) .site-header {
+    width: calc(100% - 56px); grid-template-columns: minmax(0,1fr) auto;
+    padding-top: .4rem; min-height: 104px;
+  }
+  body:has(.research-notebook) .site-header > nav {
+    grid-column: 1 / -1; grid-row: 2; justify-content: space-between;
+    gap: 1rem; min-height: 46px; width: 100%; overflow: visible;
+  }
+  body:has(.research-notebook) .site-header > nav a { display: inline-flex; align-items: center; min-height: 44px; }
+  body:has(.research-notebook) .hero {
+    width: calc(100% - 56px); grid-template-columns: minmax(0,1.12fr) minmax(0,.88fr);
+    min-height: 0; gap: clamp(1.5rem,4vw,3.5rem); padding-block: clamp(3.5rem,8vw,6rem);
+  }
+  body:has(.research-notebook) .hero h1 { font-size: clamp(2.85rem,5.3vw,4rem); }
+  body:has(.research-notebook) .hero .portrait-frame {
+    height: auto; aspect-ratio: 4 / 5; min-height: 0;
+  }
+  body:has(.research-notebook) .hero .portrait-frame img { max-height: calc(100% - 24px); }
+  body:has(.research-notebook) .hero .hero-actions { gap: .5rem 1.1rem; }
+  body:has(.research-notebook) .hero-actions .text-link { min-height: 44px; }
+  body:has(.research-notebook) main > section.research-notebook {
+    min-height: 0; display: block; padding: 3.75rem 28px 4rem;
+  }
+  .research-notebook .rn-workspace {
+    height: auto; grid-template-columns: minmax(185px,.45fr) minmax(0,1fr);
+    align-items: start; gap: clamp(1.25rem,3vw,2rem);
+  }
+  .research-notebook .rn-nav { inset: auto; position: static; padding: 1.2rem 0 0; }
+  .research-notebook .rn-panel { display: block; height: auto; padding: 1.2rem 0 0; }
+  .research-notebook .rn-panels { height: auto; border: 0; }
+  .research-notebook .rn-question { font-size: clamp(1.95rem,3.2vw,2.35rem); margin: .65rem 0 .9rem; }
+  .research-notebook .rn-context > :is(span,small) { font-size: .8125rem; }
+  .research-notebook .rn-panel-footer { margin-block-start: 1rem; }
+  .research-notebook .rn-tab { min-height: 52px; padding: .62rem .55rem .62rem .75rem; }
+  .research-notebook .rn-tab > strong { font-size: 1.4rem; }
+  .research-notebook .rn-tab > span { font-size: .8125rem; }
+  .research-notebook .ra-stage { min-height: 11.5rem; }
+  .research-notebook .ra-scene svg { height: auto; max-height: none; }
+  .research-notebook .ra-scene .ra-test-label { font-size: 32px; }
+  body:has(.research-notebook) :is(.spotlight-media,.research-context-image,.architecture-art) {
+    min-height: 0; aspect-ratio: 16 / 10;
+  }
+  body:has(.research-notebook) .research-context-image img { height: 100%; min-height: 0; object-fit: contain; }
+  body:has(.research-notebook) .role-figure img { max-height: 33rem; }
+  body:has(.research-notebook) main > section.stories-section { height: auto; min-height: 0; grid-template-columns: 1fr; }
+  body:has(.research-notebook) .stories-section .publication-art { min-height: 0; height: auto; aspect-ratio: 16/10; }
+  body:has(.research-notebook) .portfolio-footer { scroll-margin-top: 0; }
+  .project-header ~ main :is(.project-section,.project-next) { padding-block: 3.75rem; }
+  .project-header ~ main .case-lead-media { height: auto; aspect-ratio: 16 / 10; }
+}
+
+/* Phone layouts and compact disclosure menus, shared by home and case studies. */
+@media (max-width: 767px) {
+  body { --compact-edge: clamp(.875rem,4.6vw,1.75rem); }
+  header[data-responsive-header] {
+    position: relative; z-index: 20; isolation: isolate;
+    width: calc(100% - var(--compact-edge) * 2);
+    grid-template-columns: minmax(0,1fr) auto; padding: .45rem 0; min-height: 0;
+    gap: 0 .5rem;
+  }
+  header[data-responsive-header] > :is(.identity,.project-header__identity) {
+    display: flex; min-width: 0; min-height: 48px; font-size: .875rem; gap: .55rem;
+  }
+  header[data-responsive-header] > :is(.identity,.project-header__identity) > span:last-child {
+    max-width: none; line-height: 1.22;
+  }
+  header[data-responsive-header] .identity-mark { flex: 0 0 28px; width: 28px; }
+  header[data-responsive-header] > :is(.header-actions,.project-header__actions) {
+    grid-column: 2; grid-row: 1; display: flex; gap: .4rem;
+  }
+  header[data-responsive-header] .theme-toggle {
+    width: 44px; height: 44px; padding: 0; font-size: 0;
+  }
+  header[data-responsive-header] .theme-toggle::before,
+  header[data-responsive-header] .theme-toggle span { left: 10px; top: 10px; }
+  header[data-responsive-header] .theme-toggle::after { display: none; }
+  header[data-responsive-header][data-menu-ready] :is(.header-cta,.back-link) { display: none; }
+  header[data-responsive-header] .responsive-only { display: inline-flex; }
+  .responsive-menu-toggle {
+    min-height: 44px; min-width: 44px; padding: 0 .7rem; align-items: center;
+    justify-content: center; border: 1px solid var(--line); background: var(--paper-deep);
+    color: var(--ink); font: 600 .875rem/1 'DM Sans',sans-serif; cursor: pointer;
+  }
+  [data-menu-ready] .responsive-menu-toggle { display: inline-flex; }
+  header[data-responsive-header] > nav {
+    grid-column: 1 / -1; grid-row: 2; width: 100%; display: grid; min-height: 0;
+    grid-template-columns: repeat(2,minmax(0,1fr)); gap: .25rem .8rem;
+    padding: .55rem 0 .25rem; overflow: visible; white-space: normal;
+  }
+  header[data-menu-ready]:not(:has([aria-expanded="true"][data-responsive-toggle])) > nav { display: none; }
+  header[data-responsive-header] > nav a {
+    min-height: 44px; display: flex; align-items: center; white-space: normal;
+    padding: .35rem .2rem; font-size: .875rem; line-height: 1.3;
+    border-bottom: 1px solid var(--line);
+  }
+  header[data-responsive-header] > nav a::after { content: none; }
+  header[data-responsive-header] :is(button,a):focus-visible {
+    outline: 2px solid var(--cobalt); outline-offset: 2px;
+  }
+  body:has(.research-notebook) .hero {
+    width: calc(100% - var(--compact-edge) * 2); padding: 2.3rem 0 3.4rem;
+    gap: 1.7rem; grid-template-columns: minmax(0,1fr); min-height: 0;
+  }
+  body:has(.research-notebook) .hero h1 {
+    max-width: 14ch; font-size: clamp(2.55rem,11vw,3.85rem);
+    line-height: 1; overflow-wrap: anywhere;
+  }
+  body:has(.research-notebook) .hero .hero-intro { margin-top: 1.15rem; }
+  body:has(.research-notebook) .hero .hero-actions {
+    display: flex; align-items: center; gap: .45rem 1rem; margin-top: 1.2rem;
+  }
+  body:has(.research-notebook) .hero .hero-actions .button {
+    width: auto; min-height: 48px; padding-inline: .85rem;
+  }
+  body:has(.research-notebook) .hero-actions .text-link { min-height: 44px; padding: .3rem; }
+  body:has(.research-notebook) .hero .portrait-frame {
+    height: auto; min-height: 0; aspect-ratio: 6 / 5; max-height: 26rem;
+  }
+  body:has(.research-notebook) .hero .portrait-frame img {
+    width: min(83%, 390px); max-height: calc(100% - 28px);
+  }
+  body:has(.research-notebook) main > section.research-notebook {
+    padding: 2.7rem var(--compact-edge) 3.25rem; min-height: 0;
+  }
+  .research-notebook .rn-header { padding-bottom: 1.15rem; }
+  .research-notebook .rn-header h2 { font-size: clamp(2.5rem,10vw,3.65rem); }
+  .research-notebook .rn-workspace { grid-template-columns: minmax(0,1fr); gap: 0; }
+  .research-notebook .rn-nav { position: static; padding: .95rem 0 1.1rem; scroll-margin-top: 1rem; }
+  .research-notebook .rn-tabs { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .45rem; }
+  .research-notebook .rn-tab {
+    min-height: 52px; padding: .7rem .55rem; border: 1px solid var(--line);
+    border-left: 2px solid transparent; background: var(--paper);
+  }
+  .research-notebook .rn-tab[aria-selected="true"] {
+    border-left-color: var(--rn-blue); background: color-mix(in srgb,var(--rn-blue) 7%,var(--paper));
+  }
+  .research-notebook .rn-tab > strong { font-size: clamp(1.15rem,4.95vw,1.4rem); line-height: 1.07; }
+  .research-notebook .rn-tab > span { font-size: .8125rem; line-height: 1.35; }
+  .research-notebook .rn-foundation-label { grid-column: 1 / -1; margin-top: .15rem; padding: .55rem 0 0; }
+  .research-notebook .rn-platform-tab { grid-column: 1 / -1; }
+  .research-notebook .rn-panels { border: 0; min-width: 0; }
+  .research-notebook .rn-panel {
+    padding: 1.2rem 0 .6rem; border-top: 1px solid var(--line);
+    scroll-margin-top: 1rem;
+  }
+  .research-notebook .rn-context { margin-bottom: .65rem; gap: .3rem .8rem; }
+  .research-notebook .rn-question { font-size: clamp(1.98rem,8.5vw,2.6rem); margin-bottom: 1rem; }
+  .research-notebook .rn-panel .ra-stage {
+    margin-inline: calc(var(--compact-edge) * -.35); padding-block: .2rem;
+  }
+  .research-notebook .ra-scene .ra-labels { gap: .35rem; }
+  .research-notebook .ra-scene svg { height: auto; max-height: none; }
+  .research-notebook .ra-motion-note { align-items: center; }
+  .research-notebook .ra-pause { padding-inline: .4rem 0; }
+  .research-notebook .rn-panel-footer {
+    display: grid; grid-template-columns: minmax(0,1fr) auto; gap: .15rem .7rem;
+  }
+  .research-notebook .rn-panel-footer .rn-open-reading { justify-self: start; text-align: start; }
+  .research-notebook .rn-panel-footer .rn-panel-footnote { grid-column: 1 / -1; max-width: none; }
+  .research-notebook .rn-panel-footer .responsive-only {
+    display: inline-flex; grid-column: 2; grid-row: 1; align-items: center; min-height: 44px;
+    color: var(--muted); text-decoration: underline; text-underline-offset: .25em; font-size: .875rem;
+  }
+  .rn-reading-panel[open] {
+    inset: 0; margin: 0; width: 100%; max-width: none; height: 100%; max-height: 100%; height: 100dvh; max-height: 100dvh;
+    border: 0; box-shadow: none;
+  }
+  .rn-reading-heading {
+    padding: max(.75rem,env(safe-area-inset-top)) var(--compact-edge) .75rem;
+    gap: .85rem;
+  }
+  .research-notebook .rn-reading-heading > h3 { font-size: clamp(1.5rem,6vw,1.9rem); line-height: 1.1; }
+  .rn-reading-body { padding: 1rem var(--compact-edge) max(1.5rem,env(safe-area-inset-bottom)); }
+  html:has(.rn-reading-panel[open],.figure-lightbox[open]) { overflow: hidden; }
+  .research-notebook .rn-reading-body .rn-support { grid-template-columns: minmax(0,1fr); }
+  body:has(.research-notebook) :is(.work-section,.research-section,.experience-section,.stories-section,.secondary-work-group) {
+    padding-inline: var(--compact-edge);
+  }
+  body:has(.research-notebook) :is(.work-section,.research-section,.experience-section,.stories-section) {
+    padding-block: clamp(3rem,10vw,5rem);
+  }
+  body:has(.research-notebook) :is(.system-spotlight,.role-spotlight,.related-projects,.architecture-card) {
+    grid-template-columns: minmax(0,1fr); min-height: 0;
+  }
+  body:has(.research-notebook) :is(.spotlight-copy,.role-copy) { padding: clamp(1.1rem,5vw,2rem); }
+  body:has(.research-notebook) :is(.spotlight-copy h3,.role-spotlight h3) { font-size: clamp(2.25rem,9.5vw,3.45rem); }
+  body:has(.research-notebook) :is(.spotlight-media,.research-context-image,.architecture-art) {
+    min-height: 0; aspect-ratio: 4 / 3;
+  }
+  body:has(.research-notebook) .research-context-image img { min-height: 0; height: 100%; }
+  body:has(.research-notebook) .project-actions { gap: .1rem .85rem; }
+  body:has(.research-notebook) .project-actions > a { min-height: 44px; }
+  body:has(.research-notebook) .portfolio-footer .contact-profiles { gap: .3rem .95rem; }
+
+  .project-header ~ main :is(.project-hero,.publication-strip,.paper-abstract) {
+    width: calc(100% - var(--compact-edge) * 2);
+  }
+  .project-header ~ main :is(.project-section,.project-next,.resource-bar,.claim-key,.project-media) {
+    padding-inline: var(--compact-edge);
+  }
+  .project-header ~ main .project-hero { padding-block: 2.8rem 2.3rem; }
+  .project-header ~ main .project-hero h1 {
+    font-size: clamp(2.65rem,10.5vw,4rem); line-height: 1.03; overflow-wrap: anywhere;
+  }
+  .project-header ~ main .project-kicker { margin-bottom: 1.1rem; }
+  .project-header ~ main :is(.project-question,.hero-summary,.hero-links) { margin-top: 1.2rem; }
+  .project-header ~ main .hero-links { display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
+  .project-header ~ main .hero-links a { min-height: 44px; display: inline-flex; align-items: center; }
+  .project-header ~ main .publication-strip {
+    grid-template-columns: 1fr; margin-bottom: 1rem; gap: .65rem; padding-block: .9rem;
+  }
+  .project-header ~ main .publication-strip > div { padding: 0; border: 0; min-height: 0; }
+  .project-header ~ main .paper-abstract { padding-block: 1.15rem 2rem; }
+  .project-header ~ main .project-section { padding-block: 3.25rem; }
+  .project-header ~ main .section-heading { grid-template-columns: 1fr; gap: .75rem; margin-bottom: 1.5rem; }
+  .project-header ~ main .resource-bar { grid-template-columns: minmax(0,1fr); padding-block: 0; }
+  .project-header ~ main .resource-bar > * {
+    min-height: 0; padding: .85rem 0; border-left: 0;
+  }
+  .project-header ~ main .resource-bar > * + * { border-top: 1px solid var(--line); }
+  .project-header ~ main .claim-key { grid-template-columns: 1fr; gap: .55rem; }
+  .project-header ~ main .case-lead-media { height: auto; aspect-ratio: 16 / 10; }
+  .project-header ~ main .project-media.diagram-media .case-lead-media > img { padding: .4rem; }
+  .project-header ~ main :is(.evidence-gallery,.figure-grid,.split) {
+    grid-template-columns: minmax(0,1fr); gap: 1.5rem;
+  }
+  .project-header ~ main .evidence-gallery > figure { grid-column: 1; }
+  .project-header ~ main .research-table-wrap { max-width: 100%; }
+  .figure-lightbox[open] {
+    inset: 0; margin: 0; width: 100%; height: 100dvh; max-height: none;
+  }
+  .figure-lightbox__bar { padding: max(.6rem,env(safe-area-inset-top)) var(--compact-edge) .6rem; }
+}
+
+/* The narrow desktop rules set a frame height for snap scrolling. Disable that
+   only in the tablet range so content height can follow the actual viewport. */
+@media (max-width: 1099px) {
+  html:has(.research-notebook) { scroll-snap-type: none; }
+}
+@media (max-width: 359px) {
+  .research-notebook .rn-tab > strong { font-size: 1.15rem; }
+  .research-notebook .ra-scene .ra-labels { font-size: .8125rem; }
+}
+
+@media (min-width: 576px) and (max-width: 767px) and (orientation: landscape) {
+  body:has(.research-notebook) .hero {
+    grid-template-columns: minmax(0,1.2fr) minmax(0,.8fr); gap: 1.3rem;
+  }
+  body:has(.research-notebook) .hero h1 { font-size: clamp(2.4rem,6.5vw,3rem); }
+  body:has(.research-notebook) .hero .portrait-frame { aspect-ratio: 4 / 5; }
+}

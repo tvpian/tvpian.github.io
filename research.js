@@ -4,7 +4,7 @@
   const tabs = [...chapter.querySelectorAll('[data-thread]')];
   const panels = [...chapter.querySelectorAll('[data-thread-panel]')];
   const nav = chapter.querySelector('.rn-tabs');
-  const mobile = matchMedia('(max-width: 700px)');
+  const mobile = matchMedia('(max-width: 767px)');
   nav.setAttribute('role', 'tablist');
   nav.setAttribute('aria-label', 'Research threads and shared platform');
   const setOrientation = () => nav.setAttribute('aria-orientation', mobile.matches ? 'horizontal' : 'vertical');
@@ -19,7 +19,7 @@
     panel.setAttribute('aria-labelledby', tabs.find(t => t.hash === '#' + panel.id).id);
     panel.tabIndex = 0;
   }
-  function reveal(id, {update = false, scroll = false, focus = false} = {}) {
+  function reveal(id, {update = false, scroll = false, focus = false, readPanel = false} = {}) {
     const target = document.getElementById(id);
     const panel = target?.closest('[data-thread-panel]');
     if (!target || !chapter.contains(target) || (!panel && !target.matches('details'))) return false;
@@ -36,7 +36,7 @@
     const reading = target.closest('.rn-reading-panel');
     if (reading && !reading.open) reading.showModal();
     if (update) history.pushState(null, '', '#' + id);
-    if (scroll) (target.closest('.rn-reading-panel') ? target : chapter).scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
+    if (scroll) (target.closest('.rn-reading-panel') ? target : readPanel && panel ? panel : chapter).scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
     if (focus) target.focus({preventScroll: true});
     return true;
   }
@@ -44,7 +44,7 @@
     const tab = event.target.closest('[data-thread]');
     if (!tab || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
-    reveal(tab.hash.slice(1), {update: true, scroll: mobile.matches || chapter.querySelector('.rn-panels').getBoundingClientRect().top < 0});
+    reveal(tab.hash.slice(1), {update: true, scroll: mobile.matches || chapter.querySelector('.rn-panels').getBoundingClientRect().top < 0, readPanel: mobile.matches, focus: mobile.matches});
   });
   nav.addEventListener('keydown', event => {
     const index = tabs.indexOf(event.target.closest('[data-thread]'));
@@ -73,7 +73,7 @@
   fromHash();
   if (location.hash) requestAnimationFrame(() => {
     const target = document.getElementById(location.hash.slice(1));
-    if (target && chapter.contains(target)) (target.closest('.rn-reading-panel') ? target : chapter).scrollIntoView({behavior: 'instant', block: 'start'});
+    if (target && chapter.contains(target)) (target.closest('.rn-reading-panel') ? target : readPanel && panel ? panel : chapter).scrollIntoView({behavior: 'instant', block: 'start'});
   });
 })();
 
