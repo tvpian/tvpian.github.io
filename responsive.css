@@ -1,5 +1,6 @@
 /* Small-screen layouts. The approved desktop styles remain the default. */
-.responsive-menu-toggle, .responsive-only { display: none; }
+.responsive-menu-toggle, .responsive-only,
+.research-notebook :is(.rn-onward,.rn-thread-position,.rn-index-skip) { display: none; }
 /* Existing nav rules give links display:flex, so explicitly protect desktop. */
 @media (min-width: 768px) {
   header[data-responsive-header] > nav[id] > a.responsive-only { display: none; }
@@ -166,9 +167,18 @@
   }
   .research-notebook .rn-panel-footer .rn-open-reading { justify-self: start; text-align: start; }
   .research-notebook .rn-panel-footer .rn-panel-footnote { grid-column: 1 / -1; max-width: none; }
-  .research-notebook .rn-panel-footer .responsive-only {
-    display: inline-flex; grid-column: 2; grid-row: 1; align-items: center; min-height: 44px;
-    color: var(--muted); text-decoration: underline; text-underline-offset: .25em; font-size: .875rem;
+  .research-notebook .rn-index-heading {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+    gap: .1rem .75rem;
+  }
+  .research-notebook .rn-index-heading .rn-nav-label { margin-bottom: 0; }
+  .research-notebook :is(.rn-index-skip,.rn-thread-position > a) {
+    display: inline-flex; align-items: center; min-height: 44px;
+    color: var(--rn-blue); font-size: .875rem; text-decoration: underline; text-underline-offset: .24em;
+  }
+  .research-notebook .rn-thread-position {
+    display: flex; justify-content: space-between; align-items: center; gap: .75rem;
+    margin: -.65rem 0 .45rem; color: var(--muted); font-size: .8125rem;
   }
   .rn-reading-panel[open] {
     inset: 0; margin: 0; width: 100%; max-width: none; height: 100%; max-height: 100%; height: 100dvh; max-height: 100dvh;
@@ -257,4 +267,27 @@
   }
   body:has(.research-notebook) .hero h1 { font-size: clamp(2.4rem,6.5vw,3rem); }
   body:has(.research-notebook) .hero .portrait-frame { aspect-ratio: 4 / 5; }
+}
+
+@media (max-width: 1099px) {
+  .research-notebook .rn-onward {
+    display: grid; min-height: 0; width: 100%; margin: 1.15rem 0 0; padding: 0;
+    gap: .15rem; overflow: visible;
+  }
+  .research-notebook .rn-onward a {
+    display: flex; align-items: center; min-height: 44px;
+    color: var(--rn-blue); text-underline-offset: .24em; white-space: normal;
+  }
+  .research-notebook .rn-onward a::after { content: none; }
+  .research-notebook .rn-onward .rn-next-thread {
+    display: grid; gap: .2rem; padding: .7rem .9rem;
+    border: 1px solid var(--line); border-left: 2px solid var(--rn-blue);
+    background: color-mix(in srgb,var(--rn-blue) 7%,var(--paper));
+  }
+  .research-notebook .rn-next-thread span { font-size: .8125rem; line-height: 1.35; }
+  .research-notebook .rn-next-thread strong {
+    color: var(--ink); font: 400 clamp(1.25rem,5vw,1.5rem)/1.12 'Instrument Serif',Georgia,serif;
+  }
+  .research-notebook .rn-onward a:hover strong { text-decoration: underline; }
+  .research-notebook .rn-onward .rn-skip-projects { width: fit-content; font-size: .875rem; text-decoration: underline; }
 }

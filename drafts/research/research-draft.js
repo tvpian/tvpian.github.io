@@ -5,6 +5,7 @@
   const panels = [...chapter.querySelectorAll('[data-thread-panel]')];
   const nav = chapter.querySelector('.rn-tabs');
   const mobile = matchMedia('(max-width: 767px)');
+  const compact = matchMedia('(max-width: 1099px)');
   nav.setAttribute('role', 'tablist');
   nav.setAttribute('aria-label', 'Research threads and shared platform');
   const setOrientation = () => nav.setAttribute('aria-orientation', mobile.matches ? 'horizontal' : 'vertical');
@@ -35,16 +36,17 @@
     if (target.matches('details')) target.open = true;
     const reading = target.closest('.rn-reading-panel');
     if (reading && !reading.open) reading.showModal();
-    if (update) history.pushState(null, '', '#' + id);
+    if (update && location.hash !== '#' + id) history.pushState(null, '', '#' + id);
     if (scroll) (target.closest('.rn-reading-panel') ? target : readPanel && panel ? panel : chapter).scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
     if (focus) target.focus({preventScroll: true});
     return true;
   }
   chapter.addEventListener('click', event => {
-    const tab = event.target.closest('[data-thread]');
-    if (!tab || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest('[data-thread], [data-next-thread]');
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const readPanel = mobile.matches || (compact.matches && link.hasAttribute('data-next-thread'));
     event.preventDefault();
-    reveal(tab.hash.slice(1), {update: true, scroll: mobile.matches || chapter.querySelector('.rn-panels').getBoundingClientRect().top < 0, readPanel: mobile.matches, focus: mobile.matches});
+    reveal(link.hash.slice(1), {update: true, scroll: readPanel || chapter.querySelector('.rn-panels').getBoundingClientRect().top < 0, readPanel, focus: readPanel});
   });
   nav.addEventListener('keydown', event => {
     const index = tabs.indexOf(event.target.closest('[data-thread]'));
@@ -63,32 +65,34 @@
   });
   document.addEventListener('click', event => {
     const link = event.target.closest('a[href]:not([data-thread])');
-    if (!link || new URL(link.href).pathname !== location.pathname || !link.hash || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    if (event.defaultPrevented || !link || new URL(link.href).pathname !== location.pathname || !link.hash || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     if (reveal(link.hash.slice(1), {update: true, scroll: true})) event.preventDefault();
   });
   const fromHash = () => reveal(location.hash.slice(1));
   addEventListener('hashchange', fromHash);
   addEventListener('popstate', fromHash);
-  reveal('continual-learning');
+  reveal(mobile.matches ? tabs[0].hash.slice(1) : 'continual-learning');
   fromHash();
-  if (location.hash) requestAnimationFrame(() => {
-    const target = document.getElementById(location.hash.slice(1));
-    if (target && chapter.contains(target)) (target.closest('.rn-reading-panel') ? target : readPanel && panel ? panel : chapter).scrollIntoView({behavior: 'instant', block: 'start'});
+  const initialHash = location.hash;
+  const alignEntry = () => requestAnimationFrame(() => {
+    if (location.hash !== initialHash) return;
+    const target = document.getElementById(initialHash.slice(1));
+    if (!target || !chapter.contains(target)) return;
+    const thread = mobile.matches && target.closest('[data-thread-panel]');
+    const anchor = target.closest('.rn-reading-panel') ? target :
+      target.id === 'research-threads' ? target : thread || chapter;
+    anchor.scrollIntoView({behavior: 'instant', block: 'start'});
   });
+  if (initialHash) {
+    if (document.readyState === 'complete') alignEntry();
+    else addEventListener('load', alignEntry, {once: true});
+  }
 })();
 
 
 (() => {
   const root = document.querySelector('.research-notebook');
   if (!root) return;
-  const initialHash = location.hash;
-  const alignEntry = () => requestAnimationFrame(() => {
-    if (location.hash !== initialHash) return;
-    const target = document.getElementById(initialHash.slice(1));
-    if (target && root.contains(target)) (target.closest('.rn-reading-panel') ? target : root).scrollIntoView({behavior: 'instant', block: 'start'});
-  });
-  if (document.readyState === 'complete') alignEntry();
-  else addEventListener('load', alignEntry, {once: true});
   root.querySelector('[data-load-research-video]')?.addEventListener('click', event => {
     const figure = event.currentTarget.closest('figure');
     const host = figure.querySelector('.rn-video-host');
