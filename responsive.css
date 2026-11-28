@@ -1,6 +1,5 @@
 /* Small-screen layouts. The approved desktop styles remain the default. */
 .responsive-menu-toggle, .responsive-only,
-.research-notebook :is(.rn-onward,.rn-thread-toolbar) { display: none; }
 /* Existing nav rules give links display:flex, so explicitly protect desktop. */
 @media (min-width: 768px) {
   header[data-responsive-header] > nav[id] > a.responsive-only { display: none; }
@@ -167,26 +166,6 @@
   }
   .research-notebook .rn-panel-footer .rn-open-reading { justify-self: start; text-align: start; }
   .research-notebook .rn-panel-footer .rn-panel-footnote { grid-column: 1 / -1; max-width: none; }
-  .research-notebook.rn-enhanced .rn-thread-toolbar {
-    display: flex; justify-content: space-between; align-items: center;
-    gap: .75rem; color: var(--muted); font-size: .875rem;
-    border-bottom: 1px solid var(--line); scroll-margin-top: 1rem;
-  }
-  .research-notebook .rn-thread-toolbar button {
-    appearance: none; border: 0; background: transparent; color: var(--rn-blue);
-    padding: 0 .1rem 0 .65rem; min-height: 44px; font: inherit;
-    text-decoration: underline; text-underline-offset: .24em; cursor: pointer;
-  }
-  .research-notebook.rn-enhanced:not([data-thread-index-open]) .rn-nav { display: none; }
-  .research-notebook.rn-enhanced .rn-nav { padding: .45rem 0 .65rem; }
-  .research-notebook.rn-enhanced .rn-nav-label { display: none; }
-  .research-notebook.rn-enhanced .rn-tabs { grid-template-columns: minmax(0,1fr); gap: 0; }
-  .research-notebook.rn-enhanced .rn-tab {
-    min-height: 44px; padding: .62rem .55rem; border-width: 0 0 1px 2px;
-  }
-  .research-notebook.rn-enhanced .rn-tab > span { display: none; }
-  .research-notebook .rn-panel { border-top: 0; }
-  .research-notebook .rn-panel-footer { margin-top: .55rem; }
   .rn-reading-panel[open] {
     inset: 0; margin: 0; width: 100%; max-width: none; height: 100%; max-height: 100%; height: 100dvh; max-height: 100dvh;
     border: 0; box-shadow: none;
@@ -280,17 +259,64 @@
 @media (min-width: 1100px) and (min-height: 700px) {
   .research-notebook .rn-panel { grid-template-rows: auto minmax(0,1fr) auto auto; }
 }
+/* A journal index with inline entries at compact widths. */
 @media (max-width: 1099px) {
-  .research-notebook .rn-onward {
-    display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
-    min-height: 0; width: 100%; margin: .25rem 0 0; padding: 0;
-    gap: 0 .9rem; overflow: visible;
+  html:has(.rn-accordion[data-switching]), .research-notebook .rn-accordion { overflow-anchor: none; }
+  .research-notebook:has(.rn-accordion:not([hidden])) .rn-header { padding-bottom: .65rem; }
+  .research-notebook .rn-accordion-utility {
+    display: flex; justify-content: flex-end; border-bottom: 1px solid var(--line);
   }
-  .research-notebook .rn-onward a {
-    display: flex; align-items: center; min-height: 44px; max-width: 100%;
-    color: var(--rn-blue); text-decoration: underline; text-underline-offset: .24em;
-    white-space: normal; font-size: .875rem; line-height: 1.35;
+  .research-notebook .rn-accordion-utility a {
+    display: inline-flex; align-items: center; min-height: 44px;
+    color: var(--rn-blue); font-size: .875rem; text-decoration: underline; text-underline-offset: .2em;
   }
-  .research-notebook .rn-onward a::after { content: none; }
-  .research-notebook .rn-next-thread { font-weight: 600; }
+  .research-notebook .rn-accordion-item {
+    border-bottom: 1px solid var(--line); scroll-margin-top: 1rem;
+  }
+  .research-notebook .rn-accordion-item > summary {
+    display: grid; grid-template-columns: minmax(0,1fr) 1.25rem; align-items: center;
+    gap: 1rem; min-height: 60px; padding: .875rem .15rem;
+    list-style: none; cursor: pointer;
+    color: var(--ink); font: 400 clamp(1.42rem,3.6vw,1.8rem)/1.12 'Instrument Serif',Georgia,serif;
+  }
+  .research-notebook .rn-accordion-item > summary::-webkit-details-marker { display: none; }
+  .research-notebook .rn-accordion-item > summary::after {
+    content: ''; display: block; width: .46rem; height: .46rem;
+    justify-self: center; margin-top: -.19rem; border: solid var(--rn-blue);
+    border-width: 0 1.5px 1.5px 0; transform: rotate(45deg);
+  }
+  .research-notebook .rn-accordion-item[open] > summary { color: var(--rn-blue); }
+  .research-notebook .rn-accordion-item[open] > summary::after {
+    margin-top: .2rem; transform: rotate(225deg);
+  }
+  .research-notebook .rn-accordion-item > summary:focus-visible {
+    outline: 2px solid var(--rn-blue); outline-offset: -2px;
+  }
+  .research-notebook .rn-accordion-item[data-accordion-thread="research-platform"] > summary {
+    font: 500 .9375rem/1.4 'DM Sans',sans-serif;
+  }
+  .research-notebook .rn-accordion-item > .rn-panel { padding: .45rem .15rem 1.25rem; height: auto; }
+  .research-notebook .rn-accordion-item .rn-question {
+    margin: 0 0 .65rem; font-size: clamp(1.72rem,6vw,2.2rem); max-width: 31ch;
+  }
+  .research-notebook .rn-accordion-item .rn-idea { margin: .25rem 0 0; }
+  .research-notebook .rn-accordion-item .rn-idea > p { font-size: clamp(.98rem,2.2vw,1.065rem); line-height: 1.55; }
+  .research-notebook .rn-accordion-item .ra-stage { min-height: 0; }
+  .research-notebook .rn-accordion-item .rn-panel-footer { margin: .3rem 0 0; padding: 0; border: 0; }
+  .research-notebook .rn-accordion-item .rn-open-reading {
+    padding: .45rem 0; text-underline-offset: .25em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  .research-notebook .rn-accordion-item > .rn-panel {
+    display: grid;
+    grid-template-columns: minmax(0,1.65fr) minmax(0,1fr);
+    grid-template-areas: "question question" "figure idea" "figure read";
+    grid-template-rows: auto minmax(0,1fr) auto;
+    gap: .5rem clamp(1.5rem,4vw,2.75rem);
+  }
+  .research-notebook .rn-accordion-item .rn-question { grid-area: question; max-width: 39ch; }
+  .research-notebook .rn-accordion-item .ra-scene { grid-area: figure; }
+  .research-notebook .rn-accordion-item .rn-idea { grid-area: idea; align-self: center; }
+  .research-notebook .rn-accordion-item .rn-panel-footer { grid-area: read; }
 }

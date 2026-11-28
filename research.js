@@ -4,117 +4,142 @@
   const tabs = [...chapter.querySelectorAll('[data-thread]')];
   const panels = [...chapter.querySelectorAll('[data-thread-panel]')];
   const nav = chapter.querySelector('.rn-tabs');
-  const mobile = matchMedia('(max-width: 767px)');
+  const workspace = chapter.querySelector('.rn-workspace');
+  const panelHost = chapter.querySelector('.rn-panels');
+  const accordion = chapter.querySelector('.rn-accordion');
+  const items = new Map([...accordion.querySelectorAll('[data-accordion-thread]')]
+    .map(item => [item.dataset.accordionThread, item]));
   const compact = matchMedia('(max-width: 1099px)');
-  const toolbar = chapter.querySelector('[data-thread-toolbar]');
-  const menu = toolbar.querySelector('button');
-  const threadIndex = document.getElementById(menu.getAttribute('aria-controls'));
-  const position = toolbar.querySelector('[data-thread-position]');
-  const scrollTo = (element, instant = false) => element.scrollIntoView({
-    behavior: instant || matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
-    block: 'start'
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const homeThread = 'continual-learning';
+  let selected = null;
+  const align = (element, instant = false) => element.scrollIntoView({
+    behavior: instant || reduce.matches ? 'instant' : 'smooth', block: 'start'
   });
-  function setIndex(open, moveFocus = false) {
-    chapter.toggleAttribute('data-thread-index-open', open);
-    menu.setAttribute('aria-expanded', String(open));
-    if (moveFocus) (open ? tabs.find(tab => tab.getAttribute('aria-selected') === 'true') : menu)?.focus({preventScroll: true});
-  }
-  menu.addEventListener('click', () => setIndex(!chapter.hasAttribute('data-thread-index-open'), true));
-  chapter.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && mobile.matches && chapter.hasAttribute('data-thread-index-open')
-        && (threadIndex.contains(event.target) || toolbar.contains(event.target))) {
-      event.preventDefault();
-      setIndex(false, true);
-    }
-  });
-  mobile.addEventListener('change', () => setIndex(false));
-
+  const remember = (id, replace = false) => {
+    const hash = '#' + id;
+    if (location.hash !== hash) history[replace ? 'replaceState' : 'pushState'](null, '', hash);
+  };
   nav.setAttribute('role', 'tablist');
   nav.setAttribute('aria-label', 'Research threads and shared platform');
-  const setOrientation = () => nav.setAttribute('aria-orientation', mobile.matches ? 'horizontal' : 'vertical');
-  setOrientation();
-  mobile.addEventListener('change', setOrientation);
+  nav.setAttribute('aria-orientation', 'vertical');
   for (const tab of tabs) {
     tab.setAttribute('role', 'tab');
     tab.setAttribute('aria-controls', tab.hash.slice(1));
   }
-  for (const panel of panels) {
-    panel.setAttribute('role', 'tabpanel');
-    panel.setAttribute('aria-labelledby', tabs.find(t => t.hash === '#' + panel.id).id);
-    panel.tabIndex = 0;
+
+  function select(id) {
+    selected = compact.matches ? id : id || homeThread;
+    for (const panel of panels) {
+      const active = panel.id === selected;
+      if (compact.matches) items.get(panel.id).open = active;
+      panel.hidden = !active && !compact.matches;
+    }
+    for (const tab of tabs) {
+      const active = tab.hash === '#' + selected;
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+    }
   }
-  function reveal(id, {update = false, scroll = false, focus = false, readPanel = false} = {}) {
-    const target = document.getElementById(id);
-    const panel = target?.closest('[data-thread-panel]');
-    if (!target || !chapter.contains(target) || (!panel && !target.matches('details'))) return false;
-    if (panel) {
-      for (const item of panels) item.hidden = item !== panel;
-      position.textContent = panel.dataset.threadPosition;
-      for (const tab of tabs) {
-        const selected = tab.hash === '#' + panel.id;
-        tab.setAttribute('aria-selected', String(selected));
-        tab.tabIndex = selected ? 0 : -1;
+
+  function mount() {
+    const small = compact.matches;
+    workspace.hidden = small;
+    accordion.hidden = !small;
+    for (const panel of panels) {
+      const item = items.get(panel.id);
+      if (small) {
+        panel.removeAttribute('role');
+        panel.removeAttribute('tabindex');
+        panel.removeAttribute('aria-labelledby');
+        item.append(panel);
+      } else {
+        panel.setAttribute('role', 'tabpanel');
+        panel.setAttribute('aria-labelledby', tabs.find(t => t.hash === '#' + panel.id).id);
+        panel.tabIndex = 0;
+        panelHost.append(panel);
       }
     }
     chapter.classList.add('rn-enhanced');
+    select(selected);
+  }
+
+  function reveal(id, {update = false, scroll = false} = {}) {
+    const target = document.getElementById(id);
+    const panel = target?.closest('[data-thread-panel]');
+    if (!target || !chapter.contains(target) || (!panel && !target.matches('details'))) return false;
+    if (panel) select(panel.id);
     if (target.matches('details')) target.open = true;
     const reading = target.closest('.rn-reading-panel');
     if (reading && !reading.open) reading.showModal();
-    if (update && location.hash !== '#' + id) history.pushState(null, '', '#' + id);
-    if (scroll) scrollTo(reading ? target : readPanel && panel ? (mobile.matches ? toolbar : panel) : chapter);
-    if (focus) target.focus({preventScroll: true});
+    if (update) remember(id);
+    if (scroll && !reading) align(compact.matches && panel ? items.get(panel.id) : chapter);
     return true;
   }
-  chapter.addEventListener('click', event => {
-    const link = event.target.closest('[data-thread], [data-next-thread]');
-    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    const readPanel = mobile.matches || (compact.matches && link.hasAttribute('data-next-thread'));
-    event.preventDefault();
-    if (mobile.matches) setIndex(false);
-    reveal(link.hash.slice(1), {update: true, scroll: readPanel || chapter.querySelector('.rn-panels').getBoundingClientRect().top < 0, readPanel, focus: readPanel});
+
+  // Toggle at the reader's position, compensating for an earlier row collapsing.
+  for (const [id,item] of items) {
+    const summary = item.querySelector('summary');
+    summary.addEventListener('click', event => {
+      event.preventDefault();
+      const wasOpen = item.open;
+      const before = summary.getBoundingClientRect().top;
+      accordion.setAttribute('data-switching', '');
+      select(wasOpen ? null : id);
+      remember(wasOpen ? 'current' : id, wasOpen);
+      const shift = summary.getBoundingClientRect().top - before;
+      if (Math.abs(shift) > 1) window.scrollBy({top:shift,behavior:'instant'});
+      requestAnimationFrame(() => requestAnimationFrame(() => accordion.removeAttribute('data-switching')));
+    });
+  }
+
+  const fromHash = () => {
+    const id = location.hash.slice(1);
+    if (!reveal(id) && (id === 'current' || !id || id === 'research-threads')) select(null);
+  };
+  compact.addEventListener('change', () => {
+    mount();
+    fromHash();
   });
+
   nav.addEventListener('keydown', event => {
     const index = tabs.indexOf(event.target.closest('[data-thread]'));
     if (index < 0) return;
-    let next;
-    const forward = mobile.matches ? 'ArrowRight' : 'ArrowDown';
-    const backward = mobile.matches ? 'ArrowLeft' : 'ArrowUp';
-    if (event.key === forward) next = (index + 1) % tabs.length;
-    if (event.key === backward) next = (index - 1 + tabs.length) % tabs.length;
-    if (event.key === 'Home') next = 0;
-    if (event.key === 'End') next = tabs.length - 1;
+    const next = {ArrowDown:(index+1)%tabs.length,ArrowUp:(index-1+tabs.length)%tabs.length,
+      Home:0,End:tabs.length-1}[event.key];
     if (next === undefined) return;
     event.preventDefault();
     tabs[next].focus();
     reveal(tabs[next].hash.slice(1));
+  });
+  nav.addEventListener('click', event => {
+    const tab = event.target.closest('[data-thread]');
+    if (!tab || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    reveal(tab.hash.slice(1), {update:true,scroll:panelHost.getBoundingClientRect().top<0});
   });
   document.addEventListener('click', event => {
     const link = event.target.closest('a[href]:not([data-thread])');
     if (event.defaultPrevented || !link || new URL(link.href).pathname !== location.pathname || !link.hash || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     if (reveal(link.hash.slice(1), {update: true, scroll: true})) event.preventDefault();
   });
-  const fromHash = () => {
-    const id = location.hash.slice(1);
-    if (mobile.matches && id === 'research-threads') setIndex(true);
-    reveal(id);
-  };
   addEventListener('hashchange', fromHash);
   addEventListener('popstate', fromHash);
-  reveal(mobile.matches ? tabs[0].hash.slice(1) : 'continual-learning');
+  mount();
   fromHash();
   const initialHash = location.hash;
   const alignEntry = () => requestAnimationFrame(() => {
     if (location.hash !== initialHash) return;
     const target = document.getElementById(initialHash.slice(1));
-    if (!target || !chapter.contains(target)) return;
-    const thread = mobile.matches && target.closest('[data-thread-panel]');
-    const anchor = target.closest('.rn-reading-panel') ? target :
-      target === threadIndex ? (mobile.matches ? toolbar : threadIndex) : thread ? toolbar : chapter;
-    scrollTo(anchor, true);
+    if (!target || !chapter.contains(target) || target.closest('.rn-reading-panel')) return;
+    const panel = target.closest('[data-thread-panel]');
+    const anchor = compact.matches ? (panel ? items.get(panel.id) : target.id === 'research-threads' ? accordion : chapter)
+      : target.id === 'research-threads' ? target : chapter;
+    align(anchor, true);
   });
   if (initialHash) {
     if (document.readyState === 'complete') alignEntry();
-    else addEventListener('load', alignEntry, {once: true});
+    else addEventListener('load', alignEntry, {once:true});
   }
 })();
 
@@ -130,7 +155,7 @@
     video.focus();
     video.play().catch(() => {});
   });
-  const pauseHiddenMedia = () => root.querySelectorAll('.rn-panel[hidden] video, .rn-reading-panel:not([open]) video').forEach(video => video.pause());
+  const pauseHiddenMedia = () => root.querySelectorAll('.rn-panel[hidden] video, .rn-reading-panel:not([open]) video, .rn-accordion-item:not([open]) video').forEach(video => video.pause());
   new MutationObserver(pauseHiddenMedia).observe(root, {attributes: true, attributeFilter: ['hidden', 'open'], subtree: true});
   function closeDisclosure(disclosure) {
     const summary = disclosure.querySelector(':scope > summary');
@@ -141,7 +166,7 @@
       summary.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'center'});
     }
   }
-  root.querySelectorAll('details').forEach(disclosure => {
+  root.querySelectorAll('details:not(.rn-accordion-item)').forEach(disclosure => {
     const summary = disclosure.querySelector(':scope > summary');
     if (!summary) return;
     const close = document.createElement('button');
@@ -154,7 +179,7 @@
   });
   root.addEventListener('keydown', event => {
     if (event.key !== 'Escape') return;
-    const open = event.target.closest('details[open]');
+    const open = event.target.closest('details[open]:not(.rn-accordion-item)');
     if (!open) return;
     event.preventDefault();
     closeDisclosure(open);
@@ -344,7 +369,7 @@
       scene.frame=requestAnimationFrame(scene.tick);
     };
     scene.update = () => {
-      const selected=!figure.closest('.rn-panel').hidden;
+      const selected=!figure.closest('.rn-panel').hidden && !figure.closest('.rn-accordion-item:not([open])');
       if(selected&&!scene.selected) scene.elapsed=0;
       scene.selected=selected;
       const playing=selected&&scene.inView&&!document.hidden&&!root.querySelector('dialog[open]')&&!userPaused&&!reduced.matches;
