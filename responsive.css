@@ -1,6 +1,6 @@
 /* Small-screen layouts. The approved desktop styles remain the default. */
 .responsive-menu-toggle, .responsive-only,
-.research-notebook :is(.rn-onward,.rn-thread-position,.rn-index-skip) { display: none; }
+.research-notebook :is(.rn-onward,.rn-thread-toolbar) { display: none; }
 /* Existing nav rules give links display:flex, so explicitly protect desktop. */
 @media (min-width: 768px) {
   header[data-responsive-header] > nav[id] > a.responsive-only { display: none; }
@@ -167,19 +167,26 @@
   }
   .research-notebook .rn-panel-footer .rn-open-reading { justify-self: start; text-align: start; }
   .research-notebook .rn-panel-footer .rn-panel-footnote { grid-column: 1 / -1; max-width: none; }
-  .research-notebook .rn-index-heading {
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
-    gap: .1rem .75rem;
+  .research-notebook.rn-enhanced .rn-thread-toolbar {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: .75rem; color: var(--muted); font-size: .875rem;
+    border-bottom: 1px solid var(--line); scroll-margin-top: 1rem;
   }
-  .research-notebook .rn-index-heading .rn-nav-label { margin-bottom: 0; }
-  .research-notebook :is(.rn-index-skip,.rn-thread-position > a) {
-    display: inline-flex; align-items: center; min-height: 44px;
-    color: var(--rn-blue); font-size: .875rem; text-decoration: underline; text-underline-offset: .24em;
+  .research-notebook .rn-thread-toolbar button {
+    appearance: none; border: 0; background: transparent; color: var(--rn-blue);
+    padding: 0 .1rem 0 .65rem; min-height: 44px; font: inherit;
+    text-decoration: underline; text-underline-offset: .24em; cursor: pointer;
   }
-  .research-notebook .rn-thread-position {
-    display: flex; justify-content: space-between; align-items: center; gap: .75rem;
-    margin: -.65rem 0 .45rem; color: var(--muted); font-size: .8125rem;
+  .research-notebook.rn-enhanced:not([data-thread-index-open]) .rn-nav { display: none; }
+  .research-notebook.rn-enhanced .rn-nav { padding: .45rem 0 .65rem; }
+  .research-notebook.rn-enhanced .rn-nav-label { display: none; }
+  .research-notebook.rn-enhanced .rn-tabs { grid-template-columns: minmax(0,1fr); gap: 0; }
+  .research-notebook.rn-enhanced .rn-tab {
+    min-height: 44px; padding: .62rem .55rem; border-width: 0 0 1px 2px;
   }
+  .research-notebook.rn-enhanced .rn-tab > span { display: none; }
+  .research-notebook .rn-panel { border-top: 0; }
+  .research-notebook .rn-panel-footer { margin-top: .55rem; }
   .rn-reading-panel[open] {
     inset: 0; margin: 0; width: 100%; max-width: none; height: 100%; max-height: 100%; height: 100dvh; max-height: 100dvh;
     border: 0; box-shadow: none;
@@ -269,25 +276,21 @@
   body:has(.research-notebook) .hero .portrait-frame { aspect-ratio: 4 / 5; }
 }
 
+/* Keep the desktop notebook's flexible figure row after removing side labels. */
+@media (min-width: 1100px) and (min-height: 700px) {
+  .research-notebook .rn-panel { grid-template-rows: auto minmax(0,1fr) auto auto; }
+}
 @media (max-width: 1099px) {
   .research-notebook .rn-onward {
-    display: grid; min-height: 0; width: 100%; margin: 1.15rem 0 0; padding: 0;
-    gap: .15rem; overflow: visible;
+    display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;
+    min-height: 0; width: 100%; margin: .25rem 0 0; padding: 0;
+    gap: 0 .9rem; overflow: visible;
   }
   .research-notebook .rn-onward a {
-    display: flex; align-items: center; min-height: 44px;
-    color: var(--rn-blue); text-underline-offset: .24em; white-space: normal;
+    display: flex; align-items: center; min-height: 44px; max-width: 100%;
+    color: var(--rn-blue); text-decoration: underline; text-underline-offset: .24em;
+    white-space: normal; font-size: .875rem; line-height: 1.35;
   }
   .research-notebook .rn-onward a::after { content: none; }
-  .research-notebook .rn-onward .rn-next-thread {
-    display: grid; gap: .2rem; padding: .7rem .9rem;
-    border: 1px solid var(--line); border-left: 2px solid var(--rn-blue);
-    background: color-mix(in srgb,var(--rn-blue) 7%,var(--paper));
-  }
-  .research-notebook .rn-next-thread span { font-size: .8125rem; line-height: 1.35; }
-  .research-notebook .rn-next-thread strong {
-    color: var(--ink); font: 400 clamp(1.25rem,5vw,1.5rem)/1.12 'Instrument Serif',Georgia,serif;
-  }
-  .research-notebook .rn-onward a:hover strong { text-decoration: underline; }
-  .research-notebook .rn-onward .rn-skip-projects { width: fit-content; font-size: .875rem; text-decoration: underline; }
+  .research-notebook .rn-next-thread { font-weight: 600; }
 }

@@ -6,6 +6,29 @@
   const nav = chapter.querySelector('.rn-tabs');
   const mobile = matchMedia('(max-width: 767px)');
   const compact = matchMedia('(max-width: 1099px)');
+  const toolbar = chapter.querySelector('[data-thread-toolbar]');
+  const menu = toolbar.querySelector('button');
+  const threadIndex = document.getElementById(menu.getAttribute('aria-controls'));
+  const position = toolbar.querySelector('[data-thread-position]');
+  const scrollTo = (element, instant = false) => element.scrollIntoView({
+    behavior: instant || matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+    block: 'start'
+  });
+  function setIndex(open, moveFocus = false) {
+    chapter.toggleAttribute('data-thread-index-open', open);
+    menu.setAttribute('aria-expanded', String(open));
+    if (moveFocus) (open ? tabs.find(tab => tab.getAttribute('aria-selected') === 'true') : menu)?.focus({preventScroll: true});
+  }
+  menu.addEventListener('click', () => setIndex(!chapter.hasAttribute('data-thread-index-open'), true));
+  chapter.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mobile.matches && chapter.hasAttribute('data-thread-index-open')
+        && (threadIndex.contains(event.target) || toolbar.contains(event.target))) {
+      event.preventDefault();
+      setIndex(false, true);
+    }
+  });
+  mobile.addEventListener('change', () => setIndex(false));
+
   nav.setAttribute('role', 'tablist');
   nav.setAttribute('aria-label', 'Research threads and shared platform');
   const setOrientation = () => nav.setAttribute('aria-orientation', mobile.matches ? 'horizontal' : 'vertical');
@@ -26,6 +49,7 @@
     if (!target || !chapter.contains(target) || (!panel && !target.matches('details'))) return false;
     if (panel) {
       for (const item of panels) item.hidden = item !== panel;
+      position.textContent = panel.dataset.threadPosition;
       for (const tab of tabs) {
         const selected = tab.hash === '#' + panel.id;
         tab.setAttribute('aria-selected', String(selected));
@@ -37,7 +61,7 @@
     const reading = target.closest('.rn-reading-panel');
     if (reading && !reading.open) reading.showModal();
     if (update && location.hash !== '#' + id) history.pushState(null, '', '#' + id);
-    if (scroll) (target.closest('.rn-reading-panel') ? target : readPanel && panel ? panel : chapter).scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
+    if (scroll) scrollTo(reading ? target : readPanel && panel ? (mobile.matches ? toolbar : panel) : chapter);
     if (focus) target.focus({preventScroll: true});
     return true;
   }
@@ -46,6 +70,7 @@
     if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     const readPanel = mobile.matches || (compact.matches && link.hasAttribute('data-next-thread'));
     event.preventDefault();
+    if (mobile.matches) setIndex(false);
     reveal(link.hash.slice(1), {update: true, scroll: readPanel || chapter.querySelector('.rn-panels').getBoundingClientRect().top < 0, readPanel, focus: readPanel});
   });
   nav.addEventListener('keydown', event => {
@@ -68,7 +93,11 @@
     if (event.defaultPrevented || !link || new URL(link.href).pathname !== location.pathname || !link.hash || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     if (reveal(link.hash.slice(1), {update: true, scroll: true})) event.preventDefault();
   });
-  const fromHash = () => reveal(location.hash.slice(1));
+  const fromHash = () => {
+    const id = location.hash.slice(1);
+    if (mobile.matches && id === 'research-threads') setIndex(true);
+    reveal(id);
+  };
   addEventListener('hashchange', fromHash);
   addEventListener('popstate', fromHash);
   reveal(mobile.matches ? tabs[0].hash.slice(1) : 'continual-learning');
@@ -80,8 +109,8 @@
     if (!target || !chapter.contains(target)) return;
     const thread = mobile.matches && target.closest('[data-thread-panel]');
     const anchor = target.closest('.rn-reading-panel') ? target :
-      target.id === 'research-threads' ? target : thread || chapter;
-    anchor.scrollIntoView({behavior: 'instant', block: 'start'});
+      target === threadIndex ? (mobile.matches ? toolbar : threadIndex) : thread ? toolbar : chapter;
+    scrollTo(anchor, true);
   });
   if (initialHash) {
     if (document.readyState === 'complete') alignEntry();
